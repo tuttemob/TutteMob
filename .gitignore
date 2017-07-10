@@ -1,1 +1,5 @@
 config/application.config.email.php
+.settings
+.buildpath
+.project
+.tern-project
