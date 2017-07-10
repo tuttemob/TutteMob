@@ -1,0 +1,11 @@
+<nav aria-label="Anterior/Próximo">
+	<ul class="pager">
+  		<?php if (isset($this->previous)): ?>
+  			<li><a href="<?php echo $this->url($this->route, array('params' => $this->previous)); ?>">Anterior</a></li>
+		<?php endif; ?>
+    	
+    	<?php if (isset($this->next)): ?>
+  			<li><a href="<?php echo $this->url($this->route, array('params' => $this->next)); ?>">Próximo</a></li>
+		<?php endif; ?>
+	</ul>
+</nav>

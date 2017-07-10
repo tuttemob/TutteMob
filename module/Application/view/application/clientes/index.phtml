@@ -1,0 +1,625 @@
+<section class="mbr-section article mbr-section__container" id="login" style="padding-top: 120px; padding-bottom: 40px;">
+
+    <div class="container">
+        <div class="row">
+        	<div class="col-sm-12">
+		        <div class="col-lg-12">
+            		<h2>Ambientes</h2>
+            	</div>
+		            	
+		        <?php if($this->success):?>
+            		<div class="alert alert-success col-xs-12" role="alert"><?= $this->success; ?></div>
+            	<?php endif;?>
+            			
+            	<?php if($this->error):?>
+            		<div class="alert alert-danger col-xs-12" role="alert"><?= $this->error; ?></div>
+            	<?php endif;?>
+            			
+	            <div class="col-md-4">
+	            	<div class="jumbotron">
+	            		<div class="container">
+							<h2>Cozinha</h2>
+						  	<p>Preencha o briefing...</p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('cozinha')">Preencher</a></p>
+						</div>
+	            	</div>
+				</div>
+	            <div class="col-md-4">
+	            	<div class="jumbotron">
+		            	<div class="container">
+							<h2>Área de Serviço</h2>
+						  	<p>Preencha o briefing...</p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('areaServico')">Preencher</a></p>
+						</div>
+					</div>
+				</div>
+	            <div class="col-md-4">
+	            	<div class="jumbotron">
+		            	<div class="container">
+							<h2>Dormitório Casal</h2>
+						  	<p>Preencha o briefing...</p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('dormitoriocasal')">Preencher</a></p>
+						</div>
+					</div>
+				</div>
+	            <div class="col-md-4">
+	            	<div class="jumbotron">
+		            	<div class="container">
+							<h2>Dormitório Solteiro</h2>
+						  	<p>Preencha o briefing...</p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('dormitoriosolteiro')">Preencher</a></p>
+						</div>
+					</div>
+				</div>
+	            <div class="col-md-4">
+	            	<div class="jumbotron">
+		            	<div class="container">
+							<h2>Closet</h2>
+						  	<p>Preencha o briefing...</p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('closet')">Preencher</a></p>
+						</div>
+					</div>
+				</div>
+	            <!-- <div class="col-md-4">
+	            	<div class="jumbotron">
+		            	<div class="container">
+							<h2>Dormitório Infantil</h2>
+						  	<p>Preencha o briefing...</p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('dormitorioinfantil')">Preencher</a></p>
+						</div>
+					</div>
+				</div> -->				
+	            <div class="col-md-4">
+	            	<div class="jumbotron">
+		            	<div class="container">
+							<h2>Banheiro</h2>
+						  	<p>Preencha o briefing...</p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('banheiro')">Preencher</a></p>
+						</div>
+					</div>
+				</div>				
+	            <div class="col-md-4">
+	            	<div class="jumbotron">
+		            	<div class="container">
+							<h2>Home Theater</h2>
+						  	<p>Preencha o briefing...</p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('hometheater')">Preencher</a></p>
+						</div>
+					</div>
+				</div>				
+	            <div class="col-md-4">
+	            	<div class="jumbotron">
+		            	<div class="container">
+							<h2>Home Office</h2>
+						  	<p>Preencha o briefing...</p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('homeoffice')">Preencher</a></p>
+						</div>
+					</div>
+				</div>				
+		    </div>
+		    
+		    <div class="col-sm-12"  id="listabriefings">
+		    	<div class="list-group list-grid">
+		    		<div class="list-group-item col-xs-12 list-grid-header">
+		    			<h2>Meus briefings:</h2>
+		    		</div>
+		    		<div class="list-group-item col-xs-12 list-grid-header">
+		    			<strong>Quantidade:</strong> <?= $this->listaGridTotal; ?>
+		    		</div>
+		    		<?php foreach ($this->listaGrid as $item):?>
+			    		<div class="list-group-item col-xs-12">
+			    			<div class="col-xs-8">
+			    				<h4 class="list-group-item-heading"><?= $item->tpLabel?> #<?= $item->idbriefing?></h4>
+		    					<p class="list-group-item-text"><?= date('d/m/Y H:i:s', strtotime($item->datacriacao)); ?></p>
+			    			</div>
+			    			<div class="col-xs-4" style="text-align: right;">
+			    				<a class="btn btn-primary btn-lg" role="button" onclick="alterarBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>)">Alterar</a>
+			    			</div>
+			    		</div>
+		    		<?php endforeach;?>
+		    		<div class="list-group-item col-xs-12 list-grid-pagination">
+		    			<?= $this->paginationControl($this->listaGrid, 'Sliding', 'application/clientes/paginator.phtml', array('route' => 'clientes')); ?>
+		    		</div>
+				</div>
+		    </div>
+			
+			<!-- Modal formulário-->
+			<?php include __DIR__ . '/_modalAreaServico.phtml'; ?>
+			<?php include __DIR__ . '/_modalBanheiro.phtml'; ?>
+			<?php include __DIR__ . '/_modalCloset.phtml'; ?>
+			<?php include __DIR__ . '/_modalCozinha.phtml'; ?>
+			<?php include __DIR__ . '/_modalDormitorioCasal.phtml'; ?>
+			<?php include __DIR__ . '/_modalDormitorioSolteiro.phtml'; ?>
+			<?php include __DIR__ . '/_modalDormitorioInfantil.phtml'; ?>
+			<?php include __DIR__ . '/_modalHomeTheater.phtml'; ?>
+			<?php include __DIR__ . '/_modalHomeOffice.phtml'; ?>
+			<?php include __DIR__ . '/_modalCadastro.phtml'; ?>
+        </div>
+    </div>
+
+</section>
+
+<script type="text/javascript">
+$(function(){
+	// ajusta scroll ao carregar
+	$('body').scrollTop(0);
+	
+	$('#concluirCozinha').click(function(){
+		$('#modalCozinhaForm').submit();
+	});
+
+	$('#concluirAreaServico').click(function(){
+		$('#modalAreaServicoForm').submit();
+	});
+
+	$('#concluirDormitorioCasal').click(function(){
+		$('#modalDormitorioCasalForm').submit();
+	});
+
+	$('#concluirDormitorioSolteiro').click(function(){
+		$('#modalDormitorioSolteiroForm').submit();
+	});
+
+	$('#concluirCloset').click(function(){
+		$('#modalClosetForm').submit();
+	});
+
+	//$('#concluirDormitorioInfantil').click(function(){
+	//	$('#modalDormitorioInfantilForm').submit();
+	//});
+
+	$('#concluirBanheiro').click(function(){
+		$('#modalBanheiroForm').submit();
+	});
+
+	$('#concluirHomeTheater').click(function(){
+		$('#modalHomeTheaterForm').submit();
+	});
+
+	$('#concluirHomeOffice').click(function(){
+		$('#modalHomeOfficeForm').submit();
+	});
+
+	$('.block-subitem-cond').change(function(){
+		var formGroup = $(this).parents('.form-group');
+		
+		if($(this).val() == '1'){
+			$(formGroup).find('.block-subitem').fadeIn();
+			$(formGroup).find('.block-subitem').find('input,select').attr('required', 'required');
+		}else{
+			$(formGroup).find('.block-subitem').fadeOut();
+			$(formGroup).find('.block-subitem').find('input,select').removeAttr('required');
+		}
+	});
+
+	criarBriefing = function(tp){
+		if(tp == 'cozinha'){
+			var callback = function(){
+				// abre a modal de briefing da cozinha
+				$('#modalCozinhaForm').find('input').each(function(){
+					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'preferenciacores[]'){
+						$(this).val('');
+					}
+					else if($(this).attr('name') != 'preferenciacores[]'){
+						$(this).prop('checked', false);
+					}
+				});
+				$('#modalCozinhaForm').find('select').each(function(){
+					$(this).val(0);
+				});
+				$('input[name="id"]').val('');
+				$('#modalCozinhaForm').find('.box-imagem .col-xs-6').html('');
+				$('#modalCozinha').modal('show');
+			};
+
+			showModalCadastro(callback);
+			
+		} else if(tp == 'areaServico'){
+			var callback = function(){
+				// abre a modal de briefing de área de serviço
+				$('#modalAreaServicoForm').find('input').each(function(){
+					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bas_preferenciacores[]'){
+						$(this).val('');
+					}
+					else if($(this).attr('name') != 'bas_preferenciacores[]'){
+						$(this).prop('checked', false);
+					}
+				});
+				$('#modalAreaServicoForm').find('select').each(function(){
+					$(this).val(0);
+				});
+				$('input[name="id"]').val('');
+				$('#modalAreaServicoForm').find('.box-imagem .col-xs-6').html('');
+				$('#modalAreaServico').modal('show');
+			};
+
+			showModalCadastro(callback);
+		} else if(tp == 'dormitoriocasal'){
+			var callback = function(){
+				// abre a modal de briefing de dormitório de casal
+				$('#modalDormitorioCasalForm').find('input').each(function(){
+					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bdc_preferenciacores[]'){
+						$(this).val('');
+					}
+					else if($(this).attr('name') != 'bdc_preferenciacores[]'){
+						$(this).prop('checked', false);
+					}
+				});
+				$('#modalDormitorioCasalForm').find('select').each(function(){
+					$(this).val(0);
+				});
+				$('input[name="id"]').val('');
+				$('#modalDormitorioCasalForm').find('.box-imagem .col-xs-6').html('');
+				$('#modalDormitorioCasal').modal('show');
+			};
+
+			showModalCadastro(callback);
+		} else if(tp == 'dormitoriosolteiro'){
+			var callback = function(){
+				// abre a modal de briefing de dormitório de solteiro
+				$('#modalDormitorioSolteiroForm').find('input').each(function(){
+					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bds_preferenciacores[]'){
+						$(this).val('');
+					}
+					else if($(this).attr('name') != 'bds_preferenciacores[]'){
+						$(this).prop('checked', false);
+					}
+				});
+				$('#modalDormitorioSolteiroForm').find('select').each(function(){
+					$(this).val(0);
+				});
+				$('input[name="id"]').val('');
+				$('#modalDormitorioSolteiroForm').find('.box-imagem .col-xs-6').html('');
+				$('#modalDormitorioSolteiro').modal('show');
+			};
+
+			showModalCadastro(callback);
+		} /*else if(tp == 'dormitorioinfantil'){
+			var callback = function(){
+				// abre a modal de briefing de dormitório infantil
+				$('#modalDormitorioInfantilForm').find('input').each(function(){
+					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bdi_preferenciacores[]'){
+						$(this).val('');
+					}
+					else if($(this).attr('name') != 'bdi_preferenciacores[]'){
+						$(this).prop('checked', false);
+					}
+				});
+				$('#modalDormitorioInfantilForm').find('select').each(function(){
+					$(this).val(0);
+				});
+				$('input[name="id"]').val('');
+				$('#modalDormitorioInfantilForm').find('.box-imagem .col-xs-6').html('');
+				$('#modalDormitorioInfantil').modal('show');
+			};
+
+			showModalCadastro(callback);
+		}*/ else if(tp == 'closet'){
+			var callback = function(){
+				// abre a modal de briefing de closet
+				$('#modalClosetForm').find('input').each(function(){
+					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bcl_preferenciacores[]'){
+						$(this).val('');
+					}
+					else if($(this).attr('name') != 'bcl_preferenciacores[]'){
+						$(this).prop('checked', false);
+					}
+				});
+				$('#modalClosetForm').find('select').each(function(){
+					$(this).val(0);
+				});
+				$('input[name="id"]').val('');
+				$('#modalClosetForm').find('.box-imagem .col-xs-6').html('');
+				$('#modalCloset').modal('show');
+			};
+
+			showModalCadastro(callback);
+		} else if(tp == 'banheiro'){
+			var callback = function(){
+				// abre a modal de briefing de banheiro
+				$('#modalBanheiroForm').find('input').each(function(){
+					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'ban_preferenciacores[]'){
+						$(this).val('');
+					}
+					else if($(this).attr('name') != 'ban_preferenciacores[]'){
+						$(this).prop('checked', false);
+					}
+				});
+				$('#modalBanheiroForm').find('select').each(function(){
+					$(this).val(0);
+				});
+				$('input[name="id"]').val('');
+				$('#modalBanheiroForm').find('.box-imagem .col-xs-6').html('');
+				$('#modalBanheiro').modal('show');
+			};
+
+			showModalCadastro(callback);
+		} else if(tp == 'hometheater'){
+			var callback = function(){
+				// abre a modal de briefing de home theater
+				$('#modalHomeTheaterForm').find('input').each(function(){
+					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bht_preferenciacores[]'){
+						$(this).val('');
+					}
+					else if($(this).attr('name') != 'bht_preferenciacores[]'){
+						$(this).prop('checked', false);
+					}
+				});
+				$('#modalHomeTheaterForm').find('select').each(function(){
+					$(this).val(0);
+				});
+				$('input[name="id"]').val('');
+				$('#modalHomeTheaterForm').find('.box-imagem .col-xs-6').html('');
+				$('#modalHomeTheater').modal('show');
+			};
+
+			showModalCadastro(callback);
+		} else if(tp == 'homeoffice'){
+			var callback = function(){
+				// abre a modal de briefing de home office
+				$('#modalHomeOfficeForm').find('input').each(function(){
+					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bho_preferenciacores[]'){
+						$(this).val('');
+					}
+					else if($(this).attr('name') != 'bho_preferenciacores[]'){
+						$(this).prop('checked', false);
+					}
+				});
+				$('#modalHomeOfficeForm').find('select').each(function(){
+					$(this).val(0);
+				});
+				$('input[name="id"]').val('');
+				$('#modalHomeOfficeForm').find('.box-imagem .col-xs-6').html('');
+				$('#modalHomeOffice').modal('show');
+			};
+
+			showModalCadastro(callback);
+		}
+	};
+	
+	alterarBriefing = function(tp, id){
+		$.post(
+			'<?=$this->url('clientes', array('action' => 'carregaBriefing'));?>',
+			{tipo: tp, id: id},
+			function(resp){
+				if(tp == 'cozinha'){
+					// carrega a modal de cozinha
+					$('#modalCozinhaForm').find('input,select').each(function(){
+						var name = $(this).attr('name');
+						if(name != 'acao' && name != 'preferenciacores[]' && name != 'imagem'){
+							$(this).val(resp.data[name]);
+							$(this).change();
+						}
+						// preferencia de cores
+						if(name == 'preferenciacores[]'){
+							if($.inArray($(this).val(), resp.data['preferenciacores']) > -1){
+								$(this).prop('checked', true);
+							}
+						}
+					});
+
+					if(resp.data['idbriefing'] != null){
+						$('input[name="id"]').val(resp.data['idbriefing']);
+					}
+					
+					if(resp.data['imagem'] != null){
+						var pathImg = '<img src="<?=$this->basePath('upload/briefing/');?>'+resp.data['imagem']+'" class="img-responsive" style="width: 100%; margin-top: 10px;"/>'
+						$('#modalCozinhaForm').find('.box-imagem .col-xs-10').html(pathImg);
+					}
+					
+					$('#modalCozinha').modal('show');
+				} else if(tp == 'areaservico'){
+					// carrega a modal de área de serviço
+					$('#modalAreaServicoForm').find('input,select').each(function(){
+						var name = $(this).attr('name');
+						if(name != 'acao' && name != 'bas_preferenciacores[]' && name != 'bas_imagem'){
+							$(this).val(resp.data[name]);
+							$(this).change();
+						}
+						// preferencia de cores
+						if(name == 'bas_preferenciacores[]'){
+							if($.inArray($(this).val(), resp.data['bas_preferenciacores']) > -1){
+								$(this).prop('checked', true);
+							}
+						}
+					});
+
+					if(resp.data['idbriefing'] != null){
+						$('input[name="id"]').val(resp.data['idbriefing']);
+					}
+					
+					if(resp.data['bas_imagem'] != null){
+						var pathImg = '<img src="<?=$this->basePath('upload/briefing/');?>'+resp.data['bas_imagem']+'" class="img-responsive" style="width: 100%; margin-top: 10px;"/>'
+						$('#modalAreaServicoForm').find('.box-imagem .col-xs-10').html(pathImg);
+					}
+					
+					$('#modalAreaServico').modal('show');
+				} else if(tp == 'dormitoriocasal'){
+					// carrega a modal de dormitório casal
+					$('#modalDormitorioCasalForm').find('input,select').each(function(){
+						var name = $(this).attr('name');
+						if(name != 'acao' && name != 'bdc_preferenciacores[]' && name != 'bdc_imagem'){
+							$(this).val(resp.data[name]);
+							$(this).change();
+						}
+						// preferencia de cores
+						if(name == 'bdc_preferenciacores[]'){
+							if($.inArray($(this).val(), resp.data['bdc_preferenciacores']) > -1){
+								$(this).prop('checked', true);
+							}
+						}
+					});
+
+					if(resp.data['idbriefing'] != null){
+						$('input[name="id"]').val(resp.data['idbriefing']);
+					}
+					
+					if(resp.data['bdc_imagem'] != null){
+						var pathImg = '<img src="<?=$this->basePath('upload/briefing/');?>'+resp.data['bdc_imagem']+'" class="img-responsive" style="width: 100%; margin-top: 10px;"/>'
+						$('#modalDormitorioCasalForm').find('.box-imagem .col-xs-10').html(pathImg);
+					}
+					
+					$('#modalDormitorioCasal').modal('show');
+				} else if(tp == 'dormitoriosolteiro'){
+					// carrega a modal de dormitório solteiro
+					$('#modalDormitorioSolteiroForm').find('input,select').each(function(){
+						var name = $(this).attr('name');
+						if(name != 'acao' && name != 'bds_preferenciacores[]' && name != 'bds_imagem'){
+							$(this).val(resp.data[name]);
+							$(this).change();
+						}
+						// preferencia de cores
+						if(name == 'bds_preferenciacores[]'){
+							if($.inArray($(this).val(), resp.data['bds_preferenciacores']) > -1){
+								$(this).prop('checked', true);
+							}
+						}
+					});
+
+					if(resp.data['idbriefing'] != null){
+						$('input[name="id"]').val(resp.data['idbriefing']);
+					}
+					
+					if(resp.data['bds_imagem'] != null){
+						var pathImg = '<img src="<?=$this->basePath('upload/briefing/');?>'+resp.data['bds_imagem']+'" class="img-responsive" style="width: 100%; margin-top: 10px;"/>'
+						$('#modalDormitorioSolteiroForm').find('.box-imagem .col-xs-10').html(pathImg);
+					}
+					
+					$('#modalDormitorioSolteiro').modal('show');
+				} else if(tp == 'dormitorioinfantil'){
+					// carrega a modal de dormitório infantil
+					$('#modalDormitorioInfantilForm').find('input,select').each(function(){
+						var name = $(this).attr('name');
+						if(name != 'acao' && name != 'bdi_preferenciacores[]' && name != 'bdi_imagem'){
+							$(this).val(resp.data[name]);
+							$(this).change();
+						}
+						// preferencia de cores
+						if(name == 'bdi_preferenciacores[]'){
+							if($.inArray($(this).val(), resp.data['bdi_preferenciacores']) > -1){
+								$(this).prop('checked', true);
+							}
+						}
+					});
+
+					if(resp.data['idbriefing'] != null){
+						$('input[name="id"]').val(resp.data['idbriefing']);
+					}
+					
+					if(resp.data['bdi_imagem'] != null){
+						var pathImg = '<img src="<?=$this->basePath('upload/briefing/');?>'+resp.data['bdi_imagem']+'" class="img-responsive" style="width: 100%; margin-top: 10px;"/>'
+						$('#modalDormitorioInfantilForm').find('.box-imagem .col-xs-10').html(pathImg);
+					}
+					
+					$('#modalDormitorioInfantil').modal('show');
+				} else if(tp == 'closet'){
+					// carrega a modal de closet
+					$('#modalClosetForm').find('input,select').each(function(){
+						var name = $(this).attr('name');
+						if(name != 'acao' && name != 'bcl_preferenciacores[]' && name != 'bcl_imagem'){
+							$(this).val(resp.data[name]);
+							$(this).change();
+						}
+						// preferencia de cores
+						if(name == 'bcl_preferenciacores[]'){
+							if($.inArray($(this).val(), resp.data['bcl_preferenciacores']) > -1){
+								$(this).prop('checked', true);
+							}
+						}
+					});
+
+					if(resp.data['idbriefing'] != null){
+						$('input[name="id"]').val(resp.data['idbriefing']);
+					}
+					
+					if(resp.data['bcl_imagem'] != null){
+						var pathImg = '<img src="<?=$this->basePath('upload/briefing/');?>'+resp.data['bcl_imagem']+'" class="img-responsive" style="width: 100%; margin-top: 10px;"/>'
+						$('#modalClosetForm').find('.box-imagem .col-xs-10').html(pathImg);
+					}
+					
+					$('#modalCloset').modal('show');
+				} else if(tp == 'banheiro'){
+					// carrega a modal de banheiro
+					$('#modalBanheiroForm').find('input,select').each(function(){
+						var name = $(this).attr('name');
+						if(name != 'acao' && name != 'ban_preferenciacores[]' && name != 'ban_imagem'){
+							$(this).val(resp.data[name]);
+							$(this).change();
+						}
+						// preferencia de cores
+						if(name == 'ban_preferenciacores[]'){
+							if($.inArray($(this).val(), resp.data['ban_preferenciacores']) > -1){
+								$(this).prop('checked', true);
+							}
+						}
+					});
+
+					if(resp.data['idbriefing'] != null){
+						$('input[name="id"]').val(resp.data['idbriefing']);
+					}
+					
+					if(resp.data['ban_imagem'] != null){
+						var pathImg = '<img src="<?=$this->basePath('upload/briefing/');?>'+resp.data['ban_imagem']+'" class="img-responsive" style="width: 100%; margin-top: 10px;"/>'
+						$('#modalBanheiroForm').find('.box-imagem .col-xs-10').html(pathImg);
+					}
+					
+					$('#modalBanheiro').modal('show');
+				} else if(tp == 'hometheater'){
+					// carrega a modal de home theater
+					$('#modalHomeTheaterForm').find('input,select').each(function(){
+						var name = $(this).attr('name');
+						if(name != 'acao' && name != 'bht_preferenciacores[]' && name != 'bht_imagem'){
+							$(this).val(resp.data[name]);
+							$(this).change();
+						}
+						// preferencia de cores
+						if(name == 'bht_preferenciacores[]'){
+							if($.inArray($(this).val(), resp.data['bht_preferenciacores']) > -1){
+								$(this).prop('checked', true);
+							}
+						}
+					});
+
+					if(resp.data['idbriefing'] != null){
+						$('input[name="id"]').val(resp.data['idbriefing']);
+					}
+					
+					if(resp.data['bht_imagem'] != null){
+						var pathImg = '<img src="<?=$this->basePath('upload/briefing/');?>'+resp.data['bht_imagem']+'" class="img-responsive" style="width: 100%; margin-top: 10px;"/>'
+						$('#modalHomeTheaterForm').find('.box-imagem .col-xs-10').html(pathImg);
+					}
+					
+					$('#modalHomeTheater').modal('show');
+				} else if(tp == 'homeoffice'){
+					// carrega a modal de home office
+					$('#modalHomeOfficeForm').find('input,select').each(function(){
+						var name = $(this).attr('name');
+						if(name != 'acao' && name != 'bho_preferenciacores[]' && name != 'bho_imagem'){
+							$(this).val(resp.data[name]);
+							$(this).change();
+						}
+						// preferencia de cores
+						if(name == 'bho_preferenciacores[]'){
+							if($.inArray($(this).val(), resp.data['bho_preferenciacores']) > -1){
+								$(this).prop('checked', true);
+							}
+						}
+					});
+
+					if(resp.data['idbriefing'] != null){
+						$('input[name="id"]').val(resp.data['idbriefing']);
+					}
+					
+					if(resp.data['bho_imagem'] != null){
+						var pathImg = '<img src="<?=$this->basePath('upload/briefing/');?>'+resp.data['bho_imagem']+'" class="img-responsive" style="width: 100%; margin-top: 10px;"/>'
+						$('#modalHomeOfficeForm').find('.box-imagem .col-xs-10').html(pathImg);
+					}
+					
+					$('#modalHomeOffice').modal('show');
+				}
+			},
+			'json'
+		);
+	};
+});
+</script>

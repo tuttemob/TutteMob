@@ -1,0 +1,281 @@
+<div class="modal fade" id="modalHomeOffice" tabindex="-1" role="dialog" aria-labelledby="modalHomeOfficeLabel" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalHomeOfficeLabel">Briefing Home Office</h4>
+      </div>
+      <div class="modal-body">
+      		<form name="modalHomeOfficeForm" id="modalHomeOfficeForm" data-toggle="validator"
+      			class="form-briefings form-horizontal" method="post" enctype="multipart/form-data">
+      			<input type="hidden" name="acao" value="briefing-homeoffice" />
+      			<input type="hidden" name="id" value="" />
+      			
+				<div class="form-group col-xs-12">
+				   	<!-- Descrição -->
+				   	<label for="bho_descricao" class="col-sm-4">Descrição:</label>
+				   	<div class="col-sm-8">
+			   			<input type="text" class="form-control" name="bho_descricao">
+				   	</div>				   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bho_preferenciacores" class="col-sm-4">Preferência de cores:</label>
+            		
+            		<div class="col-sm-8">
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bho_preferenciacores[]" value="1">
+            				Claro
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bho_preferenciacores[]" value="2">
+            				Escuro
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bho_preferenciacores[]" value="3">
+            				Amadeirado
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bho_preferenciacores[]" value="4">
+            				Liso
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bho_preferenciacores[]" value="5">
+            				Colorido
+            			</label>
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bho_sofa" class="col-sm-4">Sofá:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bho_sofa" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- Sofá cor -->
+				   	<label for="bho_sofacor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_sofacor">
+				   	</div>
+
+				   	<!-- Dimensões -->
+				   	<label for="bho_sofadimensoes" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_sofadimensoes">
+				   	</div>				   					   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bho_poltrona" class="col-sm-4">Poltrona:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bho_poltrona" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- Poltrona cor -->
+				   	<label for="bho_poltronacor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_poltronacor">
+				   	</div>
+
+				   	<!-- Dimensões -->
+				   	<label for="bho_poltronadimensoes" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_poltronadimensoes">
+				   	</div>				   					   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bho_puf" class="col-sm-4">Pufs:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bho_puf" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- Puf cor -->
+				   	<label for="bho_pufcor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_pufcor">
+				   	</div>
+
+				   	<!-- Dimensões -->
+				   	<label for="bho_pufdimensoes" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_pufdimensoes">
+				   	</div>				   					   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bho_possuitv" class="col-sm-4">Televisor:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bho_possuitv" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- polegadas -->
+				   	<label for="bho_tvpolegadas" class="col-sm-4 block-subitem">Polegadas:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_tvpolegadas">
+				   	</div>
+				   	
+				   	<!-- modelo/marca -->
+				   	<label for="bho_tvmodelomarca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_tvmodelomarca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bho_possuidvd" class="col-sm-4">DVD:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bho_possuidvd" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- dimensões -->
+				   	<label for="bho_dvddimensaoes" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_dvddimensaoes">
+				   	</div>
+				   					   	
+				   	<!-- modelo/marca -->
+				   	<label for="bho_dvdmodelomarca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_dvdmodelomarca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bho_possuisom" class="col-sm-4">Som:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bho_possuisom" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- dimensões -->
+				   	<label for="bho_somdimensoes" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_somdimensoes">
+				   	</div>
+				   					   	
+				   	<!-- modelo/marca -->
+				   	<label for="bho_sommodelomarca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_sommodelomarca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bho_possuitvcabo" class="col-sm-4">TV a cabo:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bho_possuitvcabo" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- dimensões -->
+				   	<label for="bho_tvcabodimensoes" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_tvcabodimensoes">
+				   	</div>
+				   	
+				   	<!-- modelo/marca -->
+				   	<label for="bho_tvcabomodelomarca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_tvcabomodelomarca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bho_possuipc" class="col-sm-4">Possui PC:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bho_possuipc" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- polegadas -->
+				   	<label for="bho_pcpolegadasmonitor" class="col-sm-4 block-subitem">Polegadas monitor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_pcpolegadasmonitor">
+				   	</div>
+				   	
+				   	<!-- modelo/marca -->
+				   	<label for="bho_pcmodelomarca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_pcmodelomarca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bho_possuinotebook" class="col-sm-4">Possui Notebook:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bho_possuinotebook" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- polegadas -->
+				   	<label for="bho_notebookpolegadas" class="col-sm-4 block-subitem">Polegadas monitor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_notebookpolegadas">
+				   	</div>
+				   	
+				   	<!-- modelo/marca -->
+				   	<label for="bho_notebookmodelomarca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bho_notebookmodelomarca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bho_obs" class="col-sm-4">Observações:</label>
+            		
+            		<div class="col-sm-8">
+				   		<input type="text" class="form-control" name="bho_obs">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12 box-imagem">
+      				<label for="bho_imagem" class="col-sm-4">Gostaria de nos enviar alguma imagem?</label>
+            		
+            		<div class="col-sm-8">
+				   		<input type="file" class="form-control" name="bho_imagem" />
+				   		
+				   		<div class="col-xs-10"></div>
+				   	</div>
+				</div>
+			</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" id="concluirHomeOffice" class="btn btn-primary">Concluir</button>
+      </div>
+    </div>
+  </div>
+</div>

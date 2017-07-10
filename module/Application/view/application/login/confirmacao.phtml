@@ -1,0 +1,23 @@
+<section class="mbr-section article mbr-section__container" id="confirmacao" style="padding-top: 120px; padding-bottom: 40px;">
+
+    <div class="container">
+        <div class="row">
+        	<h2>Confirmação de cadastro</h2>
+        	
+        	<?php if($this->success):?>
+            	<div class="alert alert-success" role="alert"><?= $this->success; ?></div>
+            <?php endif;?>
+            			
+            <?php if($this->error):?>
+            	<div class="alert alert-danger" role="alert"><?= $this->error; ?></div>
+            <?php endif;?>            
+        </div>
+        
+        <div class="row">
+            <div class="nav-item">
+				<a class="nav-link link" href="<?= $this->url('login'); ?>">Clique aqui</a> para fazer o login.
+			</div>        
+        </div>
+    </div>
+
+</section>

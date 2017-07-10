@@ -1,0 +1,393 @@
+<div class="modal fade" id="modalCozinha" tabindex="-1" role="dialog" aria-labelledby="modalCozinhaLabel" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalCozinhaLabel">Briefing Cozinha</h4>
+      </div>
+      <div class="modal-body">
+      		<form name="modalCozinhaForm" id="modalCozinhaForm" data-toggle="validator"
+      			class="form-briefings form-horizontal" method="post" enctype="multipart/form-data">
+      			<input type="hidden" name="acao" value="briefing-cozinha" />
+      			<input type="hidden" name="id" value="" />
+      			
+				<div class="form-group col-xs-12">
+				   	<!-- Descrição -->
+				   	<label for="descricao" class="col-sm-4">Descrição:</label>
+				   	<div class="col-sm-8">
+			   			<input type="text" class="form-control" name="descricao">
+				   	</div>				   	
+				</div>
+				
+      			<div class="form-group col-xs-12">
+      				<label for="qtdpessoas" class="col-sm-4">Quantidade de pessoas:</label>
+            		
+            		<div class="col-sm-8">
+				   		<input type="text" class="form-control" name="qtdpessoas" required>
+				   	</div>
+				</div>
+					
+				<div class="form-group col-xs-12">
+      				<label for="preferenciacores" class="col-sm-4">Preferência de cores:</label>
+            		
+            		<div class="col-sm-8">
+            			<label class="col-md-6">
+            				<input type="checkbox" name="preferenciacores[]" value="1">
+            				Claro
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="preferenciacores[]" value="2">
+            				Escuro
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="preferenciacores[]" value="3">
+            				Amadeirado
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="preferenciacores[]" value="4">
+            				Liso
+            			</label>
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="fogao" class="col-sm-4">Fogão:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="fogao" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- Fogao tipo -->
+				   	<label for="fogao_tipo" class="col-sm-4 block-subitem">Tipo:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<select class="form-control" name="fogao_tipo">
+			   				<option value="">Selecione...</option>
+				   			<option value="1">Mesa</option>
+				   			<option value="2">Com Forno</option>
+				   			<option value="3">Embutir</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- Fogao cor -->
+				   	<label for="fogao_cor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<select class="form-control" name="fogao_cor">
+				   			<option value="">Selecione...</option>
+				   			<?php include __DIR__.'/_optionsCores.phtml';?>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- Fogao marca -->
+				   	<label for="fogao_marca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="fogao_marca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="coifa" class="col-sm-4">Coifa/Depurador:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="coifa" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- tipo -->
+				   	<label for="coifa_tipo" class="col-sm-4 block-subitem">Tipo:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="coifa_tipo">
+				   	</div>
+				   	
+				   	<!-- cor -->
+				   	<label for="coifa_cor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<select class="form-control" name="coifa_cor">
+				   			<option value="">Selecione...</option>
+				   			<?php include __DIR__.'/_optionsCores.phtml';?>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- marca -->
+				   	<label for="coifa_marca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="coifa_marca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="forno" class="col-sm-4">Forno:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="forno" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- tipo -->
+				   	<label for="forno_tipo" class="col-sm-4 block-subitem">Tipo:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<select class="form-control" name="forno_tipo">
+			   				<option value="">Selecione...</option>
+				   			<option value="1">Embutir</option>
+				   			<option value="2">Tradicional</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- cor -->
+				   	<label for="fogao_cor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<select class="form-control" name="forno_cor">
+				   			<option value="">Selecione...</option>
+				   			<?php include __DIR__.'/_optionsCores.phtml';?>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- cor -->
+				   	<label for="fogao_marca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="forno_marca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="microondas" class="col-sm-4">Microondas:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="microondas" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- tipo -->
+				   	<label for="microondas_tipo" class="col-sm-4 block-subitem">Tipo:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<select class="form-control" name="microondas_tipo">
+			   				<option value="">Selecione...</option>
+				   			<option value="1">Embutir</option>
+				   			<option value="2">Tradicional</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- cor -->
+				   	<label for="fogao_cor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<select class="form-control" name="microondas_cor">
+				   			<option value="">Selecione...</option>
+				   			<?php include __DIR__.'/_optionsCores.phtml';?>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- cor -->
+				   	<label for="fogao_marca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="microondas_marca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="refrigerador" class="col-sm-4">Refrigerador:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="refrigerador" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- tipo -->
+				   	<label for="refrigerador_tipo" class="col-sm-4 block-subitem">Tipo:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="refrigerador_tipo">
+				   	</div>
+				   	
+				   	<!-- cor -->
+				   	<label for="refrigerador_cor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<select class="form-control" name="refrigerador_cor">
+				   			<option value="">Selecione...</option>
+				   			<?php include __DIR__.'/_optionsCores.phtml';?>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- marca -->
+				   	<label for="refrigerador_marca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="refrigerador_marca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="freezer" class="col-sm-4">Freezer:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="freezer" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- tipo -->
+				   	<label for="freezer_tipo" class="col-sm-4 block-subitem">Tipo:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="freezer_tipo">
+				   	</div>
+				   	
+				   	<!-- cor -->
+				   	<label for="freezer_cor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<select class="form-control" name="freezer_cor">
+				   			<option value="">Selecione...</option>
+				   			<?php include __DIR__.'/_optionsCores.phtml';?>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- marca -->
+				   	<label for="freezer_marca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="freezer_marca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="lavalouca" class="col-sm-4">Lava - louça:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="lavalouca" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- tipo -->
+				   	<label for="lavalouca_tipo" class="col-sm-4 block-subitem">Tipo:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="lavalouca_tipo">
+				   	</div>
+				   	
+				   	<!-- cor -->
+				   	<label for="lavalouca_cor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<select class="form-control" name="lavalouca_cor">
+				   			<option value="">Selecione...</option>
+				   			<?php include __DIR__.'/_optionsCores.phtml';?>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- marca -->
+				   	<label for="lavalouca_marca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="lavalouca_marca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="televisor" class="col-sm-4">Televisor:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="televisor" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- tipo -->
+				   	<label for="televisor_tipo" class="col-sm-4 block-subitem">Tipo:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="televisor_tipo">
+				   	</div>
+				   	
+				   	<!-- cor -->
+				   	<label for="televisor_cor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<select class="form-control" name="televisor_cor">
+				   			<option value="">Selecione...</option>
+				   			<?php include __DIR__.'/_optionsCores.phtml';?>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- marca -->
+				   	<label for="televisor_marca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="televisor_marca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="pia" class="col-sm-4">Pia:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="pia" required>
+				   			<option value="">Selecione...</option>
+				   			<option value="1">Uma cuba</option>
+				   			<option value="2">Duas cubas</option>
+				   		</select>
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="eletroportateis" class="col-sm-4">Eletroportáteis:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="eletroportateis" required>
+				   			<option value="">Selecione...</option>
+				   			<option value="1">Guardados</option>
+				   			<option value="2">Expostos</option>
+				   		</select>
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="mesa" class="col-sm-4">Mesa:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="mesa" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bancada" class="col-sm-4">Bancada para refeições rápidas:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bancada" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="observacoes" class="col-sm-4">Observações:</label>
+            		
+            		<div class="col-sm-8">
+				   		<input type="text" class="form-control" name="observacoes">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12 box-imagem">
+      				<label for="imagem" class="col-sm-4">Gostaria de nos enviar alguma imagem?</label>
+            		
+            		<div class="col-sm-8">
+				   		<input type="file" class="form-control" name="imagem" />
+				   		
+				   		<div class="col-xs-10"></div>
+				   	</div>
+				</div>
+			</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" id="concluirCozinha" class="btn btn-primary">Concluir</button>
+      </div>
+    </div>
+  </div>
+</div>

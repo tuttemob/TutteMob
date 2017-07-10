@@ -1,0 +1,235 @@
+<div class="modal fade" id="modalHomeTheater" tabindex="-1" role="dialog" aria-labelledby="modalHomeTheaterLabel" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalHomeTheaterLabel">Briefing Home Theater</h4>
+      </div>
+      <div class="modal-body">
+      		<form name="modalHomeTheaterForm" id="modalHomeTheaterForm" data-toggle="validator"
+      			class="form-briefings form-horizontal" method="post" enctype="multipart/form-data">
+      			<input type="hidden" name="acao" value="briefing-hometheater" />
+      			<input type="hidden" name="id" value="" />
+      			
+				<div class="form-group col-xs-12">
+				   	<!-- Descrição -->
+				   	<label for="bht_descricao" class="col-sm-4">Descrição:</label>
+				   	<div class="col-sm-8">
+			   			<input type="text" class="form-control" name="bht_descricao">
+				   	</div>				   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bht_preferenciacores" class="col-sm-4">Preferência de cores:</label>
+            		
+            		<div class="col-sm-8">
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bht_preferenciacores[]" value="1">
+            				Claro
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bht_preferenciacores[]" value="2">
+            				Escuro
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bht_preferenciacores[]" value="3">
+            				Amadeirado
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bht_preferenciacores[]" value="4">
+            				Liso
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bht_preferenciacores[]" value="5">
+            				Colorido
+            			</label>
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bht_sofa" class="col-sm-4">Sofá:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bht_sofa" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- Sofá cor -->
+				   	<label for="bht_sofacor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_sofacor">
+				   	</div>
+
+				   	<!-- Dimensões -->
+				   	<label for="bht_sofadimensoes" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_sofadimensoes">
+				   	</div>				   					   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bht_poltrona" class="col-sm-4">Poltrona:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bht_poltrona" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- Poltrona cor -->
+				   	<label for="bht_poltronacor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_poltronacor">
+				   	</div>
+
+				   	<!-- Dimensões -->
+				   	<label for="bht_poltronadimensoes" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_poltronadimensoes">
+				   	</div>				   					   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bht_puf" class="col-sm-4">Pufs:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bht_puf" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- Puf cor -->
+				   	<label for="bht_pufcor" class="col-sm-4 block-subitem">Cor:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_pufcor">
+				   	</div>
+
+				   	<!-- Dimensões -->
+				   	<label for="bht_pufdimensoes" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_pufdimensoes">
+				   	</div>				   					   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bht_possuitv" class="col-sm-4">Televisor:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bht_possuitv" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- polegadas -->
+				   	<label for="bht_tvpolegadas" class="col-sm-4 block-subitem">Polegadas:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_tvpolegadas">
+				   	</div>
+				   	
+				   	<!-- modelo/marca -->
+				   	<label for="bht_tvmodelomarca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_tvmodelomarca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bht_possuidvd" class="col-sm-4">DVD:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bht_possuidvd" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- dimensões -->
+				   	<label for="bht_dvddimensoes" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_dvddimensoes">
+				   	</div>
+				   					   	
+				   	<!-- modelo/marca -->
+				   	<label for="bht_dvdmodelomarca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_dvdmodelomarca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bht_possuisom" class="col-sm-4">Som:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bht_possuisom" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- dimensões -->
+				   	<label for="bht_somdimensoes" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_somdimensoes">
+				   	</div>
+				   					   	
+				   	<!-- modelo/marca -->
+				   	<label for="bht_sommodelomarca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_sommodelomarca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bht_possuitvcabo" class="col-sm-4">TV a cabo:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bht_possuitvcabo" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- dimensões -->
+				   	<label for="bht_tvcabodimensoes" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_tvcabodimensoes">
+				   	</div>
+				   	
+				   	<!-- modelo/marca -->
+				   	<label for="bht_tvcabomodelomarca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bht_tvcabomodelomarca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bht_obs" class="col-sm-4">Observações:</label>
+            		
+            		<div class="col-sm-8">
+				   		<input type="text" class="form-control" name="bht_obs">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12 box-imagem">
+      				<label for="bht_imagem" class="col-sm-4">Gostaria de nos enviar alguma imagem?</label>
+            		
+            		<div class="col-sm-8">
+				   		<input type="file" class="form-control" name="bht_imagem" />
+				   		
+				   		<div class="col-xs-10"></div>
+				   	</div>
+				</div>
+			</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" id="concluirHomeTheater" class="btn btn-primary">Concluir</button>
+      </div>
+    </div>
+  </div>
+</div>

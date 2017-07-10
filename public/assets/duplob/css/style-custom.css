@@ -1,0 +1,48 @@
+#formLogin {
+	max-width: 600px; 
+	margin: 0 auto;
+}
+
+.help-block.with-errors {
+	color: #d9534f;
+}
+
+.jumbotron {
+    padding: 1rem 1rem !important;
+    margin-bottom: 2rem;
+    background-color: #eceeef;
+    border-radius: .3rem;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-briefings {
+	width: 100%;
+	display: inline-block;
+}
+
+.block-subitem {
+	display: none;
+	margin-top: 5px;
+	text-align: right;
+}
+
+.list-grid .list-grid-header {
+	background: #eceeef;
+}
+.list-grid-pagination {
+	background: #eceeef;
+	padding: 0px;
+}
+.list-grid-pagination .pager {
+	padding-right: 5px;
+	margin: 5px 0px;
+	text-align: right;
+}
+
+@media (min-width: 844px) {
+	.modal-dialog {
+	    width: 800px;
+	    margin: 30px auto;
+	}	
+}

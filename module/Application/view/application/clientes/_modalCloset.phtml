@@ -1,0 +1,170 @@
+<div class="modal fade" id="modalCloset" tabindex="-1" role="dialog" aria-labelledby="modalClosetLabel" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalClosetLabel">Briefing Closet</h4>
+      </div>
+      <div class="modal-body">
+      		<form name="modalClosetForm" id="modalClosetForm" data-toggle="validator"
+      			class="form-briefings form-horizontal" method="post" enctype="multipart/form-data">
+      			<input type="hidden" name="acao" value="briefing-closet" />
+      			<input type="hidden" name="id" value="" />
+      			
+				<div class="form-group col-xs-12">
+				   	<!-- Descrição -->
+				   	<label for="bcl_descricao" class="col-sm-4">Descrição:</label>
+				   	<div class="col-sm-8">
+			   			<input type="text" class="form-control" name="bcl_descricao">
+				   	</div>				   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bcl_preferenciacores" class="col-sm-4">Preferência de cores:</label>
+            		
+            		<div class="col-sm-8">
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bcl_preferenciacores[]" value="1">
+            				Claro
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bcl_preferenciacores[]" value="2">
+            				Escuro
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bcl_preferenciacores[]" value="3">
+            				Amadeirado
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bcl_preferenciacores[]" value="4">
+            				Liso
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bcl_preferenciacores[]" value="5">
+            				Colorido
+            			</label>
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bcl_penteadeira" class="col-sm-4">Penteadeira:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bcl_penteadeira" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bcl_qtdgavchave" class="col-sm-4">Qtd gavetas com chave:</label>
+            		
+            		<div class="col-sm-8">
+				   		<input type="text" class="form-control" name="bcl_qtdgavchave">
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bcl_sapateiras" class="col-sm-4">Sapateiras:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bcl_sapateiras" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bcl_calceiros" class="col-sm-4">Calceiros:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bcl_calceiros" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bcl_portajoias" class="col-sm-4">Porta-joias:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bcl_portajoias" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bcl_gravateiro" class="col-sm-4">Gravateiro:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bcl_gravateiro" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bcl_portacintos" class="col-sm-4">Porta-cintos:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bcl_portacintos" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bcl_portaobjetos" class="col-sm-4">Porta-objetos:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bcl_portaobjetos" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bcl_portascomespelho" class="col-sm-4">Portas com espelho:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bcl_portascomespelho" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+							
+				<div class="form-group col-xs-12">
+      				<label for="bcl_obs" class="col-sm-4">Observações:</label>
+            		
+            		<div class="col-sm-8">
+				   		<input type="text" class="form-control" name="bcl_obs">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12 box-imagem">
+      				<label for="bcl_imagem" class="col-sm-4">Gostaria de nos enviar alguma imagem?</label>
+            		
+            		<div class="col-sm-8">
+				   		<input type="file" class="form-control" name="bcl_imagem" />
+				   		
+				   		<div class="col-xs-10"></div>
+				   	</div>
+				</div>
+			</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" id="concluirCloset" class="btn btn-primary">Concluir</button>
+      </div>
+    </div>
+  </div>
+</div>

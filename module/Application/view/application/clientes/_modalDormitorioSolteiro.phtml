@@ -1,0 +1,297 @@
+<div class="modal fade" id="modalDormitorioSolteiro" tabindex="-1" role="dialog" aria-labelledby="modalDormitorioSolteiroLabel" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalDormitorioSolteiroLabel">Briefing Dormitório Solteiro</h4>
+      </div>
+      <div class="modal-body">
+      		<form name="modalDormitorioSolteiroForm" id="modalDormitorioSolteiroForm" data-toggle="validator"
+      			class="form-briefings form-horizontal" method="post" enctype="multipart/form-data">
+      			<input type="hidden" name="acao" value="briefing-dormitoriosolteiro" />
+      			<input type="hidden" name="id" value="" />
+      			
+				<div class="form-group col-xs-12">
+				   	<!-- Descrição -->
+				   	<label for="bds_descricao" class="col-sm-4">Descrição:</label>
+				   	<div class="col-sm-8">
+			   			<input type="text" class="form-control" name="bds_descricao">
+				   	</div>				   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bds_mascfem" class="col-sm-4">Masculino/Feminino:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bds_mascfem" required>
+				   			<option value="M">Masculino</option>
+				   			<option value="F">Feminino</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+				   	<!-- Idade -->
+				   	<label for="bds_idade" class="col-sm-4">Idade:</label>
+				   	<div class="col-sm-8">
+			   			<input type="text" class="form-control" name="bds_idade">
+				   	</div>				   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bds_preferenciacores" class="col-sm-4">Preferência de cores:</label>
+            		
+            		<div class="col-sm-8">
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bds_preferenciacores[]" value="1">
+            				Claro
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bds_preferenciacores[]" value="2">
+            				Escuro
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bds_preferenciacores[]" value="3">
+            				Amadeirado
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bds_preferenciacores[]" value="4">
+            				Liso
+            			</label>
+            			<label class="col-md-6">
+            				<input type="checkbox" name="bds_preferenciacores[]" value="5">
+            				Colorido
+            			</label>
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+				   	<!-- Cama tipo -->
+				   	<label for="bds_tipocama" class="col-sm-4">Tipo de cama:</label>
+				   	<div class="col-sm-8">
+			   			<select class="form-control" name="bds_tipocama">
+			   				<option value="">Selecione...</option>
+				   			<option value="1">Box</option>
+				   			<option value="2">Tradicional</option>
+				   			<option value="3">Com gavetas</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- Cama cor -->
+				   	<label for="bds_corcama" class="col-sm-4">Cor:</label>
+				   	<div class="col-sm-8">
+			   			<select class="form-control" name="bds_corcama">
+				   			<option value="">Selecione...</option>
+				   			<?php include __DIR__.'/_optionsCores.phtml';?>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- Medição cama -->
+				   	<label for="bds_camamedicao" class="col-sm-4">Lagura x Altura x Profundidade:</label>
+				   	<div class="col-sm-8">
+			   			<input type="text" class="form-control" name="bds_camamedicao">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bds_penteadeira" class="col-sm-4">Penteadeira:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bds_penteadeira" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bds_bancadaestudos" class="col-sm-4">Banca de estudos:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bds_bancadaestudos" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bds_qtdgavchave" class="col-sm-4">Qtd gavetas com chave:</label>
+            		
+            		<div class="col-sm-8">
+				   		<input type="text" class="form-control" name="bds_qtdgavchave">
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bds_sapateiras" class="col-sm-4">Sapateiras:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bds_sapateiras" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bds_calceiros" class="col-sm-4">Calceiros:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bds_calceiros" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bds_portajoias" class="col-sm-4">Porta-joias:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bds_portajoias" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bds_gravateiro" class="col-sm-4">Gravateiro:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bds_gravateiro" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bds_portacintos" class="col-sm-4">Porta-cintos:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bds_portacintos" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bds_portaobjetos" class="col-sm-4">Porta-objetos:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bds_portaobjetos" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+
+				<div class="form-group col-xs-12">
+      				<label for="bds_portascomespelho" class="col-sm-4">Portas com espelho:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control" name="bds_portascomespelho" required>
+				   			<option value="0" selected>Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>				   	
+				</div>
+							
+				<div class="form-group col-xs-12">
+      				<label for="bds_possuitv" class="col-sm-4">Televisor:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bds_possuitv" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- polegadas -->
+				   	<label for="bds_tvpolegadas" class="col-sm-4 block-subitem">Polegadas:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bds_tvpolegadas">
+				   	</div>
+				   	
+				   	<!-- modelo/marca -->
+				   	<label for="bds_tvmodelomarca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bds_tvmodelomarca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bds_possuidvd" class="col-sm-4">DVD:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bds_possuidvd" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- dimensões -->
+				   	<label for="bds_dvddimensao" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bds_dvddimensao">
+				   	</div>
+				   					   	
+				   	<!-- modelo/marca -->
+				   	<label for="bds_dvdmodelomarca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bds_dvdmodelomarca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bds_possuitvcabo" class="col-sm-4">TV a cabo:</label>
+            		
+            		<div class="col-sm-8">
+				   		<select class="form-control block-subitem-cond" name="bds_possuitvcabo" required>
+				   			<option value="0">Não</option>
+				   			<option value="1">Sim</option>
+				   		</select>
+				   	</div>
+				   	
+				   	<!-- dimensão -->
+				   	<label for="bds_tvcabodimensao" class="col-sm-4 block-subitem">Dimensões:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bds_tvcabodimensao">
+				   	</div>
+				   	
+				   	<!-- modelo/marca -->
+				   	<label for="bds_tvcabomodelomarca" class="col-sm-4 block-subitem">Modelo/Marca:</label>
+				   	<div class="col-sm-8 block-subitem">
+			   			<input type="text" class="form-control" name="bds_tvcabomodelomarca">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+      				<label for="bds_obs" class="col-sm-4">Observações:</label>
+            		
+            		<div class="col-sm-8">
+				   		<input type="text" class="form-control" name="bds_obs">
+				   	</div>
+				</div>
+				
+				<div class="form-group col-xs-12 box-imagem">
+      				<label for="bds_imagem" class="col-sm-4">Gostaria de nos enviar alguma imagem?</label>
+            		
+            		<div class="col-sm-8">
+				   		<input type="file" class="form-control" name="bds_imagem" />
+				   		
+				   		<div class="col-xs-10"></div>
+				   	</div>
+				</div>
+			</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" id="concluirDormitorioSolteiro" class="btn btn-primary">Concluir</button>
+      </div>
+    </div>
+  </div>
+</div>

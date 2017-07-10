@@ -1,0 +1,124 @@
+<section class="mbr-section article mbr-section__container" id="login" style="padding-top: 120px; padding-bottom: 40px;">
+
+    <div class="container">
+        <div class="row">
+        	<div class="col-sm-12">
+		        <div class="panel panel-default">
+		            <div class="panel-body">
+		            	<div id="form-acoes" class="col-xs-12">
+		            		<form id="formLogin" method="post" data-toggle="validator">
+		            			<input type="hidden" name="acao" value="login" />
+		            			
+		            			<?php if($this->success):?>
+		            				<div class="alert alert-success" role="alert"><?= $this->success; ?></div>
+		            			<?php endif;?>
+		            			
+		            			<?php if($this->error):?>
+		            				<div class="alert alert-danger" role="alert"><?= $this->error; ?></div>
+		            			<?php endif;?>
+		            			
+		            			<div class="form-group" style="text-align: center;">
+				            		<h2>Login</h2>
+								</div>
+		            			<div class="form-group">
+									<label for="email">E-mail:</label>
+									<input type="email" class="form-control" name="email" placeholder="E-mail" required>
+								</div>
+								
+								<div class="form-group">
+				            		<label for="documento">Senha:</label>
+								   	<input type="password" class="form-control" name="senha" placeholder="Senha" required>
+								   	<div class="help-block with-errors"></div>
+								</div>
+							
+		            			<div class="form-group">
+		            				<button type="submit" class="btn btn-primary btn-block">
+		            					<span class="glyphicon glyphicon-plus"></span> Login</button>
+		            			</div>
+		            			
+		            			<div class="form-group">
+		            				<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalCliente">
+		            					<span class="glyphicon glyphicon-plus"></span> Cadastrar</button>
+		            			</div>
+							</form>
+		            	</div>
+		            </div>
+		        </div>
+		    </div>
+			
+			<!-- Modal formuário-->
+			<div class="modal fade" id="modalCliente" tabindex="-1" role="dialog" aria-labelledby="modalClienteLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="modalClienteLabel">Cadastro de cliente</h4>
+			      </div>
+			      <div class="modal-body">
+			      		<form name="modalClienteForm" id="modalClienteForm" method="post" data-toggle="validator">
+			      			<input type="hidden" name="acao" value="cadastrar" />
+			      			
+			      			<div class="form-group">
+			            		<label for="nomecompleto">Nome completo:</label>
+							   	<input type="text" class="form-control" name="nome" placeholder="Nome completo" required>
+							</div>
+								
+							<div class="form-group">
+								<label for="email">E-mail:</label>
+								<div class="input-group">
+									<span class="input-group-addon">@</span>
+									<input type="email" class="form-control" name="email" placeholder="E-mail" required>
+								</div>
+							</div>
+							
+							<div class="form-group">
+			            		<label for="documento">Senha:</label>
+							   	<input type="password" class="form-control" name="senha" placeholder="Senha" required>
+							</div>
+							  	
+							<div class="form-group">
+							  	<label for="fone_cel">Telefone Celular:</label>
+							    <!-- <input type="tel" class="form-control" name="fone_cel" mask="(99) 99999-9999" placeholder="(xx) 9xxxx-xxxx" required> -->
+							    <!-- <input type="tel" class="form-control" name="fone_cel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" placeholder="(xx) 9xxxx-xxxx" required> -->
+							    <!-- <input type="text" name="fone_cel" class="phone form-control" placeholder="(xx) 9xxxx-xxxx" required> -->
+							    <input type="text" name="fone_cel" id="campoTelefone" class="form-control" placeholder="(xxx) 9xxxx-xxxx" required>
+							</div>
+						</form>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+			        <button type="button" id="cadastrar" class="btn btn-primary">Concluir</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+        </div>
+    </div>
+
+</section>
+
+<script type="text/javascript">
+$(function(){
+	$('#cadastrar').click(function(){
+		$('#modalClienteForm').submit();
+	});
+});
+
+$(document).ready(function(){
+	  $('.date').mask('11/11/1111');
+	  $('.time').mask('00:00:00');
+	  $('.date_time').mask('99/99/9999 00:00:00');
+	  $('.cep').mask('99999-999');
+	  $('.phone').mask('(99) 99999-9999');
+	  $('.phone_with_ddd').mask('(99) 9999-9999');
+	  $('.phone_us').mask('(999) 999-9999');
+	  $('.mixed').mask('AAA 000-S0S');
+	});
+
+jQuery(function($){
+	$("#campoData").mask("99/99/9999");
+	$("#campoTelefone").mask("(999) 09999-9999");
+	$("#campoSenha").mask("***-****");
+	});		
+
+</script>
