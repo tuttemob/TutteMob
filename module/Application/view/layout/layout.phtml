@@ -10,156 +10,155 @@
             ->appendName('viewport', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
         ?>
         
-        <link rel="shortcut icon" href="<?= $this->basePath('assets/images/logo2-128x129-78.png') ?>" type="image/x-icon">
-
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
-		<link rel="stylesheet" href="<?= $this->basePath('assets/bootstrap-material-design-font/css/material.css') ?>">
-		<link rel="stylesheet" href="<?= $this->basePath('assets/et-line-font-plugin/style.css') ?>">
-		<link rel="stylesheet" href="<?= $this->basePath('assets/web/assets/mobirise-icons/mobirise-icons.css') ?>">
-		<link rel="stylesheet" href="<?= $this->basePath('assets/tether/tether.min.css') ?>">
-		<link rel="stylesheet" href="<?= $this->basePath('assets/bootstrap/css/bootstrap.min.css') ?>">
-		<link rel="stylesheet" href="<?= $this->basePath('assets/animate.css/animate.min.css') ?>">
-		<link rel="stylesheet" href="<?= $this->basePath('assets/dropdown/css/style.css') ?>">
-		<link rel="stylesheet" href="<?= $this->basePath('assets/theme/css/style.css') ?>">
-		<link rel="stylesheet" href="<?= $this->basePath('assets/mobirise-gallery/style.css') ?>">
-		<link rel="stylesheet" href="<?= $this->basePath('assets/mobirise/css/mbr-additional.css') ?>">
-		<link rel="stylesheet" href="<?= $this->basePath('assets/duplob/css/style-custom.css') ?>">
-		<link rel="stylesheet" href="<?= $this->basePath('assets/meusestilos/css/meusestilos.css') ?>">
-		
-		<script src="<?= $this->basePath('assets/web/assets/jquery/jquery.min.js') ?>"></script>
-		<!-- 
-		<script src="<?= $this->basePath('js/angular.min.js') ?>"></script>
-		<script src="<?= $this->basePath('js/ngMask.min.js') ?>"></script>
-		 -->
-		<script src="<?= $this->basePath('assets/web/assets/jquery/jquery.mask.min.js') ?>"></script>
-		
+		<!-- Bootstrap core CSS -->
+	    <link href="<?= $this->basePath('lib/bootstrap/dist/css/bootstrap.min.css') ?>" rel="stylesheet">
+	
+	    <!-- Custom styles -->
+	    <link href="<?= $this->basePath('css/style.css') ?>" rel="stylesheet">
+	    <link rel="stylesheet" href="<?= $this->basePath('lib/duplob/css/style-custom.css') ?>">
+	
+	    <!-- jQuery -->
+	    <script src="<?= $this->basePath('lib/jquery/dist/jquery.min.js') ?>"></script>
+	    <script src="<?= $this->basePath('lib/mask/jquery.mask.min.js') ?>"></script>
     </head>
     <body>
-    	<section id="menu-3">	
-    	    <nav class="navbar navbar-dropdown navbar-fixed-top">
-		        <div class="container">
-		
-		            <div class="mbr-table">
-		                <div class="mbr-table-cell">
-		
-		                    <div class="navbar-brand">
-		                        <a href="<?= $this->url('home'); ?>" class="navbar-logo">
-		                        	<img src="<?= $this->basePath('assets/images/logo-358x128-64.png') ?>" alt="TutteMob"></a>
-		                    </div>
-		
-		                </div>
-		                <div class="mbr-table-cell">
-		
-		                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-		                        <div class="hamburger-icon"></div>
-		                    </button>
-
-							<ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
-								<li class="nav-item">
-									<a class="nav-link link" href="<?= $this->url('home'); ?>">
-										<span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>HOME
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link link" href="<?= $this->url('home'); ?>#content2-6">
-										<span class="mbri-info mbr-iconfont mbr-iconfont-btn"></span>QUEM SOMOS
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link link" href="<?= $this->url('home'); ?>#bottom">
-										<span class="mbri-info mbr-iconfont mbr-iconfont-btn"></span>CONTATO
-									</a>
-								</li>
-								
-								<li class="nav-item dropdown open">
-									<a href="javascript:void(0)" class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" aria-expanded="true">
-										CONHEÇA NOSSAS LOJAS
-									</a>
-									<div class="dropdown-menu">
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-u">CAMPINA GRANDE</a>
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-u">ARCOVERDE</a>
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-u">JOÃO PESSOA</a>
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-u">NATAL</a>										
-										<!--
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-9">BOA VIAGEM</a>										
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-9">CARUARU</a>
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-9">PIEDADE</a>
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-r">CASA FORTE</a>
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-r">OLINDA</a>										
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-r">PINA</a>										
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-r">S. C. CAPIBARIBE</a>
-										 -->
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-v">GIARDINI CAMPINA GRANDE</a>
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-v">GIARDINI BOA VIAGEM</a>
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-v">GIARDINI GRAÇAS</a>
-										<a class="dropdown-item" href="<?= $this->url('home'); ?>#features3-v">GIARDINI NATAL</a>
-									</div>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link link" href="<?= $this->url('home'); ?>#testimonials1-b" aria-expanded="false">DEPOIMENTOS</a>
-								</li>
-								
-								<?php if($this->usuario): ?>
-									<li class="nav-item">
-										<a class="nav-link link" href="<?= $this->url('clientes'); ?>"><?= reset(explode(' ', $this->usuario->nome))?></a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link link" href="<?= $this->url('logout'); ?>">SAIR</a>
-									</li>
-								<?php else:?>
-									<li class="nav-item"><a class="nav-link link"></a></li>
-									<li class="nav-item">
-										<a class="nav-link link" href="<?= $this->url('login'); ?>">LOGIN</a>
-									</li>
-								<?php endif;?>
-								
-							</ul>
-							<button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-		                        <div class="close-icon"></div>
-		                    </button>
-		
-		                </div>
-		            </div>
-		
-		        </div>
-		    </nav>
-		</section>
-    	
-    	<?= $this->content ?>
-        
-        <section class="mbr-section mbr-section-md-padding mbr-footer footer2" id="contacts2-7" style="background-color: rgb(46, 46, 46); padding-top: 90px; padding-bottom: 90px;">
-    	    <div class="container">
-		        <div class="row">
-		            <div class="mbr-footer-content col-xs-12 col-md-3">
-		                <p><font color="#7c7c7c" face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong>Endereço</strong></span></font><br>Rua xxxxxxxxxxxxxxx<br><br>
-						<strong>Contatos</strong><br>
-						Email:&nbsp; contato@xxxx.com.br<br><br>
-						Phone:&nbsp;<br>(99) 99999-9999<br><br><br></p>
-		            </div>
-		            <div class="mbr-footer-content col-xs-12 col-md-3"><strong>Links</strong><ul><li>Ver todos os endereços</li><li>Todos os telefones</li><br></ul></div>
-		            <div class="col-xs-12 col-md-6">
-		                <div class="mbr-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:EjVSLiBGZWxpcGUgQ2FtYXLDo28sIENhcmF6aW5obyAtIFJTLCA5OTUwMC0wMDAsIEJyYXNpbA" allowfullscreen=""></iframe></div>
-		            </div>
-		        </div>
-		    </div>
-		</section>
-
-		<script src="<?= $this->basePath('assets/tether/tether.min.js') ?>"></script>
-		<script src="<?= $this->basePath('assets/bootstrap/js/bootstrap.min.js') ?>"></script>
-		<script src="<?= $this->basePath('assets/duplob/js/bootstrap-validator.js') ?>"></script>
-		<script src="<?= $this->basePath('assets/smooth-scroll/SmoothScroll.js') ?>"></script>
-		<script src="<?= $this->basePath('assets/viewportChecker/jquery.viewportchecker.js') ?>"></script>
-		<script src="<?= $this->basePath('assets/dropdown/js/script.min.js') ?>"></script>
-		<script src="<?= $this->basePath('assets/touchSwipe/jquery.touchSwipe.min.js') ?>"></script>
-		<script src="<?= $this->basePath('assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js') ?>"></script>
-		<script src="<?= $this->basePath('assets/masonry/masonry.pkgd.min.js') ?>"></script>
-		<script src="<?= $this->basePath('assets/imagesloaded/imagesloaded.pkgd.min.js') ?>"></script>
-		<script src="<?= $this->basePath('assets/theme/js/script.js') ?>"></script>
-		<script src="<?= $this->basePath('assets/mobirise-gallery/player.min.js') ?>"></script>
-		<script src="<?= $this->basePath('assets/mobirise-gallery/script.js') ?>"></script>
-		        
-        <input name="animation" type="hidden">
+    	<nav class="navbar navbar-default navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <a class="navbar-brand" href="#section-1">
+	            <img alt="TutteMob" src="<?= $this->basePath('img/layout/logo-menu.png') ?>" class="img-responsive" />
+	          </a>
+	        </div>
+	
+	        <ul class="nav navbar-nav navbar-right">
+	          <li>
+	            <a href="#section-1" title="Quem somos">
+	              <img src="<?= $this->basePath('img/layout/quem-somos.png') ?>" class="img-responsive" />
+	            </a>
+	          </li>
+	          <li>
+	            <a href="#section-2" title="Ambientes">
+	              <img src="<?= $this->basePath('img/layout/ambientes.png') ?>" class="img-responsive" />
+	            </a>
+	          </li>
+	          <li>
+	            <a href="#section-3" title="Franquias Físicas">
+	              <img src="<?= $this->basePath('img/layout/franquias-fisicas.png') ?>" class="img-responsive" />
+	            </a>
+	          </li>
+	          <li>
+	            <a href="#section-4" title="Experiências de Clientes">
+	              <img src="<?= $this->basePath('img/layout/experiencia-clientes.png') ?>" class="img-responsive" />
+	            </a>
+	          </li>
+	          <li>
+	            <a href="#section-5" title="Ajuda">
+	              <img src="<?= $this->basePath('img/layout/ajuda.png') ?>" class="img-responsive" />
+	            </a>
+	          </li>
+	          <li>
+	            <a href="<?= $this->url('login'); ?>" title="Login">
+	              <img src="<?= $this->basePath('img/layout/login.png') ?>" class="img-responsive" />
+	            </a>
+	          </li>
+	          <li>
+	            <a href="#section-7" title="Iniciar minha experiência TutteMob">
+	              <img src="<?= $this->basePath('img/layout/iniciar-experiencia.png') ?>" class="img-responsive" />
+	            </a>
+	          </li>
+	          <!--
+	          <li class="dropdown">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+	            <ul class="dropdown-menu">
+	              <li><a href="#">Action</a></li>
+	              <li><a href="#">Another action</a></li>
+	              <li><a href="#">Something else here</a></li>
+	              <li role="separator" class="divider"></li>
+	              <li><a href="#">Separated link</a></li>
+	            </ul>
+	          </li>
+	          -->
+	        </ul>
+	      </div>
+	    </nav>
+	
+	    <div id="section-0" class="section col-lg-12"></div>
+	
+		<?= $this->layout()->content; ?>    
+	
+	    <footer>
+	        <a class="navbar-brand" href="#section-1">
+	            <img alt="TutteMob" src="<?= $this->basePath('img/layout/logo-menu.png') ?>" class="img-responsive" />
+	        </a>
+	
+	        <div id="footer-links" class="pull-right">
+	            <ul class="nav navbar-nav navbar-right">
+	              <li>
+	                <a href="#section-1" title="Facebook">
+	                  <img src="<?= $this->basePath('img/layout/facebook.png') ?>" class="img-responsive" />
+	                </a>
+	              </li>
+	              <li>
+	                <a href="#section-1" title="Twitter">
+	                  <img src="<?= $this->basePath('img/layout/twitter.png') ?>" class="img-responsive" />
+	                </a>
+	              </li>
+	              <li>
+	                <a href="#section-1" title="Youtube">
+	                  <img src="<?= $this->basePath('img/layout/youtube.png') ?>" class="img-responsive" />
+	                </a>
+	              </li>
+	              <li>
+	                <a href="#section-1" title="Instagram">
+	                  <img src="<?= $this->basePath('img/layout/instagram.png') ?>" class="img-responsive" />
+	                </a>
+	              </li>
+	              <li>
+	                <a href="#section-1" title="Email">
+	                  <img src="<?= $this->basePath('img/layout/email.png') ?>" class="img-responsive" />
+	                </a>
+	              </li>
+	            </ul>
+	        </div>
+	    </footer>  
+	
+	    <!-- Bootstrap core JavaScript
+	    ================================================== -->
+	    <script src="<?= $this->basePath('lib/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
+	    <script src="<?= $this->basePath('lib/smooth-scroll/SmoothScroll.js') ?>"></script>
+	    <script src="<?= $this->basePath('lib/duplob/js/bootstrap-validator.js') ?>"></script>
+	
+	    <!-- smooth scroll -->
+	    <script type="text/javascript">
+	      $(function(){
+	          $('a').attr('href', function() {
+	              if(/\#/.test(this.href)){
+	                  var hrefParts = this.href.split(/#/);
+	                  hrefParts[1] = 'smoothScroll' + hrefParts[1];
+	                  return hrefParts.join('#');
+	              }else{
+	                  return this.href;
+	              }
+	          });
+	
+	          // executa ao carregar
+	          var reSmooth = /^#smoothScroll/;
+	          if (reSmooth.test(location.hash)) {
+	              // Strip the "#smoothScroll" part off (and put "#" back on the beginning)
+	              var id = '#' + location.hash.replace(reSmooth, '');
+	              $.smoothScroll({scrollTarget: id});
+	          }
+	
+	          $('a').on('click', function(){
+	              var reSmooth = /#smoothScroll/;
+	              if (reSmooth.test(this.href)) {
+	                  var hrefParts = this.href.split(/#/);
+	
+	                  var id = '#' + ('#' + hrefParts[1]).replace(reSmooth, '');
+	                  $.smoothScroll({scrollTarget: id});
+	              }
+	          });
+	      });
+	    </script>
     </body>
 </html>

@@ -1,0 +1,73 @@
+body, html {  
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+/* NAVBAR */
+.navbar-default {
+  background-color: #FFFFFF;
+  border: none !important;
+}
+.navbar-brand {
+  height: auto !important;
+  max-height: 65px !important;
+  max-width: 400px;
+  padding: 15px;
+  margin-top: 10px;
+}
+.navbar-nav {
+  margin: 0px;
+}
+.navbar-nav > li {
+    float: left !important;
+}
+.nav > li > a {
+  padding: 10px 3px;
+}
+.nav > li > a > img {
+  height: 70px;
+}
+
+/* CONTENT */
+.section {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 50px;
+}
+
+#section-0 {
+  height: 90px;
+}
+
+#section-1 {
+  background-image: url("../img/Cores.jpg");
+  min-height: 100%;
+}
+
+#section-2 {
+  background-image: url("../img/Desert.jpg");
+  min-height: 100%;
+}
+
+#section-3 {
+  background-image: url("../img/Cores.jpg");
+  min-height: 100%;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .section {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 1040px) {
+    .navbar-right {
+        float: left !important;  
+    }
+}
