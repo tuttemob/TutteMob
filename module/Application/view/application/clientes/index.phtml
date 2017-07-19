@@ -20,7 +20,7 @@
 	            		<div class="container">
 							<h2>Cozinha</h2>
 						  	<p>Preencha o briefing...</p>
-						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('cozinha')">Preencher</a></p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="return criarBriefing('cozinha')">Preencher</a></p>
 						</div>
 	            	</div>
 				</div>
@@ -29,7 +29,7 @@
 		            	<div class="container">
 							<h2>Área de Serviço</h2>
 						  	<p>Preencha o briefing...</p>
-						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('areaServico')">Preencher</a></p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="return criarBriefing('areaServico')">Preencher</a></p>
 						</div>
 					</div>
 				</div>
@@ -38,7 +38,7 @@
 		            	<div class="container">
 							<h2>Dormitório Casal</h2>
 						  	<p>Preencha o briefing...</p>
-						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('dormitoriocasal')">Preencher</a></p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="return criarBriefing('dormitoriocasal')">Preencher</a></p>
 						</div>
 					</div>
 				</div>
@@ -47,7 +47,7 @@
 		            	<div class="container">
 							<h2>Dormitório Solteiro</h2>
 						  	<p>Preencha o briefing...</p>
-						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('dormitoriosolteiro')">Preencher</a></p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="return criarBriefing('dormitoriosolteiro')">Preencher</a></p>
 						</div>
 					</div>
 				</div>
@@ -56,7 +56,7 @@
 		            	<div class="container">
 							<h2>Closet</h2>
 						  	<p>Preencha o briefing...</p>
-						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('closet')">Preencher</a></p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="return criarBriefing('closet')">Preencher</a></p>
 						</div>
 					</div>
 				</div>
@@ -65,7 +65,7 @@
 		            	<div class="container">
 							<h2>Dormitório Infantil</h2>
 						  	<p>Preencha o briefing...</p>
-						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('dormitorioinfantil')">Preencher</a></p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="return criarBriefing('dormitorioinfantil')">Preencher</a></p>
 						</div>
 					</div>
 				</div> -->				
@@ -74,7 +74,7 @@
 		            	<div class="container">
 							<h2>Banheiro</h2>
 						  	<p>Preencha o briefing...</p>
-						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('banheiro')">Preencher</a></p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="return criarBriefing('banheiro')">Preencher</a></p>
 						</div>
 					</div>
 				</div>				
@@ -83,7 +83,7 @@
 		            	<div class="container">
 							<h2>Home Theater</h2>
 						  	<p>Preencha o briefing...</p>
-						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('hometheater')">Preencher</a></p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="return criarBriefing('hometheater')">Preencher</a></p>
 						</div>
 					</div>
 				</div>				
@@ -92,7 +92,7 @@
 		            	<div class="container">
 							<h2>Home Office</h2>
 						  	<p>Preencha o briefing...</p>
-						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="criarBriefing('homeoffice')">Preencher</a></p>
+						  	<p><a class="btn btn-primary btn-lg" role="button" onclick="return criarBriefing('homeoffice')">Preencher</a></p>
 						</div>
 					</div>
 				</div>				
@@ -113,7 +113,7 @@
 		    					<p class="list-group-item-text"><?= date('d/m/Y H:i:s', strtotime($item->datacriacao)); ?></p>
 			    			</div>
 			    			<div class="col-xs-4" style="text-align: right;">
-			    				<a class="btn btn-primary btn-lg" role="button" onclick="alterarBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>)">Alterar</a>
+			    				<a class="btn btn-primary btn-lg" role="button" onclick="return alterarBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>)">Alterar</a>
 			    			</div>
 			    		</div>
 		    		<?php endforeach;?>
@@ -375,6 +375,8 @@ $(function(){
 
 			showModalCadastro(callback);
 		}
+
+		return false;
 	};
 	
 	alterarBriefing = function(tp, id){
@@ -620,6 +622,8 @@ $(function(){
 			},
 			'json'
 		);
+
+		return false;
 	};
 });
 </script>
