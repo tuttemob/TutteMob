@@ -44,20 +44,11 @@ body, html {
   height: 90px;
 }
 
-#section-1 {
-  background-image: url("../img/Cores.jpg");
+#section-slide {
+  background-image: url("../img/slide/slide-1.png");
   min-height: 100%;
 }
 
-#section-2 {
-  background-image: url("../img/Desert.jpg");
-  min-height: 100%;
-}
-
-#section-3 {
-  background-image: url("../img/Cores.jpg");
-  min-height: 100%;
-}
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
