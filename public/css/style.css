@@ -2,7 +2,7 @@ body, html {
   height: 100%;
   margin: 0;
   font: 400 15px/1.8 "Lato", sans-serif;
-  color: #777;
+  color: #000;
 }
 
 /* NAVBAR */
@@ -45,10 +45,79 @@ body, html {
 }
 
 #section-slide {
-  background-image: url("../img/slide/slide-1.png");
+  background-image: #FFF;
   min-height: 100%;
+  padding: 0px;
 }
 
+/* Ambientes */
+#section-ambientes {
+  padding: 0px;
+}
+#section-ambientes div.col-md-5 {
+	padding-top: 120px;
+	text-align: center;
+}
+#section-ambientes div.col-md-5 h1 {
+	font-size: 26px;
+	font-weight: 600;
+}
+#section-ambientes div.col-md-5 p {
+	font-size: 16px;
+	max-width: 300px;
+	line-height: 28px;
+	margin: 0 auto;
+}
+#section-ambientes div.col-md-7 div.col-xs-4 {
+	margin: 20px 0px;
+}
+
+/* Login / Cadastro */
+#section-login {
+  padding: 0px;
+}
+#section-login div.col-md-8 {
+	padding: 0px;
+	padding-top: 60px;
+	text-align: center;
+}
+#section-login div.col-md-8 p {
+	font-size: 16px;
+	line-height: 28px;
+	margin: 0 auto;
+}
+#section-login div.col-xs-3 {
+	text-align: left;
+}
+#section-login div.col-xs-3 img {
+	max-width: 120px;
+}
+#section-login div.col-xs-9 {
+	padding-top: 30px;
+}
+
+#section-login .login-title {
+	text-align: center;
+}
+#section-login #formLogin label {
+	margin-top: 10px;
+	font-size: 16px;
+	font-weight: 400;
+}
+#section-login #formLogin input {
+	border: none;
+	box-shadow: none;
+	border-bottom: 2px solid;
+}
+#section-login #formLogin button {
+	margin-top: 30px;
+	padding: 18px 0px;
+	font-size: 20px;
+}
+
+#section-footer {
+  padding-top: 0px;
+}
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {

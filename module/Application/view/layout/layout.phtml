@@ -25,7 +25,7 @@
     	<nav class="navbar navbar-default navbar-fixed-top">
 	      <div class="container-fluid">
 	        <div class="navbar-header">
-	          <a class="navbar-brand" href="#section-1">
+	          <a class="navbar-brand" href="<?= $this->url('home'); ?>">
 	            <img alt="TutteMob" src="<?= $this->basePath('img/layout/logo-menu.png') ?>" class="img-responsive" />
 	          </a>
 	        </div>
@@ -37,7 +37,7 @@
 	            </a>
 	          </li>
 	          <li>
-	            <a href="#section-2" title="Ambientes">
+	            <a href="<?= $this->url('home', array('action' => 'ambientes')); ?>" title="Ambientes">
 	              <img src="<?= $this->basePath('img/layout/ambientes.png') ?>" class="img-responsive" />
 	            </a>
 	          </li>
@@ -62,7 +62,7 @@
 	            </a>
 	          </li>
 	          <li>
-	            <a href="#section-7" title="Iniciar minha experiência TutteMob">
+	            <a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>" title="Iniciar minha experiência TutteMob">
 	              <img src="<?= $this->basePath('img/layout/iniciar-experiencia.png') ?>" class="img-responsive" />
 	            </a>
 	          </li>
@@ -86,8 +86,8 @@
 	
 		<?= $this->layout()->content; ?>    
 	
-	    <footer>
-	        <a class="navbar-brand" href="#section-1">
+	    <div id="section-footer" class="section col-lg-12">
+	        <a class="navbar-brand" href="<?= $this->url('home'); ?>">
 	            <img alt="TutteMob" src="<?= $this->basePath('img/layout/logo-menu.png') ?>" class="img-responsive" />
 	        </a>
 	
@@ -120,7 +120,7 @@
 	              </li>
 	            </ul>
 	        </div>
-	    </footer>  
+	    </div>  
 	
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
@@ -134,7 +134,11 @@
 	          $('a').attr('href', function() {
 	              if(/\#/.test(this.href)){
 	                  var hrefParts = this.href.split(/#/);
-	                  hrefParts[1] = 'smoothScroll' + hrefParts[1];
+
+	                  if('slideCarousel' != hrefParts[1]){
+	                	  hrefParts[1] = 'smoothScroll' + hrefParts[1];	
+	                  }
+	                  
 	                  return hrefParts.join('#');
 	              }else{
 	                  return this.href;

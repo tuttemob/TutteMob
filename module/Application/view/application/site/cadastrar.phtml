@@ -27,25 +27,30 @@
 	</div>
 	<div class="col-md-4">
 		<div class="login-title">
-			<h2>Login</h2>
+			<h2>Cadastro</h2>
 		</div>
 		
 		<form id="formLogin" method="post" data-toggle="validator">
-			<input type="hidden" name="acao" value="login" />
+			<input type="hidden" name="acao" value="cadastrar" />
+			<input type="hidden" name="fone_cel" value="0">
 			
 			<div class="form-group">
-				<label for="email">E-mail:</label>
+            	<label for="nomecompleto">Nos conte o seu nome completo:</label>
+				<input type="text" class="form-control" name="nome" placeholder="Nome completo" required>
+			</div>
+					
+			<div class="form-group">
+				<label for="email">Nos conte o seu e-mail:</label>
 				<input type="email" class="form-control" name="email" placeholder="E-mail" required>
 			</div>
-			
+				
 			<div class="form-group">
-				<label for="documento">Senha:</label>
-				<input type="password" class="form-control" name="senha" placeholder="Senha" required>
-				<div class="help-block with-errors"></div>
+            	<label for="documento">Escolha uma senha:</label>
+			   	<input type="password" class="form-control" name="senha" placeholder="Senha" required>
 			</div>
 			
 			<div class="form-group">
-				<button type="submit" class="btn btn-primary btn-block">Entrar</button>
+				<button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
             </div>
 			
 		</form>
@@ -53,6 +58,12 @@
 </div>
 
 <script type="text/javascript">
+$(function(){
+	$('#cadastrar').click(function(){
+		$('#modalClienteForm').submit();
+	});
+});
+
 $(document).ready(function(){
 	  $('.date').mask('11/11/1111');
 	  $('.time').mask('00:00:00');

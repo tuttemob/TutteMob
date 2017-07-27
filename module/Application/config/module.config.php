@@ -18,9 +18,10 @@ return [
         	'home' => [
                 'type'    => Segment::class,
                 'options' => [
-                    'route'    => '/[:action]',
+                    'route'    => '/[:action[/:params]]',
                 	'constraints' => array(
-                		'action' => '[a-zA-Z]*'	
+                		'action' => '[a-zA-Z\-]*',
+                		'params' => '.*'	
                 	),
                 	'defaults' => [
                         'controller' => Controller\SiteController::class,

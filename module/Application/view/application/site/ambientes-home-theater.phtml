@@ -3,14 +3,27 @@
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
 	    <li data-target="#slideCarousel" data-slide-to="0" class="active"></li>
+	    <li data-target="#slideCarousel" data-slide-to="1" ></li>
+	    <li data-target="#slideCarousel" data-slide-to="2" ></li>
+	    <li data-target="#slideCarousel" data-slide-to="3" ></li>
 	  </ol>
 	
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">
 	    <div class="item active">
-	    	<a href="<?= $this->url('home', array('action' => 'ambientes')); ?>">
-	      		<img src="<?= $this->basePath('img/slide/slide-1.png'); ?>" alt="Ambientes">
-	      	</a>
+	    	<img src="<?= $this->basePath('img/ambientes/slide-1.jpg'); ?>" alt="Ambientes">
+	    </div>
+	    
+	    <div class="item">
+	    	<img src="<?= $this->basePath('img/ambientes/slide-2.jpg'); ?>" alt="Ambientes">
+	    </div>
+	    
+	    <div class="item">
+	    	<img src="<?= $this->basePath('img/ambientes/slide-3.jpg'); ?>" alt="Ambientes">
+	    </div>
+	    
+	    <div class="item">
+	    	<img src="<?= $this->basePath('img/ambientes/slide-4.jpg'); ?>" alt="Ambientes">
 	    </div>
 	  </div>
 	
