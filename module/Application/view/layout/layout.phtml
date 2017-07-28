@@ -31,6 +31,7 @@
 	        </div>
 	
 	        <ul class="nav navbar-nav navbar-right">
+	        <?php if(!$this->usuario): ?>  
 	          <li>
 	            <a href="#section-1" title="Quem somos">
 	              <img src="<?= $this->basePath('img/layout/quem-somos.png') ?>" class="img-responsive" />
@@ -66,18 +67,20 @@
 	              <img src="<?= $this->basePath('img/layout/iniciar-experiencia.png') ?>" class="img-responsive" />
 	            </a>
 	          </li>
-	          <!--
+	        <?php else: ?>  
 	          <li class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	            	<img src="<?= $this->basePath('img/layout/menu-login.png') ?>" class="img-responsive" />
+	            </a>
 	            <ul class="dropdown-menu">
-	              <li><a href="#">Action</a></li>
-	              <li><a href="#">Another action</a></li>
-	              <li><a href="#">Something else here</a></li>
+	               
+	              <li><a href="<?= $this->url('clientes'); ?>">Orçamentos</a></li>
+	              
 	              <li role="separator" class="divider"></li>
-	              <li><a href="#">Separated link</a></li>
+	              <li><a href="<?= $this->url('login', array('action' => 'logout')); ?>">Sair</a></li>
 	            </ul>
 	          </li>
-	          -->
+	        <?php endif;?>
 	        </ul>
 	      </div>
 	    </nav>

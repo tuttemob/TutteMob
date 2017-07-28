@@ -98,6 +98,13 @@ body, html {
 
 #section-login .login-title {
 	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+#section-login .login-title h4 {
+	width: 80%;
+	font-size: 18px;
+	margin: 0 auto;
 }
 #section-login #formLogin label {
 	margin-top: 10px;
