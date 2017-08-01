@@ -46,7 +46,6 @@ body, html {
 
 #section-slide {
   background-image: #FFF;
-  min-height: 100%;
   padding: 0px;
 }
 
@@ -124,6 +123,21 @@ body, html {
 
 #section-footer {
   padding-top: 0px;
+}
+
+#section-quemsomos {
+  background-color: #F73F80;
+  text-align: center;
+  color: #FFFFFF;
+  padding-bottom: 10px;
+}
+
+#section-quemsomos-interno {
+  border-width: 5px;
+  border-color: #FFFFFF;
+  border-style: solid;
+  width: 40%;
+  margin: 0 auto;
 }
 
 /* Turn off parallax scrolling for tablets and phones */
