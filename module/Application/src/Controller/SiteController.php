@@ -29,6 +29,26 @@ class SiteController extends ManagerController {
 		return new ViewModel(array());
 	}
 	
+	public function ambientesCozinhaAction()
+	{
+		return new ViewModel(array());
+	}
+	
+	public function ambientesQuartoAction()
+	{
+		return new ViewModel(array());
+	}
+	
+	public function ambientesHomeOfficeAction()
+	{
+		return new ViewModel(array());
+	}
+	
+	public function ambientesBanheiroAction()
+	{
+		return new ViewModel(array());
+	}
+	
 	/**
 	 * Cadastrar usuarios
 	 * @return \Zend\View\Model\ViewModel
