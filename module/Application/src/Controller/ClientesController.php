@@ -16,6 +16,9 @@ class ClientesController extends ManagerController {
 	{
 		$error = null;
 		$success = null;
+		$complementar = null;
+		$complementarAcao = null;
+		$complementarId = null;
 		
 		$modelBriefingCozinha = $this->serviceManager->get('Model\BriefingCozinha');
 		$modelBriefingDormitorioCasal = $this->serviceManager->get('Model\BriefingDormitorioCasal');
@@ -576,6 +579,11 @@ class ClientesController extends ManagerController {
 				$msg  = base64_encode($success);
 			}
 			
+			if($codBriefing){
+				$type = $_POST['acao'];
+				$msg  = base64_encode($codBriefing);
+			}
+			
 			return $this->redirect()->toRoute('clientes', array(
 				'params' => $type.'='.$msg
 			));
@@ -585,7 +593,6 @@ class ClientesController extends ManagerController {
 		$listaCozinha = $modelBriefingCozinha->lista(array('idpessoa' => $this->usuario->idpessoa),'datacriacao DESC');
 		$listaDormitorioCasal = $modelBriefingDormitorioCasal->lista(array('idpessoa' => $this->usuario->idpessoa),'datacriacao DESC');
 		$listaDormitorioSolteiro = $modelBriefingDormitorioSolteiro->lista(array('idpessoa' => $this->usuario->idpessoa),'datacriacao DESC');
-		//$listaDormitorioInfantil = $modelBriefingDormitorioInfantil->lista(array('idpessoa' => $this->usuario->idpessoa),'datacriacao DESC');
 		$listaBanheiro = $modelBriefingBanheiro->lista(array('idpessoa' => $this->usuario->idpessoa),'datacriacao DESC');
 		$listaAreaServico = $modelBriefingAreaServico->lista(array('idpessoa' => $this->usuario->idpessoa),'datacriacao DESC');
 		$listaCloset = $modelBriefingCloset->lista(array('idpessoa' => $this->usuario->idpessoa),'datacriacao DESC');
@@ -595,20 +602,28 @@ class ClientesController extends ManagerController {
 		// apresenta mensagem ao usuario
 		$params = $this->params('params');
 		if($params != '' && !preg_match('/^[0-9]*$/', $params)){
-			list($type, $msg) = explode('=', $params);
+			preg_match('/^([A-z\-0-9]*)\=(.*)$/', $params, $matches);
+			list($match, $type, $msg) = $matches;
 			
 			if($type == 'error'){
 				$error = base64_decode($msg); 
 			}
-			
-			if($type == 'success'){
+			else if($type == 'success'){
 				$success = base64_decode($msg);
+			}
+			else {
+				$complementar = true;
+				$complementarAcao = $type;
+				$complementarId = base64_decode($msg);
 			}
 		}
 		
 		return new ViewModel(array(
-			'success' => $success,
-			'error'  => $error,
+			'success' 			=> $success,
+			'error'  			=> $error,
+			'complementar' 		=> $complementar,	
+			'complementarAcao' 	=> $complementarAcao,	
+			'complementarId' 	=> $complementarId,	
 			// grid itens
 			'listaCozinha'				=> $listaCozinha,
 			'listaDormitorioCasal' 		=> $listaDormitorioCasal,

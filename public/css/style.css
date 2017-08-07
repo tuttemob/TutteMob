@@ -150,7 +150,41 @@ body, html {
 	padding: 0px;
 	font-size: 16px;
 }
+.briefing-complemento-step {
+	width: 90%;
+	height: 80%;
+	margin: 0;
+	left: 5%;
+	top: 15%;
+	color: #FFF;
+	font-size: 2em;
+	line-height: 40px;
+	position: fixed;
+	z-index: 100001; 
+}
+.briefing-complemento-step .col-1 {
+	text-align: center;
+	margin-top: 30px;
+}
+.briefing-complemento-step .col-2 {
+	margin-top: 30px;
+}
+.briefing-complemento-step .col-2-controle {
+	float: left;
+	min-width: 80px;
+	margin-bottom: 10px;
+	padding-top: 5px;
+}
+.briefing-complemento-step .col-2-texto {
+	float: left;
+	width: 90%;
+	margin-bottom: 10px;
+}
+#briefing-medidas {
+	background: #3fb7ca;
+}
 
+/* Footer */
 #section-footer {
   padding-top: 0px;
 }
