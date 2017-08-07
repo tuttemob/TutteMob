@@ -592,22 +592,6 @@ class ClientesController extends ManagerController {
 		$listaHomeTheater = $modelBriefingHomeTheater->lista(array('idpessoa' => $this->usuario->idpessoa),'datacriacao DESC');
 		$listaHomeOffice = $modelBriefingHomeOffice->lista(array('idpessoa' => $this->usuario->idpessoa),'datacriacao DESC');
 		
-		$listaPaginacao = array_merge($listaCozinha, 
-				$listaDormitorioCasal, 
-				$listaDormitorioSolteiro, 
-				//$listaDormitorioInfantil, 
-				$listaBanheiro, 
-				$listaAreaServico,
-				$listaCloset,
-				$listaHomeTheater,
-				$listaHomeOffice);
-		
-		// cria o objeto de paginação
-		$page = (int) $this->params('params');
-		$paginator = new Paginator(new ArrayAdapter($listaPaginacao));
-		$paginator->setItemCountPerPage(4);
-		$paginator->setCurrentPageNumber($page);
-		
 		// apresenta mensagem ao usuario
 		$params = $this->params('params');
 		if($params != '' && !preg_match('/^[0-9]*$/', $params)){
@@ -625,8 +609,15 @@ class ClientesController extends ManagerController {
 		return new ViewModel(array(
 			'success' => $success,
 			'error'  => $error,
-			'listaGrid' => $paginator,
-			'listaGridTotal' => count($listaPaginacao)
+			// grid itens
+			'listaCozinha'				=> $listaCozinha,
+			'listaDormitorioCasal' 		=> $listaDormitorioCasal,
+			'listaDormitorioSolteiro'  	=> $listaDormitorioSolteiro,
+			'listaBanheiro' 			=> $listaBanheiro,
+			'listaAreaServico' 			=> $listaAreaServico,
+			'listaCloset' 				=> $listaCloset,
+			'listaHomeTheater' 			=> $listaHomeTheater,
+			'listaHomeOffice' 			=> $listaHomeOffice
 		));
 	}
 
