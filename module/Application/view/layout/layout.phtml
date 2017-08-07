@@ -10,6 +10,8 @@
             ->appendName('viewport', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
         ?>
         
+        <link rel="shortcut icon" href="<?= $this->basePath('img/layout/logo2-128x129-78.png') ?>" type="image/x-icon">
+        
 		<!-- Bootstrap core CSS -->
 	    <link href="<?= $this->basePath('lib/bootstrap/dist/css/bootstrap.min.css') ?>" rel="stylesheet">
 	
@@ -53,8 +55,8 @@
 	            </a>
 	          </li>
 	          <li>
-	            <a href="#section-5" title="Ajuda">
-	              <img src="<?= $this->basePath('img/layout/ajuda.png') ?>" class="img-responsive" />
+	            <a href="#section-5" title="Contato">
+	              <img src="<?= $this->basePath('img/layout/contato.png') ?>" class="img-responsive" />
 	            </a>
 	          </li>
 	          <li>
@@ -77,6 +79,15 @@
 	              <li><a href="<?= $this->url('clientes'); ?>">Orçamentos</a></li>
 	              
 	              <li role="separator" class="divider"></li>
+	              <li><a href="#">Quem Somos?</a></li>
+	              <li role="separator" class="divider"></li>
+	              <li><a href="<?= $this->url('home', array('action' => 'ambientes')); ?>">Ambientes</a></li>
+	              <li role="separator" class="divider"></li>
+	              <li><a href="#">Franquias Físicas</a></li>
+	              <!-- <li><a href="javascript:void(0)">Experiência de clientes</a></li> -->
+	              <li role="separator" class="divider"></li>
+	              <li><a href="#">Contato</a></li>
+	              <li role="separator" class="divider"></li>
 	              <li><a href="<?= $this->url('login', array('action' => 'logout')); ?>">Sair</a></li>
 	            </ul>
 	          </li>
@@ -88,6 +99,11 @@
 	    <div id="section-0" class="section col-lg-12"></div>
 	
 		<?= $this->layout()->content; ?>    
+	
+	
+	<?php if($_SERVER['REQUEST_URI'] != '/tuttemob/public/cadastrar' &&
+			$_SERVER['REQUEST_URI'] != '/tuttemob/public/login/'): ?>	
+		  
 	
 	    <div id="section-footer" class="section col-lg-12">
 	        <a class="navbar-brand" href="<?= $this->url('home'); ?>">
@@ -116,14 +132,31 @@
 	                  <img src="<?= $this->basePath('img/layout/instagram.png') ?>" class="img-responsive" />
 	                </a>
 	              </li>
+	              
+	              <!-- 
+	              <h2>
+	              	URL: <?php
+	              		$dominio= $_SERVER['HTTP_HOST'];
+ 						$url = "http://" . $dominio. $_SERVER['REQUEST_URI'];
+ 						$url2 = " " . $dominio;
+ 						$url3 = $_SERVER['REQUEST_URI'];
+						echo $url3;?>
+				  </h2>
+				  -->
+	              
+	              <!-- 
 	              <li>
 	                <a href="#section-1" title="Email">
 	                  <img src="<?= $this->basePath('img/layout/email.png') ?>" class="img-responsive" />
 	                </a>
 	              </li>
+	               -->
 	            </ul>
 	        </div>
 	    </div>  
+	    
+	    <?php endif;?>
+	    
 	
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
