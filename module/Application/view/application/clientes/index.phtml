@@ -258,6 +258,10 @@
 							<a role="button" onclick="return criarBriefing('hometheater')">+ Adicionar Home Office</a>
 						</div>
 					</div>
+            	</div>
+            	
+            	<div class="briefing-item col-xs-12">
+            		<button class="btn btn-primary" id="btn-finalizar-briefings">Finalizar Briefings</button>
             	</div>				
 		    </div>
 		    
@@ -274,11 +278,7 @@
 			<?php include __DIR__ . '/_modalCadastro.phtml'; ?>
 			
 			<!-- complemento briefing -->
-			<?php 
-				if($this->complementar){
-					include __DIR__ . '/_complemento.phtml';
-				}
-			?>
+			<?php include __DIR__ . '/_complemento.phtml'; ?>
 </div>
 
 <script type="text/javascript">
@@ -289,6 +289,45 @@ $(function(){
 	// controle do grid
 	$('.briefing-item .cmn-toggle').click(function(){
 		$(this).parents('.briefing-item').find('.briefing-grid').slideToggle();
+	});
+
+	// complementar briefings
+	$('#btn-finalizar-briefings').on('click', function(){
+		$('.briefing-complemento-step').hide();
+		if(!$('#briefing-complemento').is(':visible')){
+			$('#briefing-complemento').fadeIn();
+		}
+	});
+	$('#cmn-toggle-step1').on('click', function(){
+		if($(this).parents('.switch').find('input:checkbox').is(':checked')){
+			$('.briefing-complemento-step').hide();
+			$('#briefing-vendedor').fadeIn();
+		}
+	});
+	$('#briefing-vendedor .btn-voltar').click(function(){
+		$('#cmn-toggle-step1').prop('checked', false);
+		$('.briefing-complemento-step').hide();
+		$('#briefing-complemento').fadeIn();
+	});
+	$('#cmn-toggle-step4').on('click', function(){
+		if($(this).parents('.switch').find('input:checkbox').is(':checked')){
+			$('.briefing-complemento-step').hide();
+			$('#briefing-videos').fadeIn();
+		}
+	});
+	$('#briefing-videos .btn-voltar').click(function(){
+		$('#cmn-toggle-step4').prop('checked', false);
+		$('.briefing-complemento-step').hide();
+		$('#briefing-complemento').fadeIn();
+	});
+	
+	$('.btn-avancar').click(function(){
+		$('.briefing-complemento-step input:checkbox').prop('checked', false);
+		$('.briefing-complemento-step').hide();
+		$('#briefing-obrigado').fadeIn();
+	});
+	$('.btn-fechar').click(function(){
+		$('.briefing-complemento-step').hide();
 	});
 	
 	$('#concluirCozinha').click(function(){

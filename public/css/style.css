@@ -151,6 +151,7 @@ body, html {
 	font-size: 16px;
 }
 .briefing-complemento-step {
+	display: none;
 	width: 90%;
 	height: 80%;
 	margin: 0;
@@ -169,6 +170,23 @@ body, html {
 .briefing-complemento-step .col-2 {
 	margin-top: 30px;
 }
+.briefing-complemento-step .col-3 {
+	position: absolute;
+    bottom: 15px;
+    left: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.briefing-complemento-step .col-3 .btn {
+	width: 150px;
+	background: #3FB7CA;
+	font-weight: bold;
+	font-size: 16px;
+	border: none;    
+}
+.briefing-complemento-step .col-3 .btn-fechar {
+	border: 2px #FFF solid
+}
 .briefing-complemento-step .col-2-controle {
 	float: left;
 	min-width: 80px;
@@ -180,8 +198,31 @@ body, html {
 	width: 90%;
 	margin-bottom: 10px;
 }
-#briefing-medidas {
+#briefing-complemento {
 	background: #3fb7ca;
+}
+#briefing-videos {
+	background: #9A5B90;
+}
+#briefing-videos .col-1 {
+	padding: 0px 50px;
+}
+#briefing-videos .col-2 {
+	margin-top: 50px;
+}
+#briefing-videos .col-2 img {
+	border: 5px #FFF solid
+}
+#briefing-vendedor {
+	background: #F73F80;
+}
+#briefing-obrigado {
+	background: #3fb7ca;
+    text-align: center;
+}
+#briefing-obrigado .col-1 {
+	font-size: 40px;
+	padding-top: 30px;	
 }
 
 /* Footer */

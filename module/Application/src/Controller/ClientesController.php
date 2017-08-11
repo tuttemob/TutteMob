@@ -74,7 +74,7 @@ class ClientesController extends ManagerController {
 							
 						$codBriefing = $modelBriefingCozinha->cria($insertArrayValues);
 						if($codBriefing){
-							$success = 'Seu briefing foi cadastrado com sucesso. Aguarde nosso contato.';
+							$success = 'Seu briefing foi cadastrado com sucesso.';
 						}else{
 							$error = 'Ocorreu um erro, tente novamente mais tarde.';
 						}
@@ -89,7 +89,7 @@ class ClientesController extends ManagerController {
 						unset($insertArrayValues['id']);
 						
 						$modelBriefingCozinha->update($insertArrayValues, $filtro);
-						$success = 'Seu briefing foi alterado com sucesso. Aguarde nosso contato.';
+						$success = 'Seu briefing foi alterado com sucesso.';
 					}
 				}
 				catch (\Exception $e){
@@ -133,7 +133,7 @@ class ClientesController extends ManagerController {
 						
 						$codBriefing = $modelBriefingAreaServico->cria($insertArrayValues);
 						if($codBriefing){
-							$success = 'Seu briefing foi cadastrado com sucesso. Aguarde nosso contato.';
+							$success = 'Seu briefing foi cadastrado com sucesso.';
 						}else{
 							$error = 'Ocorreu um erro, tente novamente mais tarde.';
 						}
@@ -148,7 +148,7 @@ class ClientesController extends ManagerController {
 						unset($insertArrayValues['id']);
 						
 						$modelBriefingAreaServico->update($insertArrayValues, $filtro);
-						$success = 'Seu briefing foi alterado com sucesso. Aguarde nosso contato.';
+						$success = 'Seu briefing foi alterado com sucesso.';
 					}
 				}
 				catch (\Exception $e){
@@ -192,7 +192,7 @@ class ClientesController extends ManagerController {
 						
 						$codBriefing = $modelBriefingDormitorioCasal->cria($insertArrayValues);
 						if($codBriefing){
-							$success = 'Seu briefing foi cadastrado com sucesso. Aguarde nosso contato.';
+							$success = 'Seu briefing foi cadastrado com sucesso.';
 						}else{
 							$error = 'Ocorreu um erro, tente novamente mais tarde.';
 						}
@@ -207,7 +207,7 @@ class ClientesController extends ManagerController {
 						unset($insertArrayValues['id']);
 						
 						$modelBriefingDormitorioCasal->update($insertArrayValues, $filtro);
-						$success = 'Seu briefing foi alterado com sucesso. Aguarde nosso contato.';
+						$success = 'Seu briefing foi alterado com sucesso.';
 					}
 				}
 				catch (\Exception $e){
@@ -251,7 +251,7 @@ class ClientesController extends ManagerController {
 						
 						$codBriefing = $modelBriefingDormitorioSolteiro->cria($insertArrayValues);
 						if($codBriefing){
-							$success = 'Seu briefing foi cadastrado com sucesso. Aguarde nosso contato.';
+							$success = 'Seu briefing foi cadastrado com sucesso.';
 						}else{
 							$error = 'Ocorreu um erro, tente novamente mais tarde.';
 						}
@@ -266,7 +266,7 @@ class ClientesController extends ManagerController {
 						unset($insertArrayValues['id']);
 						
 						$modelBriefingDormitorioSolteiro->update($insertArrayValues, $filtro);
-						$success = 'Seu briefing foi alterado com sucesso. Aguarde nosso contato.';
+						$success = 'Seu briefing foi alterado com sucesso.';
 					}
 				}
 				catch (\Exception $e){
@@ -310,7 +310,7 @@ class ClientesController extends ManagerController {
 						
 						$codBriefing = $modelBriefingDormitorioInfantil->cria($insertArrayValues);
 						if($codBriefing){
-							$success = 'Seu briefing foi cadastrado com sucesso. Aguarde nosso contato.';
+							$success = 'Seu briefing foi cadastrado com sucesso.';
 						}else{
 							$error = 'Ocorreu um erro, tente novamente mais tarde.';
 						}
@@ -325,7 +325,7 @@ class ClientesController extends ManagerController {
 						unset($insertArrayValues['id']);
 						
 						$modelBriefingDormitorioInfantil->update($insertArrayValues, $filtro);
-						$success = 'Seu briefing foi alterado com sucesso. Aguarde nosso contato.';
+						$success = 'Seu briefing foi alterado com sucesso.';
 					}
 				}
 				catch (\Exception $e){
@@ -369,7 +369,7 @@ class ClientesController extends ManagerController {
 						
 						$codBriefing = $modelBriefingCloset->cria($insertArrayValues);
 						if($codBriefing){
-							$success = 'Seu briefing foi cadastrado com sucesso. Aguarde nosso contato.';
+							$success = 'Seu briefing foi cadastrado com sucesso.';
 						}else{
 							$error = 'Ocorreu um erro, tente novamente mais tarde.';
 						}
@@ -384,7 +384,7 @@ class ClientesController extends ManagerController {
 						unset($insertArrayValues['id']);
 						
 						$modelBriefingCloset->update($insertArrayValues, $filtro);
-						$success = 'Seu briefing foi alterado com sucesso. Aguarde nosso contato.';
+						$success = 'Seu briefing foi alterado com sucesso.';
 					}
 				}
 				catch (\Exception $e){
@@ -428,7 +428,7 @@ class ClientesController extends ManagerController {
 						
 						$codBriefing = $modelBriefingBanheiro->cria($insertArrayValues);
 						if($codBriefing){
-							$success = 'Seu briefing foi cadastrado com sucesso. Aguarde nosso contato.';
+							$success = 'Seu briefing foi cadastrado com sucesso.';
 						}else{
 							$error = 'Ocorreu um erro, tente novamente mais tarde.';
 						}
@@ -443,7 +443,7 @@ class ClientesController extends ManagerController {
 						unset($insertArrayValues['id']);
 						
 						$modelBriefingBanheiro->update($insertArrayValues, $filtro);
-						$success = 'Seu briefing foi alterado com sucesso. Aguarde nosso contato.';
+						$success = 'Seu briefing foi alterado com sucesso.';
 					}
 				} 
 				catch (\Exception $e){
@@ -487,7 +487,7 @@ class ClientesController extends ManagerController {
 						
 						$codBriefing = $modelBriefingHomeTheater->cria($insertArrayValues);
 						if($codBriefing){
-							$success = 'Seu briefing foi cadastrado com sucesso. Aguarde nosso contato.';
+							$success = 'Seu briefing foi cadastrado com sucesso.';
 						}else{
 							$error = 'Ocorreu um erro, tente novamente mais tarde.';
 						}
@@ -502,7 +502,7 @@ class ClientesController extends ManagerController {
 						unset($insertArrayValues['id']);
 						
 						$modelBriefingHomeTheater->update($insertArrayValues, $filtro);
-						$success = 'Seu briefing foi alterado com sucesso. Aguarde nosso contato.';
+						$success = 'Seu briefing foi alterado com sucesso.';
 					}
 				}
 				catch (\Exception $e){
@@ -546,7 +546,7 @@ class ClientesController extends ManagerController {
 						
 						$codBriefing = $modelBriefingHomeOffice->cria($insertArrayValues);
 						if($codBriefing){
-							$success = 'Seu briefing foi cadastrado com sucesso. Aguarde nosso contato.';
+							$success = 'Seu briefing foi cadastrado com sucesso.';
 						}else{
 							$error = 'Ocorreu um erro, tente novamente mais tarde.';
 						}
@@ -561,7 +561,7 @@ class ClientesController extends ManagerController {
 						unset($insertArrayValues['id']);
 						
 						$modelBriefingHomeOffice->update($insertArrayValues, $filtro);
-						$success = 'Seu briefing foi alterado com sucesso. Aguarde nosso contato.';
+						$success = 'Seu briefing foi alterado com sucesso.';
 					}
 				}
 				catch (\Exception $e){
@@ -579,10 +579,12 @@ class ClientesController extends ManagerController {
 				$msg  = base64_encode($success);
 			}
 			
+			/*
 			if($codBriefing){
 				$type = $_POST['acao'];
 				$msg  = base64_encode($codBriefing);
 			}
+			*/
 			
 			return $this->redirect()->toRoute('clientes', array(
 				'params' => $type.'='.$msg
