@@ -295,6 +295,28 @@ input.cmn-toggle-round:checked + label:after {
   margin: 0 auto;
 }
 
+#section-experiencia-clientes {
+  margin: 0 auto;
+}
+
+#section-experiencia-clientes {
+  margin: 0 auto;
+}
+
+#section-franquias-fisicas {
+  margin: 0 auto;
+}
+
+#section-inicie-experiencia {
+  margin: 0 auto;
+}
+
+#mapa{
+  width: 100%; 
+  height: 500px; 
+  border: 1px solid #ccc;
+}
+
 #section-menudropdowncliente {
 }
 

@@ -80,6 +80,9 @@ class SiteController extends ManagerController {
 							$error = 'O e-mail informado já possui cadastro.';
 						}
 						else {
+
+							//echo '<script>console.log("Chegou aqui")</script>';
+
 							// adiciona os campos extras
 							$data['datacriacao'] = new SqlExpression("NOW()");
 							$data['idpapel']	 = 1;

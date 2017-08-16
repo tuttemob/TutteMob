@@ -40,4 +40,96 @@
 			<!-- </div> -->				
 		</div>
 	</div>
-<!-- </div> -->	  
+<!-- </div> -->	 
+
+
+	<div id="section-experiencia-clientes" class="section col-lg-12">
+		<img src="<?= $this->basePath('img/outros/experiencia_clientes.png'); ?>" class="img-responsive" alt="Experiência dos Clientes">
+	</div>  
+	
+	<!-- <div id="section-franquias-fisicas" class="section col-lg-12">
+		<div id="mapa"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:EjVSLiBGZWxpcGUgQ2FtYXLDo28sIENhcmF6aW5obyAtIFJTLCA5OTUwMC0wMDAsIEJyYXNpbA" allowfullscreen=""></iframe></div>
+	</div> -->
+	
+	<div class="container">
+		<div id="section-franquias-fisicas" class="section col-lg-12" style="width:100%;height:400px;">
+		
+			<script>
+			function myMap() {
+			/*var mapProp= {
+			    center:new google.maps.LatLng(-28.268400,-52.420126),
+			    zoom:18,
+			};
+			var map=new google.maps.Map(document.getElementById("section-franquias-fisicas"),mapProp);*/
+			
+				var mapCanvas = document.getElementById("section-franquias-fisicas");
+			  	var myCenter = new google.maps.LatLng(-28.268481,-52.420323); 
+			  	var mapOptions = {center: myCenter, zoom: 18/*, disableDefaultUI: true*/};
+			  	var map = new google.maps.Map(mapCanvas,mapOptions);
+			  	var marker = new google.maps.Marker({
+			    	position: myCenter,
+			    	animation: google.maps.Animation.BOUNCE
+			  	});
+			  	marker.setMap(map);
+		
+				  /*google.maps.event.addListener(marker,'click',function() {*/
+					    var infowindow = new google.maps.InfoWindow({
+					      content:"Faça-nos uma visita!"
+					    });
+					  infowindow.open(map,marker);
+					  /*});*/
+			}
+			</script>
+			
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt6Q5NYmV8Pi-LX1GRnffZP3anE4pu4ek&callback=myMap"></script>   
+		</div>
+	</div>
+	
+	
+	<div id="section-inicie-experiencia" class="section col-lg-12">
+		<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>" title="Inicie sua experiência TutteMob">
+			<img src="<?= $this->basePath('img/outros/inicie_experiencia.png'); ?>" class="img-responsive" alt="Inicie sua experiência">
+		</a>
+	</div>  
+	
+
+	<div id="section-footer" class="section col-lg-12">
+	        <!-- 
+	        <a class="navbar-brand" href="<?= $this->url('home'); ?>">
+	            <img alt="TutteMob" src="<?= $this->basePath('img/layout/logo-menu.png') ?>" class="img-responsive" />
+	        </a>
+	         -->
+	 
+	        <div id="footer-links" class="pull-right">
+	            <ul class="nav navbar-nav navbar-right">
+	              <li>
+	                <a href="#section-1" title="Facebook">
+	                  <img src="<?= $this->basePath('img/layout/facebook.png') ?>" class="img-responsive" />
+	                </a>
+	              </li>
+	              <li>
+	                <a href="#section-1" title="Twitter">
+	                  <img src="<?= $this->basePath('img/layout/twitter.png') ?>" class="img-responsive" />
+	                </a>
+	              </li>
+	              <li>
+	                <a href="#section-1" title="Youtube">
+	                  <img src="<?= $this->basePath('img/layout/youtube.png') ?>" class="img-responsive" />
+	                </a>
+	              </li>
+	              <li>
+	                <a href="#section-1" title="Instagram">
+	                  <img src="<?= $this->basePath('img/layout/instagram.png') ?>" class="img-responsive" />
+	                </a>
+	              </li>
+	              
+	              <!-- 
+	              <li>
+	                <a href="#section-1" title="Email">
+	                  <img src="<?= $this->basePath('img/layout/email.png') ?>" class="img-responsive" />
+	                </a>
+	              </li>
+	               -->
+	            </ul>
+	        </div>
+	    </div>   

@@ -35,7 +35,7 @@
 	        <ul class="nav navbar-nav navbar-right">
 	        <?php if(!$this->usuario): ?>  
 	          <li>
-	            <a href="#section-1" title="Quem somos">
+	            <a href="<?= $this->url('home'); ?>#section-quemsomos" title="Quem somos">
 	              <img src="<?= $this->basePath('img/layout/quem-somos.png') ?>" class="img-responsive" />
 	            </a>
 	          </li>
@@ -45,12 +45,12 @@
 	            </a>
 	          </li>
 	          <li>
-	            <a href="#section-3" title="Franquias Físicas">
+	            <a href="<?= $this->url('home'); ?>#section-franquias-fisicas" title="Franquias Físicas">
 	              <img src="<?= $this->basePath('img/layout/franquias-fisicas.png') ?>" class="img-responsive" />
 	            </a>
 	          </li>
 	          <li>
-	            <a href="#section-4" title="Experiências de Clientes">
+	            <a href="<?= $this->url('home'); ?>#section-experiencia-clientes" title="Experiências de Clientes">
 	              <img src="<?= $this->basePath('img/layout/experiencia-clientes.png') ?>" class="img-responsive" />
 	            </a>
 	          </li>
@@ -79,11 +79,11 @@
 	              <li><a href="<?= $this->url('clientes'); ?>">Orçamentos</a></li>
 	              
 	              <li role="separator" class="divider"></li>
-	              <li><a href="#">Quem Somos?</a></li>
+	              <li><a href="<?= $this->url('home'); ?>#section-quemsomos">Quem Somos?</a></li>
 	              <li role="separator" class="divider"></li>
 	              <li><a href="<?= $this->url('home', array('action' => 'ambientes')); ?>">Ambientes</a></li>
 	              <li role="separator" class="divider"></li>
-	              <li><a href="#">Franquias Físicas</a></li>
+	              <li><a href="<?= $this->url('home'); ?>#section-franquias-fisicas">Franquias Físicas</a></li>
 	              <!-- <li><a href="javascript:void(0)">Experiência de clientes</a></li> -->
 	              <li role="separator" class="divider"></li>
 	              <li><a href="#">Contato</a></li>
@@ -101,16 +101,15 @@
 		<?= $this->layout()->content; ?>    
 	
 	
-	<?php if($_SERVER['REQUEST_URI'] != '/tuttemob/public/cadastrar' &&
-			$_SERVER['REQUEST_URI'] != '/tuttemob/public/login/'): ?>	
-		  
-	
-	    <div id="section-footer" class="section col-lg-12">
+	 
+	    <!--<div id="section-footer" class="section col-lg-12">-->
+	        <!-- 
 	        <a class="navbar-brand" href="<?= $this->url('home'); ?>">
 	            <img alt="TutteMob" src="<?= $this->basePath('img/layout/logo-menu.png') ?>" class="img-responsive" />
 	        </a>
-	
-	        <div id="footer-links" class="pull-right">
+	         -->
+	 
+	        <!--<div id="footer-links" class="pull-right">
 	            <ul class="nav navbar-nav navbar-right">
 	              <li>
 	                <a href="#section-1" title="Facebook">
@@ -131,7 +130,7 @@
 	                <a href="#section-1" title="Instagram">
 	                  <img src="<?= $this->basePath('img/layout/instagram.png') ?>" class="img-responsive" />
 	                </a>
-	              </li>
+	              </li>-->
 	              
 	              <!-- 
 	              <h2>
@@ -150,13 +149,11 @@
 	                  <img src="<?= $this->basePath('img/layout/email.png') ?>" class="img-responsive" />
 	                </a>
 	              </li>
-	               -->
 	            </ul>
 	        </div>
 	    </div>  
 	    
-	    <?php endif;?>
-	    
+ 	-->	    
 	
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
