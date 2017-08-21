@@ -3,3 +3,4 @@ config/application.config.email.php
 .buildpath
 .project
 .tern-project
+php_logs.log
