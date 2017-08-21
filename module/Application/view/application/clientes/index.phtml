@@ -32,7 +32,7 @@
 								</div>
 								<div class="col-xs-4">
 									<a onclick="return alterarBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Alterar</a>
-									<a onclick="return false;">Excluir</a>
+									<a onclick="return removerBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Excluir</a>
 								</div>
 							</div>
 						<?php endforeach;?>
@@ -63,7 +63,7 @@
 								</div>
 								<div class="col-xs-4">
 									<a onclick="return alterarBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Alterar</a>
-									<a onclick="return false;">Excluir</a>
+									<a onclick="return removerBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Excluir</a>
 								</div>
 							</div>
 						<?php endforeach;?>
@@ -94,7 +94,7 @@
 								</div>
 								<div class="col-xs-4">
 									<a onclick="return alterarBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Alterar</a>
-									<a onclick="return false;">Excluir</a>
+									<a onclick="return removerBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Excluir</a>
 								</div>
 							</div>
 						<?php endforeach;?>
@@ -125,7 +125,7 @@
 								</div>
 								<div class="col-xs-4">
 									<a onclick="return alterarBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Alterar</a>
-									<a onclick="return false;">Excluir</a>
+									<a onclick="return removerBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Excluir</a>
 								</div>
 							</div>
 						<?php endforeach;?>
@@ -156,7 +156,7 @@
 								</div>
 								<div class="col-xs-4">
 									<a onclick="return alterarBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Alterar</a>
-									<a onclick="return false;">Excluir</a>
+									<a onclick="return removerBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Excluir</a>
 								</div>
 							</div>
 						<?php endforeach;?>
@@ -187,7 +187,7 @@
 								</div>
 								<div class="col-xs-4">
 									<a onclick="return alterarBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Alterar</a>
-									<a onclick="return false;">Excluir</a>
+									<a onclick="return removerBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Excluir</a>
 								</div>
 							</div>
 						<?php endforeach;?>
@@ -218,7 +218,7 @@
 								</div>
 								<div class="col-xs-4">
 									<a onclick="return alterarBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Alterar</a>
-									<a onclick="return false;">Excluir</a>
+									<a onclick="return removerBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Excluir</a>
 								</div>
 							</div>
 						<?php endforeach;?>
@@ -249,7 +249,7 @@
 								</div>
 								<div class="col-xs-4">
 									<a onclick="return alterarBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Alterar</a>
-									<a onclick="return false;">Excluir</a>
+									<a onclick="return removerBriefing('<?= strtolower($item->tp)?>', <?= $item->idbriefing?>);">Excluir</a>
 								</div>
 							</div>
 						<?php endforeach;?>
@@ -275,7 +275,6 @@
 			<?php include __DIR__ . '/_modalDormitorioInfantil.phtml'; ?>
 			<?php include __DIR__ . '/_modalHomeTheater.phtml'; ?>
 			<?php include __DIR__ . '/_modalHomeOffice.phtml'; ?>
-			<?php include __DIR__ . '/_modalCadastro.phtml'; ?>
 			
 			<!-- complemento briefing -->
 			<?php include __DIR__ . '/_complemento.phtml'; ?>
@@ -300,8 +299,11 @@ $(function(){
 	});
 	$('#cmn-toggle-step1').on('click', function(){
 		if($(this).parents('.switch').find('input:checkbox').is(':checked')){
-			$('.briefing-complemento-step').hide();
-			$('#briefing-vendedor').fadeIn();
+			var callback = function(){
+				$('.briefing-complemento-step').hide();
+				$('#briefing-vendedor').fadeIn();
+			};
+			showModalCadastro(callback);
 		}
 	});
 	$('#briefing-vendedor .btn-voltar').click(function(){
@@ -311,8 +313,11 @@ $(function(){
 	});
 	$('#cmn-toggle-step4').on('click', function(){
 		if($(this).parents('.switch').find('input:checkbox').is(':checked')){
-			$('.briefing-complemento-step').hide();
-			$('#briefing-videos').fadeIn();
+			var callback = function(){
+				$('.briefing-complemento-step').hide();
+				$('#briefing-videos').fadeIn();
+			};
+			showModalCadastro(callback);
 		}
 	});
 	$('#briefing-videos .btn-voltar').click(function(){
@@ -322,9 +327,17 @@ $(function(){
 	});
 	
 	$('.btn-avancar').click(function(){
-		$('.briefing-complemento-step input:checkbox').prop('checked', false);
-		$('.briefing-complemento-step').hide();
-		$('#briefing-obrigado').fadeIn();
+		if($(this).parents('#briefing-cadastro').length == 0){
+			if($(this).parents('#briefing-vendedor').length == 1){
+				$('.briefing-complemento-step input:checkbox').prop('checked', false);
+				$('.briefing-complemento-step').hide();
+				$('#briefing-obrigado-vendedor').fadeIn();
+			}else{
+				$('.briefing-complemento-step input:checkbox').prop('checked', false);
+				$('.briefing-complemento-step').hide();
+				$('#briefing-obrigado').fadeIn();
+			}
+		}
 	});
 	$('.btn-fechar').click(function(){
 		$('.briefing-complemento-step').hide();
@@ -380,86 +393,70 @@ $(function(){
 
 	criarBriefing = function(tp){
 		if(tp == 'cozinha'){
-			var callback = function(){
-				// abre a modal de briefing da cozinha
-				$('#modalCozinhaForm').find('input').each(function(){
-					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'preferenciacores[]'){
-						$(this).val('');
-					}
-					else if($(this).attr('name') != 'preferenciacores[]'){
-						$(this).prop('checked', false);
-					}
-				});
-				$('#modalCozinhaForm').find('select').each(function(){
-					$(this).val(0);
-				});
-				$('input[name="id"]').val('');
-				$('#modalCozinhaForm').find('.box-imagem .col-xs-6').html('');
-				$('#modalCozinha').modal('show');
-			};
-
-			showModalCadastro(callback);
+			// abre a modal de briefing da cozinha
+			$('#modalCozinhaForm').find('input').each(function(){
+				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'preferenciacores[]'){
+					$(this).val('');
+				}
+				else if($(this).attr('name') != 'preferenciacores[]'){
+					$(this).prop('checked', false);
+				}
+			});
+			$('#modalCozinhaForm').find('select').each(function(){
+				$(this).val(0);
+			});
+			$('input[name="id"]').val('');
+			$('#modalCozinhaForm').find('.box-imagem .col-xs-6').html('');
+			$('#modalCozinha').modal('show');
 			
 		} else if(tp == 'areaServico'){
-			var callback = function(){
-				// abre a modal de briefing de área de serviço
-				$('#modalAreaServicoForm').find('input').each(function(){
-					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bas_preferenciacores[]'){
-						$(this).val('');
-					}
-					else if($(this).attr('name') != 'bas_preferenciacores[]'){
-						$(this).prop('checked', false);
-					}
-				});
-				$('#modalAreaServicoForm').find('select').each(function(){
-					$(this).val(0);
-				});
-				$('input[name="id"]').val('');
-				$('#modalAreaServicoForm').find('.box-imagem .col-xs-6').html('');
-				$('#modalAreaServico').modal('show');
-			};
-
-			showModalCadastro(callback);
+			// abre a modal de briefing de área de serviço
+			$('#modalAreaServicoForm').find('input').each(function(){
+				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bas_preferenciacores[]'){
+					$(this).val('');
+				}
+				else if($(this).attr('name') != 'bas_preferenciacores[]'){
+					$(this).prop('checked', false);
+				}
+			});
+			$('#modalAreaServicoForm').find('select').each(function(){
+				$(this).val(0);
+			});
+			$('input[name="id"]').val('');
+			$('#modalAreaServicoForm').find('.box-imagem .col-xs-6').html('');
+			$('#modalAreaServico').modal('show');
 		} else if(tp == 'dormitoriocasal'){
-			var callback = function(){
-				// abre a modal de briefing de dormitório de casal
-				$('#modalDormitorioCasalForm').find('input').each(function(){
-					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bdc_preferenciacores[]'){
-						$(this).val('');
-					}
-					else if($(this).attr('name') != 'bdc_preferenciacores[]'){
-						$(this).prop('checked', false);
-					}
-				});
-				$('#modalDormitorioCasalForm').find('select').each(function(){
-					$(this).val(0);
-				});
-				$('input[name="id"]').val('');
-				$('#modalDormitorioCasalForm').find('.box-imagem .col-xs-6').html('');
-				$('#modalDormitorioCasal').modal('show');
-			};
-
-			showModalCadastro(callback);
+			// abre a modal de briefing de dormitório de casal
+			$('#modalDormitorioCasalForm').find('input').each(function(){
+				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bdc_preferenciacores[]'){
+					$(this).val('');
+				}
+				else if($(this).attr('name') != 'bdc_preferenciacores[]'){
+					$(this).prop('checked', false);
+				}
+			});
+			$('#modalDormitorioCasalForm').find('select').each(function(){
+				$(this).val(0);
+			});
+			$('input[name="id"]').val('');
+			$('#modalDormitorioCasalForm').find('.box-imagem .col-xs-6').html('');
+			$('#modalDormitorioCasal').modal('show');
 		} else if(tp == 'dormitoriosolteiro'){
-			var callback = function(){
-				// abre a modal de briefing de dormitório de solteiro
-				$('#modalDormitorioSolteiroForm').find('input').each(function(){
-					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bds_preferenciacores[]'){
-						$(this).val('');
-					}
-					else if($(this).attr('name') != 'bds_preferenciacores[]'){
-						$(this).prop('checked', false);
-					}
-				});
-				$('#modalDormitorioSolteiroForm').find('select').each(function(){
-					$(this).val(0);
-				});
-				$('input[name="id"]').val('');
-				$('#modalDormitorioSolteiroForm').find('.box-imagem .col-xs-6').html('');
-				$('#modalDormitorioSolteiro').modal('show');
-			};
-
-			showModalCadastro(callback);
+			// abre a modal de briefing de dormitório de solteiro
+			$('#modalDormitorioSolteiroForm').find('input').each(function(){
+				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bds_preferenciacores[]'){
+					$(this).val('');
+				}
+				else if($(this).attr('name') != 'bds_preferenciacores[]'){
+					$(this).prop('checked', false);
+				}
+			});
+			$('#modalDormitorioSolteiroForm').find('select').each(function(){
+				$(this).val(0);
+			});
+			$('input[name="id"]').val('');
+			$('#modalDormitorioSolteiroForm').find('.box-imagem .col-xs-6').html('');
+			$('#modalDormitorioSolteiro').modal('show');
 		} /*else if(tp == 'dormitorioinfantil'){
 			var callback = function(){
 				// abre a modal de briefing de dormitório infantil
@@ -481,85 +478,69 @@ $(function(){
 
 			showModalCadastro(callback);
 		}*/ else if(tp == 'closet'){
-			var callback = function(){
-				// abre a modal de briefing de closet
-				$('#modalClosetForm').find('input').each(function(){
-					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bcl_preferenciacores[]'){
-						$(this).val('');
-					}
-					else if($(this).attr('name') != 'bcl_preferenciacores[]'){
-						$(this).prop('checked', false);
-					}
-				});
-				$('#modalClosetForm').find('select').each(function(){
-					$(this).val(0);
-				});
-				$('input[name="id"]').val('');
-				$('#modalClosetForm').find('.box-imagem .col-xs-6').html('');
-				$('#modalCloset').modal('show');
-			};
-
-			showModalCadastro(callback);
+			// abre a modal de briefing de closet
+			$('#modalClosetForm').find('input').each(function(){
+				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bcl_preferenciacores[]'){
+					$(this).val('');
+				}
+				else if($(this).attr('name') != 'bcl_preferenciacores[]'){
+					$(this).prop('checked', false);
+				}
+			});
+			$('#modalClosetForm').find('select').each(function(){
+				$(this).val(0);
+			});
+			$('input[name="id"]').val('');
+			$('#modalClosetForm').find('.box-imagem .col-xs-6').html('');
+			$('#modalCloset').modal('show');
 		} else if(tp == 'banheiro'){
-			var callback = function(){
-				// abre a modal de briefing de banheiro
-				$('#modalBanheiroForm').find('input').each(function(){
-					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'ban_preferenciacores[]'){
-						$(this).val('');
-					}
-					else if($(this).attr('name') != 'ban_preferenciacores[]'){
-						$(this).prop('checked', false);
-					}
-				});
-				$('#modalBanheiroForm').find('select').each(function(){
-					$(this).val(0);
-				});
-				$('input[name="id"]').val('');
-				$('#modalBanheiroForm').find('.box-imagem .col-xs-6').html('');
-				$('#modalBanheiro').modal('show');
-			};
-
-			showModalCadastro(callback);
+			// abre a modal de briefing de banheiro
+			$('#modalBanheiroForm').find('input').each(function(){
+				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'ban_preferenciacores[]'){
+					$(this).val('');
+				}
+				else if($(this).attr('name') != 'ban_preferenciacores[]'){
+					$(this).prop('checked', false);
+				}
+			});
+			$('#modalBanheiroForm').find('select').each(function(){
+				$(this).val(0);
+			});
+			$('input[name="id"]').val('');
+			$('#modalBanheiroForm').find('.box-imagem .col-xs-6').html('');
+			$('#modalBanheiro').modal('show');
 		} else if(tp == 'hometheater'){
-			var callback = function(){
-				// abre a modal de briefing de home theater
-				$('#modalHomeTheaterForm').find('input').each(function(){
-					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bht_preferenciacores[]'){
-						$(this).val('');
-					}
-					else if($(this).attr('name') != 'bht_preferenciacores[]'){
-						$(this).prop('checked', false);
-					}
-				});
-				$('#modalHomeTheaterForm').find('select').each(function(){
-					$(this).val(0);
-				});
-				$('input[name="id"]').val('');
-				$('#modalHomeTheaterForm').find('.box-imagem .col-xs-6').html('');
-				$('#modalHomeTheater').modal('show');
-			};
-
-			showModalCadastro(callback);
+			// abre a modal de briefing de home theater
+			$('#modalHomeTheaterForm').find('input').each(function(){
+				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bht_preferenciacores[]'){
+					$(this).val('');
+				}
+				else if($(this).attr('name') != 'bht_preferenciacores[]'){
+					$(this).prop('checked', false);
+				}
+			});
+			$('#modalHomeTheaterForm').find('select').each(function(){
+				$(this).val(0);
+			});
+			$('input[name="id"]').val('');
+			$('#modalHomeTheaterForm').find('.box-imagem .col-xs-6').html('');
+			$('#modalHomeTheater').modal('show');
 		} else if(tp == 'homeoffice'){
-			var callback = function(){
-				// abre a modal de briefing de home office
-				$('#modalHomeOfficeForm').find('input').each(function(){
-					if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bho_preferenciacores[]'){
-						$(this).val('');
-					}
-					else if($(this).attr('name') != 'bho_preferenciacores[]'){
-						$(this).prop('checked', false);
-					}
-				});
-				$('#modalHomeOfficeForm').find('select').each(function(){
-					$(this).val(0);
-				});
-				$('input[name="id"]').val('');
-				$('#modalHomeOfficeForm').find('.box-imagem .col-xs-6').html('');
-				$('#modalHomeOffice').modal('show');
-			};
-
-			showModalCadastro(callback);
+			// abre a modal de briefing de home office
+			$('#modalHomeOfficeForm').find('input').each(function(){
+				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bho_preferenciacores[]'){
+					$(this).val('');
+				}
+				else if($(this).attr('name') != 'bho_preferenciacores[]'){
+					$(this).prop('checked', false);
+				}
+			});
+			$('#modalHomeOfficeForm').find('select').each(function(){
+				$(this).val(0);
+			});
+			$('input[name="id"]').val('');
+			$('#modalHomeOfficeForm').find('.box-imagem .col-xs-6').html('');
+			$('#modalHomeOffice').modal('show');
 		}
 
 		return false;
@@ -808,6 +789,21 @@ $(function(){
 			},
 			'json'
 		);
+
+		return false;
+	};
+
+	removerBriefing = function(tp, id){
+		if(confirm("Deseja remover o briefing?")){
+			$.post(
+				'<?=$this->url('clientes', array('action' => 'removeBriefing'));?>',
+				{tipo: tp, id: id},
+				function(resp){
+					window.location = "<?=$this->url('clientes');?>/index/" + resp.data;
+				},
+				'json'
+			);
+		}
 
 		return false;
 	};

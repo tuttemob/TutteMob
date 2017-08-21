@@ -687,6 +687,54 @@ class ClientesController extends ManagerController {
 		$this->jsonDispatch(array('data' => $briefing));
 	}
 	
+	public function removeBriefingAction(){
+		//$modelBriefingCozinha = $this->serviceManager->get('Model\BriefingCozinha');
+		$briefing= array();
+		
+		if($this->getRequest()->isPost()){
+			$data = $this->getRequest()->getPost()->toArray();
+			
+			try{
+				if($data['tipo'] == 'cozinha'){
+					$modelBriefingCozinha = $this->serviceManager->get('Model\BriefingCozinha');
+					$modelBriefingCozinha->delete(array('idbriefing' => $data['id'], 'idpessoa' => $this->usuario->idpessoa));
+				} elseif($data['tipo'] == 'dormitoriocasal'){
+					$modelBriefingDormitorioCasal = $this->serviceManager->get('Model\BriefingDormitorioCasal');
+					$modelBriefingDormitorioCasal->delete(array('idbriefing' => $data['id'], 'idpessoa' => $this->usuario->idpessoa));
+				} elseif($data['tipo'] == 'dormitoriosolteiro'){
+					$modelBriefingDormitorioSolteiro = $this->serviceManager->get('Model\BriefingDormitorioSolteiro');
+					$modelBriefingDormitorioSolteiro->delete(array('idbriefing' => $data['id'], 'idpessoa' => $this->usuario->idpessoa));
+				} elseif($data['tipo'] == 'dormitorioinfantil'){
+					$modelBriefingDormitorioInfantil = $this->serviceManager->get('Model\BriefingDormitorioInfantil');
+					$modelBriefingDormitorioInfantil->delete(array('idbriefing' => $data['id'], 'idpessoa' => $this->usuario->idpessoa));
+				} elseif($data['tipo'] == 'banheiro'){
+					$modelBriefingBanheiro = $this->serviceManager->get('Model\BriefingBanheiro');
+					$modelBriefingBanheiro->delete(array('idbriefing' => $data['id'], 'idpessoa' => $this->usuario->idpessoa));
+				} elseif($data['tipo'] == 'areaservico'){
+					$modelBriefingAreaServico = $this->serviceManager->get('Model\BriefingAreaServico');
+					$modelBriefingAreaServico->delete(array('idbriefing' => $data['id'], 'idpessoa' => $this->usuario->idpessoa));
+				} elseif($data['tipo'] == 'closet'){
+					$modelBriefingCloset = $this->serviceManager->get('Model\BriefingCloset');
+					$modelBriefingCloset->delete(array('idbriefing' => $data['id'], 'idpessoa' => $this->usuario->idpessoa));
+				}  elseif($data['tipo'] == 'hometheater'){
+					$modelBriefingHomeTheater = $this->serviceManager->get('Model\BriefingHomeTheater');
+					$modelBriefingHomeTheater->delete(array('idbriefing' => $data['id'], 'idpessoa' => $this->usuario->idpessoa));
+				}  elseif($data['tipo'] == 'homeoffice'){
+					$modelBriefingHomeOffice = $this->serviceManager->get('Model\BriefingHomeOffice');
+					$modelBriefingHomeOffice->delete(array('idbriefing' => $data['id'], 'idpessoa' => $this->usuario->idpessoa));
+				}
+
+				$redirect = 'success=' . base64_encode("Seu briefing foi removido com sucesso.");
+			}
+			catch(\Exception $e){
+				trigger_error($e->getMessage());
+				$redirect = 'error=' . base64_encode("Ocorreu um erro, tente novamente mais tarde.");
+			}
+		}
+		
+		$this->jsonDispatch(array('data' => $redirect));
+	}
+
 	public function completaCadastroAction(){
 		$modelPessoa = $this->serviceManager->get('Model\Pessoa');
 		
@@ -737,6 +785,7 @@ class ClientesController extends ManagerController {
 						$success = true;
 					}
 					catch (\Exception $e){
+						trigger_error($e->getMessage());
 						$success = 'Ocorreu um erro ao atualizar, tente novamente mais tarde.';
 					}
 				}
