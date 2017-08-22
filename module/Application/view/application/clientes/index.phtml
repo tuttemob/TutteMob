@@ -297,6 +297,11 @@ $(function(){
 			$('#briefing-complemento').fadeIn();
 		}
 	});
+	$('#briefing-cadastro .btn-voltar').click(function(){
+		$('.cmn-toggle').prop('checked', false);
+		$('.briefing-complemento-step').hide();
+		$('#briefing-complemento').fadeIn();
+	});
 	$('#cmn-toggle-step1').on('click', function(){
 		if($(this).parents('.switch').find('input:checkbox').is(':checked')){
 			var callback = function(){
