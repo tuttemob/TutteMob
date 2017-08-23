@@ -29,6 +29,7 @@ class ClientesController extends ManagerController {
 		$modelBriefingCloset = $this->serviceManager->get('Model\BriefingCloset');
 		$modelBriefingHomeTheater = $this->serviceManager->get('Model\BriefingHomeTheater');
 		$modelBriefingHomeOffice = $this->serviceManager->get('Model\BriefingHomeOffice');
+		$modelAgendaMedicao = $this->serviceManager->get('Model\BriefingAgendaMedicao');
 		
 		if($this->getRequest()->isPost()){
 			$data = $this->getRequest()->getPost()->toArray();
@@ -620,6 +621,14 @@ class ClientesController extends ManagerController {
 			}
 		}
 		
+		// se possuir trás a agenda da medição
+		$agendaMedicao = (array) reset($modelAgendaMedicao->lista(array('idpessoa' => $this->usuario->idpessoa)));
+		if(isset($agendaMedicao['datahora'])){
+			list($medicaoDia, $medicaoHoras) = explode(' ', $agendaMedicao['datahora']);
+			$agendaMedicao['dia'] = preg_replace('/([0-9]{4})\-([0-9]{2})\-([0-9]{2})/','$3/$2/$1',$medicaoDia);
+			$agendaMedicao['horas'] = substr($medicaoHoras,0,5);
+		}
+
 		return new ViewModel(array(
 			'success' 			=> $success,
 			'error'  			=> $error,
@@ -634,7 +643,8 @@ class ClientesController extends ManagerController {
 			'listaAreaServico' 			=> $listaAreaServico,
 			'listaCloset' 				=> $listaCloset,
 			'listaHomeTheater' 			=> $listaHomeTheater,
-			'listaHomeOffice' 			=> $listaHomeOffice
+			'listaHomeOffice' 			=> $listaHomeOffice,
+			'agendaMedicao'				=> $agendaMedicao
 		));
 	}
 
@@ -792,6 +802,34 @@ class ClientesController extends ManagerController {
 			}
 		}
 		
+		$this->jsonDispatch(array('data' => $success));
+	}
+
+	public function agendaMedicaoAction(){
+		$modelPessoa = $this->serviceManager->get('Model\Pessoa');
+		$modelAgendaMedicao = $this->serviceManager->get('Model\BriefingAgendaMedicao');
+		
+		$success = false;
+		if($this->getRequest()->isPost()){
+			$data = $this->getRequest()->getPost()->toArray();
+			
+			try{
+				// apaga o agendamento atual
+				$modelAgendaMedicao->delete(array('idpessoa' => $this->usuario->idpessoa));
+
+				// cria um novo agendamento
+				$data['dia'] = preg_replace('/([0-9]{2})\/([0-9]{2})\/([0-9]{4})/','$3-$2-$1',$data['dia']);
+				$dataHora = $data['dia'].' '.$data['horas'];
+				$modelAgendaMedicao->insert(array('datahora' => $dataHora, 'idpessoa' => $this->usuario->idpessoa));
+
+				$success = true;
+			}
+			catch (\Exception $e){
+				trigger_error($e->getMessage());
+				$success = 'Ocorreu um erro ao atualizar, tente novamente mais tarde.';
+			}
+		}
+
 		$this->jsonDispatch(array('data' => $success));
 	}
 }

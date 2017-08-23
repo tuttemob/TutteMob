@@ -71,6 +71,11 @@ class Module
     				$adapter = $sm->get('Zend\Db\Adapter\Adapter');
     				$table = new Model\BriefingHomeOffice($adapter);
     				return $table;
+    			},
+				'Model\BriefingAgendaMedicao' =>  function($sm) {
+    				$adapter = $sm->get('Zend\Db\Adapter\Adapter');
+    				$table = new Model\BriefingAgendaMedicao($adapter);
+    				return $table;
     			}
     		]
     	];

@@ -190,13 +190,14 @@
 			<strong>Por favor, informe a data e o horário para o agendamento da medição:</strong>
 		</div>
 		
-		<form name="vendedorForm" id="vendedorForm" data-toggle="validator" method="post">
+		<form name="agendaMedicao" id="agendaMedicao" data-toggle="validator" method="post">
 
 			<div class="form-group col-sm-6">
 				<label for="agenda-dia" class="col-sm-6" style="text-align: right;">DIA:</label>
 				
 				<div class="col-sm-6">
-					<input type="text" class="form-control" name="dia" />
+					<input type="text" class="form-control" name="dia" value="<?= $this->agendaMedicao['dia'] ?>"
+						placeholder="12/12/2010" required />
 				</div>
 			</div>
 
@@ -204,7 +205,8 @@
 				<label for="agenda-horas" class="col-sm-6" style="text-align: right;">A PARTIR DAS:</label>
 				
 				<div class="col-sm-3">
-					<input type="text" class="form-control" name="horas" />
+					<input type="text" class="form-control" name="horas" value="<?= $this->agendaMedicao['horas'] ?>"
+						placeholder="18:00" required />
 				</div>
 
 				<div class="col-sm-3" style="text-align: left;">
@@ -325,19 +327,49 @@ $(function(){
 		$('#modalCadastroForm').submit();	
 	});
 
-	$('#modalCadastroForm').submit(function(){
-		$.post(
-			'<?=$this->url('clientes', array('action' => 'completaCadastro'));?>',
-			$(this).serialize(),
-			function(resp){
-				if(resp.data == true){
-					modalCadastroCallback();
-				}else{
-					alert(resp.data);
-				}
-			},
-			'json'
-		);
+	$('#modalCadastroForm').validator().on('submit', function (e) {
+		if (e.isDefaultPrevented()) {
+			// handle the invalid form...
+		} else {
+			$.post(
+				'<?=$this->url('clientes', array('action' => 'completaCadastro'));?>',
+				$(this).serialize(),
+				function(resp){
+					if(resp.data == true){
+						modalCadastroCallback();
+					}else{
+						alert(resp.data);
+					}
+				},
+				'json'
+			);
+		}
+		return false;
+	});
+
+	$('#briefing-vendedor .btn-avancar').click(function(e){
+		$('#agendaMedicao').submit();	
+	});
+
+	$('#agendaMedicao').validator().on('submit', function (e) {
+		if (e.isDefaultPrevented()) {
+			// handle the invalid form...
+		} else {
+			$.post(
+				'<?=$this->url('clientes', array('action' => 'agendaMedicao'));?>',
+				$(this).serialize(),
+				function(resp){
+					if(resp.data == true){
+						$('.briefing-complemento-step input:checkbox').prop('checked', false);
+						$('.briefing-complemento-step').hide();
+						$('#briefing-obrigado-vendedor').fadeIn();
+					}else{
+						alert(resp.data);
+					}
+				},
+				'json'
+			);
+		}
 		return false;
 	});
 });
