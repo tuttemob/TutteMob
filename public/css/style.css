@@ -1,13 +1,14 @@
 body, html {  
   height: 100%;
   margin: 0;
-  font: 400 15px/1.8 "Lato", sans-serif;
+  /*font: 400 15px/1.8 "Lato", sans-serif;*/
+  font: 400 15px/1.8 "Lato", MyriadPro Regular, sans-serif;
   color: #000;
 }
 
 /* NAVBAR */
 .navbar-default {
-  background-color: #FFFFFF;
+  background-color: #000;
   border: none !important;
 }
 .navbar-brand {
@@ -253,6 +254,7 @@ body, html {
 /* Footer */
 #section-footer {
   padding-top: 0px;
+  background-color: #000;
 }
 
 /* Button Sim/Nao */
@@ -321,19 +323,96 @@ input.cmn-toggle-round:checked + label:after {
 }
 
 #section-experiencia-clientes {
-  margin: 0 auto;
-}
-
-#section-experiencia-clientes {
-  margin: 0 auto;
+  margin: 0 auto
 }
 
 #section-franquias-fisicas {
-  margin: 0 auto;
+  background-color: #3FB7CA;
+  text-align: center;
+  color: #FFFFFF;
+  padding-bottom: 50px;
+  /*border: 5px #000 solid*/
+}
+
+#section-franquias-fisicas-interno {
+  background-color: #3FB7CA;
+  text-align: left;
+  color: #FFFFFF;
+  margin-bottom:0px !important;
+}
+
+#section-franquias-fisicas-interno .form-group {
+	margin-bottom:0px !important;
+}
+
+#section-mapa-interno {
+	width:100%;
+	height:300px;
+	margin: 0 auto;
+	color: #281447;
 }
 
 #section-inicie-experiencia {
-  margin: 0 auto;
+  /*margin: 0 auto;*/
+  text-align: center;
+  color: #FFFFFF;
+  padding: 0px;
+  /*border: 5px #000 solid*/
+}
+
+#section-inicie-experiencia-interno {
+  position:	absolute;
+  margin: 0;
+  
+  position:	absolute;
+  /*right:		20px;*/
+  /*POSICIONANDO NO TOPO*/
+  /*top:		20px;*/  
+  /*margin: 0;*/
+  /*left: 36%;*/
+  /*margin-left: -500px;*/
+  
+  /*top: 0; bottom: 0;*/
+  left: 0; right: 0;
+  margin: auto;
+  top: 30%;
+}
+
+
+#section-inicie-experiencia-interno h4 {
+  font-size: 26
+}
+
+#section-inicie-experiencia-interno-caixa {
+  position:	absolute;
+  /*right:		20px;*/
+  /*POSICIONANDO NO TOPO*/
+  /*top:		20px;*/  
+  border-width: 5px;
+  border-color: #FFFFFF;
+  border-style: solid;
+  width: 70%;
+  /*margin: 0;*/
+  /*left: 36%;*/
+  /*margin-left: -500px;*/
+  
+  /*top: 0; bottom: 0;*/
+  left: 0; right: 0;
+  margin: auto;
+  top: 37%;
+  /*transform: translateY(+80%);*/
+}
+
+#section-inicie-experiencia-interno-caixa {
+  font-size: 48px;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+a.linksSemEstilos:link,a.linksSemEstilos:visited,a.linksSemEstilos:hover,a.linksSemEstilos:active { 
+ text-decoration:none !important; 
 }
 
 #mapa{
@@ -357,3 +436,10 @@ input.cmn-toggle-round:checked + label:after {
         float: left !important;  
     }
 }
+
+@font-face {
+	font-family: "MyriadPro Regular";
+	src: url("../font/MyriadPro-Regular.otf");
+	}
+
+/*p { font-family: "MyriadPro Regular", Cursive; }*/

@@ -28,69 +28,126 @@
 
 <!-- <div class="col-md-12"> -->
 	<div id="section-quemsomos" class="section col-lg-12">
-		<h1><strong>Quem somos?</strong></h1>
+		<h1><strong>QUEM SOMOS?</strong></h1>
 		A TutteMob é um novo conceito no <strong>relacionamento</strong> com consumidores de móveis planejados.<br>
 		Esta será a sua primeira experiência na compra de móveis planejados de forma <strong>totalmente on line</strong>.<br>
 		Os móveis que produzimos são vendidos de forma <strong>direta ao consumidor</strong>.<br>
-		Você terá toda a comodidade dos serviços de uma loja física <strong>sem sair de casa</strong>.</p>
+		Você terá toda a comodidade dos serviços de uma loja física <strong>sem sair de casa</strong>.<br><br>
 		<div id="section-quemsomos-interno">
 			<!-- <div class="container"> -->
 				<strong>Somos novo conceito no relacionamento</strong><br>
-				<strong>Com consumidores de móveis planejados.</p></strong>
+				<strong>Com consumidores de móveis planejados.</strong><br>
 			<!-- </div> -->				
 		</div>
 	</div>
 <!-- </div> -->	 
 
-
+	 
 	<div id="section-experiencia-clientes" class="section col-lg-12">
 		<img src="<?= $this->basePath('img/outros/experiencia_clientes.png'); ?>" class="img-responsive" alt="Experiência dos Clientes">
-	</div>  
-	
-	<!-- <div id="section-franquias-fisicas" class="section col-lg-12">
-		<div id="mapa"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:EjVSLiBGZWxpcGUgQ2FtYXLDo28sIENhcmF6aW5obyAtIFJTLCA5OTUwMC0wMDAsIEJyYXNpbA" allowfullscreen=""></iframe></div>
-	</div> -->
-	
-	<div class="container">
-		<div id="section-franquias-fisicas" class="section col-lg-12" style="width:100%;height:400px;">
-		
-			<script>
-			function myMap() {
-			/*var mapProp= {
-			    center:new google.maps.LatLng(-28.268400,-52.420126),
-			    zoom:18,
-			};
-			var map=new google.maps.Map(document.getElementById("section-franquias-fisicas"),mapProp);*/
-			
-				var mapCanvas = document.getElementById("section-franquias-fisicas");
-			  	var myCenter = new google.maps.LatLng(-28.268481,-52.420323); 
-			  	var mapOptions = {center: myCenter, zoom: 18/*, disableDefaultUI: true*/};
-			  	var map = new google.maps.Map(mapCanvas,mapOptions);
-			  	var marker = new google.maps.Marker({
-			    	position: myCenter,
-			    	animation: google.maps.Animation.BOUNCE
-			  	});
-			  	marker.setMap(map);
-		
-				  /*google.maps.event.addListener(marker,'click',function() {*/
-					    var infowindow = new google.maps.InfoWindow({
-					      content:"Faça-nos uma visita!"
-					    });
-					  infowindow.open(map,marker);
-					  /*});*/
-			}
-			</script>
-			
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt6Q5NYmV8Pi-LX1GRnffZP3anE4pu4ek&callback=myMap"></script>   
-		</div>
 	</div>
+	  
+	<form role="form">
+			<div id="section-franquias-fisicas" class="section col-lg-12">
+				<h2><strong>NÃO SOMOS APENAS DIGITAIS</strong></h2>
+				<h3>Confira a nossa loja em Passo Fundo</h3><br>
+				<div class="row">
+					<div class="col-sm-3">
+					<fieldset disabled>
+					   	<div id="section-franquias-fisicas-interno">
+					   		<label for="pais">País</label>				   	
+				   			<select class="form-control" id="pais">
+				   				<option value="">Selecione...</option>
+					   			<option value="1" selected>Brasil</option>
+					   			<option value="2">Argentina</option>
+					   		</select>
+					   		
+					   		<label for="estado">Estado</label>				   	
+				   			<select class="form-control" id="estado">
+				   				<option value="">Selecione...</option>
+					   			<option value="1" selected>Rio Grande do Sul</option>
+					   			<option value="2">Santa Catarina</option>
+					   			<option value="2">Paraná</option>
+					   		</select>
+	
+					   		<label for="cidade">Cidade</label>				   	
+				   			<select class="form-control" id="cidade">
+				   				<option value="">Selecione...</option>
+					   			<option value="1" selected>Passo Fundo</option>
+					   			<option value="2">Bento Gonçalves</option>
+					   			<option value="2">Caxias do Sul</option>
+					   		</select>
+					   		<br>
+					   		<h4>R. Morom, 3081 - Boqueirão, Passo Fundo - RS, 99010-035, Brasil</h4>
+					   	</div>
+					 </fieldset>
+					 </div>
+					 <div class="col-sm-9">
+						<div id="section-mapa-interno">
+							<script>
+							function myMap() {
+							/*var mapProp= {
+							    center:new google.maps.LatLng(-28.268400,-52.420126),
+							    zoom:18,
+							};
+							var map=new google.maps.Map(document.getElementById("section-franquias-fisicas"),mapProp);*/
+
+							var contentString = '<div id="contentString">' + 
+								'<p>Faça-nos uma visita!</p>' +
+								'<a href="https://www.google.com/maps/dir/Rua+Morom,+3081+-+Boqueir%C3%A3o,+Passo+Fundo+-+RS,+Brasil//@-28.2685421,-52.4225509,17z/data=!3m1!4b1!4m8!4m7!1m5!1m1!1s0x94e2bf61376873cd:0xaf96e89e6f68519a!2m2!1d-52.4203622!2d-28.2685421!1m0?hl=pt-BR" target="_blank">Loja Passo Fundo</a>' +								 
+								'</div>';
+								
+							var mapCanvas = document.getElementById("section-mapa-interno");
+						  	var myCenter = new google.maps.LatLng(-28.268499,-52.420467); 
+						  	var mapOptions = {center: myCenter, zoom: 18/*, disableDefaultUI: true*/};
+						  	var map = new google.maps.Map(mapCanvas,mapOptions);
+						  	var marker = new google.maps.Marker({
+						    	position: myCenter,
+						    	//animation: google.maps.Animation.BOUNCE
+						  	});
+						  	marker.setMap(map);
+					
+							  /*google.maps.event.addListener(marker,'click',function() {*/
+								    var infowindow = new google.maps.InfoWindow({
+								      content: contentString
+								    });
+								  infowindow.open(map,marker);
+								  /*});*/
+							}
+							</script>
+							 
+							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt6Q5NYmV8Pi-LX1GRnffZP3anE4pu4ek&callback=myMap"></script>
+						</div>   
+
+					 
+					 </div>
+				</div>
+			</div>
+	</form>
+
 	
 	
 	<div id="section-inicie-experiencia" class="section col-lg-12">
-		<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>" title="Inicie sua experiência TutteMob">
-			<img src="<?= $this->basePath('img/outros/inicie_experiencia.png'); ?>" class="img-responsive" alt="Inicie sua experiência">
-		</a>
-	</div>  
+			
+		<!-- 
+		<img src="<?= $this->basePath('img/outros/painel_iniciar_exp.png'); ?>" class="img-responsive" alt="Inicie sua experiência">
+	
+		<div id="section-inicie-experiencia-interno">
+			<h2><strong>Inicie sua experiência agora,</strong></h2>
+			<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>" title="Inicie sua experiência TutteMob">
+			<div id="section-inicie-experiencia-interno-caixa" class="linksSemEstilos">
+				<strong>SEM SAIR DE CASA!</strong>	
+			</div>
+			</a>
+			<br><br><br><br>
+			<h4><strong>Produtos e serviços de loja física, preço e comodidade de loja virtual.</strong><br></h4>			 
+		</div>
+		 -->
+		 
+		 <a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>" title="Inicie sua experiência TutteMob">
+			<img src="<?= $this->basePath('img/outros/painel_iniciar_exp.png'); ?>" class="img-responsive" alt="Inicie sua experiência">		 
+		 </a>
+	</div>
 	
 
 	<div id="section-footer" class="section col-lg-12">
