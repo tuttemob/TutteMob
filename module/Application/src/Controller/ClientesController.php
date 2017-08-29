@@ -832,4 +832,49 @@ class ClientesController extends ManagerController {
 
 		$this->jsonDispatch(array('data' => $success));
 	}
+
+	public function uploadArquivosBriefingsAction(){
+		$modelMedidasArquivos = $this->serviceManager->get('Model\BriefingMedidasArquivos');
+
+		$success = '';
+		if($this->getRequest()->isPost()){
+			$files = $this->getRequest()->getFiles()->toArray();
+			
+			// upload arquivos
+			if(isset($files['briefing'])){
+				$totalArquivos = 0;
+				foreach($files['briefing'] as $tp => $briefings){
+					foreach($briefings as $idbriefing => $arquivos){
+						foreach($arquivos['arquivos'] as $arquivo){
+							// upload de arquivo enviado
+							$extArquivo = preg_replace('/(.*)\./', '', $arquivo['name']);
+							
+							if(preg_match('/(jpg|png|jpeg|pdf)$/', $extArquivo)){
+								$nomeArquivo = $idbriefing . '_' . ((int) time()) . '.'. $extArquivo;
+								
+								// move o arquivo para a pasta
+								move_uploaded_file($arquivo['tmp_name'], './public/upload/briefing-medidas/'.$nomeArquivo);
+								
+								$modelMedidasArquivos->cria(array(
+									'tp' 		 => $tp,
+									'idbriefing' => $idbriefing,
+									'arquivo' 	 => $nomeArquivo
+								));
+
+								$totalArquivos++;
+							}
+						}
+					}
+				}
+
+				if($totalArquivos){
+					$success = 'Os arquivos foram enviados com sucesso.';
+				}else{
+					$success = 'Nenhum arquivo foi enviado.';
+				}
+			}
+		}
+
+		$this->jsonDispatch(array('data' => $success, 'files' => $totalArquivos));
+	}
 }

@@ -222,6 +222,230 @@
 	</div>
 </div>
 
+<div id="briefing-arquivos1" class="briefing-complemento-step">
+	<div class="col-1 col-xs-12">
+		Você selecionou a opção:<br />
+		<strong>Enviarei os arquivos das medidas e fotos.</strong>
+	</div>
+	
+	<div class="col-2 col-xs-12">
+		<div class="col-xs-12" style="text-align: center;">
+			Por favor, insira o nome do ambiente em cada arquivo a ser enviado. Após o anexo do arquivo,
+			utilize o botão [+] para adicionar o próximo.
+		</div>
+		
+		<form name="formArquivosBriefings" id="formArquivosBriefings" target="iframeArquivosBriefings"
+			method="post" class="form-horizontal" enctype="multipart/form-data"
+				action="<?php echo $this->url('clientes', array('action' => 'uploadArquivosBriefings')); ?>">
+
+		<?php foreach($this->listaCozinha as $item): ?>	
+			<div class="col-md-12">
+				<div class="form-group col-xs-12">
+					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
+					
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+							value="<?= $item->descricao; ?>" readonly="readonly" />
+					</div>
+				</div>
+
+				<div class="form-group col-xs-12">
+					<div class="col-xs-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
+					</div>
+					<div class="col-xs-3">
+						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
+						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
+
+						<span class="adicionar-arquivo glyphicon glyphicon-plus pull-right"></span>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+
+		<?php foreach($this->listaAreaServico as $item): ?>	
+			<div class="col-md-12">
+				<div class="form-group col-xs-12">
+					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
+					
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+							value="<?= $item->bas_descricao; ?>" readonly="readonly" />
+					</div>
+				</div>
+
+				<div class="form-group col-xs-12">
+					<div class="col-xs-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
+					</div>
+					<div class="col-xs-3">
+						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
+						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
+
+						<span class="adicionar-arquivo glyphicon glyphicon-plus pull-right"></span>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+
+		<?php foreach($this->listaDormitorioCasal as $item): ?>	
+			<div class="col-md-12">
+				<div class="form-group col-xs-12">
+					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
+					
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+							value="<?= $item->bdc_descricao; ?>" readonly="readonly" />
+					</div>
+				</div>
+
+				<div class="form-group col-xs-12">
+					<div class="col-xs-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
+					</div>
+					<div class="col-xs-3">
+						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
+						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
+
+						<span class="adicionar-arquivo glyphicon glyphicon-plus pull-right"></span>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+
+		<?php foreach($this->listaDormitorioSolteiro as $item): ?>	
+			<div class="col-md-12">
+				<div class="form-group col-xs-12">
+					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
+					
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+							value="<?= $item->bds_descricao; ?>" readonly="readonly" />
+					</div>
+				</div>
+
+				<div class="form-group col-xs-12">
+					<div class="col-xs-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
+					</div>
+					<div class="col-xs-3">
+						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
+						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
+
+						<span class="adicionar-arquivo glyphicon glyphicon-plus pull-right"></span>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+
+		<?php foreach($this->listaCloset as $item): ?>	
+			<div class="col-md-12">
+				<div class="form-group col-xs-12">
+					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
+					
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+							value="<?= $item->bcl_descricao; ?>" readonly="readonly" />
+					</div>
+				</div>
+
+				<div class="form-group col-xs-12">
+					<div class="col-xs-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
+					</div>
+					<div class="col-xs-3">
+						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
+						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
+
+						<span class="adicionar-arquivo glyphicon glyphicon-plus pull-right"></span>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+
+		<?php foreach($this->listaBanheiro as $item): ?>	
+			<div class="col-md-12">
+				<div class="form-group col-xs-12">
+					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
+					
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+							value="<?= $item->ban_descricao; ?>" readonly="readonly" />
+					</div>
+				</div>
+
+				<div class="form-group col-xs-12">
+					<div class="col-xs-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
+					</div>
+					<div class="col-xs-3">
+						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
+						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
+
+						<span class="adicionar-arquivo glyphicon glyphicon-plus pull-right"></span>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+
+		<?php foreach($this->listaHomeTheater as $item): ?>	
+			<div class="col-md-12">
+				<div class="form-group col-xs-12">
+					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
+					
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+							value="<?= $item->bht_descricao; ?>" readonly="readonly" />
+					</div>
+				</div>
+
+				<div class="form-group col-xs-12">
+					<div class="col-xs-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
+					</div>
+					<div class="col-xs-3">
+						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
+						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
+
+						<span class="adicionar-arquivo glyphicon glyphicon-plus pull-right"></span>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+
+		<?php foreach($this->listaHomeOffice as $item): ?>	
+			<div class="col-md-12">
+				<div class="form-group col-xs-12">
+					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
+					
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+							value="<?= $item->bho_descricao; ?>" readonly="readonly" />
+					</div>
+				</div>
+
+				<div class="form-group col-xs-12">
+					<div class="col-xs-9">
+						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
+					</div>
+					<div class="col-xs-3">
+						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
+						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
+
+						<span class="adicionar-arquivo glyphicon glyphicon-plus pull-right"></span>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+		</form>
+	</div>
+	
+	<div class="col-3 col-xs-12">
+		<button class="btn btn-primary btn-voltar pull-left">VOLTAR</button>
+		<button class="btn btn-primary btn-avancar pull-right">AVANÇAR</button>
+	</div>
+</div>
+
 <div id="briefing-videos" class="briefing-complemento-step">
 	<div class="col-1 col-xs-12">
 		Você selecionou a opção: <br />
@@ -298,6 +522,26 @@
 	</div>
 </div>
 
+<div id="briefing-obrigado-arquivos" class="briefing-complemento-step">
+	<div class="col-1 col-xs-12">
+		Obrigado! <3
+	</div>
+	
+	<div class="col-2 col-xs-12">
+		<div class="col-xs-12" style="margin-top: 30px;">
+			Agora temos as informações para poder fazer<br/>
+			<strong>o projeto que se adapta ao seu desejo.</strong>
+		</div>
+	</div>
+	
+	<div class="col-3 col-xs-12">
+		<button class="btn btn-primary btn-fechar pull-right">FECHAR</button>
+	</div>
+</div>
+
+<!-- iframeArquivosBriefings -->
+<iframe name="iframeArquivosBriefings" id="iframeArquivosBriefings" class="hide"></iframe>
+
 <script type="text/javascript">
 $(function(){
 	var modalCadastroCallback = null;
@@ -371,6 +615,46 @@ $(function(){
 			);
 		}
 		return false;
+	});
+
+	$('#briefing-arquivos1 .btn-avancar').click(function(e){
+		$('#formArquivosBriefings').submit();	
+	});
+
+	$('#iframeArquivosBriefings').on('load', function (e) {
+		var response = JSON.parse($(this).contents().find('body').get(0).innerHTML);
+		// caso nenhum arquivo tenha sido enviado
+		// ou ocorreu um erro
+		if(response.files == 0){
+			alert(response.data);
+		}else{
+			$('.briefing-complemento-step input:checkbox').prop('checked', false);
+			$('.briefing-complemento-step').hide();
+			$('#briefing-obrigado-arquivos').fadeIn();
+		}
+	});
+
+	$('body').on('click', '.pesquisar-arquivo', function(){
+		$(this).parent().find('input:file').click();
+	});
+	$('body').on('change', '#formArquivosBriefings .form-group input:file', function(){
+		var arquivoPath = $(this).val();
+			arquivoPath = arquivoPath.replace(/^.*(\/|\\)/, "");
+			
+			$(this).parents('.form-group').find('input:text').val(arquivoPath);
+	});
+	$('body').on('click', '.adicionar-arquivo', function(){
+		var clonaArquivo = $(this).parents('.form-group').clone();
+		// esconde botao add
+		$(this).parents('.form-group').find('.adicionar-arquivo').hide();
+		
+		// limpa campos
+		$(clonaArquivo).find('input:file').val('');
+		$(clonaArquivo).find('input:text').val('');
+		$(clonaArquivo).find('.adicionar-arquivo').show();
+
+		// clona input
+		$(this).parents('.col-md-12').append(clonaArquivo);
 	});
 });
 </script>
