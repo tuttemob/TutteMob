@@ -294,6 +294,7 @@ $(function(){
 	$('#btn-confirmar-ambientes').on('click', function(){
 		$('.briefing-complemento-step').hide();
 		if(!$('#briefing-complemento').is(':visible')){
+			$('#background-frames').fadeIn();
 			$('#briefing-complemento').fadeIn();
 		}
 	});
@@ -361,7 +362,8 @@ $(function(){
 		}
 	});*/
 	$('.btn-fechar').click(function(){
-		$('.briefing-complemento-step').hide();
+		$('#background-frames').fadeOut();
+		$('.briefing-complemento-step').fadeOut();
 	});
 	
 	$('#concluirCozinha').click(function(){
