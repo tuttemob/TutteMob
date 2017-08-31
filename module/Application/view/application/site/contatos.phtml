@@ -1,0 +1,71 @@
+<div id="section-contatos" class="section col-lg-12">
+	<div class="col-md-12">
+		<div class="contato-title">
+			<h2><p>Está com dúvidas e quer saber mais sobre os serviços inovadores</p>
+			<p>que oferecemos? Entre em contato conosco!</p></h2>
+		</div>
+	</div>
+	<div class="corpo">
+		<div class="col-md-6">
+			<div class="col-xs-3">
+                <a href="#section-1" title="Facebook">
+                  <img src="<?= $this->basePath('img/layout/facebook.png') ?>" class="img-responsive" />
+                </a>
+     		</div>
+	 		<div class="col-xs-3">
+                <a href="#section-1" title="Twitter">
+                  <img src="<?= $this->basePath('img/layout/twitter.png') ?>" class="img-responsive" />
+                </a>
+            </div>
+			<div class="col-xs-3">
+                <a href="#section-1" title="Youtube">
+                  <img src="<?= $this->basePath('img/layout/youtube2.png') ?>" class="img-responsive" />
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#section-1" title="Instagram">
+                  <img src="<?= $this->basePath('img/layout/instagram2.png') ?>" class="img-responsive" />
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#section-1" title="Endereço">
+                  <img src="<?= $this->basePath('img/layout/Icone1.png') ?>" class="img-responsive" />
+                </a>
+            </div>
+            <div class="col-xs-3">
+               <img src="<?= $this->basePath('img/layout/seta-conteudo.png'); ?>" class="img-responsive" />
+            </div>
+		</div>
+		
+		<div class="col-md-6">
+			<form id="formContato" method="post" data-toggle="validator">
+				<input type="hidden" name="acao" value="contato" />
+				
+				<div class="form-group">
+	            	<label for="nome">Nome:</label>
+					<input type="text" class="form-control" name="nome" placeholder="Nome completo" required>
+				</div>
+						
+				<div class="form-group">
+	            	<label for="telefone">Telefone:</label>
+				   	<input type="text" class="form-control" name="telefone" placeholder="Telefone" required>
+				</div>
+				
+				<div class="form-group">
+					<label for="email">E-mail:</label>
+					<input type="email" class="form-control" name="email" placeholder="E-mail" required>
+				</div>
+					
+				<div class="form-group">
+					<label for="mensagem">Mensagem:</label>
+					<textarea class="form-control" name="mensagem" placeholder="Mensagem" required></textarea>
+				</div>
+					
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary btn-block">Enviar</button>
+	            </div>
+				
+			</form>		
+		</div>
+	</div>
+</div>

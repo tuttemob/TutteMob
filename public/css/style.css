@@ -78,7 +78,8 @@ body, html {
 }
 #section-ambientes div.col-md-5 h1 {
 	font-size: 26px;
-	font-weight: 600;
+	font-weight: 900;
+	letter-spacing:10px;
 }
 #section-ambientes div.col-md-5 p {
 	font-size: 16px;
@@ -89,6 +90,59 @@ body, html {
 #section-ambientes div.col-md-7 div.col-xs-4 {
 	margin: 20px 0px;
 }
+
+/* Contatos */
+#section-contatos {
+  padding: 0px;
+}
+#section-contatos .contato-title {
+	text-align: center;
+	padding-top: 0px;
+	padding-bottom: 10px;
+}
+#section-contatos .contato-title h2 {
+	font-weight: 900;
+}
+#section-contatos .corpo {
+	padding-top: 0px;
+}
+#section-contatos div.col-xs-3 {
+	text-align: left;
+}
+#section-contatos div.col-xs-3 img {
+	max-width: 120px;
+}
+#section-contatos div.col-xs-9 {
+	padding-top: 30px;
+}
+#section-contatos .form-group {
+    margin-bottom: 5px;
+}
+#section-contatos #formContato label {
+	margin-top: 10px;
+	font-size: 16px;
+	font-weight: 400;
+}
+#section-contatos #formContato input {
+	border: none;
+	box-shadow: none;
+	border: 2px solid;
+}
+#section-contatos #formContato textarea {
+    /*width: 400px;*/
+    /*height: 120px;*/
+    /*line-height: 500px;*/
+    /*max-width: 400px;*/
+    /*height: 5em;*/
+    /* Para permitir aos usuários redimensionarem qualquer textarea verticalmente. Ele não funciona em todos os browsers */
+    /*resize: vertical;*/
+}
+#section-contatos #formContato button {
+	margin-top: 30px;
+	padding: 18px 0px;
+	font-size: 20px;
+}
+
 
 /* Login / Cadastro */
 #section-login {

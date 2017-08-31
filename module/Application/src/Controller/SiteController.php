@@ -20,6 +20,11 @@ class SiteController extends ManagerController {
 		return new ViewModel(array());
 	}
 	
+	public function contatosAction()
+	{
+		return new ViewModel(array());
+	}
+	
 	/**
 	 * Views lincadas ao Ambientes
 	 * @return \Zend\View\Model\ViewModel
