@@ -1,5 +1,6 @@
 <div id="section-login" class="section col-lg-12">
 	
+	<!-- 
 	<div class="col-md-12">
 		<?php if($this->success):?>
 			<div class="alert alert-success" role="alert"><?= $this->success; ?></div>
@@ -9,6 +10,7 @@
 	    	<div class="alert alert-danger" role="alert"><?= $this->error; ?></div>
 	    <?php endif;?>
     </div>
+    -->
            
 	<div class="col-md-8">
 		<div class="col-xs-3">
@@ -43,6 +45,14 @@
 				<input type="password" class="form-control" name="senha" placeholder="Senha" required>
 				<div class="help-block with-errors"></div>
 			</div>
+			
+			<?php if($this->success):?>
+				<div class="alert alert-success" role="alert"><?= $this->success; ?></div>
+		    <?php endif;?>
+		            			
+		    <?php if($this->error):?>
+		    	<div class="alert alert-danger" role="alert"><?= $this->error; ?></div>
+		    <?php endif;?>
 			
 			<div class="form-group">
 				<button type="submit" class="btn btn-primary btn-block">Entrar</button>

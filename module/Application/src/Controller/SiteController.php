@@ -67,7 +67,13 @@ class SiteController extends ManagerController {
 		
 		if($this->getRequest()->isPost()){
 			$data = $this->getRequest()->getPost()->toArray();
-				
+			
+			session_start();
+			$_SESSION[nome]=$data[nome];
+			$_SESSION[email]=$data[email];
+			$_SESSION[senha]=$data[senha];
+			$_SESSION[senharepeat]=$data[senharepeat];
+			
 			if(isset($data['acao']) && $data['acao'] == 'cadastrar'){
 				try{
 					unset($data['acao']);
@@ -77,40 +83,42 @@ class SiteController extends ManagerController {
 						
 					if($form->isValid()){
 						$data = $form->getData(FormInterface::VALUES_AS_ARRAY);
-		
-						// verifica a existencia do email
-						$pessoa = reset($modelPessoa->lista(array('email' => $data['email'])));
-		
-						if($pessoa){
-							$error = 'O e-mail informado já possui cadastro.';
+						
+						if(strcmp($data['senha'], $data['senharepeat']) != 0) {
+							$error = 'As senhas não conferem.';
 						}
 						else {
-
-							//echo '<script>console.log("Chegou aqui")</script>';
-
-							// adiciona os campos extras
-							$data['datacriacao'] = new SqlExpression("NOW()");
-							$data['idpapel']	 = 1;
-								
-							// criptografa a senha
-							$data['senha'] = md5($data['senha']);
-								
-							$data['ctoken'] = md5(time());
-								
-							$modelPessoa->cria($data);
-								
-							// envia email de notificacao
-							$macros = array(
-								'ctoken' => $data['ctoken']
-							);
-								
-							$template = new Template('template.CadastroConfirmacao.phtml', $macros);
-							$email    = new Email($template);
-							$email->setSubject('Confirmação de cadastro');
-							$email->addTo($data['email'], $data['nome']);
-							$email->send();
-								
-							$success = 'Seu cadastro foi concluído. Um e-mail de confirmação foi enviado para você.';
+							// verifica a existencia do email
+							$pessoa = reset($modelPessoa->lista(array('email' => $data['email'])));
+			
+							if($pessoa){
+								$error = 'O e-mail informado já possui cadastro.';
+							}
+							else {
+								// adiciona os campos extras
+								$data['datacriacao'] = new SqlExpression("NOW()");
+								$data['idpapel']	 = 1;
+									
+								// criptografa a senha
+								$data['senha'] = md5($data['senha']);
+									
+								$data['ctoken'] = md5(time());
+									
+								$modelPessoa->cria($data);
+									
+								// envia email de notificacao
+								$macros = array(
+									'ctoken' => $data['ctoken']
+								);
+									
+								$template = new Template('template.CadastroConfirmacao.phtml', $macros);
+								$email    = new Email($template);
+								$email->setSubject('Confirmação de cadastro');
+								$email->addTo($data['email'], $data['nome']);
+								$email->send();
+									
+								$success = 'Seu cadastro foi concluído. Um e-mail de confirmação foi enviado para você.';
+							}
 						}
 					}else{
 						$error = 'Preencha corretamente os campos do formulário.';

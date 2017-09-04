@@ -14,7 +14,7 @@ class Cadastro extends Form
 				array('name' => 'StringTrim')
 			)
 		));
-				$filter->add(array(			'name' => 'email',			'required' => true,			'filters' => array(				array('name' => 'StripTags'),				array('name' => 'StringTrim')			),			'validators' => array(				array('name' => 'EmailAddress'),			)		));		$filter->add(array(			'name' => 'senha',			'required' => true,			'filters' => array(				array('name' => 'StripTags'),				array('name' => 'StringTrim')			)		));				$filter->add(array(			'name' => 'fone_cel',			'required' => false,			'filters' => array(				array('name' => 'StripTags'),				array('name' => 'StringTrim')			)		));		
+				$filter->add(array(			'name' => 'email',			'required' => true,			'filters' => array(				array('name' => 'StripTags'),				array('name' => 'StringTrim')			),			'validators' => array(				array('name' => 'EmailAddress'),			)		));		$filter->add(array(			'name' => 'senha',			'required' => true,			'filters' => array(				array('name' => 'StripTags'),				array('name' => 'StringTrim')			)		));				$filter->add(array(				'name' => 'senharepeat',				'required' => true,				'filters' => array(						array('name' => 'StripTags'),						array('name' => 'StringTrim')				)		));				$filter->add(array(			'name' => 'fone_cel',			'required' => false,			'filters' => array(				array('name' => 'StripTags'),				array('name' => 'StringTrim')			)		));		
 		$this->setInputFilter($filter);
 	}
 }

@@ -148,6 +148,9 @@ body, html {
 #section-login {
   padding: 0px;
 }
+#section-login .form-group {
+    margin-bottom: 0px;
+}
 #section-login div.col-md-8 {
 	padding: 0px;
 	padding-top: 60px;
