@@ -106,14 +106,10 @@ body, html {
 #section-contatos .corpo {
 	padding-top: 0px;
 }
-#section-contatos div.col-xs-3 {
-	text-align: left;
-}
-#section-contatos div.col-xs-3 img {
-	max-width: 120px;
-}
-#section-contatos div.col-xs-9 {
-	padding-top: 30px;
+#section-contatos #col-direita .col-xs-4,
+#section-contatos #col-direita .col-xs-8 {
+  padding: 0px 5px;
+  padding-bottom: 10px;
 }
 #section-contatos .form-group {
     margin-bottom: 5px;
