@@ -830,5 +830,14 @@ $(function(){
 
 		return false;
 	};
+
+	<?php echo (count($this->listaCozinha))? "$('#cmn-toggle-cozinha').click();": ''; ?>
+	<?php echo (count($this->listaAreaServico))? "$('#cmn-toggle-areaServico').click();": ''; ?>
+	<?php echo (count($this->listaDormitorioCasal))? "$('#cmn-toggle-dormitoriocasal').click();": ''; ?>
+	<?php echo (count($this->listaDormitorioSolteiro))? "$('#cmn-toggle-dormitoriosolteiro').click();": ''; ?>
+	<?php echo (count($this->listaCloset))? "$('#cmn-toggle-closet').click();": ''; ?>
+	<?php echo (count($this->listaBanheiro))? "$('#cmn-toggle-banheiro').click();": ''; ?>
+	<?php echo (count($this->listaHomeTheater))? "$('#cmn-toggle-hometheater').click();": ''; ?>
+	<?php echo (count($this->listaHomeOffice))? "$('#cmn-toggle-homeoffice').click();": ''; ?>
 });
 </script>

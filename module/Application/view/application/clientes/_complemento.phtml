@@ -546,6 +546,16 @@
 <div id="btn-fechar-youtube"><button class="btn btn-primary pull-right">FECHAR VIDÊO</button></div>
 <iframe name="iframeVideosYoutube" id="iframeVideosYoutube" frameborder="0" allowfullscreen></iframe>
 
+
+<!-- datepicker -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" 
+	integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  		crossorigin="anonymous"></script>
+<!-- timepicker -->
+<link rel="stylesheet" href="<?php echo $this->basePath('lib/timepicker/jquery.timepicker.css'); ?>" />
+<script src="<?php echo $this->basePath('lib/timepicker/jquery.timepicker.min.js'); ?>"></script>
+
 <script type="text/javascript">
 $(function(){
 	var modalCadastroCallback = null;
@@ -682,6 +692,55 @@ $(function(){
 
 		// clona input
 		$(this).parents('.col-md-12').append(clonaArquivo);
+	});
+
+	// mascaras medicao vendedor
+	$('input[name="dia"]').datepicker({
+        dateFormat: 'dd/mm/yy',
+        dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
+        dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+        dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+        monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+        monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
+    });
+	$('input[name="dia"]').mask('99/99/9999');
+	$('input[name="dia"]').blur(function(){
+		if(/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/.test($(this).val()) == false){
+			$(this).val('');	
+		}
+	});
+	$('input[name="horas"]').timepicker({ 'timeFormat': 'H:i' });
+	$('input[name="horas"]').mask('99:99');
+	$('input[name="horas"]').blur(function(){
+		if(/^([0-9]{2})\:([0-9]{2})$/.test($(this).val()) == false){
+			$(this).val('');	
+		}
+	});
+
+	// mascaras complemento cadastro
+	$('input[name="cpf"]').mask('999.999.999-99');
+	$('input[name="cpf"]').blur(function(){
+		if(/^([0-9]{3})\.([0-9]{3})\.([0-9]{3})\-([0-9]{2})$/.test($(this).val()) == false){
+			$(this).val('');	
+		}
+	});
+	$('input[name="datanascimento"]').mask('99/99/9999');
+	$('input[name="datanascimento"]').blur(function(){
+		if(/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/.test($(this).val()) == false){
+			$(this).val('');	
+		}
+	});
+	$('input[name="cep"]').mask('99999-999');
+	$('input[name="cep"]').blur(function(){
+		if(/^([0-9]{5})\-([0-9]{3})$/.test($(this).val()) == false){
+			$(this).val('');	
+		}
+	});
+	$('input[name="fone_com"]').mask('(99) 99999-9999');
+	$('input[name="fone_com"]').blur(function(){
+		if(/^\([0-9]{2}\) ([0-9]{5})\-([0-9]{3,4})$/.test($(this).val()) == false){
+			$(this).val('');	
+		}
 	});
 });
 </script>
