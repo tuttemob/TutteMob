@@ -503,34 +503,35 @@ input.cmn-toggle-round:checked + label:after {
 }
 
 #section-inicie-experiencia {
-  /*margin: 0 auto;*/
   text-align: center;
   color: #FFFFFF;
   padding: 0px;
-  /*border: 5px #000 solid*/
 }
 
 #section-inicie-experiencia-interno {
   position:	absolute;
   margin: 0;
-  
-  position:	absolute;
-  /*right:		20px;*/
-  /*POSICIONANDO NO TOPO*/
-  /*top:		20px;*/  
-  /*margin: 0;*/
-  /*left: 36%;*/
-  /*margin-left: -500px;*/
-  
-  /*top: 0; bottom: 0;*/
   left: 0; right: 0;
   margin: auto;
-  top: 30%;
+  top: 25%;
 }
 
+#section-inicie-experiencia-interno h2 {
+  font-size: 40px
+}
+
+#section-inicie-experiencia-interno a {
+  display: grid;
+  width: 80%;
+  margin: 0 auto;
+  border: 3px #FFF solid;
+  padding: 15px 30px;
+  font-size: 60px;
+  color: #FFF;
+}
 
 #section-inicie-experiencia-interno h4 {
-  font-size: 26
+  font-size: 30px
 }
 
 #section-inicie-experiencia-interno-caixa {
