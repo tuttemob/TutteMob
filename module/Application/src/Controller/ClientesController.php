@@ -1,6 +1,7 @@
 <?php
 namespace Application\Controller;
 
+use Application\Api\Imagem\BrImageRed;
 use Zend\View\Model\ViewModel;
 use Zend\Paginator\Paginator;
 use Zend\Paginator\Adapter\ArrayAdapter;
@@ -748,15 +749,15 @@ class ClientesController extends ManagerController {
 	public function completaCadastroAction(){
 		$modelPessoa = $this->serviceManager->get('Model\Pessoa');
 		
-		$success = false;
+		$retorno = false;
 		if($this->getRequest()->isPost()){
 			$data = $this->getRequest()->getPost()->toArray();
 		
 			if($data['acao'] == 'checa-cadastro'){
 				if($this->usuario->datacomplemento != ''){
-					$success = true;
+					$retorno = true;
 				} else {
-					$success = array(
+					$retorno = array(
 						'nome' => $this->usuario->nome,
 						'email' => $this->usuario->email,							
 						'fone_cel' => $this->usuario->fone_cel							
@@ -779,11 +780,32 @@ class ClientesController extends ManagerController {
 					}
 					// apresenta mensagem de campos em branco, menos para fone_com e obs
 					else if($coluna != 'fone_com' && $coluna != 'obs'){
-						$success = 'Há campos em branco, preencha todos os campos.';
+						$retorno = 'Há campos em branco, preencha todos os campos.';
 					}
 				}
 				
-				if(!$success){
+				// upload de arquivo enviado
+				if(isset($_FILES['avatar']) && $_FILES['avatar']['name'] != ''){
+					$extArquivo = preg_replace('/(.*)\./', '', $_FILES['avatar']['name']);
+					
+					if(preg_match('/(jpg|bmp|png|gif|jpeg)$/', $extArquivo)){
+						$nomeArquivo = ((int) time()) . '.'. $extArquivo;
+						
+						// move o arquivo para a pasta
+						move_uploaded_file($_FILES['avatar']['tmp_name'], './public/upload/avatar/'.$nomeArquivo);
+						
+						// redimensiona a imagem
+						$brImageRed = new BrImageRed('./public/upload/avatar/'.$nomeArquivo);
+						$brImageRed->setAlvo('altura', 150);
+						$brImageRed->newImagem();
+
+						$arrayValues['avatar'] = $nomeArquivo;
+					}else{
+						$retorno = 'O arquivo enviado nao é uma imagem. Selecione outro arquivo.';
+					}
+				}
+
+				if(!$retorno){
 					try{
 						// ajusta datanascimento
 						$arrayValues['datanascimento'] = implode('-', array_reverse(explode('/', $arrayValues['datanascimento'])));
@@ -792,17 +814,17 @@ class ClientesController extends ManagerController {
 						$arrayValues['datacomplemento'] = date('Y-m-d H:i:s');
 						
 						$modelPessoa->update($arrayValues, array('idpessoa' => $this->usuario->idpessoa));
-						$success = true;
+						$retorno = true;
 					}
 					catch (\Exception $e){
 						trigger_error($e->getMessage());
-						$success = 'Ocorreu um erro ao atualizar, tente novamente mais tarde.';
+						$retorno = 'Ocorreu um erro ao atualizar, tente novamente mais tarde.';
 					}
 				}
 			}
 		}
 		
-		$this->jsonDispatch(array('data' => $success));
+		$this->jsonDispatch(array('data' => $retorno));
 	}
 
 	public function agendaMedicaoAction(){

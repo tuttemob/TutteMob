@@ -54,9 +54,19 @@
 	
 	<div class="col-2 col-xs-12">
 		<form name="modalCadastroForm" id="modalCadastroForm" data-toggle="validator"
-			class="form-briefings form-horizontal" method="post">
+			class="form-briefings form-horizontal" method="post" target="iframeCadastroForm" enctype="multipart/form-data">
 			<input type="hidden" name="acao" value="completa-cadastro" />
 			
+			<div class="form-group col-xs-12 box-imagem">
+				<label for="avatar" class="col-sm-4">Foto de perfil:</label>
+				
+				<div class="col-sm-8">
+					<input type="file" class="form-control" name="avatar" />
+					
+					<div class="col-xs-10"></div>
+				</div>
+			</div>
+
 			<div class="form-group col-xs-12">
 				<label for="nome" class="col-sm-4">Nome completo:</label>
 				
@@ -539,6 +549,9 @@
 	</div>
 </div>
 
+<!-- iframeCadastroForm -->
+<iframe name="iframeCadastroForm" id="iframeCadastroForm" class="hide"></iframe>
+
 <!-- iframeArquivosBriefings -->
 <iframe name="iframeArquivosBriefings" id="iframeArquivosBriefings" class="hide"></iframe>
 
@@ -588,21 +601,19 @@ $(function(){
 	$('#modalCadastroForm').validator().on('submit', function (e) {
 		if (e.isDefaultPrevented()) {
 			// handle the invalid form...
+			return false;
 		} else {
-			$.post(
-				'<?=$this->url('clientes', array('action' => 'completaCadastro'));?>',
-				$(this).serialize(),
-				function(resp){
-					if(resp.data == true){
-						modalCadastroCallback();
-					}else{
-						alert(resp.data);
-					}
-				},
-				'json'
-			);
+			$(this).attr('action', '<?=$this->url('clientes', array('action' => 'completaCadastro'));?>');
+			return true;
 		}
-		return false;
+	});
+	$('#iframeCadastroForm').on('load', function (e) {
+		var response = JSON.parse($(this).contents().find('body').get(0).innerHTML);
+		if(response.data == true){
+			modalCadastroCallback();
+		}else{
+			alert(response.data);
+		}
 	});
 
 	$('#briefing-vendedor .btn-avancar').click(function(e){
