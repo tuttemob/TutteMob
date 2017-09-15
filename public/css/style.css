@@ -143,7 +143,8 @@ body, html {
     margin-bottom: 5px;
 }
 #section-contatos #formContato label {
-	margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 0px;
 	font-size: 16px;
 	font-weight: 400;
 }
@@ -153,13 +154,10 @@ body, html {
 	border: 2px solid;
 }
 #section-contatos #formContato textarea {
-    /*width: 400px;*/
-    /*height: 120px;*/
-    /*line-height: 500px;*/
-    /*max-width: 400px;*/
-    /*height: 5em;*/
-    /* Para permitir aos usuários redimensionarem qualquer textarea verticalmente. Ele não funciona em todos os browsers */
-    /*resize: vertical;*/
+  border: none;
+	box-shadow: none;
+  border: 2px solid;
+  height: 100px;  
 }
 #section-contatos #formContato button {
 	margin-top: 30px;
