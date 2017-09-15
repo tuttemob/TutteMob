@@ -50,7 +50,7 @@ return [
                 'options' => [
                     'route'    => '/login/[:action[/:ctoken]]',
                 	'constraints' => array(
-                		'action' => '[a-zA-Z]*',
+                		'action' => '[a-zA-Z\-]*',
                 		'ctoken' => '.*'
                 	),
                 	'defaults' => [

@@ -1,0 +1,29 @@
+<div id="section-esqueceu-senha" class="section col-lg-12">
+    <div class="container">
+        <div class="row">
+            <h2>Esqueci minha senha.</h2>
+            <p>Informe o seu e-mail de login para receber uma nova senha:</p>
+            
+            <form action="<?= $this->url('login', array('action' => 'esqueceu-senha')); ?>"     
+                method="post" data-toggle="validator">
+                
+                <div class="form-group col-md-6">
+                    <input type="email" class="form-control" name="email" placeholder="E-mail" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>   
+        </div>
+        <div class="row">
+            <?php if($this->success):?>
+                <div class="alert alert-success" role="alert"><?= $this->success; ?></div>
+            <?php endif;?>
+                        
+            <?php if($this->error):?>
+                <div class="alert alert-danger" role="alert"><?= $this->error; ?></div>
+            <?php endif;?>   
+        </div>
+    </div>
+</div>
