@@ -33,5 +33,6 @@ return array(
     'Zend\\Authentication\\' => array($vendorDir . '/zendframework/zend-authentication/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
+    'Facebook\\' => array($vendorDir . '/facebook/graph-sdk/src/Facebook'),
     'Application\\' => array($baseDir . '/module/Application/src'),
 );

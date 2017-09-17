@@ -8,6 +8,7 @@ class ComposerStaticInit0d3f6f35c8273e946a5d6db536201262
 {
     public static $files = array (
         '34901568a1e26d13dd475cb2c85e0284' => __DIR__ . '/..' . '/zendframework/zend-form/autoload/formElementManagerPolyfill.php',
+        'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -46,6 +47,10 @@ class ComposerStaticInit0d3f6f35c8273e946a5d6db536201262
         'I' => 
         array (
             'Interop\\Container\\' => 18,
+        ),
+        'F' => 
+        array (
+            'Facebook\\' => 9,
         ),
         'A' => 
         array (
@@ -161,6 +166,10 @@ class ComposerStaticInit0d3f6f35c8273e946a5d6db536201262
         'Interop\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
+        ),
+        'Facebook\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
         ),
         'Application\\' => 
         array (
