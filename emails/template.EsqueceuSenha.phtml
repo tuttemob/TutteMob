@@ -1,10 +1,8 @@
 <html>
 <body>
-	<h2>Uma nova senha de acesso foi gerada:</h2>
+	<h2>Olá <?= $this->macros['nome']; ?>,</h2>
 	<p>
-		<b>Usuario:</b> <?= $this->macros['nome']; ?> <br />
-		<b>E-mail:</b> <?= $this->macros['email']; ?> <br />
-		<b>Nova senha de acesso:</b> <?= $this->macros['senha']; ?> <br />
+		Para cadastrar uma nova senha <a href="http://localhost/tuttemob/public/login/cadastrar-senha/senhaToken=<?= $this->macros['senhaToken']; ?>">clique aqui</a>.
 	</p>
 </body>
 </html>

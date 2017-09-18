@@ -177,24 +177,24 @@ class LoginController extends ManagerController {
 			
 			if($pessoa){
 				// gera uma nova senha
-				$novaSenha = substr(base64_encode(date('siHdmY')),0, 8);
+				$senhaToken = md5($pessoa->idpessoa . date('siHdmY'));
 
-				$data = array( 'senha' => md5($novaSenha) );
+				$dataUpdate = array( 'senhatoken' => $senhaToken );
 				
-				$modelPessoa->update($data, array('idpessoa' => $pessoa->idpessoa));
+				$modelPessoa->update($dataUpdate, array('idpessoa' => $pessoa->idpessoa));
 				
 				$macros = array(
 					'email' => $pessoa->email, 
 					'nome'  => $pessoa->nome,
-					'senha' => $novaSenha
+					'senhaToken' => $senhaToken
 				);
 				$template = new Template('template.EsqueceuSenha.phtml', $macros);
 				$email    = new Email($template);
-				$email->setSubject('Uma nova senha foi gerada');
+				$email->setSubject('Cadastrar nova senha');
 				$email->addTo($pessoa->email, $pessoa->nome);
 				$email->send();
 
-				$success = "Uma nova senha foi enviada para o e-mail informado.";
+				$success = "Os passos para alterar sua senha foram enviados para o seu email.";
 			}
 			else {
 				$error = 'O e-mail informado não pertence a nossa lista de usuários.';
@@ -230,6 +230,71 @@ class LoginController extends ManagerController {
 		}
 
 		return new ViewModel(array(
+			'success' => $success,
+			'error'  => $error
+		));
+	}
+
+	public function cadastrarSenhaAction()
+	{
+		$modelPessoa = $this->serviceManager->get('Model\Pessoa');
+		
+		$error = null;
+		$success = null;
+		$senhaToken = null;
+
+		if($this->request->isPost()){
+			$data = $this->request->getPost();
+
+			if($data->senhaToken != ''){
+				// verifica a existencia da pessoa por email
+				$pessoa = reset($modelPessoa->lista(array('senhaToken' => $data->senhaToken)));
+				if($pessoa){
+					$dataUpdate = array('senha' => md5($data->senha), 'senhaToken' => '');
+					$modelPessoa->update($dataUpdate, array('idpessoa' => $pessoa->idpessoa));
+
+					$success = 'Nova senha cadastrada com sucesso.';
+				}else{
+					$error = 'Cadastro não encontrado.';
+				}
+			}else{
+				$error = 'Código de troca de senha inválido.';
+			}
+
+			if($error){
+				$type = 'error';
+				$msg  = base64_encode($error);
+			}
+			
+			if($success){
+				$type = 'success';
+				$msg  = base64_encode($success);
+			}
+			
+			return $this->redirect()->toRoute('login', array(
+				'action' => 'cadastrar-senha',
+				'ctoken' => $type.'='.$msg
+			));
+		}
+
+		$params = $this->params('ctoken');
+		if($params != '' && !preg_match('/^[0-9]*$/', $params)){
+			preg_match('/^([A-z\-0-9]*)\=(.*)$/', $params, $matches);
+			list($match, $type, $msg) = $matches;
+			
+			if($type == 'error'){
+				$error = base64_decode($msg); 
+			}
+			else if($type == 'success'){
+				$success = base64_decode($msg);
+			}
+			else if($type == 'senhaToken'){
+				$senhaToken = $msg;
+			}
+		}
+
+		return new ViewModel(array(
+			'senhaToken' => $senhaToken,
 			'success' => $success,
 			'error'  => $error
 		));

@@ -1,0 +1,36 @@
+<div id="section-esqueceu-senha" class="section col-lg-12">
+    <div class="container">
+        <div class="row">
+            <h2>Cadastrar uma nova senha de acesso.</h2>
+            <?php if(!$this->success): ?>
+                <p>Informe uma nova senha de acesso:</p>
+                
+                <form action="<?= $this->url('login', array('action' => 'cadastrar-senha')); ?>"     
+                    method="post" data-toggle="validator">
+                    <input type="hidden" name="senhaToken" value="<?= $this->senhaToken ?>">
+                    
+                    <div class="form-group col-md-6">
+                        <input type="password" class="form-control" name="senha" placeholder="Senha" required>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                    
+                </form>   
+            <?php endif; ?>
+        </div>    
+        <div class="row">
+            <?php if($this->success):?>
+                <div class="alert alert-success" role="alert">
+                    <?= $this->success; ?>
+                    <a href="<?= $this->url('login'); ?>">Clique aqui e faça o login.</a>
+                </div>
+            <?php endif;?>
+                        
+            <?php if($this->error):?>
+                <div class="alert alert-danger" role="alert"><?= $this->error; ?></div>
+            <?php endif;?>   
+        </div>
+    </div>
+</div>
