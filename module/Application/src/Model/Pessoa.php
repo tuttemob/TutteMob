@@ -38,6 +38,14 @@ class Pessoa extends AbstractModel
 	
 		return false;
 	}
+
+	/**
+	 * Autentica o usuário apenas com um objeto de dados Pessoa
+	 */
+	public function authenticationPessoa($pessoa){
+		unset($pessoa->senha);
+		$_SESSION[self::NAMESPACE_USER_SESSION] = $pessoa;
+	}
 	
 	/**
 	 * Obtem os dados de um usuário logado

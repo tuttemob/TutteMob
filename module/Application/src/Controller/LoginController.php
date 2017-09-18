@@ -54,6 +54,74 @@ class LoginController extends ManagerController {
 			'error'  => $error
 		));
 	}
+
+	public function facebookAction()
+	{
+		$modelPessoa = $this->serviceManager->get('Model\Pessoa');
+		
+		$error = null;
+		$success = null;
+
+		if($this->getRequest()->isPost()){
+			$data = $this->getRequest()->getPost()->toArray();
+
+			if(isset($data['accessToken'])){
+				// obtem os dados do usuario pelo facebook
+				$facebookUser = \Application\Api\Facebook::getUser($data['accessToken']);
+
+				if($facebookUser){
+					// verifica a existencia do facebook id
+					$pessoa = reset($modelPessoa->lista(array('facebook_userid' => $facebookUser['id'])));
+					if(!$pessoa){
+						// verifica a existencia do email
+						$pessoa = reset($modelPessoa->lista(array('email' => $facebookUser['email'])));
+						if($pessoa){
+							$modelPessoa->update(
+								array(
+									'facebook_userid' => $facebookUser['id'], 
+									'dataconfirmacao' => new SqlExpression("NOW()")
+								),
+								array('idpessoa' => $pessoa->idpessoa)
+							);
+
+							$success = true;
+						}else{
+							$idpessoa = $modelPessoa->cria([
+								'facebook_userid' => $facebookUser['id'],
+								'nome' => $facebookUser['name'],
+								'email' => $facebookUser['email'],
+								'senha' => md5(date('siHdmY')),
+								'fone_cel' => '',
+								'idpapel' => 1,
+								'datacriacao' => new SqlExpression("NOW()"),
+								'dataconfirmacao' => new SqlExpression("NOW()"),
+							]);
+
+							$pessoa = reset($modelPessoa->lista(array('email' => $facebookUser['email'])));
+
+							$success = true;
+						}
+					}
+
+					// loga o usuário com os dados da Pessoa
+					$modelPessoa->authenticationPessoa($pessoa);
+					$success = true;
+				}else{
+					$error = 'Usuário não encontrado ou sem permissões para o site.';
+				}
+			}else{
+				$error = 'Requisição inválida.';
+			}
+		}else{
+			$error = 'Requisição inválida.';
+		}
+
+		if($success){
+			$this->jsonDispatch(array('data' => 'success'));
+		}else{
+			$this->jsonDispatch(array('data' => 'error', 'msg' => $error));
+		}
+	}
 	
 	public function logoutAction(){
 		$modelPessoa = $this->serviceManager->get('Model\Pessoa');
