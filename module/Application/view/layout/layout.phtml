@@ -78,7 +78,7 @@
 						<li>
 							<div class="usuario-avatar">
 								<div class="usuario-avatar-text pull-left">
-									AMBIENTES E PREFERÊNCIAS DO <?= strtoupper(reset(explode(' ',$this->usuario->nome))); ?>
+									AMBIENTES E PREFERÊNCIAS DE <?= strtoupper(reset(explode(' ',$this->usuario->nome))); ?>
 								</div>
 								<div class="usuario-avatar-img pull-left">
 									<?php if($this->usuario->avatar): ?>
@@ -95,7 +95,7 @@
 	            </a>
 	            <ul class="dropdown-menu menu-cliente">
 	               
-	              <li><a href="<?= $this->url('clientes'); ?>"><img src="<?= $this->basePath('img/layout/Tuttemob_Icones9.png') ?>" class="img-responsive" /> Orçamentos</a></li>
+	              <li><a href="<?= $this->url('clientes'); ?>">Orçamentos</a></li>
 	              
 	              <li role="separator" class="divider"></li>
 	              <li><a href="<?= $this->url('home'); ?>#section-quemsomos">Quem Somos?</a></li>

@@ -4,6 +4,7 @@ namespace Application\Controller;
 use Zend\Db\Sql\Expression as SqlExpression;
 use Zend\View\Model\ViewModel;
 use Application\Api\Form\Cadastro;
+use Application\Api\Form\Contato;
 use Zend\Form\FormInterface;
 use Application\Api\Notify\Template;
 use Application\Api\Notify\Email;
@@ -16,11 +17,6 @@ class SiteController extends ManagerController {
 	}
 	
 	public function ambientesAction()
-	{
-		return new ViewModel(array());
-	}
-	
-	public function contatosAction()
 	{
 		return new ViewModel(array());
 	}
@@ -68,7 +64,7 @@ class SiteController extends ManagerController {
 		if($this->getRequest()->isPost()){
 			$data = $this->getRequest()->getPost()->toArray();
 			
-			session_start();
+			//session_start();
 			$_SESSION[nome]=$data[nome];
 			$_SESSION[email]=$data[email];
 			$_SESSION[senha]=$data[senha];
@@ -166,4 +162,95 @@ class SiteController extends ManagerController {
 			'error'  => $error
 		));
 	}
+	
+	public function contatosAction()
+	{
+		$error = null;
+		$success = null;
+		
+		//$modelPessoa = $this->serviceManager->get('Model\Pessoa');
+		
+		if($this->getRequest()->isPost()){
+			$data = $this->getRequest()->getPost()->toArray();
+			
+			//session_start();
+			/* 
+			$_SESSION[nome]=$data[nome];
+			$_SESSION[telefone]=$data[telefone];
+			$_SESSION[email]=$data[email];
+			$_SESSION[mensagem]=$data[mensagem];
+			*/
+			
+			if(isset($data['acao']) && $data['acao'] == 'contatos'){
+				try{
+					unset($data['acao']);
+					
+					$form = new Contato();
+					$form->setData($data);
+					
+					if($form->isValid()){
+						$data = $form->getData(FormInterface::VALUES_AS_ARRAY);
+						
+						// envia email com a mensagem
+						$macros = array(
+								'nome' => $data['nome'],
+								'telefone' => $data['telefone'],
+								'email' => $data['email'],
+								'mensagem' => $data['mensagem']
+						);
+						
+						$template = new Template('template.EmailMensagemContato.phtml', $macros);
+						$email    = new Email($template);
+						$email->setSubject('Contato');
+						$email->addTo('tuttemob@gmail.com', 'TutteMob');
+						$email->send();
+						
+						$success = 'Sua mensagem foi enviada, aguarde nosso contato.';
+					}else{
+						$error = 'Preencha corretamente os campos do formulário.';
+					}
+				}catch (\Exception $e){
+					$error = 'Ocorreu um erro, tente novamente mais tarde.' . $e->getMessage();
+				}
+				
+				$type = null;
+				$msg = null;
+				
+				if($error){
+					$type = 'error';
+					$msg  = base64_encode($error);
+				}
+				
+				if($success){
+					$type = 'success';
+					$msg  = base64_encode($success);
+				}
+				
+				return $this->redirect()->toRoute('home', array(
+						'action' => 'contatos',
+						'params' => $type.'='.$msg
+				));
+			}
+		}
+		
+		// apresenta mensagem ao usuario
+		$params = $this->params('params');
+		if($params != ''){
+			list($type, $msg) = explode('=', $params);
+			
+			if($type == 'error'){
+				$error = base64_decode($msg);
+			}
+			
+			if($type == 'success'){
+				$success = base64_decode($msg);
+			}
+		}
+		
+		return new ViewModel(array(
+				'success' => $success,
+				'error'  => $error
+		));
+	}
+	
 }
