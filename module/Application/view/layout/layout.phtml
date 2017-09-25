@@ -83,6 +83,8 @@
 								<div class="usuario-avatar-img pull-left">
 									<?php if($this->usuario->avatar): ?>
 										<img src="<?= $this->basePath('upload/avatar/' . $this->usuario->avatar) ?>" class="img-thumbnail" />	
+									<?php elseif ($this->usuario->facebook_userid): ?>
+										<img src="https://graph.facebook.com/<?= $this->usuario->facebook_userid; ?>/picture?height=200" class="img-thumbnail" />	
 									<?php else: ?>
 										<img src="<?= $this->basePath('img/layout/avatar.png') ?>" class="img-thumbnail" />	
 									<?php endif; ?>
