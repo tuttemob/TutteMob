@@ -41,7 +41,7 @@
 
 				<div class="col-xs-9">
 					<form id="formContato" method="post" data-toggle="validator">
-						<input type="hidden" name="acao" value="contato" />
+						<input type="hidden" name="acao" value="contatos" />
 						
 						<div class="form-group">
 										<label for="nome">Nome:</label>
@@ -67,7 +67,16 @@
 							<button type="submit" class="btn btn-primary btn-block">Enviar</button>
 									</div>
 						
-					</form>		
+					</form>	
+					
+					<!-- 	
+					<?php 
+						unset($_SESSION["nome"]);
+						unset($_SESSION["telefone"]);
+						unset($_SESSION["email"]);
+						unset($_SESSION["mensagem"]);
+					?>
+					 -->
 				</div>
 		</div>
 	</div>

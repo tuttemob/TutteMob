@@ -18,6 +18,10 @@ class LoginController extends ManagerController {
 		if($this->getRequest()->isPost()){
 			$data = $this->getRequest()->getPost()->toArray();
 			
+			//session_start();
+			$_SESSION[email]=$data[email];
+			$_SESSION[senha]=$data[senha];			
+			
 			if(isset($data['acao']) && $data['acao'] == 'login'){
 				unset($data['acao']);
 				
@@ -246,7 +250,10 @@ class LoginController extends ManagerController {
 		if($this->request->isPost()){
 			$data = $this->request->getPost();
 
-			if($data->senhaToken != ''){
+			if(strcmp($data['senha'], $data['senharepeat']) != 0) {
+				$error = 'As senhas não conferem.';
+			}
+			else if($data->senhaToken != ''){
 				// verifica a existencia da pessoa por email
 				$pessoa = reset($modelPessoa->lista(array('senhaToken' => $data->senhaToken)));
 				if($pessoa){

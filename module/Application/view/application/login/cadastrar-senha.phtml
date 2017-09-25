@@ -2,19 +2,30 @@
     <div class="container">
         <div class="row">
             <h2>Cadastrar uma nova senha de acesso.</h2>
-            <?php if(!$this->success): ?>
-                <p>Informe uma nova senha de acesso:</p>
+            <?php if(!$this->success): ?>                
                 
-                <form action="<?= $this->url('login', array('action' => 'cadastrar-senha')); ?>"     
+                <form class="container" action="<?= $this->url('login', array('action' => 'cadastrar-senha')); ?>"     
                     method="post" data-toggle="validator">
                     <input type="hidden" name="senhaToken" value="<?= $this->senhaToken ?>">
                     
-                    <div class="form-group col-md-6">
-                        <input type="password" class="form-control" name="senha" placeholder="Senha" required>
+                    <div class="row">
+	                    <p>Informe uma nova senha de acesso:</p>
+	                    <div class="form-group col-md-6">
+	                        <input type="password" class="form-control" name="senha" placeholder="Senha" required>
+	                    </div>
                     </div>
-
-                    <div class="form-group col-md-6">
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+					
+					<div class="row">
+	                    <p>Repita a senha:</p>
+	                    <div class="form-group col-md-6">
+	                        <input type="password" class="form-control" name="senharepeat" placeholder="Senha" required>
+	                    </div>
+                    </div>
+					
+					<div class="row">
+	                    <div class="form-group col-md-6">
+	                        <button type="submit" class="btn btn-primary">Enviar</button>
+	                    </div>
                     </div>
                     
                 </form>   
