@@ -59,6 +59,59 @@ body, html {
   height: 70px;
 }
 
+/* MENU LEFT */
+#menu-nav-left {
+  position: fixed;
+  width: 100px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10023;
+  background: #FFF;
+  overflow: hidden;
+  padding: 25px;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  transition: width 0.3s;
+  border-right: 1px #A04D87 solid;
+}
+#menu-nav-left:HOVER {
+  width: 400px;
+}
+#nav-top img {
+  margin-left: -12px;
+  height: 75px;
+}
+#nav-center {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  top: 50%;
+  margin-top: -100px;
+}
+#nav-center ul {
+  font-size: 35px;
+  color: #AAA;
+}
+#nav-center ul li {
+  padding-left: 35px;
+}
+#nav-center ul li a {
+  color: #6D6D6D;
+}
+#nav-center ul li a:HOVER {
+  color: #A04D87;
+}
+#nav-bottom {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+}
+#a-login {
+  font-size: 20px;
+  color: #A04D87;
+}
+
 /* CONTENT */
 #background-frames {
   display: none;

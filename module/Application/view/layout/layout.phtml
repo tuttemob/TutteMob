@@ -117,6 +117,38 @@
 	      </div>
 	    </nav>
 	
+			<div id="menu-nav-left">
+					<div id="nav-top">
+						<a href="<?= $this->url('home'); ?>" title="Inicio">
+							<img src="<?= $this->basePath('img/layout/logo-menu-left.png') ?>" />
+						</a>
+					</div>
+					<div id="nav-center">
+						<ul>
+							<li>
+								<a href="<?= $this->url('home', array('action' => 'ambientes')); ?>" title="Ambientes">
+									Ambientes
+								</a>
+							</li>
+							<li>
+								<a href="<?= $this->url('home', array('action' => 'contatos')); ?>" title="Contatos">
+									Contatos
+								</a>
+							</li>
+							<li>
+								<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>" title="Iniciar minha experiência TutteMob">
+									Iniciar Tuttemob
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div id="nav-bottom">
+						<div class="pull-left">
+							<a href="<?= $this->url('login'); ?>" title="Login" id="a-login">LOGIN</a>
+						</div>
+					</div>
+			</div>
+
 	    <div id="section-0" class="section col-lg-12"></div>
 	
 			<?= $this->layout()->content; ?>    
