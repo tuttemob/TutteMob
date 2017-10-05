@@ -250,6 +250,9 @@ class LoginController extends ManagerController {
 		if($this->request->isPost()){
 			$data = $this->request->getPost();
 
+			//session_start();
+			$_SESSION[senhaToken]=$data[senhaToken];
+			
 			if(strcmp($data['senha'], $data['senharepeat']) != 0) {
 				$error = 'As senhas não conferem.';
 			}
