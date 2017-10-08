@@ -168,6 +168,9 @@
 								<a href="<?= $this->url('login', array('action' => 'logout')); ?>" title="Sair" id="a-login">SAIR</a>
 							<?php endif; ?>	
 						</div>
+						<div class="pull-right">
+							<a href="javascript:void(0)" onclick="showMenuMobile();" class="glyphicon glyphicon-menu-hamburger"></a>
+						</div>
 					</div>
 			</div>
 
@@ -187,6 +190,11 @@
 	    <!-- smooth scroll -->
 	    <script type="text/javascript">
 	      $(function(){
+						showMenuMobile = function(){
+							$('#menu-nav-left').toggleClass('active');
+							$('#nav-center').fadeToggle(300);
+						};
+
 	          $('a').attr('href', function() {
 	              if(/\#/.test(this.href)){
 	                  var hrefParts = this.href.split(/#/);
