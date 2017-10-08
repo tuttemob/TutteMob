@@ -126,8 +126,18 @@
 					<div id="nav-center">
 						<ul>
 							<li>
+								<a href="<?= $this->url('home'); ?>#section-quemsomos" title="Quem somos">
+									Quem somos
+								</a>
+							</li>
+							<li>
 								<a href="<?= $this->url('home', array('action' => 'ambientes')); ?>" title="Ambientes">
 									Ambientes
+								</a>
+							</li>
+							<li>
+								<a href="<?= $this->url('home'); ?>#section-franquias-fisicas" title="Franquias Fisícas">
+									Franquias Fisícas
 								</a>
 							</li>
 							<li>
@@ -135,23 +145,35 @@
 									Contatos
 								</a>
 							</li>
-							<li>
-								<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>" title="Iniciar minha experiência TutteMob">
-									Iniciar Tuttemob
-								</a>
-							</li>
+							<?php if(!$this->usuario): ?>
+								<li>
+									<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>" title="Iniciar minha experiência TutteMob">
+										Iniciar Tuttemob
+									</a>
+								</li>
+							<?php else: ?>	
+								<li>
+									<a href="<?= $this->url('clientes'); ?>" title="Meus Orçamentos">
+										Meus Orçamentos
+									</a>
+								</li>
+							<?php endif; ?>
 						</ul>
 					</div>
 					<div id="nav-bottom">
 						<div class="pull-left">
-							<a href="<?= $this->url('login'); ?>" title="Login" id="a-login">LOGIN</a>
+							<?php if(!$this->usuario): ?>
+								<a href="<?= $this->url('login'); ?>" title="Login" id="a-login">LOGIN</a>
+							<?php else: ?>	
+								<a href="<?= $this->url('login', array('action' => 'logout')); ?>" title="Sair" id="a-login">SAIR</a>
+							<?php endif; ?>	
 						</div>
 					</div>
 			</div>
 
-	    <div id="section-0" class="section col-lg-12"></div>
-	
-			<?= $this->layout()->content; ?>    
+			<div id="section-content" class="section col-lg-12">
+				<?= $this->layout()->content; ?>    
+			</div>
 	
 			<!-- Background frames -->
 			<div id="background-frames"></div>
