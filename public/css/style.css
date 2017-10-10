@@ -67,7 +67,7 @@ body, html {
   height: 100%;
   left: 0;
   top: 0;
-  z-index: 10023;
+  z-index: 100023;
   background: #FFF;
   overflow: hidden;
   padding: 25px;
@@ -82,6 +82,9 @@ body, html {
 #nav-top img {
   margin-left: -12px;
   height: 75px;
+}
+#logo-menu-left-2 {
+  display: none;
 }
 #nav-center {
   display: block;
@@ -125,7 +128,7 @@ body, html {
     left: 0;
     bottom: 0;
     top: auto;
-    z-index: 10023;
+    z-index: 100023;
     background: #FFF;
     overflow: hidden;
     padding: 10px;

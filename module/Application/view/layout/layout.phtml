@@ -120,7 +120,8 @@
 			<div id="menu-nav-left">
 					<div id="nav-top">
 						<a href="<?= $this->url('home'); ?>" title="Inicio">
-							<img src="<?= $this->basePath('img/layout/logo-menu-left.png') ?>" />
+							<img src="<?= $this->basePath('img/layout/logo-menu-left.png') ?>" id="logo-menu-left" />
+							<img src="<?= $this->basePath('img/layout/logo-menu-left-2.png') ?>" id="logo-menu-left-2" />
 						</a>
 					</div>
 					<div id="nav-center">
@@ -190,10 +191,41 @@
 	    <!-- smooth scroll -->
 	    <script type="text/javascript">
 	      $(function(){
+						$('#menu-nav-left').hover(
+							function(){
+								$('#background-frames').fadeIn();
+								$('#logo-menu-left-2').fadeIn(500);
+								$('#logo-menu-left').hide();
+							},
+							function(){
+								$('#background-frames').fadeOut();
+								$('#logo-menu-left').fadeIn(500);
+								$('#logo-menu-left-2').hide();
+							}
+						);
+						var menuMobileState = 0;
 						showMenuMobile = function(){
 							$('#menu-nav-left').toggleClass('active');
 							$('#nav-center').fadeToggle(300);
+							if(menuMobileState == 1){
+								$('#background-frames').fadeOut();
+								$('#logo-menu-left').fadeIn(500);
+								$('#logo-menu-left-2').hide();
+								menuMobileState = 0;
+							}else{
+								$('#background-frames').fadeIn();
+								$('#logo-menu-left-2').fadeIn(500);
+								$('#logo-menu-left').hide();
+								menuMobileState = 1;
+							}
 						};
+						$('#background-frames').click(function(){
+							$('#menu-nav-left').removeClass('active');
+							$('#nav-center').fadeOut(300);
+							$('#logo-menu-left').fadeIn(500);
+							$('#logo-menu-left-2').hide();
+							menuMobileState = 0;
+						});
 
 	          $('a').attr('href', function() {
 	              if(/\#/.test(this.href)){
