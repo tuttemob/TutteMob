@@ -1,7 +1,7 @@
 <html>
 <body>
 	<h2>Mensagem enviada por <?=$this->macros['nome'];?>:</h2>
-	<p><?=$this->macros['mensagem'];?></p>
+	<p><?=nl2br($this->macros['mensagem']);?></p>
 	<p>E-mail: <?=$this->macros['email'];?></p>
 	<p>Fone de contato: <?=$this->macros['telefone'];?></p>
 </body>
