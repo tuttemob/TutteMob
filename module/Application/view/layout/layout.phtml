@@ -177,6 +177,21 @@
 								Contatos
 							</a>
 						</div>
+
+						<div id="center-social">
+							<ul>
+								<li><a href="#" title="Facebook">
+											<img src="<?= $this->basePath('img/layout/B9.png'); ?>" /></a></li>
+								<li><a href="#" title="Twitter">
+											<img src="<?= $this->basePath('img/layout/B10.png'); ?>" /></a></li>			
+								<li><a href="#" title="Youtube">
+											<img src="<?= $this->basePath('img/layout/B11.png'); ?>" /></a></li>
+								<li><a href="#" title="Instagram">
+											<img src="<?= $this->basePath('img/layout/B12.png'); ?>" /></a></li>
+								<li><a href="#" title="Google Maps">
+											<img src="<?= $this->basePath('img/layout/B13.png'); ?>" /></a></li>
+							</ul>
+						</div>
 					</div>
 					<div id="nav-bottom">
 						<div class="pull-left">
@@ -185,6 +200,20 @@
 							<?php else: ?>	
 								<a href="<?= $this->url('login', array('action' => 'logout')); ?>" title="Sair" id="a-login">SAIR</a>
 							<?php endif; ?>	
+						</div>
+						<div id="bottom-social">
+							<ul>
+								<li><a href="#" title="Facebook">
+											<img src="<?= $this->basePath('img/layout/B9.png'); ?>" /></a></li>
+								<li><a href="#" title="Twitter">
+											<img src="<?= $this->basePath('img/layout/B10.png'); ?>" /></a></li>			
+								<li><a href="#" title="Youtube">
+											<img src="<?= $this->basePath('img/layout/B11.png'); ?>" /></a></li>
+								<li><a href="#" title="Instagram">
+											<img src="<?= $this->basePath('img/layout/B12.png'); ?>" /></a></li>
+								<li><a href="#" title="Google Maps">
+											<img src="<?= $this->basePath('img/layout/B13.png'); ?>" /></a></li>
+							</ul>
 						</div>
 						<div class="pull-right">
 							<a href="javascript:void(0)" onclick="showMenuMobile();" class="glyphicon glyphicon-menu-hamburger"></a>
@@ -210,14 +239,20 @@
 	      $(function(){
 						$('#menu-nav-left').hover(
 							function(){
-								$('#background-frames').fadeIn();
-								$('#logo-menu-left-2').fadeIn(100);
-								$('#logo-menu-left').hide();
+								if($(document).width() > 800){
+									$('#background-frames').fadeIn();
+									$('#logo-menu-left-2').fadeIn(100);
+									$('#logo-menu-left').hide();
+									$('#bottom-social').fadeIn(600);
+								}
 							},
 							function(){
-								$('#background-frames').fadeOut();
-								$('#logo-menu-left').fadeIn(100);
-								$('#logo-menu-left-2').hide();
+								if($(document).width() > 800){
+									$('#background-frames').fadeOut();
+									$('#logo-menu-left').fadeIn(100);
+									$('#logo-menu-left-2').hide();
+									$('#bottom-social').hide();
+								}
 							}
 						);
 						var menuMobileState = 0;
@@ -226,13 +261,11 @@
 							$('#nav-center').fadeToggle(300);
 							if(menuMobileState == 1){
 								$('#background-frames').fadeOut();
-								$('#logo-menu-left').fadeIn(100);
-								$('#logo-menu-left-2').hide();
+								$('#center-social').hide();
 								menuMobileState = 0;
 							}else{
 								$('#background-frames').fadeIn();
-								$('#logo-menu-left-2').fadeIn(100);
-								$('#logo-menu-left').hide();
+								$('#center-social').fadeIn();
 								menuMobileState = 1;
 							}
 						};

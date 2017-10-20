@@ -118,7 +118,28 @@ body, html {
 #nav-center #nav-center-outrositens a:HOVER {
   color: #A04D87;
 }
+#nav-center #center-social {
+  display: none;
+  float: left;
+  width: 230px;
+  height: 30px;
+  padding: 0px;
+  padding-top: 20px;
+}
+#nav-center #center-social ul {
+  list-style: none;
+  padding-left: 20px;
+}
+#nav-center #center-social ul li {
+  display: inline;
+  padding: 0px;
+}
+#nav-center #center-social ul li img {
+  height: 30px;
+}
+
 #nav-bottom {
+  width: 400px;
   position: absolute;
   bottom: 0;
   margin-bottom: 20px;
@@ -126,6 +147,23 @@ body, html {
 #a-login {
   font-size: 20px;
   color: #A04D87;
+}
+#nav-bottom #bottom-social {
+  display: none;
+  float: left;
+  width: 230px;
+  height: 30px;
+  padding: 0px;
+  margin-left: 100px;
+}
+#nav-bottom #bottom-social ul {
+  list-style: none;
+}
+#nav-bottom #bottom-social ul li {
+  display: inline;
+}
+#nav-bottom #bottom-social ul li img {
+  height: 30px;
 }
 #nav-bottom .pull-right {
   display: none;
@@ -151,7 +189,7 @@ body, html {
   }
   #menu-nav-left.active {
     width: 100%;
-    height: 320px;
+    height: 380px;
   }
   #nav-top {
     position: absolute;
@@ -172,7 +210,7 @@ body, html {
     padding-top: 20px;
   }
   #nav-center ul {
-    font-size: 25px;
+    font-size: 20px;
     color: #AAA;
   }
   #nav-center ul li {
@@ -187,6 +225,7 @@ body, html {
     margin-bottom: 6px;
   }
   #nav-bottom .pull-left {
+    display: none;
     margin-top: 2px;
     margin-right: 15px;
   }
@@ -248,17 +287,34 @@ body, html {
 
 /* pagina inicial */
 #experiencia-tuttemob {
-  padding: 15px 30px;
-  color: #F73F80;
+  display: grid;
   position: fixed;
   top: 20px;
   right: 20px;
-  font-weight: bold;
-  font-size: 17px;
+  height: 60px;
+  overflow: hidden;
   z-index: 100026;
   border: 1px #CCC solid;
   background: #FFF;
   box-shadow: 2px 2px 5px #888888;
+  border-radius: 4px;
+}
+#experiencia-tuttemob a {
+  padding: 15px 30px;
+  color: #F73F80;
+  font-weight: bold;
+  font-size: 17px;
+  text-align: center;
+  -webkit-transition: margin-top 0.3s;
+  -moz-transition: margin-top 0.3s;
+  transition: margin-top 0.3s;
+}
+#experiencia-tuttemob:hover a:first-child {
+  margin-top: -60px;
+}
+#experiencia-tuttemob a:last-child {
+  background: #F73F80;
+  color: #FFF;
 }
 #section-apresentacao {
   padding: 0;
