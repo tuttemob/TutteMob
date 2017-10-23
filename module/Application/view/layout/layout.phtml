@@ -145,7 +145,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="<?= $this->url('home'); ?>#section-quemsomos" title="Sobre nós">
+								<a href="<?= $this->url('home', array('action' => 'sobre-nos')); ?>" title="Sobre nós">
 									Sobre nós
 								</a>
 							</li>
@@ -259,6 +259,7 @@
 						showMenuMobile = function(){
 							$('#menu-nav-left').toggleClass('active');
 							$('#nav-center').fadeToggle(300);
+
 							if(menuMobileState == 1){
 								$('#background-frames').fadeOut();
 								$('#center-social').hide();

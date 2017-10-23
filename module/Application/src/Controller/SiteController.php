@@ -50,6 +50,11 @@ class SiteController extends ManagerController {
 		return new ViewModel(array());
 	}
 	
+	public function sobreNosAction()
+	{
+		return new ViewModel(array());
+	}
+	
 	/**
 	 * Cadastrar usuarios
 	 * @return \Zend\View\Model\ViewModel
