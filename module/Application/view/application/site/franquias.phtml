@@ -1,0 +1,77 @@
+<form role="form">
+		<div id="section-franquias-fisicas" class="section col-lg-12">
+			<h2><strong>NÃO SOMOS APENAS DIGITAIS</strong></h2>
+			<h3>Confira a nossa loja em Passo Fundo</h3><br>
+			<div class="row">
+				<div class="col-sm-3">
+				<fieldset disabled>
+				   	<div id="section-franquias-fisicas-interno">
+				   		<label for="pais">País</label>				   	
+			   			<select class="form-control" id="pais">
+			   				<option value="">Selecione...</option>
+				   			<option value="1" selected>Brasil</option>
+				   			<option value="2">Argentina</option>
+				   		</select>
+				   		
+				   		<label for="estado">Estado</label>				   	
+			   			<select class="form-control" id="estado">
+			   				<option value="">Selecione...</option>
+				   			<option value="1" selected>Rio Grande do Sul</option>
+				   			<option value="2">Santa Catarina</option>
+				   			<option value="2">Paraná</option>
+				   		</select>
+
+				   		<label for="cidade">Cidade</label>				   	
+			   			<select class="form-control" id="cidade">
+			   				<option value="">Selecione...</option>
+				   			<option value="1" selected>Passo Fundo</option>
+				   			<option value="2">Bento Gonçalves</option>
+				   			<option value="2">Caxias do Sul</option>
+				   		</select>
+				   		<br>
+				   		<h4>R. Morom, 3081 - Boqueirão, Passo Fundo - RS, 99010-035, Brasil</h4>
+				   	</div>
+				 </fieldset>
+				 </div>
+				 <div class="col-sm-9">
+					<div id="section-mapa-interno">
+						<script>
+						function myMap() {
+						/*var mapProp= {
+						    center:new google.maps.LatLng(-28.268400,-52.420126),
+						    zoom:18,
+						};
+						var map=new google.maps.Map(document.getElementById("section-franquias-fisicas"),mapProp);*/
+
+						var contentString = '<div id="contentString">' + 
+							'<p>Faça-nos uma visita!</p>' +
+							'<a href="https://www.google.com/maps/dir/Rua+Morom,+3081+-+Boqueir%C3%A3o,+Passo+Fundo+-+RS,+Brasil//@-28.2685421,-52.4225509,17z/data=!3m1!4b1!4m8!4m7!1m5!1m1!1s0x94e2bf61376873cd:0xaf96e89e6f68519a!2m2!1d-52.4203622!2d-28.2685421!1m0?hl=pt-BR" target="_blank">Loja Passo Fundo</a>' +								 
+							'</div>';
+							
+						var mapCanvas = document.getElementById("section-mapa-interno");
+					  	var myCenter = new google.maps.LatLng(-28.268499,-52.420467); 
+					  	var mapOptions = {center: myCenter, zoom: 18/*, disableDefaultUI: true*/};
+					  	var map = new google.maps.Map(mapCanvas,mapOptions);
+					  	var marker = new google.maps.Marker({
+					    	position: myCenter,
+					    	//animation: google.maps.Animation.BOUNCE
+					  	});
+					  	marker.setMap(map);
+				
+						  /*google.maps.event.addListener(marker,'click',function() {*/
+							    var infowindow = new google.maps.InfoWindow({
+							      content: contentString
+							    });
+							  infowindow.open(map,marker);
+							  /*});*/
+						}
+						</script>
+						 
+						<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt6Q5NYmV8Pi-LX1GRnffZP3anE4pu4ek&callback=myMap"></script>
+					</div>   
+
+				 
+				 </div>
+			</div>
+		</div>
+</form>

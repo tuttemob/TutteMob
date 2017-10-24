@@ -55,6 +55,16 @@ class SiteController extends ManagerController {
 		return new ViewModel(array());
 	}
 	
+	public function franquiasAction()
+	{
+		return new ViewModel(array());
+	}
+	
+	public function experienciaClientesAction()
+	{
+		return new ViewModel(array());
+	}
+	
 	/**
 	 * Cadastrar usuarios
 	 * @return \Zend\View\Model\ViewModel
