@@ -12,7 +12,7 @@
         
         <link rel="shortcut icon" href="<?= $this->basePath('img/layout/logo-aba.png') ?>" type="image/x-icon">
         
-		<!-- Bootstrap core CSS -->
+			<!-- Bootstrap core CSS -->
 	    <link href="<?= $this->basePath('lib/bootstrap/dist/css/bootstrap.min.css') ?>" rel="stylesheet">
 	
 	    <!-- Ícones do Google -->
@@ -27,96 +27,7 @@
 	    <script src="<?= $this->basePath('lib/mask/jquery.mask.min.js') ?>"></script>
     </head>
     <body>
-    	<nav class="navbar navbar-default navbar-fixed-top">
-	      <div class="container-fluid">
-	        <div class="navbar-header">
-	          <a class="navbar-brand" href="<?= $this->url('home'); ?>">
-	            <img alt="TutteMob" src="<?= $this->basePath('img/layout/logo-menu-preto.png') ?>" class="img-responsive" />
-	          </a>
-	        </div>
-	
-	        <ul class="nav navbar-nav navbar-right">
-	        <?php if(!$this->usuario): ?>  
-	          <li>
-	            <a href="<?= $this->url('home'); ?>#section-quemsomos" title="Quem somos">
-	              <img src="<?= $this->basePath('img/layout/quem-somos.png') ?>" class="img-responsive" />
-	            </a>
-	          </li>
-	          <li>
-	            <a href="<?= $this->url('home', array('action' => 'ambientes')); ?>" title="Ambientes">
-	              <img src="<?= $this->basePath('img/layout/ambientes.png') ?>" class="img-responsive" />
-	            </a>
-	          </li>
-	          <li>
-	            <a href="<?= $this->url('home'); ?>#section-franquias-fisicas" title="Franquias Físicas">
-	              <img src="<?= $this->basePath('img/layout/franquias-fisicas.png') ?>" class="img-responsive" />
-	            </a>
-	          </li>
-	          <!-- 
-	          <li>
-	            <a href="<?= $this->url('home'); ?>#section-experiencia-clientes" title="Experiências de Clientes">
-	              <img src="<?= $this->basePath('img/layout/experiencia-clientes.png') ?>" class="img-responsive" />
-	            </a>
-	          </li>
-	           -->
-	          <li>
-	            <a href="<?= $this->url('home', array('action' => 'contatos')); ?>" title="Contatos">
-	              <img src="<?= $this->basePath('img/layout/contato.png') ?>" class="img-responsive" />
-	            </a>
-	          </li>
-	          <li>
-	            <a href="<?= $this->url('login'); ?>" title="Login">
-	              <img src="<?= $this->basePath('img/layout/login.png') ?>" class="img-responsive" />
-	            </a>
-	          </li>
-	          <li>
-	            <a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>" title="Iniciar minha experiência TutteMob">
-	              <img src="<?= $this->basePath('img/layout/iniciar-experiencia.png') ?>" class="img-responsive" />
-	            </a>
-	          </li>
-					<?php else: ?>
-						<li>
-							<div class="usuario-avatar">
-								<div class="usuario-avatar-text pull-left">
-									AMBIENTES E PREFERÊNCIAS DE <?= strtoupper(reset(explode(' ',$this->usuario->nome))); ?>
-								</div>
-								<div class="usuario-avatar-img pull-left">
-									<?php if($this->usuario->avatar): ?>
-										<img src="<?= $this->basePath('upload/avatar/' . $this->usuario->avatar) ?>" class="img-thumbnail" />	
-									<?php elseif ($this->usuario->facebook_userid): ?>
-										<img src="https://graph.facebook.com/<?= $this->usuario->facebook_userid; ?>/picture?height=200" class="img-thumbnail" />	
-									<?php else: ?>
-										<img src="<?= $this->basePath('img/layout/avatar.png') ?>" class="img-thumbnail" />	
-									<?php endif; ?>
-								</div>
-							</div>
-						</li>  
-	          <li class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-	            	<img src="<?= $this->basePath('img/layout/menu-login.png') ?>" class="img-responsive" />
-	            </a>
-	            <ul class="dropdown-menu menu-cliente">
-	               
-	              <li><a href="<?= $this->url('clientes'); ?>">Orçamentos</a></li>
-	              
-	              <li role="separator" class="divider"></li>
-	              <li><a href="<?= $this->url('home'); ?>#section-quemsomos">Quem Somos?</a></li>
-	              <li role="separator" class="divider"></li>
-	              <li><a href="<?= $this->url('home', array('action' => 'ambientes')); ?>">Ambientes</a></li>
-	              <li role="separator" class="divider"></li>
-	              <li><a href="<?= $this->url('home'); ?>#section-franquias-fisicas">Franquias Físicas</a></li>
-	              <!-- <li><a href="javascript:void(0)">Experiência de clientes</a></li> -->
-	              <li role="separator" class="divider"></li>
-	              <li><a href="#">Contato</a></li>
-	              <li role="separator" class="divider"></li>
-	              <li><a href="<?= $this->url('login', array('action' => 'logout')); ?>">Sair</a></li>
-	            </ul>
-	          </li>
-	        <?php endif;?>
-	        </ul>
-	      </div>
-	    </nav>
-	
+			
 			<div id="menu-nav-left">
 					<div id="nav-top">
 						<a href="<?= $this->url('home'); ?>" title="Inicio">

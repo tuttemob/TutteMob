@@ -242,7 +242,7 @@ body, html {
   }
   
   #experiencia-tuttemob {
-	display: none !important;  
+	  display: none !important;  
   }
 }
 @media screen and (min-width: 800px){
@@ -321,48 +321,48 @@ body, html {
   background: #F73F80;
   color: #FFF;
 }
-#section-apresentacao {
+.section-apresentacao {
   padding: 0;
 }
-#section-apresentacao .section-page {
+.section-apresentacao .section-page {
   color: #F73F80;
   top: 50%;
   transform: translate(10%, -50%);
 }
-#section-apresentacao #p1 img {
+.section-apresentacao #p1 img {
   width: 300px;
 }
-#section-apresentacao #p2 {
+.section-apresentacao #p2 {
   font-size: 38px;
 }
-#section-apresentacao #p3 {
+.section-apresentacao #p3 {
   font-size: 118px;
   font-weight: bold;
   line-height: 118px;
   margin-top: -15px;
 }
 
-#section-apresentacao2 {
+.section-apresentacao2 {
   padding: 0;
 }
-#section-apresentacao2 .section-page {
+.section-apresentacao2 .section-page {
   color: #FFF;
   top: 50%;
   transform: translate(10%, -50%);
 }
-#section-apresentacao2 #p2 {
+.section-apresentacao2 #p2 {
   font-size: 38px;
 }
-#section-apresentacao2 #p3 {
+.section-apresentacao2 #p3 {
   font-size: 60px;
   font-weight: bold;
   line-height: 60px;
   margin-top: -15px;
 }
-#section-apresentacao2 #p4 {
+.section-apresentacao2 #p4 {
   font-size: 30px;
 }
-#section-apresentacao2 #p4 .link-border {
+.section-apresentacao2 #p4 .link-border {
   margin-top: -10px;
   width: 0px;
   height: 2px;
@@ -371,31 +371,31 @@ body, html {
   -moz-transition: width 0.6s;
   transition: width 0.6s;
 }
-#section-apresentacao2 #p4:hover .link-border {
+.section-apresentacao2 #p4:hover .link-border {
   width: 300px;
 }
-#section-apresentacao2 #p4 a {
+.section-apresentacao2 #p4 a {
   color: #FFF;
 }
 
-#section-apresentacao3 {
+.section-apresentacao3 {
   padding: 0;
 }
-#section-apresentacao3 .section-page {
+.section-apresentacao3 .section-page {
   color: #F73F80;
   top: 50%;
   transform: translate(10%, -50%);
 }
-#section-apresentacao3 #p3 {
+.section-apresentacao3 #p3 {
   font-size: 80px;
   font-weight: bold;
   line-height: 80px;
   margin-top: -15px;
 }
-#section-apresentacao3 #p4 {
+.section-apresentacao3 #p4 {
   font-size: 30px;
 }
-#section-apresentacao3 #p4 .link-border {
+.section-apresentacao3 #p4 .link-border {
   margin-top: -10px;
   width: 0px;
   height: 2px;
@@ -404,12 +404,18 @@ body, html {
   -moz-transition: width 0.6s;
   transition: width 0.6s;
 }
-#section-apresentacao3 #p4:hover .link-border {
+.section-apresentacao3 #p4:hover .link-border {
   width: 300px;
 }
-#section-apresentacao3 #p4 a {
+.section-apresentacao3 #p4 a {
   color: #F73F80;
 }
+
+/* Pagina inicial MOBILE */
+@media screen and (max-width: 800px){
+  
+}
+
 
 /* Ambientes */
 #section-ambientes {
