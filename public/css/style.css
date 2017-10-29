@@ -564,11 +564,11 @@ body, html {
 }
 .briefing-complemento-step {
 	display: none;
-	width: 90%;
+	width: 87%;
 	height: 80%;
 	margin: 0;
-	left: 5%;
-	top: 15%;
+	left: 10%;
+	top: 10%;
 	color: #FFF;
 	font-size: 2em;
 	line-height: 40px;
