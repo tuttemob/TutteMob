@@ -6,76 +6,225 @@
 		INICIE AGORA!
 	</a>
 </div>
-<div class="section-apresentacao section col-lg-12">
-	<div class="section-background">
-		<img src="<?= $this->basePath('img/paginas/inicial-1-bg.png'); ?>" class="img-responsive" />
+
+<div id="section-desktop">
+	<div class="section-apresentacao section col-lg-12">
+		<div class="section-background">
+			<img src="<?= $this->basePath('img/paginas/inicial-1-bg.png'); ?>" class="img-responsive" />
+		</div>
+		<div class="section-page">
+			<div id="p1">
+				<img src="<?= $this->basePath('img/paginas/inicial-1-logo.png'); ?>" />
+			</div>
+			<div id="p2">
+				Móveis planejados
+			</div>
+			<div id="p3">
+				na palma <br /> da mão.
+			</div>
+		</div>
 	</div>
-	<div class="section-page">
-		<div id="p1">
-			<img src="<?= $this->basePath('img/paginas/inicial-1-logo.png'); ?>" />
+
+	<div class="section-apresentacao2 section col-lg-12">
+		<div class="section-background">
+			<img src="<?= $this->basePath('img/paginas/inicial-2-bg.png'); ?>" class="img-responsive" />
 		</div>
-		<div id="p2">
-			Móveis planejados
+		<div class="section-page">
+			<div id="p2">
+				A tuttemob é o
+			</div>
+			<div id="p3">
+				novo, com todas as <br /> 
+				vantagens de comprar <br />
+				via internet.
+			</div>
+			<div id="p4">
+				<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">Descubra</a>
+				<div class="link-border"></div>
+			</div>
 		</div>
-		<div id="p3">
-			na palma <br /> da mão.
+	</div>
+
+	<div class="section-apresentacao3 section col-lg-12">
+		<div class="section-background">
+			<img src="<?= $this->basePath('img/paginas/inicial-3-bg.png'); ?>" class="img-responsive" />
+		</div>
+		<div class="section-page">
+			<div id="p3">
+				Não <br />
+				somos apenas <br />
+				digitais.
+			</div>
+			<div id="p4">
+				<a href="<?= $this->url('home', array('action' => 'franquias')); ?>">Encontre</a>
+				<div class="link-border"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-apresentacao2 section col-lg-12">
+		<div class="section-background">
+			<img src="<?= $this->basePath('img/paginas/inicial-4-bg.png'); ?>" class="img-responsive" />
+		</div>
+		<div class="section-page">
+			<div id="p2">
+				O que nos move é a
+			</div>
+			<div id="p3">
+				satisfação <br /> 
+				de quem já passou <br />
+				por aqui.
+			</div>
+			<div id="p4">
+				<a href="<?= $this->url('home', array('action' => 'experiencia-clientes')); ?>">Veja</a>
+				<div class="link-border"></div>
+			</div>
 		</div>
 	</div>
 </div>
 
-<div class="section-apresentacao2 section col-lg-12">
-	<div class="section-background">
-		<img src="<?= $this->basePath('img/paginas/inicial-2-bg.png'); ?>" class="img-responsive" />
+<div id="section-mobile" style="visibility: hidden; position: relative; margin: 0 auto;
+									top: 0px; left: 0px; width: 0; height: 0; overflow: hidden;">
+
+	<!-- Slides Container -->
+	<div u="slides" style="cursor:move;position: absolute; left: 0px; top: 0px; width: 0; height: 0; overflow: hidden;">
+		<div>
+			<div class="section-apresentacao section col-lg-12">
+				<div class="section-background">
+					<img src="<?= $this->basePath('img/paginas/inicial-1-bg.png'); ?>" />
+				</div>
+				<div class="section-page">
+					<div id="p1">
+						<img src="<?= $this->basePath('img/paginas/inicial-1-logo.png'); ?>" />
+					</div>
+					<div id="p2">
+						Móveis planejados
+					</div>
+					<div id="p3">
+						na palma <br /> da mão.
+					</div>
+				</div>
+
+				<a class="pbutton" href="#">EXPERIÊNCIA TUTTEMOB</a>
+			</div>
+		</div>
+		<div>
+			<div class="section-apresentacao2 section col-lg-12">
+				<div class="section-background">
+					<img src="<?= $this->basePath('img/paginas/inicial-2-bg.png'); ?>" />
+				</div>
+				<div class="section-page">
+					<div id="p2">
+						A tuttemob é o
+					</div>
+					<div id="p3">
+						novo, com <br />
+						todas <br />
+						as vantagens <br />
+						de comprar <br />
+						via internet.
+					</div>
+				</div>
+
+				<a class="pbutton" href="#">DESCUBRA</a>
+			</div>
+		</div>
+		<div>
+			<div class="section-apresentacao3 section col-lg-12">
+				<div class="section-background">
+					<img src="<?= $this->basePath('img/paginas/inicial-3-bg.png'); ?>" />
+				</div>
+				<div class="section-page">
+					<div id="p3">
+						Não <br />
+						somos apenas <br />
+						digitais.
+					</div>
+				</div>
+
+				<a class="pbutton" href="#">ENCONTRE</a>
+			</div>
+		</div>
+		<div>
+			<div class="section-apresentacao2 section-apresentacao4 section col-lg-12">
+				<div class="section-background">
+					<img src="<?= $this->basePath('img/paginas/inicial-4-bg.png'); ?>" />
+				</div>
+				<div class="section-page">
+					<div id="p2">
+						O que nos move é a
+					</div>
+					<div id="p3">
+						satisfação de <br /> 
+						quem já passou <br />
+						por aqui.
+					</div>
+				</div>
+
+				<a class="pbutton" href="#">VEJA</a>
+			</div>
+		</div>
 	</div>
-	<div class="section-page">
-		<div id="p2">
-			A tuttemob é o
-		</div>
-		<div id="p3">
-			novo, com todas as <br /> 
-			vantagens de comprar <br />
-			via internet.
-		</div>
-		<div id="p4">
-			<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">Descubra</a>
-			<div class="link-border"></div>
+
+	<!-- Bullet Navigator -->
+	<div data-u="navigator" id="navigator" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+		<div data-u="prototype" class="i" style="width:16px;height:16px;">
+			<svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+				<circle class="b" cx="8000" cy="8000" r="5800"></circle>
+			</svg>
 		</div>
 	</div>
 </div>
 
-<div class="section-apresentacao3 section col-lg-12">
-	<div class="section-background">
-		<img src="<?= $this->basePath('img/paginas/inicial-3-bg.png'); ?>" class="img-responsive" />
-	</div>
-	<div class="section-page">
-		<div id="p3">
-			Não <br />
-			somos apenas <br />
-			digitais.
-		</div>
-		<div id="p4">
-			<a href="<?= $this->url('home', array('action' => 'franquias')); ?>">Encontre</a>
-			<div class="link-border"></div>
-		</div>
-	</div>
-</div>
+<script src="<?= $this->basePath('lib/jssor/jssor.slider.min.js') ?>"></script>
 
-<div class="section-apresentacao2 section col-lg-12">
-	<div class="section-background">
-		<img src="<?= $this->basePath('img/paginas/inicial-4-bg.png'); ?>" class="img-responsive" />
-	</div>
-	<div class="section-page">
-		<div id="p2">
-			O que nos move é a
-		</div>
-		<div id="p3">
-			satisfação <br /> 
-			de quem já passou <br />
-			por aqui.
-		</div>
-		<div id="p4">
-			<a href="<?= $this->url('home', array('action' => 'experiencia-clientes')); ?>">Veja</a>
-			<div class="link-border"></div>
-		</div>
-	</div>
-</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	ajustaWidHei = function(){
+		if($(window).width() < 800){
+			$('body').css('overflow', 'hidden');
+		}else{
+			$('body').css('overflow', 'auto');
+		}
+
+		var winWidth = $(window).width() + 'px';
+		var winHeight = ($(window).height()) + 'px';
+		$('#section-mobile').attr('style', $('#section-mobile').attr('style').replace(/(width: )([0-9]{1,4})(px)?/, 'width: ' + winWidth));
+		$('#section-mobile').attr('style', $('#section-mobile').attr('style').replace(/(height: )([0-9]{1,4})(px)?/, 'height: ' + winHeight));
+		$('#section-mobile div').each(function(){
+			if(	$(this).attr('style') != undefined 
+				&& $(this).parents('#navigator').length == 0
+				&& $(this).attr('id') != 'navigator')
+			{
+				$(this).attr('style', $(this).attr('style').replace(/(width: )([0-9]{1,4})(px)?/, 'width: ' + winWidth));
+				$(this).attr('style', $(this).attr('style').replace(/(height: )([0-9]{1,3})(px)?/, 'height: ' + winHeight));
+				if($(this).find('#navigator').length > 0){
+					$(this).attr('style', $(this).attr('style').replace(/(height: )([0-9]{1,4})(px)?/, 'height: 30px'));
+					$(this).css('left', 0);
+				}
+			}
+		});
+		$('#section-mobile div.section-background img').css('height',winHeight);
+		$('#section-mobile div.section-background img').css('transform', 'translate(-35%, 0%)');
+	};
+
+	// ajustes iniciais
+	ajustaWidHei();
+
+	// inicia o slide
+	setTimeout(function() {
+		var options = {
+            $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$,
+                $ChanceToShow: 2
+            }
+        };
+		var jssor_slider1 = new $JssorSlider$("section-mobile", options);	
+	}, 100);
+
+	// ajusta dimensoes em monitoramento
+	setInterval(function(){
+		ajustaWidHei();
+	}, 300);
+});
+</script>
