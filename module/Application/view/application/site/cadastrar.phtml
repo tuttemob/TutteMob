@@ -39,22 +39,22 @@
 			
 			<div class="form-group">
             	<label for="nome">Nos conte o seu nome completo:</label>
-				<input type="text" class="form-control" name="nome" value="<?php echo $_SESSION[nome];?>" placeholder="Nome completo" required>
+				<input type="text" class="form-control" name="nome" value="<?php echo isset($_SESSION['nome'])? $_SESSION['nome']: '';?>" placeholder="Nome completo" required>
 			</div>
 					
 			<div class="form-group">
 				<label for="email">Nos conte o seu e-mail:</label>
-				<input type="email" class="form-control" name="email" value="<?php echo $_SESSION[email];?>" placeholder="E-mail" required>
+				<input type="email" class="form-control" name="email" value="<?php echo $_SESSION['email'];?>" placeholder="E-mail" required>
 			</div>
 				
 			<div class="form-group">
             	<label for="senha">Escolha uma senha:</label>
-			   	<input type="password" class="form-control" name="senha" value="<?php echo $_SESSION[senha];?>" placeholder="Senha" required>
+			   	<input type="password" class="form-control" name="senha" value="<?php echo $_SESSION['senha'];?>" placeholder="Senha" required>
 			</div>
 			
 			<div class="form-group">
             	<label for="senharepeat">Repita a senha:</label>
-			   	<input type="password" class="form-control" name="senharepeat" value="<?php echo $_SESSION[senharepeat];?>" placeholder="Senha" required>
+			   	<input type="password" class="form-control" name="senharepeat" value="<?php echo $_SESSION['senharepeat'];?>" placeholder="Senha" required>
 			</div>
 
 			<?php if($this->success):?>

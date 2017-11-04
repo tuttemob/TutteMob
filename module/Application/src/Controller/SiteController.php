@@ -79,14 +79,13 @@ class SiteController extends ManagerController {
 		if($this->getRequest()->isPost()){
 			$data = $this->getRequest()->getPost()->toArray();
 			
-			//session_start();
-			$_SESSION[nome]=$data[nome];
-			$_SESSION[email]=$data[email];
-			$_SESSION[senha]=$data[senha];
-			$_SESSION[senharepeat]=$data[senharepeat];
-			
 			if(isset($data['acao']) && $data['acao'] == 'cadastrar'){
 				try{
+					$_SESSION['nome']=$data['nome'];
+					$_SESSION['email']=$data['email'];
+					$_SESSION['senha']=$data['senha'];
+					$_SESSION['senharepeat']=$data['senharepeat'];
+					
 					unset($data['acao']);
 						
 					$form = new Cadastro();
@@ -95,7 +94,7 @@ class SiteController extends ManagerController {
 					if($form->isValid()){
 						$data = $form->getData(FormInterface::VALUES_AS_ARRAY);
 						
-						if(strcmp($data['senha'], $data['senharepeat']) != 0) {
+						if($data['senha'] != $data['senharepeat']) {
 							$error = 'As senhas não conferem.';
 						}
 						else {
