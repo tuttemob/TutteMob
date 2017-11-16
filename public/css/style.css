@@ -244,6 +244,27 @@ body, html {
   #experiencia-tuttemob {
 	  display: none !important;  
   }
+  
+  #section-ambientes div.col-md-5 {
+	padding-top: 20px !important;
+	/*text-align: center;*/
+  }
+  
+  #section-ambientes div.col-md-7 {
+	padding-top: 20px !important; 
+  }
+  
+  #section-quemsomos {
+  	left: 10% !important;
+  }
+  
+  #section-quemsomos-interno {
+    width: 100% !important;
+  }
+  
+  #section-contatos #col-esquerda .col-xs-3 {
+    display: none;
+  }
 }
 @media screen and (min-width: 800px){
   #nav-center {
@@ -326,14 +347,14 @@ body, html {
 }
 .section-apresentacao .section-page {
   color: #F73F80;
-  top: 50%;
-  transform: translate(10%, -50%);
+  top: 40%;
+  transform: translate(10%, -40%);
 }
 .section-apresentacao #p1 img {
   width: 300px;
 }
 .section-apresentacao #p2 {
-  font-size: 38px;
+  font-size: 38px;  
 }
 .section-apresentacao #p3 {
   font-size: 118px;
@@ -447,7 +468,7 @@ body, html {
     padding: 15px 0px;
     background: #F73F80;
     color: #FFF;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -466,11 +487,12 @@ body, html {
   }
   #section-mobile .section-apresentacao #p2 {
     font-size: 24px;
+    margin-bottom: 5px;
   }
   #section-mobile .section-apresentacao #p3 {
-    font-size: 85px;
+    font-size: 55px;
     font-weight: bold;
-    line-height: 85px;
+    line-height: 55px;
     margin-top: -15px;
   }
 
@@ -491,7 +513,7 @@ body, html {
     font-size: 45px;
     font-weight: bold;
     line-height: 45px;
-    margin-top: -15px;
+    margin-top: -5px;
   }
   #section-mobile .section-apresentacao2 a.pbutton {
     color: #F73F80;
@@ -513,7 +535,7 @@ body, html {
     font-size: 45px;
     font-weight: bold;
     line-height: 45px;
-    margin-top: -15px;
+    margin-top: -5px;
   }
   #section-mobile .section-apresentacao3 a.pbutton {
     background: #F73F80;
@@ -543,7 +565,7 @@ body, html {
   padding: 0px;
 }
 #section-ambientes div.col-md-5 {
-	padding-top: 120px;
+	padding-top: 160px;
 	text-align: center;
 }
 #section-ambientes div.col-md-5 h1 {
@@ -557,8 +579,11 @@ body, html {
 	line-height: 28px;
 	margin: 0 auto;
 }
+#section-ambientes div.col-md-7 {
+	padding-top: 50px; 
+}
 #section-ambientes div.col-md-7 div.col-xs-4 {
-	margin: 20px 0px;
+	margin: 20px 0px; 
 }
 
 /* Contatos */
@@ -929,13 +954,21 @@ input.cmn-toggle-round:checked + label:after {
   margin-left: 30px;
 }
 
-#section-quemsomos {
+#section-quemsomos-bg {
   /*position:absolute;*/
   background-color: #F73F80;
   text-align: center;
   color: #FFFFFF;
   padding-bottom: 50px;
   height:100% !important;
+}
+
+#section-quemsomos {
+  position:absolute;
+  width: 80%;
+  left: 15%;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 #section-quemsomos-interno {
