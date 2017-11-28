@@ -265,6 +265,10 @@ body, html {
   #section-contatos #col-esquerda .col-xs-3 {
     display: none;
   }
+  #section-contatos #col-esquerda .col-xs-9 {
+    width: 100%;
+    padding-bottom: 70px;
+  }
 }
 @media screen and (min-width: 800px){
   #nav-center {
@@ -1004,11 +1008,35 @@ input.cmn-toggle-round:checked + label:after {
 	margin-bottom:0px !important;
 }
 
+#section-franquias-fisicas #rodape-espaco {
+  display: none;
+  width: 100%;
+  height: 70px;
+  background-color: #3FB7CA;
+}
+
 #section-mapa-interno {
 	width:100%;
 	height:300px;
 	margin: 0 auto;
 	color: #281447;
+}
+
+@media screen and (max-width: 800px){
+  #section-franquias-fisicas #rodape-espaco {
+    display: block;
+  }
+  #section-franquias-fisicas {
+    padding: 0px;
+    padding-top: 15px;
+  }
+  #section-franquias-fisicas .row {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #section-franquias-fisicas form h2 {
+    margin: 0;
+  }
 }
 
 #section-inicie-experiencia {

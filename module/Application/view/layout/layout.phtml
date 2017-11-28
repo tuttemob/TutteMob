@@ -28,111 +28,111 @@
     </head>
     <body>
 			
-			<div id="menu-nav-left">
-					<div id="nav-top">
-						<a href="<?= $this->url('home'); ?>" title="Inicio">
-							<img src="<?= $this->basePath('img/layout/logo-menu-left.png') ?>" id="logo-menu-left" />
-							<img src="<?= $this->basePath('img/layout/logo-menu-left-2.png') ?>" id="logo-menu-left-2" />
-						</a>
-					</div>
-					<div id="nav-center">
-						<ul>
-							<?php if(!$this->usuario): ?>
+			<div id="section-content" class="section col-lg-12">
+				<div id="menu-nav-left">
+						<div id="nav-top">
+							<a href="<?= $this->url('home'); ?>" title="Inicio">
+								<img src="<?= $this->basePath('img/layout/logo-menu-left.png') ?>" id="logo-menu-left" />
+								<img src="<?= $this->basePath('img/layout/logo-menu-left-2.png') ?>" id="logo-menu-left-2" />
+							</a>
+						</div>
+						<div id="nav-center">
+							<ul>
+								<?php if(!$this->usuario): ?>
+									<li>
+										<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>" title="Iniciar minha experiência TutteMob">
+											Experimente o novo
+										</a>
+									</li>
+								<?php else: ?>	
+									<li>
+										<a href="<?= $this->url('clientes'); ?>" title="Meus Orçamentos">
+											Meus Orçamentos
+										</a>
+									</li>
+								<?php endif; ?>
 								<li>
-									<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>" title="Iniciar minha experiência TutteMob">
-										Experimente o novo
+									<a href="<?= $this->url('home', array('action' => 'ambientes')); ?>" title="Ambientes">
+										Ambientes
 									</a>
 								</li>
-							<?php else: ?>	
 								<li>
-									<a href="<?= $this->url('clientes'); ?>" title="Meus Orçamentos">
-										Meus Orçamentos
+									<a href="<?= $this->url('home', array('action' => 'sobre-nos')); ?>" title="Sobre nós">
+										Sobre nós
 									</a>
 								</li>
-							<?php endif; ?>
-							<li>
-								<a href="<?= $this->url('home', array('action' => 'ambientes')); ?>" title="Ambientes">
-									Ambientes
-								</a>
-							</li>
-							<li>
-								<a href="<?= $this->url('home', array('action' => 'sobre-nos')); ?>" title="Sobre nós">
-									Sobre nós
-								</a>
-							</li>
-							<li>
-								<a href="<?= $this->url('home', array('action' => 'franquias')); ?>" title="Franquias Físicas">
-									Franquias Físicas
-								</a>
-							</li>
-							<!-- 
-							<li style="font-size: 20px;">
-								<a href="<?= $this->url('home'); ?>#section-experiencia-clientes" title="Experiência de Clientes">
+								<li>
+									<a href="<?= $this->url('home', array('action' => 'franquias')); ?>" title="Franquias Físicas">
+										Franquias Físicas
+									</a>
+								</li>
+								<!-- 
+								<li style="font-size: 20px;">
+									<a href="<?= $this->url('home'); ?>#section-experiencia-clientes" title="Experiência de Clientes">
+										Experiência de Clientes
+									</a>
+								</li>
+								<li>
+									<a href="<?= $this->url('home', array('action' => 'contatos')); ?>" title="Contatos">
+										Contatos
+									</a>
+								</li>
+								-->
+							</ul>
+							
+							<div id="nav-center-outrositens">
+								<a href="<?= $this->url('home', array('action' => 'experiencia-clientes')); ?>" title="Experiência de Clientes">
 									Experiência de Clientes
 								</a>
-							</li>
-							<li>
+								<br>
 								<a href="<?= $this->url('home', array('action' => 'contatos')); ?>" title="Contatos">
 									Contatos
 								</a>
-							</li>
-							 -->
-						</ul>
-						
-						<div id="nav-center-outrositens">
-							<a href="<?= $this->url('home', array('action' => 'experiencia-clientes')); ?>" title="Experiência de Clientes">
-								Experiência de Clientes
-							</a>
-							<br>
-							<a href="<?= $this->url('home', array('action' => 'contatos')); ?>" title="Contatos">
-								Contatos
-							</a>
-						</div>
+							</div>
 
-						<div id="center-social">
-							<ul>
-								<li><a href="#" title="Facebook">
-											<img src="<?= $this->basePath('img/layout/B9.png'); ?>" /></a></li>
-								<li><a href="#" title="Twitter">
-											<img src="<?= $this->basePath('img/layout/B10.png'); ?>" /></a></li>			
-								<li><a href="#" title="Youtube">
-											<img src="<?= $this->basePath('img/layout/B11.png'); ?>" /></a></li>
-								<li><a href="#" title="Instagram">
-											<img src="<?= $this->basePath('img/layout/B12.png'); ?>" /></a></li>
-								<li><a href="#" title="Google Maps">
-											<img src="<?= $this->basePath('img/layout/B13.png'); ?>" /></a></li>
-							</ul>
+							<div id="center-social">
+								<ul>
+									<li><a href="#" title="Facebook">
+												<img src="<?= $this->basePath('img/layout/B9.png'); ?>" /></a></li>
+									<li><a href="#" title="Twitter">
+												<img src="<?= $this->basePath('img/layout/B10.png'); ?>" /></a></li>			
+									<li><a href="#" title="Youtube">
+												<img src="<?= $this->basePath('img/layout/B11.png'); ?>" /></a></li>
+									<li><a href="#" title="Instagram">
+												<img src="<?= $this->basePath('img/layout/B12.png'); ?>" /></a></li>
+									<li><a href="#" title="Google Maps">
+												<img src="<?= $this->basePath('img/layout/B13.png'); ?>" /></a></li>
+								</ul>
+							</div>
 						</div>
-					</div>
-					<div id="nav-bottom">
-						<div class="pull-left">
-							<?php if(!$this->usuario): ?>
-								<a href="<?= $this->url('login'); ?>" title="Login" id="a-login">LOGIN</a>
-							<?php else: ?>	
-								<a href="<?= $this->url('login', array('action' => 'logout')); ?>" title="Sair" id="a-login">SAIR</a>
-							<?php endif; ?>	
+						<div id="nav-bottom">
+							<div class="pull-left">
+								<?php if(!$this->usuario): ?>
+									<a href="<?= $this->url('login'); ?>" title="Login" id="a-login">LOGIN</a>
+								<?php else: ?>	
+									<a href="<?= $this->url('login', array('action' => 'logout')); ?>" title="Sair" id="a-login">SAIR</a>
+								<?php endif; ?>	
+							</div>
+							<div id="bottom-social">
+								<ul>
+									<li><a href="#" title="Facebook">
+												<img src="<?= $this->basePath('img/layout/B9.png'); ?>" /></a></li>
+									<li><a href="#" title="Twitter">
+												<img src="<?= $this->basePath('img/layout/B10.png'); ?>" /></a></li>			
+									<li><a href="#" title="Youtube">
+												<img src="<?= $this->basePath('img/layout/B11.png'); ?>" /></a></li>
+									<li><a href="#" title="Instagram">
+												<img src="<?= $this->basePath('img/layout/B12.png'); ?>" /></a></li>
+									<li><a href="#" title="Google Maps">
+												<img src="<?= $this->basePath('img/layout/B13.png'); ?>" /></a></li>
+								</ul>
+							</div>
+							<div class="pull-right">
+								<a href="javascript:void(0)" onclick="showMenuMobile();" class="glyphicon glyphicon-menu-hamburger"></a>
+							</div>
 						</div>
-						<div id="bottom-social">
-							<ul>
-								<li><a href="#" title="Facebook">
-											<img src="<?= $this->basePath('img/layout/B9.png'); ?>" /></a></li>
-								<li><a href="#" title="Twitter">
-											<img src="<?= $this->basePath('img/layout/B10.png'); ?>" /></a></li>			
-								<li><a href="#" title="Youtube">
-											<img src="<?= $this->basePath('img/layout/B11.png'); ?>" /></a></li>
-								<li><a href="#" title="Instagram">
-											<img src="<?= $this->basePath('img/layout/B12.png'); ?>" /></a></li>
-								<li><a href="#" title="Google Maps">
-											<img src="<?= $this->basePath('img/layout/B13.png'); ?>" /></a></li>
-							</ul>
-						</div>
-						<div class="pull-right">
-							<a href="javascript:void(0)" onclick="showMenuMobile();" class="glyphicon glyphicon-menu-hamburger"></a>
-						</div>
-					</div>
-			</div>
-
-			<div id="section-content" class="section col-lg-12">
+				</div>
+				
 				<?= $this->layout()->content; ?>    
 			</div>
 	
