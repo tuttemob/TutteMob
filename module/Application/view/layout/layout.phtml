@@ -66,18 +66,6 @@
 										Franquias Físicas
 									</a>
 								</li>
-								<!-- 
-								<li style="font-size: 20px;">
-									<a href="<?= $this->url('home'); ?>#section-experiencia-clientes" title="Experiência de Clientes">
-										Experiência de Clientes
-									</a>
-								</li>
-								<li>
-									<a href="<?= $this->url('home', array('action' => 'contatos')); ?>" title="Contatos">
-										Contatos
-									</a>
-								</li>
-								-->
 							</ul>
 							
 							<div id="nav-center-outrositens">
@@ -148,119 +136,119 @@
 	    <!-- smooth scroll -->
 	    <script type="text/javascript">
 	      $(function(){
-						$('#menu-nav-left').hover(
-							function(){
-								if($(document).width() > 800){
-									$('#background-frames').fadeIn();
-									$('#logo-menu-left-2').fadeIn(100);
-									$('#logo-menu-left').hide();
-									$('#bottom-social').fadeIn(600);
-								}
+			$('#menu-nav-left').hover(
+				function(){
+					if($(document).width() > 800){
+						$('#background-frames').fadeIn();
+						$('#logo-menu-left-2').fadeIn(100);
+						$('#logo-menu-left').hide();
+						$('#bottom-social').fadeIn(600);
+					}
+				},
+				function(){
+					if($(document).width() > 800){
+						$('#background-frames').fadeOut();
+						$('#logo-menu-left').fadeIn(100);
+						$('#logo-menu-left-2').hide();
+						$('#bottom-social').hide();
+					}
+				}
+			);
+			var menuMobileState = 0;
+			showMenuMobile = function(){
+				$('#menu-nav-left').toggleClass('active');
+				$('#nav-center').fadeToggle(300);
+
+				if(menuMobileState == 1){
+					$('#background-frames').fadeOut();
+					$('#center-social').hide();
+					menuMobileState = 0;
+				}else{
+					$('#background-frames').fadeIn();
+					$('#center-social').fadeIn();
+					menuMobileState = 1;
+				}
+			};
+			$('#background-frames').click(function(){
+				$('#menu-nav-left').removeClass('active');
+				$('#nav-center').fadeOut(300);
+				$('#logo-menu-left').fadeIn(500);
+				$('#logo-menu-left-2').hide();
+				menuMobileState = 0;
+			});
+
+			$('a').attr('href', function() {
+				if(/\#/.test(this.href)){
+					var hrefParts = this.href.split(/#/);
+
+					if('slideCarousel' != hrefParts[1]){
+						hrefParts[1] = 'smoothScroll' + hrefParts[1];	
+					}
+					
+					return hrefParts.join('#');
+				}else{
+					return this.href;
+				}
+			});
+	
+			// executa ao carregar
+			var reSmooth = /^#smoothScroll/;
+			if (reSmooth.test(location.hash)) {
+				// Strip the "#smoothScroll" part off (and put "#" back on the beginning)
+				var id = '#' + location.hash.replace(reSmooth, '');
+				$.smoothScroll({scrollTarget: id});
+			}
+	
+			$('a').on('click', function(){
+				var reSmooth = /#smoothScroll/;
+				if (reSmooth.test(this.href)) {
+					var hrefParts = this.href.split(/#/);
+
+					var id = '#' + ('#' + hrefParts[1]).replace(reSmooth, '');
+					$.smoothScroll({scrollTarget: id});
+				}
+			});
+
+			// Login com facebook
+			$('#loginComFacebok').on('click', function(){
+				FB.login(function(fbresponse){
+					if (fbresponse.status == 'connected') {
+						$.post(
+							'<?= $this->url('login', array('action' => 'facebook')); ?>',
+							{
+								accessToken: fbresponse.authResponse.accessToken
 							},
-							function(){
-								if($(document).width() > 800){
-									$('#background-frames').fadeOut();
-									$('#logo-menu-left').fadeIn(100);
-									$('#logo-menu-left-2').hide();
-									$('#bottom-social').hide();
-								}
-							}
+							function(lgresponse){
+									if(lgresponse.data == 'success'){
+											window.location = '<?= $this->url('clientes'); ?>';
+									}else{
+										alert(lgresponse.msg);
+									}
+							},'json'	
 						);
-						var menuMobileState = 0;
-						showMenuMobile = function(){
-							$('#menu-nav-left').toggleClass('active');
-							$('#nav-center').fadeToggle(300);
+					}
+				}, {scope: 'public_profile,email'});
+			});
+	    });
 
-							if(menuMobileState == 1){
-								$('#background-frames').fadeOut();
-								$('#center-social').hide();
-								menuMobileState = 0;
-							}else{
-								$('#background-frames').fadeIn();
-								$('#center-social').fadeIn();
-								menuMobileState = 1;
-							}
-						};
-						$('#background-frames').click(function(){
-							$('#menu-nav-left').removeClass('active');
-							$('#nav-center').fadeOut(300);
-							$('#logo-menu-left').fadeIn(500);
-							$('#logo-menu-left-2').hide();
-							menuMobileState = 0;
-						});
-
-	          $('a').attr('href', function() {
-	              if(/\#/.test(this.href)){
-	                  var hrefParts = this.href.split(/#/);
-
-	                  if('slideCarousel' != hrefParts[1]){
-	                	  hrefParts[1] = 'smoothScroll' + hrefParts[1];	
-	                  }
-	                  
-	                  return hrefParts.join('#');
-	              }else{
-	                  return this.href;
-	              }
-	          });
-	
-	          // executa ao carregar
-	          var reSmooth = /^#smoothScroll/;
-	          if (reSmooth.test(location.hash)) {
-	              // Strip the "#smoothScroll" part off (and put "#" back on the beginning)
-	              var id = '#' + location.hash.replace(reSmooth, '');
-	              $.smoothScroll({scrollTarget: id});
-	          }
-	
-	          $('a').on('click', function(){
-	              var reSmooth = /#smoothScroll/;
-	              if (reSmooth.test(this.href)) {
-	                  var hrefParts = this.href.split(/#/);
-	
-	                  var id = '#' + ('#' + hrefParts[1]).replace(reSmooth, '');
-	                  $.smoothScroll({scrollTarget: id});
-	              }
-	          });
-
-						// Login com facebook
-						$('#loginComFacebok').on('click', function(){
-							FB.login(function(fbresponse){
-								if (fbresponse.status == 'connected') {
-									$.post(
-										'<?= $this->url('login', array('action' => 'facebook')); ?>',
-										{
-											accessToken: fbresponse.authResponse.accessToken
-										},
-										function(lgresponse){
-												if(lgresponse.data == 'success'){
-														window.location = '<?= $this->url('clientes'); ?>';
-												}else{
-													alert(lgresponse.msg);
-												}
-										},'json'	
-									);
-								}
-							}, {scope: 'public_profile,email'});
-						});
-	      });
-
-				// Load the SDK asynchronously
-				<?php $configFacebook = include './config/application.config.facebook.php'; ?>
-				window.fbAsyncInit = function() {
-					FB.init({
-						appId      : '<?= $configFacebook['app_id']; ?>',
-						cookie     : true,  // enable cookies to allow the server to access 
-																// the session
-						xfbml      : true,  // parse social plugins on this page
-						version    : 'v2.8' // use graph api version 2.8
-					});
-				};
-				(function(d, s, id) {
-					var js, fjs = d.getElementsByTagName(s)[0];
-					if (d.getElementById(id)) return;
-					js = d.createElement(s); js.id = id;
-					js.src = "//connect.facebook.net/en_US/sdk.js";
-					fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));
+		// Load the SDK asynchronously
+		<?php $configFacebook = include './config/application.config.facebook.php'; ?>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '<?= $configFacebook['app_id']; ?>',
+				cookie     : true,  // enable cookies to allow the server to access 
+														// the session
+				xfbml      : true,  // parse social plugins on this page
+				version    : 'v2.8' // use graph api version 2.8
+			});
+		};
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
 	    </script>
     </body>
 </html>
