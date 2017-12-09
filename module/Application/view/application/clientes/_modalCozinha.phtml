@@ -31,22 +31,22 @@
       				<label for="preferenciacores" class="col-sm-4">Preferência de cores:</label>
             		
             		<div class="col-sm-8">
-            			<label class="col-md-6">
-            				<input type="checkbox" name="preferenciacores[]" value="1">
-            				Claro
-            			</label>
-            			<label class="col-md-6">
-            				<input type="checkbox" name="preferenciacores[]" value="2">
-            				Escuro
-            			</label>
-            			<label class="col-md-6">
-            				<input type="checkbox" name="preferenciacores[]" value="3">
-            				Amadeirado
-            			</label>
-            			<label class="col-md-6">
-            				<input type="checkbox" name="preferenciacores[]" value="4">
-            				Liso
-            			</label>
+						<div class="col-md-6">
+							<input type="checkbox" name="preferenciacores[]" id="preferenciacores-1" value="1">
+            				<label for="preferenciacores-1">Claro</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="checkbox" name="preferenciacores[]" id="preferenciacores-2" value="2">
+							<label for="preferenciacores-2">Escuro</label>
+						</div>
+						<div class="col-md-6">
+							<input type="checkbox" name="preferenciacores[]" id="preferenciacores-3" value="3">
+							<label for="preferenciacores-3">Amadeirado</label>
+						</div>
+						<div class="col-md-6">
+							<input type="checkbox" name="preferenciacores[]" id="preferenciacores-4" value="4">
+							<label for="preferenciacores-4">Liso</label>
+						</div>
 				   	</div>
 				</div>
 				
@@ -54,10 +54,14 @@
       				<label for="fogao" class="col-sm-4">Fogão:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="fogao" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="fogao" id="fogao-1" value="1" class="block-subitem-cond">
+            				<label for="fogao-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="fogao" id="fogao-0" value="0" class="block-subitem-cond">
+            				<label for="fogao-0">Não</label>
+						</div>
 				   	</div>
 				   	
 				   	<!-- Fogao tipo -->
@@ -91,10 +95,14 @@
       				<label for="coifa" class="col-sm-4">Coifa/Depurador:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="coifa" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="coifa" id="coifa-1" value="1" class="block-subitem-cond">
+            				<label for="coifa-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="coifa" id="coifa-0" value="0" class="block-subitem-cond">
+            				<label for="coifa-0">Não</label>
+						</div>
 				   	</div>
 				   	
 				   	<!-- tipo -->
@@ -123,10 +131,14 @@
       				<label for="forno" class="col-sm-4">Forno:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="forno" required>
-				   			<option value="0">Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="forno" id="forno-1" value="1" class="block-subitem-cond">
+            				<label for="forno-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="forno" id="forno-0" value="0" class="block-subitem-cond">
+            				<label for="forno-0">Não</label>
+						</div>
 				   	</div>
 				   	
 				   	<!-- tipo -->
@@ -159,10 +171,14 @@
       				<label for="microondas" class="col-sm-4">Microondas:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="microondas" required>
-				   			<option value="0">Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="microondas" id="microondas-1" value="1" class="block-subitem-cond">
+            				<label for="microondas-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="microondas" id="microondas-0" value="0" class="block-subitem-cond">
+            				<label for="microondas-0">Não</label>
+						</div>
 				   	</div>
 				   	
 				   	<!-- tipo -->
@@ -195,10 +211,14 @@
       				<label for="refrigerador" class="col-sm-4">Refrigerador:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="refrigerador" required>
-				   			<option value="0">Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="refrigerador" id="refrigerador-1" value="1" class="block-subitem-cond">
+            				<label for="refrigerador-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="refrigerador" id="refrigerador-0" value="0" class="block-subitem-cond">
+            				<label for="refrigerador-0">Não</label>
+						</div>
 				   	</div>
 				   	
 				   	<!-- tipo -->
@@ -227,10 +247,14 @@
       				<label for="freezer" class="col-sm-4">Freezer:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="freezer" required>
-				   			<option value="0">Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="freezer" id="freezer-1" value="1" class="block-subitem-cond">
+            				<label for="freezer-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="freezer" id="freezer-0" value="0" class="block-subitem-cond">
+            				<label for="freezer-0">Não</label>
+						</div>
 				   	</div>
 				   	
 				   	<!-- tipo -->
@@ -259,10 +283,14 @@
       				<label for="lavalouca" class="col-sm-4">Lava - louça:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="lavalouca" required>
-				   			<option value="0">Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="lavalouca" id="lavalouca-1" value="1" class="block-subitem-cond">
+            				<label for="lavalouca-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="lavalouca" id="lavalouca-0" value="0" class="block-subitem-cond">
+            				<label for="lavalouca-0">Não</label>
+						</div>
 				   	</div>
 				   	
 				   	<!-- tipo -->
@@ -291,10 +319,14 @@
       				<label for="televisor" class="col-sm-4">Televisor:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="televisor" required>
-				   			<option value="0">Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="televisor" id="televisor-1" value="1" class="block-subitem-cond">
+            				<label for="televisor-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="televisor" id="televisor-0" value="0" class="block-subitem-cond">
+            				<label for="televisor-0">Não</label>
+						</div>
 				   	</div>
 				   	
 				   	<!-- tipo -->
@@ -347,10 +379,14 @@
       				<label for="mesa" class="col-sm-4">Mesa:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control" name="mesa" required>
-				   			<option value="0">Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="mesa" id="mesa-1" value="1">
+            				<label for="mesa-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="mesa" id="mesa-0" value="0">
+            				<label for="mesa-0">Não</label>
+						</div>
 				   	</div>
 				</div>
 				
@@ -358,10 +394,14 @@
       				<label for="bancada" class="col-sm-4">Bancada para refeições rápidas:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control" name="bancada" required>
-				   			<option value="0">Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="bancada" id="bancada-1" value="1">
+            				<label for="bancada-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="bancada" id="bancada-0" value="0">
+            				<label for="bancada-0">Não</label>
+						</div>
 				   	</div>
 				</div>
 				

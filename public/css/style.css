@@ -420,6 +420,13 @@ input.cmn-toggle-round:checked + label:after {
   border-bottom: 2px solid;
   border-color: #AAA;
 }
+.form-group select {
+  border: none;
+  border-bottom: 2px solid;
+  border-color: #AAA;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+}
 
 /* pagina inicial */
 #experiencia-tuttemob {
@@ -778,6 +785,63 @@ input.cmn-toggle-round:checked + label:after {
 #section-briefings {
 	padding: 0px;	
 }
+#section-briefings .form-group {
+  margin-bottom: 20px;
+}
+#section-briefings .form-group label {
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+#section-briefings .form-group input[type="radio"],
+#section-briefings .form-group input[type="checkbox"] {
+  display: none;
+}
+
+#section-briefings .form-group input[type="radio"] + label:before,
+#section-briefings .form-group input[type="checkbox"] + label:before {
+  border: 1px solid #AAA;
+  content: "\00a0";
+  display: inline-block;
+  font: 16px/1em sans-serif;
+  height: 16px;
+  margin: 0 .25em 0 0;
+  padding:0;
+  vertical-align: top;
+  width: 16px;
+  border-radius:4px;
+  margin-top: 5px;
+}
+
+#section-briefings .form-group input[type="radio"]:checked + label:before,
+#section-briefings .form-group input[type="checkbox"]:checked + label:before {
+  background: rgb(255, 19, 110);
+  color: #FFF;
+  content: "\2713";
+  text-align: center;
+  margin-top: 5px;
+}
+#section-briefings .modal-header .close {
+  color: rgb(255, 19, 74);
+  opacity: 1;
+}
+#section-briefings .modal-footer .btn-primary {
+  text-transform: uppercase;
+  border: 2px solid;
+  border-color: #FFF;
+  color: #FFF;
+  font-weight: bolder;
+  background: rgb(255, 19, 74);
+  padding: 10px 15px;
+  padding-top: 13px;
+}
+#section-briefings .modal-footer .btn-default {
+  text-transform: uppercase;
+  border: 2px #AAA solid;
+  padding: 9px 15px;
+  padding-top: 12px;
+}
+
 #section-briefings .col-md-8 h2 {
 	color: rgb(255, 19, 110);
     font-weight: bolder;

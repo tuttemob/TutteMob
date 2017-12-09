@@ -312,17 +312,6 @@ $(document).ready(function(){
 	// ajustes iniciais
 	ajustaWidHei();
 
-	// inicia o slide
-	setTimeout(function() {
-		var options = {
-            $BulletNavigatorOptions: {
-                $Class: $JssorBulletNavigator$,
-                $ChanceToShow: 2
-            }
-        };
-		var jssor_slider1 = new $JssorSlider$("section-mobile", options);	
-	}, 100);
-
 	// ajusta dimensoes em monitoramento
 	setInterval(function(){
 		ajustaWidHei();
@@ -451,7 +440,7 @@ $(function(){
 	$('#concluirHomeOffice').click(function(){
 		$('#modalHomeOfficeForm').submit();
 	});
-
+/*
 	$('.block-subitem-cond').change(function(){
 		var formGroup = $(this).parents('.form-group');
 		
@@ -463,21 +452,39 @@ $(function(){
 			$(formGroup).find('.block-subitem').find('input,select').removeAttr('required');
 		}
 	});
+*/
+	$('.block-subitem-cond').click(function(){
+		var formGroup = $(this).parents('.form-group');
+		
+		if($(this).val() == '1'){
+			$(formGroup).find('.block-subitem').fadeIn();
+			$(formGroup).find('.block-subitem').find('input,select').attr('required', 'required');
+		}else{
+			$(formGroup).find('.block-subitem').slideUp();
+			$(formGroup).find('.block-subitem').find('input,select').removeAttr('required');
+		}
+	});
 
 	criarBriefing = function(tp){
 		if(tp == 'cozinha'){
 			// abre a modal de briefing da cozinha
 			$('#modalCozinhaForm').find('input').each(function(){
-				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'preferenciacores[]'){
+				if($(this).attr('type') == 'radio'){
+					if($(this).val() == 0){
+						$(this).prop('checked', true);
+						$(this).click();
+					}
+				} else if($(this).attr('name') != 'acao' && $(this).attr('name') != 'preferenciacores[]'){
 					$(this).val('');
 				}
-				else if($(this).attr('name') != 'preferenciacores[]'){
+				else if($(this).attr('name') == 'preferenciacores[]'){
 					$(this).prop('checked', false);
 				}
 			});
 			$('#modalCozinhaForm').find('select').each(function(){
 				$(this).val(0);
 			});
+
 			$('input[name="id"]').val('');
 			$('#modalCozinhaForm').find('.box-imagem .col-xs-6').html('');
 			$('#modalCozinha').modal('show');
@@ -485,10 +492,15 @@ $(function(){
 		} else if(tp == 'areaServico'){
 			// abre a modal de briefing de área de serviço
 			$('#modalAreaServicoForm').find('input').each(function(){
-				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bas_preferenciacores[]'){
+				if($(this).attr('type') == 'radio'){
+					if($(this).val() == 0){
+						$(this).prop('checked', true);
+						$(this).click();
+					}
+				} else if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bas_preferenciacores[]'){
 					$(this).val('');
 				}
-				else if($(this).attr('name') != 'bas_preferenciacores[]'){
+				else if($(this).attr('name') == 'bas_preferenciacores[]'){
 					$(this).prop('checked', false);
 				}
 			});
@@ -501,10 +513,15 @@ $(function(){
 		} else if(tp == 'dormitoriocasal'){
 			// abre a modal de briefing de dormitório de casal
 			$('#modalDormitorioCasalForm').find('input').each(function(){
-				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bdc_preferenciacores[]'){
+				if($(this).attr('type') == 'radio'){
+					if($(this).val() == 0){
+						$(this).prop('checked', true);
+						$(this).click();
+					}
+				} else if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bdc_preferenciacores[]'){
 					$(this).val('');
 				}
-				else if($(this).attr('name') != 'bdc_preferenciacores[]'){
+				else if($(this).attr('name') == 'bdc_preferenciacores[]'){
 					$(this).prop('checked', false);
 				}
 			});
@@ -517,10 +534,15 @@ $(function(){
 		} else if(tp == 'dormitoriosolteiro'){
 			// abre a modal de briefing de dormitório de solteiro
 			$('#modalDormitorioSolteiroForm').find('input').each(function(){
-				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bds_preferenciacores[]'){
+				if($(this).attr('type') == 'radio'){
+					if($(this).val() == 0){
+						$(this).prop('checked', true);
+						$(this).click();
+					}
+				} else if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bds_preferenciacores[]'){
 					$(this).val('');
 				}
-				else if($(this).attr('name') != 'bds_preferenciacores[]'){
+				else if($(this).attr('name') == 'bds_preferenciacores[]'){
 					$(this).prop('checked', false);
 				}
 			});
@@ -553,10 +575,15 @@ $(function(){
 		}*/ else if(tp == 'closet'){
 			// abre a modal de briefing de closet
 			$('#modalClosetForm').find('input').each(function(){
-				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bcl_preferenciacores[]'){
+				if($(this).attr('type') == 'radio'){
+					if($(this).val() == 0){
+						$(this).prop('checked', true);
+						$(this).click();
+					}
+				} else if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bcl_preferenciacores[]'){
 					$(this).val('');
 				}
-				else if($(this).attr('name') != 'bcl_preferenciacores[]'){
+				else if($(this).attr('name') == 'bcl_preferenciacores[]'){
 					$(this).prop('checked', false);
 				}
 			});
@@ -569,10 +596,15 @@ $(function(){
 		} else if(tp == 'banheiro'){
 			// abre a modal de briefing de banheiro
 			$('#modalBanheiroForm').find('input').each(function(){
-				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'ban_preferenciacores[]'){
+				if($(this).attr('type') == 'radio'){
+					if($(this).val() == 0){
+						$(this).prop('checked', true);
+						$(this).click();
+					}
+				} else if($(this).attr('name') != 'acao' && $(this).attr('name') != 'ban_preferenciacores[]'){
 					$(this).val('');
 				}
-				else if($(this).attr('name') != 'ban_preferenciacores[]'){
+				else if($(this).attr('name') == 'ban_preferenciacores[]'){
 					$(this).prop('checked', false);
 				}
 			});
@@ -585,10 +617,15 @@ $(function(){
 		} else if(tp == 'hometheater'){
 			// abre a modal de briefing de home theater
 			$('#modalHomeTheaterForm').find('input').each(function(){
-				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bht_preferenciacores[]'){
+				if($(this).attr('type') == 'radio'){
+					if($(this).val() == 0){
+						$(this).prop('checked', true);
+						$(this).click();
+					}
+				} else if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bht_preferenciacores[]'){
 					$(this).val('');
 				}
-				else if($(this).attr('name') != 'bht_preferenciacores[]'){
+				else if($(this).attr('name') == 'bht_preferenciacores[]'){
 					$(this).prop('checked', false);
 				}
 			});
@@ -601,10 +638,15 @@ $(function(){
 		} else if(tp == 'homeoffice'){
 			// abre a modal de briefing de home office
 			$('#modalHomeOfficeForm').find('input').each(function(){
-				if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bho_preferenciacores[]'){
+				if($(this).attr('type') == 'radio'){
+					if($(this).val() == 0){
+						$(this).prop('checked', true);
+						$(this).click();
+					}
+				} else if($(this).attr('name') != 'acao' && $(this).attr('name') != 'bho_preferenciacores[]'){
 					$(this).val('');
 				}
-				else if($(this).attr('name') != 'bho_preferenciacores[]'){
+				else if($(this).attr('name') == 'bho_preferenciacores[]'){
 					$(this).prop('checked', false);
 				}
 			});
@@ -629,8 +671,14 @@ $(function(){
 					$('#modalCozinhaForm').find('input,select').each(function(){
 						var name = $(this).attr('name');
 						if(name != 'acao' && name != 'preferenciacores[]' && name != 'imagem'){
-							$(this).val(resp.data[name]);
-							$(this).change();
+							if($(this).attr('type') == 'radio'){
+								if($(this).val() == resp.data[name]){
+									$(this).click();
+								}
+							}else{
+								$(this).val(resp.data[name]);
+								$(this).change();
+							}
 						}
 						// preferencia de cores
 						if(name == 'preferenciacores[]'){
@@ -655,8 +703,14 @@ $(function(){
 					$('#modalAreaServicoForm').find('input,select').each(function(){
 						var name = $(this).attr('name');
 						if(name != 'acao' && name != 'bas_preferenciacores[]' && name != 'bas_imagem'){
-							$(this).val(resp.data[name]);
-							$(this).change();
+							if($(this).attr('type') == 'radio'){
+								if($(this).val() == resp.data[name]){
+									$(this).click();
+								}
+							}else{
+								$(this).val(resp.data[name]);
+								$(this).change();
+							}
 						}
 						// preferencia de cores
 						if(name == 'bas_preferenciacores[]'){
@@ -681,8 +735,14 @@ $(function(){
 					$('#modalDormitorioCasalForm').find('input,select').each(function(){
 						var name = $(this).attr('name');
 						if(name != 'acao' && name != 'bdc_preferenciacores[]' && name != 'bdc_imagem'){
-							$(this).val(resp.data[name]);
-							$(this).change();
+							if($(this).attr('type') == 'radio'){
+								if($(this).val() == resp.data[name]){
+									$(this).click();
+								}
+							}else{
+								$(this).val(resp.data[name]);
+								$(this).change();
+							}
 						}
 						// preferencia de cores
 						if(name == 'bdc_preferenciacores[]'){
@@ -707,8 +767,14 @@ $(function(){
 					$('#modalDormitorioSolteiroForm').find('input,select').each(function(){
 						var name = $(this).attr('name');
 						if(name != 'acao' && name != 'bds_preferenciacores[]' && name != 'bds_imagem'){
-							$(this).val(resp.data[name]);
-							$(this).change();
+							if($(this).attr('type') == 'radio'){
+								if($(this).val() == resp.data[name]){
+									$(this).click();
+								}
+							}else{
+								$(this).val(resp.data[name]);
+								$(this).change();
+							}
 						}
 						// preferencia de cores
 						if(name == 'bds_preferenciacores[]'){
@@ -733,8 +799,14 @@ $(function(){
 					$('#modalDormitorioInfantilForm').find('input,select').each(function(){
 						var name = $(this).attr('name');
 						if(name != 'acao' && name != 'bdi_preferenciacores[]' && name != 'bdi_imagem'){
-							$(this).val(resp.data[name]);
-							$(this).change();
+							if($(this).attr('type') == 'radio'){
+								if($(this).val() == resp.data[name]){
+									$(this).click();
+								}
+							}else{
+								$(this).val(resp.data[name]);
+								$(this).change();
+							}
 						}
 						// preferencia de cores
 						if(name == 'bdi_preferenciacores[]'){
@@ -759,8 +831,14 @@ $(function(){
 					$('#modalClosetForm').find('input,select').each(function(){
 						var name = $(this).attr('name');
 						if(name != 'acao' && name != 'bcl_preferenciacores[]' && name != 'bcl_imagem'){
-							$(this).val(resp.data[name]);
-							$(this).change();
+							if($(this).attr('type') == 'radio'){
+								if($(this).val() == resp.data[name]){
+									$(this).click();
+								}
+							}else{
+								$(this).val(resp.data[name]);
+								$(this).change();
+							}
 						}
 						// preferencia de cores
 						if(name == 'bcl_preferenciacores[]'){
@@ -785,8 +863,14 @@ $(function(){
 					$('#modalBanheiroForm').find('input,select').each(function(){
 						var name = $(this).attr('name');
 						if(name != 'acao' && name != 'ban_preferenciacores[]' && name != 'ban_imagem'){
-							$(this).val(resp.data[name]);
-							$(this).change();
+							if($(this).attr('type') == 'radio'){
+								if($(this).val() == resp.data[name]){
+									$(this).click();
+								}
+							}else{
+								$(this).val(resp.data[name]);
+								$(this).change();
+							}
 						}
 						// preferencia de cores
 						if(name == 'ban_preferenciacores[]'){
@@ -811,8 +895,14 @@ $(function(){
 					$('#modalHomeTheaterForm').find('input,select').each(function(){
 						var name = $(this).attr('name');
 						if(name != 'acao' && name != 'bht_preferenciacores[]' && name != 'bht_imagem'){
-							$(this).val(resp.data[name]);
-							$(this).change();
+							if($(this).attr('type') == 'radio'){
+								if($(this).val() == resp.data[name]){
+									$(this).click();
+								}
+							}else{
+								$(this).val(resp.data[name]);
+								$(this).change();
+							}
 						}
 						// preferencia de cores
 						if(name == 'bht_preferenciacores[]'){
@@ -837,8 +927,14 @@ $(function(){
 					$('#modalHomeOfficeForm').find('input,select').each(function(){
 						var name = $(this).attr('name');
 						if(name != 'acao' && name != 'bho_preferenciacores[]' && name != 'bho_imagem'){
-							$(this).val(resp.data[name]);
-							$(this).change();
+							if($(this).attr('type') == 'radio'){
+								if($(this).val() == resp.data[name]){
+									$(this).click();
+								}
+							}else{
+								$(this).val(resp.data[name]);
+								$(this).change();
+							}
 						}
 						// preferencia de cores
 						if(name == 'bho_preferenciacores[]'){
