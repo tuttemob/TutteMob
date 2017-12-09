@@ -386,16 +386,16 @@ input.cmn-toggle-round:checked + label:after {
   padding-left: 50px;
   color: #FFF;
   top: 50%;
-  margin-top: -140px;
+  margin-top: -170px;
 }
 .section-8-4 div.col-xs-9 h2 {
   font-weight: bolder;
-  font-size: 68px;
-  line-height: 58px;
+  font-size: 98px;
+  line-height: 88px;
 }
 .section-8-4 div.col-xs-9 p {
-  font-size: 25px;
-  line-height: 32px;
+  font-size: 35px;
+  line-height: 42px;
   margin: 0;
 }
 
@@ -780,14 +780,18 @@ input.cmn-toggle-round:checked + label:after {
 }
 #section-briefings .col-md-8 h2 {
 	color: rgb(255, 19, 110);
+    font-weight: bolder;
+    font-size: 68px;
+    line-height: 58px;
 }
 #section-briefings .col-md-8 p {
   color: rgb(255, 19, 110);
   font-size: 22px;
-  line-height: 25px;
+  line-height: 30px;
+  margin-top: 25px;
 }
 #section-briefings .col-md-4 {
-  background: rgb(255, 134, 182);
+  background: rgb(255, 174, 202);
   color: #FFF;
   position: absolute;
   min-height: 100%;
@@ -799,6 +803,11 @@ input.cmn-toggle-round:checked + label:after {
 #section-briefings .col-md-4 h2 {
   text-align: center;
   margin-bottom: 20px;
+}
+#section-briefings .section-8-4 div.col-xs-9 h2 {
+  font-weight: bolder;
+  font-size: 78px;
+  line-height: 68px;
 }
 #section-briefings input.cmn-toggle-round:checked + label:before {
   background-color: rgb(255, 19, 110);
