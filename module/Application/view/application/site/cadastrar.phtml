@@ -25,46 +25,48 @@
 		</div>
 	</div>
 	<div class="col-md-4">
-		<form id="formLogin" method="post" data-toggle="validator">
-			<input type="hidden" name="acao" value="cadastrar" />
-			<input type="hidden" name="fone_cel" value="0">
-			
-			<div class="form-group">
-            	<label for="nome">Nos conte o seu nome completo:</label>
-				<input type="text" class="form-control" name="nome" value="<?php echo isset($_SESSION['nome'])? $_SESSION['nome']: '';?>" required>
-			</div>
-					
-			<div class="form-group">
-				<label for="email">Nos conte o seu e-mail:</label>
-				<input type="email" class="form-control" name="email" value="<?php echo $_SESSION['email'];?>" required>
-			</div>
+		<div class="cadastro">
+			<form id="formLogin" method="post" data-toggle="validator">
+				<input type="hidden" name="acao" value="cadastrar" />
+				<input type="hidden" name="fone_cel" value="0">
 				
-			<div class="form-group">
-            	<label for="senha">Escolha uma senha:</label>
-			   	<input type="password" class="form-control" name="senha" value="<?php echo $_SESSION['senha'];?>" required>
-			</div>
-			
-			<div class="form-group">
-            	<label for="senharepeat">Repita a senha:</label>
-			   	<input type="password" class="form-control" name="senharepeat" value="<?php echo $_SESSION['senharepeat'];?>" required>
-			</div>
-
-			<?php if($this->success):?>
-				<div class="alert alert-success" role="alert"><?= $this->success; ?></div>
-		    <?php endif;?>
-		            			
-		    <?php if($this->error):?>
-		    	<div class="alert alert-danger" role="alert"><?= $this->error; ?></div>
-		    <?php endif;?>
-			
-			<div class="form-group">
-				<button type="submit" class="btn btn-block">Cadastrar</button>
-            </div>
-			
-			<div class="form-group">
-				<button type="button" id="loginComFacebok" class="btn btn-block">Entrar com Facebook</button>
-            </div>
-		</form>
+				<div class="form-group">
+	            	<label for="nome">Nos conte o seu nome completo:</label>
+					<input type="text" class="form-control" name="nome" value="<?php echo isset($_SESSION['nome'])? $_SESSION['nome']: '';?>" required>
+				</div>
+						
+				<div class="form-group">
+					<label for="email">Nos conte o seu e-mail:</label>
+					<input type="email" class="form-control" name="email" value="<?php echo $_SESSION['email'];?>" required>
+				</div>
+					
+				<div class="form-group">
+	            	<label for="senha">Escolha uma senha:</label>
+				   	<input type="password" class="form-control" name="senha" value="<?php echo $_SESSION['senha'];?>" required>
+				</div>
+				
+				<div class="form-group">
+	            	<label for="senharepeat">Repita a senha:</label>
+				   	<input type="password" class="form-control" name="senharepeat" value="<?php echo $_SESSION['senharepeat'];?>" required>
+				</div>
+	
+				<?php if($this->success):?>
+					<div class="alert alert-success" role="alert"><?= $this->success; ?></div>
+			    <?php endif;?>
+			            			
+			    <?php if($this->error):?>
+			    	<div class="alert alert-danger" role="alert"><?= $this->error; ?></div>
+			    <?php endif;?>
+				
+				<div class="form-group">
+					<button type="submit" class="btn btn-block">Cadastrar</button>
+	            </div>
+				
+				<div class="form-group">
+					<button type="button" id="loginComFacebok" class="btn btn-block">Entrar com Facebook</button>
+	            </div>
+			</form>
+		</div>
 		
 		<?php 
 			unset($_SESSION["nome"]);

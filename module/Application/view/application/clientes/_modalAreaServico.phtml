@@ -23,26 +23,26 @@
       				<label for="bas_preferenciacores" class="col-sm-4">Preferência de cores:</label>
             		
             		<div class="col-sm-8">
-            			<label class="col-md-6">
-            				<input type="checkbox" name="bas_preferenciacores[]" value="1">
-            				Claro
-            			</label>
-            			<label class="col-md-6">
-            				<input type="checkbox" name="bas_preferenciacores[]" value="2">
-            				Escuro
-            			</label>
-            			<label class="col-md-6">
-            				<input type="checkbox" name="bas_preferenciacores[]" value="3">
-            				Amadeirado
-            			</label>
-            			<label class="col-md-6">
-            				<input type="checkbox" name="bas_preferenciacores[]" value="4">
-            				Liso
-            			</label>
-            			<label class="col-md-6">
-            				<input type="checkbox" name="bas_preferenciacores[]" value="5">
-            				Colorido
-            			</label>
+            			<div class="col-md-6">
+            				<input type="checkbox" name="bas_preferenciacores[]" id="preferenciacores-1" value="1">
+            				<label for="preferenciacores-1">Claro</label>
+            			</div>
+            			<div class="col-md-6">
+            				<input type="checkbox" name="bas_preferenciacores[]" id="preferenciacores-2" value="2">
+            				<label for="preferenciacores-2">Escuro</label>
+            			</div>
+            			<div class="col-md-6">
+            				<input type="checkbox" name="bas_preferenciacores[]" id="preferenciacores-3" value="3">
+            				<label for="preferenciacores-3">Amadeirado</label>
+            			</div>
+            			<div class="col-md-6">
+            				<input type="checkbox" name="bas_preferenciaco-res[]" id="preferenciacores-4" value="4">
+            				<label for="preferenciacores-4">Liso</label>
+            			</div>
+            			<div class="col-md-6">
+            				<input type="checkbox" name="bas_preferenciacores[]" id="preferenciacores-5" value="5">
+            				<label for="preferenciacores-5">Colorido</label>
+            			</div>
 				   	</div>
 				</div>
 				
@@ -50,10 +50,14 @@
       				<label for="bas_maquinalavar" class="col-sm-4">Máquina de lavar:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="bas_maquinalavar" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+				   		<div class="col-md-6">
+            				<input type="radio" name="bas_maquinalavar" id="bas_maquinalavar-1" value="1" class="block-subitem-cond">
+            				<label for="bas_maquinalavar-1">Sim</label>
+				   		</div>
+            			<div class="col-md-6">
+							<input type="radio" name="bas_maquinalavar" id="bas_maquinalavar-0" value="0" class="block-subitem-cond">
+            				<label for="bas_maquinalavar-0">Não</label>
+						</div>
 				   	</div>
 				   	
 				   	<!-- Máquina de lavar cor -->

@@ -82,6 +82,15 @@ body, html {
 #nav-top img {
   margin-left: -12px;
   height: 75px;
+  float: left;
+}
+#nav-top div {
+  display: block;
+  position: absolute;
+  color: #6D6D6D;
+  padding-left: 70px;
+  margin-top: 10px;
+  display: none;
 }
 #logo-menu-left-2 {
   display: none;
@@ -409,9 +418,9 @@ input.cmn-toggle-round:checked + label:after {
   color: #AAA;
   text-transform: uppercase;
   margin-bottom: 0px;
-  margin-top: 10px;
-	font-size: 16px;
-	font-weight: 400;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 400;
 }
 .form-group input {
   border: none;
@@ -766,9 +775,17 @@ input.cmn-toggle-round:checked + label:after {
 	color: #A04D87
 }
 
+#section-login .login #formLogin {
+  margin-top: 70px;
+}
+
+#section-login .cadastro #formLogin {
+  margin-top: 5px;
+}
+
 #section-login #formLogin button {
-	margin-top: 15px;
-	padding: 18px 0px;
+  margin-top: 15px;
+  padding: 18px 0px;
   font-size: 18px;
   text-transform: uppercase;
   border: 2px solid;
@@ -1227,6 +1244,7 @@ input.cmn-toggle-round:checked + label:after {
 
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
+  color: rgb(255, 19, 74);
 }
 
 a.linksSemEstilos:link,a.linksSemEstilos:visited,a.linksSemEstilos:hover,a.linksSemEstilos:active { 

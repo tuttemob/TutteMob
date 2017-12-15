@@ -32,8 +32,15 @@
 				<div id="menu-nav-left">
 						<div id="nav-top">
 							<a href="<?= $this->url('home'); ?>" title="Inicio">
-								<img src="<?= $this->basePath('img/layout/logo-menu-left.png') ?>" id="logo-menu-left" />
-								<img src="<?= $this->basePath('img/layout/logo-menu-left-2.png') ?>" id="logo-menu-left-2" />
+								<?php if(!$this->usuario): ?>
+									<img src="<?= $this->basePath('img/layout/logo-menu-left.png') ?>" id="logo-menu-left" />
+									<img src="<?= $this->basePath('img/layout/logo-menu-left-2.png') ?>" id="logo-menu-left-2" />
+								<?php else: ?>
+									<img src="<?= $this->basePath('img/layout/logo-menu-left-logado.png') ?>" id="logo-menu-left-3" />
+									<div id="usuario-text">
+										PREFERÊNCIAS DE <br><?= strtoupper(reset(explode(' ',$this->usuario->nome))); ?>
+									</div>
+								<?php endif; ?>
 							</a>
 						</div>
 						<div id="nav-center">
@@ -141,6 +148,7 @@
 					if($(document).width() > 800){
 						$('#background-frames').fadeIn();
 						$('#logo-menu-left-2').fadeIn(100);
+						$('#usuario-text').fadeIn(100);
 						$('#logo-menu-left').hide();
 						$('#bottom-social').fadeIn(600);
 					}
@@ -150,6 +158,7 @@
 						$('#background-frames').fadeOut();
 						$('#logo-menu-left').fadeIn(100);
 						$('#logo-menu-left-2').hide();
+						$('#usuario-text').hide();
 						$('#bottom-social').hide();
 					}
 				}

@@ -1,4 +1,4 @@
-<div id="section-login" class="section col-lg-12">
+<div id="section-login" class="section section-8-4 col-lg-12">
 	
 	<!-- 
 	<div class="col-md-12">
@@ -13,69 +13,68 @@
     -->
            
 	<div class="col-md-8">
-		<div class="col-xs-3">
-			<img src="<?= $this->basePath('img/layout/seta-conteudo.png'); ?>" />
+		<div class="section-background">
+			<img src="<?= $this->basePath('img/layout/img-fundo-login.png'); ?>" />
 		</div>
 		
 		<div class="col-xs-9">
-			<p>A partir de agora vamos guiá-lo a uma <b>nova</b></p>
-			<p><b>experiência de compra</b> em móveis planejados.</p>
-			<p>&nbsp;</p>
-			<p>Precisamos conhecer as suas <b>preferências e necessidades</b></p>
-			<p>para que os nossos especialistas em projeto possam aproveitar</p>
-			<p>o que temos de melhor para deixar o seu ambiente</p>
-			<p><b>adequado ao que você procura. :)</b></p>
+			<h2>Você já <br /> conhece o novo.</h2>
+			<p>Faça o login e continue sua experiência de</p>
+			<p>comprar móveis planejados de uma <b>forma única.</b></p>
 		</div>
 	</div>
 	<div class="col-md-4">
-		<div class="login-title">
-			<h2>Login</h2>
+		<div class="login">
+			<form id="formLogin" method="post" data-toggle="validator">
+				<input type="hidden" name="acao" value="login" />
+				
+				<div class="form-group">
+					<label for="email">E-mail:</label>
+					<input type="email" class="form-control" name="email" value="<?php echo $_SESSION[email];?>" required>
+				</div>
+				
+				<div class="form-group">
+					<label for="documento">Senha:</label>
+					<input type="password" class="form-control" name="senha" value="<?php echo $_SESSION[senha];?>" required>
+					<div class="help-block with-errors"></div>
+				</div>
+	
+				<div class="form-group" style="text-align: right">
+					<a href="<?= $this->url('login', array('action' => 'esqueceu-senha')); ?>">Esqueceu sua senha?</a>
+				</div>
+				
+				<?php if($this->success):?>
+					<div class="alert alert-success" role="alert"><?= $this->success; ?></div>
+			    <?php endif;?>
+			            			
+			    <?php if($this->error):?>
+			    	<div class="alert alert-danger" role="alert"><?= $this->error; ?></div>
+			    <?php endif;?>
+				
+				<div class="form-group">
+					<button type="submit" class="btn btn-block">Entrar</button>
+	            </div>
+				
+				<div class="form-group">
+					<button type="button" id="loginComFacebok" class="btn btn-block">Entrar com Facebook</button>
+	            </div>
+			</form>
 		</div>
-		
-		<form id="formLogin" method="post" data-toggle="validator">
-			<input type="hidden" name="acao" value="login" />
-			
-			<div class="form-group">
-				<label for="email">E-mail:</label>
-				<input type="email" class="form-control" name="email" value="<?php echo $_SESSION[email];?>" placeholder="E-mail" required>
-			</div>
-			
-			<div class="form-group">
-				<label for="documento">Senha:</label>
-				<input type="password" class="form-control" name="senha" value="<?php echo $_SESSION[senha];?>" placeholder="Senha" required>
-				<div class="help-block with-errors"></div>
-			</div>
-
-			<div class="form-group" style="text-align: right">
-				<a href="<?= $this->url('login', array('action' => 'esqueceu-senha')); ?>">Esqueceu sua senha?</a>
-			</div>
-			
-			<?php if($this->success):?>
-				<div class="alert alert-success" role="alert"><?= $this->success; ?></div>
-		    <?php endif;?>
-		            			
-		    <?php if($this->error):?>
-		    	<div class="alert alert-danger" role="alert"><?= $this->error; ?></div>
-		    <?php endif;?>
-			
-			<div class="form-group">
-				<button type="submit" class="btn btn-primary btn-block">Entrar</button>
-            </div>
-			
-			<div class="form-group">
-				<button type="button" id="loginComFacebok" class="btn btn-primary btn-block">Entrar com Facebook</button>
-            </div>
-		</form>
 
 		<?php 
 			unset($_SESSION["email"]);
 			unset($_SESSION["senha"]);
 		?>
-
 	</div>
 </div>
 
 <script type="text/javascript">
+$(function(){
+	$('#cadastrar').click(function(){
+		$('#modalClienteForm').submit();
+	});
+});
+
 $(document).ready(function(){
 	  $('.date').mask('11/11/1111');
 	  $('.time').mask('00:00:00');
@@ -92,4 +91,27 @@ jQuery(function($){
 	$("#campoTelefone").mask("(999) 09999-9999");
 	$("#campoSenha").mask("***-****");
 });		
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	ajustaWidHei = function(){
+		$('body').css('overflow', 'hidden');
+		$('#section-content').css('overflow', 'hidden');
+		
+		if($(window).width() < 800){
+		}else{
+			var menuHeight = $('#menu-nav-left').outerHeight() + 'px';
+			$('.section-background img').css('height', menuHeight);
+		}
+	};
+
+	// ajustes iniciais
+	ajustaWidHei();
+
+	// ajusta dimensoes em monitoramento
+	setInterval(function(){
+		ajustaWidHei();
+	}, 300);
+});
 </script>
