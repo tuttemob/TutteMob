@@ -37,26 +37,26 @@
       				<label for="ban_preferenciacores" class="col-sm-4">Preferência de cores:</label>
             		
             		<div class="col-sm-8">
-            			<label class="col-md-6">
-            				<input type="checkbox" name="ban_preferenciacores[]" value="1">
-            				Claro
-            			</label>
-            			<label class="col-md-6">
-            				<input type="checkbox" name="ban_preferenciacores[]" value="2">
-            				Escuro
-            			</label>
-            			<label class="col-md-6">
-            				<input type="checkbox" name="ban_preferenciacores[]" value="3">
-            				Amadeirado
-            			</label>
-            			<label class="col-md-6">
-            				<input type="checkbox" name="ban_preferenciacores[]" value="4">
-            				Liso
-            			</label>
-            			<label class="col-md-6">
-            				<input type="checkbox" name="ban_preferenciacores[]" value="5">
-            				Colorido
-            			</label>
+            			<div class="col-md-6">
+            				<input type="checkbox" name="ban_preferenciacores[]" id="ban_preferenciacores-1" value="1">
+            				<label for="ban_preferenciacores-1">Claro</label>
+            			</div>
+            			<div class="col-md-6">
+            				<input type="checkbox" name="ban_preferenciacores[]" id="ban_preferenciacores-2" value="2">
+            				<label for="ban_preferenciacores-2">Escuro</label>
+            			</div>
+            			<div class="col-md-6">
+            				<input type="checkbox" name="ban_preferenciacores[]" id="ban_preferenciacores-3" value="3">
+            				<label for="ban_preferenciacores-3">Amadeirado</label>
+            			</div>
+            			<div class="col-md-6">
+            				<input type="checkbox" name="ban_preferenciacores[]" id="ban_preferenciacores-4" value="4">
+            				<label for="ban_preferenciacores-4">Liso</label>
+            			</div>
+            			<div class="col-md-6">
+            				<input type="checkbox" name="ban_preferenciacores[]" id="ban_preferenciacores-5" value="5">
+            				<label for="ban_preferenciacores-5">Colorido</label>
+            			</div>
 				   	</div>
 				</div>
 				
@@ -84,67 +84,91 @@
       				<label for="ban_secadorcabelo" class="col-sm-4">Secador de cabelo:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control" name="ban_secadorcabelo" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
-				   	</div>				   	
+						<div class="col-md-6">
+            				<input type="radio" name="ban_secadorcabelo" id="ban_secadorcabelo-1" value="1">
+            				<label for="ban_secadorcabelo-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="ban_secadorcabelo" id="ban_secadorcabelo-0" value="0">
+            				<label for="ban_secadorcabelo-0">Não</label>
+						</div>
+				   	</div>
 				</div>
 				
 				<div class="form-group col-xs-12">
       				<label for="ban_chapinha" class="col-sm-4">Chapinha:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control" name="ban_chapinha" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
-				   	</div>				   	
+						<div class="col-md-6">
+            				<input type="radio" name="ban_chapinha" id="ban_chapinha-1" value="1">
+            				<label for="ban_chapinha-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="ban_chapinha" id="ban_chapinha-0" value="0">
+            				<label for="ban_chapinha-0">Não</label>
+						</div>
+				   	</div>
 				</div>
 				
 				<div class="form-group col-xs-12">
       				<label for="ban_barbeador" class="col-sm-4">Barbeador:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control" name="ban_barbeador" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
-				   	</div>				   	
+						<div class="col-md-6">
+            				<input type="radio" name="ban_barbeador" id="ban_barbeador-1" value="1">
+            				<label for="ban_barbeador-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="ban_barbeador" id="ban_barbeador-0" value="0">
+            				<label for="ban_barbeador-0">Não</label>
+						</div>
+				   	</div>
 				</div>
 
 				<div class="form-group col-xs-12">
       				<label for="ban_armazenartoalhas" class="col-sm-4">Armazenar toalhas:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control" name="ban_armazenartoalhas" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
-				   	</div>				   	
+						<div class="col-md-6">
+            				<input type="radio" name="ban_armazenartoalhas" id="ban_armazenartoalhas-1" value="1">
+            				<label for="ban_armazenartoalhas-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="ban_armazenartoalhas" id="ban_armazenartoalhas-0" value="0">
+            				<label for="ban_armazenartoalhas-0">Não</label>
+						</div>
+				   	</div>
 				</div>
 
 				<div class="form-group col-xs-12">
       				<label for="ban_armazenaroupasuja" class="col-sm-4">Armazenar roupa suja:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control" name="ban_armazenaroupasuja" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
-				   	</div>				   	
+						<div class="col-md-6">
+            				<input type="radio" name="ban_armazenaroupasuja" id="ban_armazenaroupasuja-1" value="1">
+            				<label for="ban_armazenaroupasuja-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="ban_armazenaroupasuja" id="ban_armazenaroupasuja-0" value="0">
+            				<label for="ban_armazenaroupasuja-0">Não</label>
+						</div>
+				   	</div>
 				</div>
 							
 				<div class="form-group col-xs-12">
 				   	<!-- Tipo -->
 				   	<label for="ban_misturadores" class="col-sm-4">Misturadores:</label>
-				   	<div class="col-sm-8">
-			   			<select class="form-control" name="ban_misturadores">
-			   				<option value="">Selecione...</option>
-				   			<option value="1">Tampo</option>
-				   			<option value="2">Parede</option>
-				   		</select>
-				   	</div>				   	
+            		
+            		<div class="col-sm-8">
+						<div class="col-md-6">
+            				<input type="radio" name="ban_misturadores" id="ban_misturadores-1" value="1">
+            				<label for="ban_misturadores-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="ban_misturadores" id="ban_misturadores-0" value="0">
+            				<label for="ban_misturadores-0">Não</label>
+						</div>
+				   	</div>
 				</div>
 								
 				<div class="form-group col-xs-12">

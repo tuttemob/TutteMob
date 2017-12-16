@@ -77,10 +77,14 @@
       				<label for="bas_maquinasecar" class="col-sm-4">Máquina de secar:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="bas_maquinasecar" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+				   		<div class="col-md-6">
+            				<input type="radio" name="bas_maquinasecar" id="bas_maquinasecar-1" value="1" class="block-subitem-cond">
+            				<label for="bas_maquinasecar-1">Sim</label>
+				   		</div>
+            			<div class="col-md-6">
+							<input type="radio" name="bas_maquinasecar" id="bas_maquinasecar-0" value="0" class="block-subitem-cond">
+            				<label for="bas_maquinasecar-0">Não</label>
+						</div>
 				   	</div>
 				   	
 				   	<!-- Máquina de secar cor -->
@@ -100,10 +104,14 @@
       				<label for="bas_tabuapassar" class="col-sm-4">Tábua de passar:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="bas_tabuapassar" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="bas_tabuapassar" id="bas_tabuapassar-1" value="1">
+            				<label for="bas_tabuapassar-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="bas_tabuapassar" id="bas_tabuapassar-0" value="0">
+            				<label for="bas_tabuapassar-0">Não</label>
+						</div>
 				   	</div>
 				</div>
 				
@@ -111,10 +119,14 @@
       				<label for="bas_aquecedoragua" class="col-sm-4">Aquecedor de água:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="bas_aquecedoragua" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="bas_aquecedoragua" id="bas_aquecedoragua-1" value="1" class="block-subitem-cond">
+            				<label for="bas_aquecedoragua-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="bas_aquecedoragua" id="bas_aquecedoragua-0" value="0" class="block-subitem-cond">
+            				<label for="bas_aquecedoragua-0">Não</label>
+						</div>
 				   	</div>
 				   	
 				   	<!-- Aquecedor de água cor -->
@@ -140,10 +152,14 @@
       				<label for="bas_cabideiro" class="col-sm-4">Cabideiro p/ roupa passada:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="bas_cabideiro" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="bas_cabideiro" id="bas_cabideiro-1" value="1">
+            				<label for="bas_cabideiro-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="bas_cabideiro" id="bas_cabideiro-0" value="0">
+            				<label for="bas_cabideiro-0">Não</label>
+						</div>
 				   	</div>
 				</div>
 				
@@ -151,21 +167,29 @@
       				<label for="bas_baldes" class="col-sm-4">Baldes:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control" name="bas_baldes" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
-				   	</div>				   	
+						<div class="col-md-6">
+            				<input type="radio" name="bas_baldes" id="bas_baldes-1" value="1">
+            				<label for="bas_baldes-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="bas_baldes" id="bas_baldes-0" value="0">
+            				<label for="bas_baldes-0">Não</label>
+						</div>
+				   	</div>
 				</div>
 				
 				<div class="form-group col-xs-12">
       				<label for="bas_aspiradorpo" class="col-sm-4">Aspirador de pó:</label>
             		
             		<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="bas_aspiradorpo" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
+						<div class="col-md-6">
+            				<input type="radio" name="bas_aspiradorpo" id="bas_aspiradorpo-1" value="1" class="block-subitem-cond">
+            				<label for="bas_aspiradorpo-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="bas_aspiradorpo" id="bas_aspiradorpo-0" value="0" class="block-subitem-cond">
+            				<label for="bas_aspiradorpo-0">Não</label>
+						</div>
 				   	</div>
 				   	
 				   	<!-- Aspirador modelo/marca -->
@@ -178,23 +202,32 @@
 				<div class="form-group col-xs-12">
 				   	<label for="bas_vassourasrodo" class="col-sm-4">Vassouras/Rodo:</label>
 				   	
-				   	<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="bas_vassourasrodo" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
-				   	</div>				   	
+            		<div class="col-sm-8">
+						<div class="col-md-6">
+            				<input type="radio" name="bas_vassourasrodo" id="bas_vassourasrodo-1" value="1">
+            				<label for="bas_vassourasrodo-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="bas_vassourasrodo" id="bas_vassourasrodo-0" value="0">
+            				<label for="bas_vassourasrodo-0">Não</label>
+						</div>
+				   	</div>
 				</div>
 								
 				<div class="form-group col-xs-12">
 				   	<!-- Tipo -->
 				   	<label for="bas_armazenarroupasuja" class="col-sm-4">Armazenar roupa suja:</label>
-				   	<div class="col-sm-8">
-				   		<select class="form-control block-subitem-cond" name="bas_armazenarroupasuja" required>
-				   			<option value="0" selected>Não</option>
-				   			<option value="1">Sim</option>
-				   		</select>
-				   	</div>				   	
+
+            		<div class="col-sm-8">
+						<div class="col-md-6">
+            				<input type="radio" name="bas_armazenarroupasuja" id="bas_armazenarroupasuja-1" value="1">
+            				<label for="bas_armazenarroupasuja-1">Sim</label>
+						</div>
+            			<div class="col-md-6">
+							<input type="radio" name="bas_armazenarroupasuja" id="bas_armazenarroupasuja-0" value="0">
+            				<label for="bas_armazenarroupasuja-0">Não</label>
+						</div>
+				   	</div>
 				</div>
 								
 				<div class="form-group col-xs-12">
