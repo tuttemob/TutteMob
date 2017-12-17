@@ -792,6 +792,7 @@ input.cmn-toggle-round:checked + label:after {
   border-color: #AAA;
   color: rgb(255, 19, 74);
   font-weight: bolder;
+  background: #FFF;
 }
 
 #section-esqueceu-senha .col-md-6 {
@@ -888,11 +889,19 @@ input.cmn-toggle-round:checked + label:after {
   text-align: center;
   margin-bottom: 20px;
 }
-#section-briefings .section-8-4 div.col-xs-9 h2 {
+#section-briefings #btn-confirmar-ambientes {
+  width: 100%;
+  margin-top: 15px;
+  padding: 16px 0px;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: 2px solid;
+  border-color: #AAA;
+  color: rgb(255, 19, 74);
   font-weight: bolder;
-  font-size: 78px;
-  line-height: 68px;
+  background: #FFF;
 }
+
 #section-briefings input.cmn-toggle-round:checked + label:before {
   background-color: rgb(255, 19, 110);
 }
@@ -917,54 +926,67 @@ input.cmn-toggle-round:checked + label:after {
 }
 .briefing-complemento-step {
 	display: none;
-	width: 87%;
-	height: 80%;
-	margin: 0;
-	left: 10%;
-	top: 10%;
-	color: #FFF;
-	font-size: 2em;
-	line-height: 40px;
-	position: fixed;
-	z-index: 100001; 
 }
-.briefing-complemento-step .col-1 {
-	text-align: center;
-	margin-top: 30px;
+.briefing-complemento-step .col-md-8 .col-xs-9 h2 {
+	font-size: 75px;
+  line-height: 75px;
 }
-.briefing-complemento-step .col-2 {
-	margin-top: 30px;
+.briefing-complemento-step .col-md-8 .col-xs-9 p {
+  font-size: 24px;
+  line-height: 24px;
 }
-.briefing-complemento-step .col-3 {
-	  position: absolute;
-    bottom: 15px;
-    left: 0px;
-    padding-left: 15px;
-    padding-right: 15px;
+.briefing-complemento-step .col-md-4 {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  overflow: auto;
+  overflow-x: hidden;
 }
-.briefing-complemento-step .col-3 .btn {
-	width: 150px;
-	background: #3FB7CA;
-	font-weight: bold;
-	font-size: 16px;
-	border: none;    
+.briefing-complemento-step .col-md-4 .col-xs-12 {
+  margin-top: 10%;
 }
-.briefing-complemento-step .col-3 .btn-fechar {
-	border: 2px #FFF solid
+.briefing-complemento-step .col-md-4 .col-xs-12,
+.briefing-complemento-step .col-md-4 .col-xs-8,
+.briefing-complemento-step .col-md-4 .col-xs-4 {
+  padding: 0;
 }
-.briefing-complemento-step .col-2-controle {
-	float: left;
-	min-width: 80px;
-	margin-bottom: 10px;
-	padding-top: 5px;
+.briefing-complemento-step .col-md-4 .col-xs-8 {
+  color: rgb(255, 19, 110);
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 27px;
 }
-.briefing-complemento-step .col-2-texto {
-	float: left;
-	width: 90%;
-	margin-bottom: 10px;
+.briefing-complemento-step .col-md-4 .col-xs-8 p {
+  margin-bottom: 0px;
 }
+.briefing-complemento-step .col-md-4 .col-xs-8 p.sub {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: normal;
+}
+.briefing-complemento-step .col-md-4 .col-xs-4 {
+  right: 0;
+  height: 100%;
+  position: absolute;
+}
+.briefing-complemento-step .col-md-4 .col-xs-4 .switch {
+  position: absolute;
+  top: 50%;
+  margin-top: -18px;
+  left: 50%;
+  margin-left: -30px;
+}
+.briefing-complemento-step .col-md-4 button{
+  color: #FFF;
+  background: rgb(255, 19, 110);
+  border: 1px rgb(255, 19, 110) solid;
+  padding: 10px 25px;
+  font-size: 14px;
+}
+
+
 #briefing-complemento {
-	background: #3fb7ca;
+	background: #FFF;
 }
 #briefing-cadastro {
 	background: #3fb7ca;
