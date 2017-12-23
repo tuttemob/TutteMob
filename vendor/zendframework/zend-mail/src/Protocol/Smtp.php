@@ -17,8 +17,6 @@ namespace Zend\Mail\Protocol;
  */
 class Smtp extends AbstractProtocol
 {
-    use ProtocolTrait;
-
     /**
      * The transport method for the socket
      *
@@ -67,13 +65,6 @@ class Smtp extends AbstractProtocol
      * @var bool
      */
     protected $data = null;
-
-    /**
-     * Whether or not send QUIT command
-     *
-     * @var bool
-     */
-    protected $useCompleteQuit = true;
 
     /**
      * Constructor.
@@ -132,18 +123,9 @@ class Smtp extends AbstractProtocol
                     }
                     break;
 
-                case '':
-                    // fall-through
-                case 'none':
-                    break;
-
                 default:
                     throw new Exception\InvalidArgumentException($config['ssl'] . ' is unsupported SSL type');
             }
-        }
-
-        if (array_key_exists('use_complete_quit', $config)) {
-            $this->setUseCompleteQuit($config['use_complete_quit']);
         }
 
         // If no port has been specified then check the master PHP ini file. Defaults to 25 if the ini setting is null.
@@ -156,25 +138,6 @@ class Smtp extends AbstractProtocol
         parent::__construct($host, $port);
     }
 
-    /**
-     * Set whether or not send QUIT command
-     *
-     * @param int $useCompleteQuit use complete quit
-     */
-    public function setUseCompleteQuit($useCompleteQuit)
-    {
-        return $this->useCompleteQuit = (bool) $useCompleteQuit;
-    }
-
-    /**
-     * Whether or not send QUIT command
-     *
-     * @return bool
-     */
-    public function useCompleteQuit()
-    {
-        return $this->useCompleteQuit;
-    }
 
     /**
      * Connect to the server with the parameters given in the constructor.
@@ -213,7 +176,11 @@ class Smtp extends AbstractProtocol
         if ($this->secure == 'tls') {
             $this->_send('STARTTLS');
             $this->_expect(220, 180);
-            if (! stream_socket_enable_crypto($this->socket, true, $this->getCryptoMethod())) {
+            
+            stream_context_set_option($this->socket, 'ssl', 'verify_peer', false);
+            stream_context_set_option($this->socket, 'ssl', 'verify_peer_name', false);
+            
+            if (! stream_socket_enable_crypto($this->socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
                 throw new Exception\RuntimeException('Unable to connect via TLS');
             }
             $this->ehlo($host);
@@ -387,12 +354,8 @@ class Smtp extends AbstractProtocol
     {
         if ($this->sess) {
             $this->auth = false;
-
-            if ($this->useCompleteQuit()) {
-                $this->_send('QUIT');
-                $this->_expect(221, 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
-            }
-
+            $this->_send('QUIT');
+            $this->_expect(221, 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
             $this->stopSession();
         }
     }

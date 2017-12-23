@@ -13,8 +13,6 @@ use Zend\Stdlib\ErrorHandler;
 
 class Pop3
 {
-    use ProtocolTrait;
-
     /**
      * Default timeout in seconds for initiating session
      */
@@ -115,7 +113,7 @@ class Pop3
 
         if ($isTls) {
             $this->request('STLS');
-            $result = stream_socket_enable_crypto($this->socket, true, $this->getCryptoMethod());
+            $result = stream_socket_enable_crypto($this->socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
             if (! $result) {
                 throw new Exception\RuntimeException('cannot enable TLS');
             }

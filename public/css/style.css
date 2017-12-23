@@ -472,7 +472,7 @@ input.cmn-toggle-round:checked + label:after {
   padding: 0;
 }
 .section-apresentacao .section-page {
-  color: #F73F80;
+  color: #FF6FA3;
   top: 40%;
   transform: translate(10%, -40%);
 }
@@ -529,7 +529,7 @@ input.cmn-toggle-round:checked + label:after {
   padding: 0;
 }
 .section-apresentacao3 .section-page {
-  color: #F73F80;
+  color: #FF6FA3;
   top: 50%;
   transform: translate(10%, -50%);
 }
@@ -790,7 +790,7 @@ input.cmn-toggle-round:checked + label:after {
   text-transform: uppercase;
   border: 2px solid;
   border-color: #AAA;
-  color: rgb(255, 19, 74);
+  color: rgb(255, 127, 172);
   font-weight: bolder;
   background: #FFF;
 }
@@ -849,7 +849,8 @@ input.cmn-toggle-round:checked + label:after {
   border-color: #FFF;
   color: #FFF;
   font-weight: bolder;
-  background: rgb(255, 19, 74);
+  /*background: rgb(255, 19, 74);*/
+  background: rgb(255, 64, 131);
   padding: 10px 15px;
   padding-top: 13px;
 }
@@ -861,13 +862,13 @@ input.cmn-toggle-round:checked + label:after {
 }
 
 #section-briefings .col-md-8 h2 {
-	color: rgb(255, 19, 110);
+	color: rgb(255, 111, 163);
     font-weight: bolder;
     font-size: 68px;
     line-height: 58px;
 }
 #section-briefings .col-md-8 p {
-  color: rgb(255, 19, 110);
+  color: rgb(255, 111, 163);
   font-size: 22px;
   line-height: 30px;
   margin-top: 25px;
@@ -897,7 +898,7 @@ input.cmn-toggle-round:checked + label:after {
   text-transform: uppercase;
   border: 2px solid;
   border-color: #AAA;
-  color: rgb(255, 19, 74);
+  color: rgb(255, 127, 172);
   font-weight: bolder;
   background: #FFF;
 }
@@ -929,7 +930,7 @@ input.cmn-toggle-round:checked + label:after {
 }
 .briefing-complemento-step .col-md-8 .col-xs-9 h2 {
 	font-size: 75px;
-  line-height: 75px;
+  	line-height: 75px;
 }
 .briefing-complemento-step .col-md-8 .col-xs-9 p {
   font-size: 24px;
@@ -951,7 +952,8 @@ input.cmn-toggle-round:checked + label:after {
   padding: 0;
 }
 .briefing-complemento-step .col-md-4 .col-xs-8 {
-  color: rgb(255, 19, 110);
+  /*color: rgb(255, 127, 172);*/
+  color: rgb(255, 111, 163);
   font-weight: bold;
   font-size: 25px;
   line-height: 27px;
@@ -978,21 +980,26 @@ input.cmn-toggle-round:checked + label:after {
 }
 .briefing-complemento-step .col-md-4 button{
   color: #FFF;
-  background: rgb(255, 19, 110);
-  border: 1px rgb(255, 19, 110) solid;
+  background: rgb(255, 127, 172);
+  border: 1px rgb(255, 127, 172) solid;
   padding: 10px 25px;
   font-size: 14px;
+  font-weight: bold;
 }
 
 
 #briefing-complemento {
 	background: #FFF;
 }
+#briefing-complemento .col-md-4 {
+  padding-top: 130px;
+}
+
 #briefing-cadastro {
 	background: #3fb7ca;
 }
 #briefing-cadastro .col-2 {
-	  height: 70%;
+	height: 70%;
     overflow: auto;
 }
 #briefing-cadastro .col-3 .btn-avancar,
@@ -1036,11 +1043,48 @@ input.cmn-toggle-round:checked + label:after {
 #briefing-vendedor {
 	background: #A04D87;
 }
+#briefing-vendedor .col-md-4 {
+  padding-top: 130px;
+}
+#briefing-vendedor form {
+  padding-top: 130px;
+}
+#briefing-vendedor .col-md-4 .col-xs-12 {
+	text-align: center;
+	font-size: 24px;
+	/*color: rgb(255, 127, 172);*/
+	color: rgb(255, 64, 131);
+	line-height: 22px;
+}
+#briefing-vendedor button {
+  margin-top: 15px;
+  padding: 18px 0px;
+  font-size: 18px;
+  text-transform: uppercase;
+  border: 2px solid;
+  border-color: #FFF;
+  color: #FFF;
+  width: 30%;
+  font-weight: bolder;
+  background: rgb(255, 64, 131);
+}
 #briefing-vendedor .col-1 {
     font-weight: 400;
 }
 #briefing-arquivos1 {
 	background: #F73F80;
+}
+#briefing-arquivos1 .col-md-4 {
+  padding-top: 40px;
+}
+#briefing-arquivos1 .col-md-4 .col-xs-12 p {
+	color: rgb(255, 127, 172);
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 27px;
+}
+#briefing-arquivos1 .col-md-4 .col-xs-12 p.sub {
+	font-size: 18px;
 }
 #briefing-arquivos1 .col-1 {
     font-weight: 400;
@@ -1062,6 +1106,24 @@ input.cmn-toggle-round:checked + label:after {
     margin: 0px;
     margin-top: 5px;
 }
+#briefing-arquivos1 .col-md-4 .col-xs-12 {
+	margin-top: 0%;
+}
+#briefing-arquivos1 .col-md-4 .col-xs-9 {
+  width: 80%;
+  /*position: absolute;*/
+  padding-left: 0px;
+  color: #FFF;
+  top: 0%;
+  margin-top: 5px;
+}
+#briefing-arquivos1 .col-md-4 .col-xs-3 {
+	padding-left: 250px;
+}
+#briefing-arquivos1 .buttons {
+	/*padding-top: 5px;*/
+	position: relative;
+}
 #formArquivosBriefings input {
     background: #F73F80;
     border: 2px #FFF solid;
@@ -1078,7 +1140,7 @@ input.cmn-toggle-round:checked + label:after {
     border-radius: 0px;
     border: 1px #FFF solid;
     text-align: center;
-    padding: 1px 23%;
+    padding: 8px 20%;
     margin-right: 10px;
     cursor: pointer;
 }
@@ -1086,11 +1148,12 @@ input.cmn-toggle-round:checked + label:after {
     background: #FFF;
     color: #F73F80;
     font-size: 25px;
-    padding: 3px 5px;
-    padding-left: 8px;
+    padding: 0px 5px;
+    padding-left: 20px;
     margin: 0px;
     border-radius: 0px;
     border: 1px #FFF solid;
+    float: left!important;
     cursor: pointer;
 }
 #briefing-obrigado {
@@ -1266,7 +1329,7 @@ input.cmn-toggle-round:checked + label:after {
 
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
-  color: rgb(255, 19, 74);
+  color: rgb(255, 127, 172);
 }
 
 a.linksSemEstilos:link,a.linksSemEstilos:visited,a.linksSemEstilos:hover,a.linksSemEstilos:active { 

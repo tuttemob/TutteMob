@@ -8,7 +8,7 @@
 			<h2>Como você deseja <br /> nos passar as medidas <br /> de seus ambientes?</h2>
 			<p>Já sabemos o que você deseja, isso nos ajudará no desenvolvimento do
 			ambiente de acordo com a sua vontade. Para isso, precisamos das 
-			<b>medidas fisícas disponíveis para acomodar o projeto.</b></p>
+			<b>medidas físicas disponíveis para acomodar o projeto.</b></p>
 			<p>Por favor, selecione uma das opções ao lado.</p>
 		</div>
 	</div>
@@ -41,7 +41,7 @@
 		<div class="col-xs-12">
 			<div class="col-xs-8 col-2-texto">
 				<p>Eu farei a medição.</p>
-				<p class="sub">Mas quero assitir o video com orientação antes.</p>
+				<p class="sub">Mas quero assistir o video com orientação antes.</p>
 			</div>
 			<div class="col-xs-4 col-2-controle">
 				<div class="switch">
@@ -204,42 +204,42 @@
 		
 		<div class="col-xs-9">
 			<p>Você selecionou:</p>
-			<h2>Desejo que um vendedor faça as medições.</h2>
+			<h2>Desejo que um<br>vendedor faça as<br>medições.</h2>
 		</div>
 	</div>
 
 	<div class="col-md-4">
-		<div class="col-xs-12" style="text-align: center;">
-			<strong>Por favor, informe a data e o horário para o agendamento da medição:</strong>
+		<!-- <div class="col-xs-12" style="text-align: center;"> -->
+		<div class="col-xs-12">
+			<strong>Informe a data e horário para<br>o agendamento da medição:</strong>
 		</div>
 		
 		<form name="agendaMedicao" id="agendaMedicao" data-toggle="validator" method="post">
 
-			<div class="form-group col-sm-6">
-				<label for="agenda-dia" class="col-sm-6" style="text-align: right;">DIA:</label>
+			<div class="form-group">
+				<label for="agenda-dia">QUAL A MELHOR DATA PARA VOCÊ?</label>
+			</div>
 				
-				<div class="col-sm-6">
-					<input type="text" class="form-control" name="dia" value="<?= $this->agendaMedicao['dia'] ?>"
-						placeholder="12/12/2010" required />
-				</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="dia" value="<?= $this->agendaMedicao['dia'] ?>"
+					placeholder="12/12/2010" required />
 			</div>
 
-			<div class="form-group col-sm-6">
-				<label for="agenda-horas" class="col-sm-6" style="text-align: right;">A PARTIR DAS:</label>
+			<div class="form-group">
+				<label for="agenda-horas" style="text-align: right;">E O MELHOR HORÁRIO?</label>
+			</div>
 				
-				<div class="col-sm-3">
-					<input type="text" class="form-control" name="horas" value="<?= $this->agendaMedicao['horas'] ?>"
-						placeholder="18:00" required />
-				</div>
-
-				<div class="col-sm-3" style="text-align: left;">
-					H.
-				</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="horas" value="<?= $this->agendaMedicao['horas'] ?>"
+					placeholder="18:00" required />
+			</div>
+			
+			<div class="form-group">
+				<button class="btn btn-primary btn-voltar pull-left">VOLTAR</button>
+				<button class="btn btn-primary btn-avancar pull-right">AVANÇAR</button>			
 			</div>
 		</form>
 
-		<button class="btn btn-primary btn-voltar pull-left">VOLTAR</button>
-		<button class="btn btn-primary btn-avancar pull-right">AVANÇAR</button>
 	</div>
 </div>
 
@@ -251,14 +251,14 @@
 		
 		<div class="col-xs-9">
 			<p>Você selecionou:</p>
-			<h2>Enviarei os arquivos das medidas e fotos.</h2>
-			<p>Serão aceitos arquivos nos formatos JPG e PNG, com resolução máxima de 300dpi.</p>
+			<h2>Enviarei os<br>arquivos das<br>medidas e fotos.</h2>
+			<p>Serão aceitos arquivos nos formatos JPG e PNG, com resolução<br>máxima de 300dpi.</p>
 		</div>
 	</div>
 	<div class="col-md-4">
 		<div class="col-xs-12" style="text-align: center;">
-			Por favor, insira o nome do ambiente em cada arquivo a ser enviado. Após o anexo do arquivo,
-			utilize o botão [+] para adicionar o próximo.
+			<p>Insira o nome do ambiente em cada arquivo a ser enviado.</p>
+			<p class="sub">Após o anexo do arquivo, utilize o botão [+] para adicionar o próximo.</p>
 		</div>
 		
 		<form name="formArquivosBriefings" id="formArquivosBriefings" target="iframeArquivosBriefings"
@@ -268,12 +268,9 @@
 		<?php foreach($this->listaCozinha as $item): ?>	
 			<div class="col-md-12">
 				<div class="form-group col-xs-12">
-					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
-					
-					<div class="col-sm-9">
-						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
-							value="<?= $item->descricao; ?>" readonly="readonly" />
-					</div>
+					<label for="agenda-dia">Nome do ambiente:</label>
+					<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+						value="<?= $item->descricao; ?>" readonly="readonly" />
 				</div>
 
 				<div class="form-group col-xs-12">
@@ -293,12 +290,9 @@
 		<?php foreach($this->listaAreaServico as $item): ?>	
 			<div class="col-md-12">
 				<div class="form-group col-xs-12">
-					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
-					
-					<div class="col-sm-9">
-						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
-							value="<?= $item->bas_descricao; ?>" readonly="readonly" />
-					</div>
+					<label for="agenda-dia">Nome do ambiente:</label>
+					<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+						value="<?= $item->bas_descricao; ?>" readonly="readonly" />
 				</div>
 
 				<div class="form-group col-xs-12">
@@ -318,12 +312,9 @@
 		<?php foreach($this->listaDormitorioCasal as $item): ?>	
 			<div class="col-md-12">
 				<div class="form-group col-xs-12">
-					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
-					
-					<div class="col-sm-9">
-						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
-							value="<?= $item->bdc_descricao; ?>" readonly="readonly" />
-					</div>
+					<label for="agenda-dia">Nome do ambiente:</label>
+					<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+						value="<?= $item->bdc_descricao; ?>" readonly="readonly" />
 				</div>
 
 				<div class="form-group col-xs-12">
@@ -343,12 +334,9 @@
 		<?php foreach($this->listaDormitorioSolteiro as $item): ?>	
 			<div class="col-md-12">
 				<div class="form-group col-xs-12">
-					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
-					
-					<div class="col-sm-9">
-						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
-							value="<?= $item->bds_descricao; ?>" readonly="readonly" />
-					</div>
+					<label for="agenda-dia">Nome do ambiente:</label>
+					<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+						value="<?= $item->bds_descricao; ?>" readonly="readonly" />
 				</div>
 
 				<div class="form-group col-xs-12">
@@ -368,12 +356,9 @@
 		<?php foreach($this->listaCloset as $item): ?>	
 			<div class="col-md-12">
 				<div class="form-group col-xs-12">
-					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
-					
-					<div class="col-sm-9">
-						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
-							value="<?= $item->bcl_descricao; ?>" readonly="readonly" />
-					</div>
+					<label for="agenda-dia">Nome do ambiente:</label>
+					<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+						value="<?= $item->bcl_descricao; ?>" readonly="readonly" />
 				</div>
 
 				<div class="form-group col-xs-12">
@@ -393,12 +378,9 @@
 		<?php foreach($this->listaBanheiro as $item): ?>	
 			<div class="col-md-12">
 				<div class="form-group col-xs-12">
-					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
-					
-					<div class="col-sm-9">
-						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
-							value="<?= $item->ban_descricao; ?>" readonly="readonly" />
-					</div>
+					<label for="agenda-dia">Nome do ambiente:</label>
+					<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+						value="<?= $item->ban_descricao; ?>" readonly="readonly" />
 				</div>
 
 				<div class="form-group col-xs-12">
@@ -418,12 +400,9 @@
 		<?php foreach($this->listaHomeTheater as $item): ?>	
 			<div class="col-md-12">
 				<div class="form-group col-xs-12">
-					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
-					
-					<div class="col-sm-9">
-						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
-							value="<?= $item->bht_descricao; ?>" readonly="readonly" />
-					</div>
+					<label for="agenda-dia">Nome do ambiente:</label>
+					<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+						value="<?= $item->bht_descricao; ?>" readonly="readonly" />
 				</div>
 
 				<div class="form-group col-xs-12">
@@ -443,12 +422,9 @@
 		<?php foreach($this->listaHomeOffice as $item): ?>	
 			<div class="col-md-12">
 				<div class="form-group col-xs-12">
-					<label for="agenda-dia" class="col-sm-3">Nome do ambiente:</label>
-					
-					<div class="col-sm-9">
-						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
-							value="<?= $item->bho_descricao; ?>" readonly="readonly" />
-					</div>
+					<label for="agenda-dia"">Nome do ambiente:</label>
+					<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
+						value="<?= $item->bho_descricao; ?>" readonly="readonly" />
 				</div>
 
 				<div class="form-group col-xs-12">
@@ -465,9 +441,10 @@
 			</div>
 		<?php endforeach; ?>
 		</form>
-
-		<button class="btn btn-primary btn-voltar pull-left">VOLTAR</button>
-		<button class="btn btn-primary btn-avancar pull-right">AVANÇAR</button>
+		<div class="buttons">
+			<button class="btn btn-primary btn-voltar pull-left">VOLTAR</button>
+			<button class="btn btn-primary btn-avancar pull-right">AVANÇAR</button>
+		</div>
 	</div>
 </div>
 
@@ -479,8 +456,8 @@
 		
 		<div class="col-xs-9">
 			<p>Você selecionou:</p>
-			<h2>Eu farei a medição.</h2>
-			<p>Serão aceitos arquivos nos formatos JPG e PNG, com resolução máxima de 300dpi.</p>
+			<h2>Eu farei<br>a medição.</h2>
+			<p>Serão aceitos arquivos nos formatos JPG e PNG, com resolução<br>máxima de 300dpi.</p>
 		</div>
 	</div>
 	<div class="col-md-4">
