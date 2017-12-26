@@ -53,148 +53,154 @@
 	</div>
 </div>
 
-<div id="briefing-cadastro" class="briefing-complemento-step">
-	<div class="col-1 col-xs-12">
-		Por favor, complete seus dados cadastrais:
-	</div>
-	
-	<div class="col-2 col-xs-12">
-		<form name="modalCadastroForm" id="modalCadastroForm" data-toggle="validator"
-			class="form-briefings form-horizontal" method="post" target="iframeCadastroForm" enctype="multipart/form-data">
-			<input type="hidden" name="acao" value="completa-cadastro" />
-			
-			<div class="form-group col-xs-12 box-imagem">
-				<label for="avatar" class="col-sm-4">Foto de perfil:</label>
-				
-				<div class="col-sm-8">
-					<input type="file" class="form-control" name="avatar" />
+<div class="modal fade" id="briefing-cadastro" tabindex="-1" role="dialog" aria-labelledby="modalbriefing-cadastroLabel" data-backdrop="static" data-keyboard="false">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content">
+      		<div class="modal-header">
+				<h2 id="modalbriefing-cadastroLabel">Estamos quase!</h2>
+				<p>Por favor, complete os seus dados cadastrais.</p>
+      		</div>
+      		<div class="modal-body">
+			  	<form name="modalCadastroForm" id="modalCadastroForm" data-toggle="validator"
+					class="form-briefings form-horizontal" method="post" target="iframeCadastroForm" enctype="multipart/form-data">
+					<input type="hidden" name="acao" value="completa-cadastro" />
 					
-					<div class="col-xs-10"></div>
-				</div>
-			</div>
-
-			<div class="form-group col-xs-12">
-				<label for="nome" class="col-sm-4">Nome completo:</label>
-				
-				<div class="col-sm-8">
-					<input type="text" class="form-control disabled" name="nome" disabled>
-				</div>
-			</div>
-				
-			<div class="form-group col-xs-12">
-				<label for="email" class="col-sm-4">E-mail:</label>
-				<div class="col-sm-8">
-					<input type="email" class="form-control disabled" name="email" disabled>
-				</div>
-			</div>
+					<div class="form-group col-xs-12 box-imagem">
+						<label for="avatar" class="col-sm-4">Foto de perfil:</label>
 						
-			<div class="form-group col-xs-12">
-				<label for="cpf" class="col-sm-4">CPF:</label>
-				
-				<div class="col-sm-8">
-					<input type="text" class="form-control" name="cpf" placeholder="999.999.999-99" required>
-				</div>
-			</div>
-			
-			<div class="form-group col-xs-12">
-				<label for="rg" class="col-sm-4">RG:</label>
-				
-				<div class="col-sm-8">
-					<input type="text" class="form-control" name="rg" required>
-				</div>
-			</div>
-			
-			<div class="form-group col-xs-12">
-				<label for="datanascimento" class="col-sm-4">Data de nascimento:</label>
-				
-				<div class="col-sm-8">
-					<input type="text" class="form-control" name="datanascimento" placeholder="99/99/9999" required>
-				</div>
-			</div>
-			
-			<div class="form-group col-xs-12">
-				<label for="sexo" class="col-sm-4">Sexo:</label>
-				
-				<div class="col-sm-8">
-					<select class="form-control" name="sexo" required>
-						<option value="M">Masculino</option>
-						<option value="F">Feminino</option>
-					</select>
-				</div>
-			</div>
-			
-			<div class="form-group col-xs-12">
-				<label for="endereco" class="col-sm-4">Endereço:</label>
-				
-				<div class="col-sm-8">
-					<input type="text" class="form-control" name="endereco" required>
-				</div>
-			</div>
-			
-			<div class="form-group col-xs-12">
-				<label for="numero" class="col-sm-4">Número:</label>
-				
-				<div class="col-sm-8">
-					<input type="text" class="form-control" name="numero" required>
-				</div>
-			</div>
-			
-			<div class="form-group col-xs-12">
-				<label for="bairro" class="col-sm-4">Bairro:</label>
-				
-				<div class="col-sm-8">
-					<input type="text" class="form-control" name="bairro" required>
-				</div>
-			</div>
-			
-			<div class="form-group col-xs-12">
-				<label for="cidade" class="col-sm-4">Cidade:</label>
-				
-				<div class="col-sm-8">
-					<input type="text" class="form-control" name="cidade" required>
-				</div>
-			</div>
-			
-			<div class="form-group col-xs-12">
-				<label for="cep" class="col-sm-4">Cep:</label>
-				
-				<div class="col-sm-8">
-					<input type="text" class="form-control" name="cep" placeholder="99999-999" required>
-				</div>
-			</div>
-			
-			<div class="form-group col-xs-12">
-				<label for="fone_cel" class="col-sm-4">Telefone Celular:</label>
-				
-				<div class="col-sm-8">
-					<input type="text" class="form-control disabled" name="fone_cel" disabled>
-				</div>
-			</div>
-			
-			<div class="form-group col-xs-12">
-				<label for="fone_com" class="col-sm-4">Telefone Comercial:</label>
-				
-				<div class="col-sm-8">
-					<input type="text" class="form-control" name="fone_com" placeholder="(xx) 9xxxx-xxxx">
-				</div>
-			</div>
-			
-			<div class="form-group col-xs-12">
-				<label for="obs" class="col-sm-4">Observações:</label>
-				
-				<div class="col-sm-8">
-					<textarea class="form-control" name="obs" rows="4"></textarea>
-				</div>
-			</div>
-		</form>
-	</div>
-	
-	<div class="col-3 col-xs-12">
-		<button class="btn btn-primary btn-voltar pull-left">VOLTAR</button>
-		<button class="btn btn-primary btn-avancar pull-right">AVANÇAR</button>
-	</div>
-</div>
+						<div class="col-sm-8">
+							<input type="file" class="form-control" name="avatar" />
+							
+							<div class="col-xs-10"></div>
+						</div>
+					</div>
 
+					<div class="form-group col-xs-12">
+						<label for="nome" class="col-sm-4">Nome completo:</label>
+						
+						<div class="col-sm-8">
+							<input type="text" class="form-control disabled" name="nome" disabled>
+						</div>
+					</div>
+						
+					<div class="form-group col-xs-12">
+						<label for="email" class="col-sm-4">E-mail:</label>
+						<div class="col-sm-8">
+							<input type="email" class="form-control disabled" name="email" disabled>
+						</div>
+					</div>
+								
+					<div class="form-group col-xs-12">
+						<label for="cpf" class="col-sm-4">CPF:</label>
+						
+						<div class="col-sm-8">
+							<input type="text" class="form-control" name="cpf" placeholder="999.999.999-99" required>
+						</div>
+					</div>
+					
+					<div class="form-group col-xs-12">
+						<label for="rg" class="col-sm-4">RG:</label>
+						
+						<div class="col-sm-8">
+							<input type="text" class="form-control" name="rg" required>
+						</div>
+					</div>
+					
+					<div class="form-group col-xs-12">
+						<label for="datanascimento" class="col-sm-4">Data de nascimento:</label>
+						
+						<div class="col-sm-8">
+							<input type="text" class="form-control" name="datanascimento" placeholder="99/99/9999" required>
+						</div>
+					</div>
+					
+					<div class="form-group col-xs-12">
+						<label for="sexo" class="col-sm-4">Sexo:</label>
+						
+						<div class="col-sm-8">
+							<div class="col-md-6">
+								<input type="radio" name="sexo" id="sexo-m" value="M" checked>
+								<label for="sexo-m">Masculino</label>
+							</div>
+							<div class="col-md-6">
+								<input type="radio" name="sexo" id="sexo-f" value="F">
+								<label for="sexo-f">Feminino</label>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group col-xs-12">
+						<label for="endereco" class="col-sm-4">Endereço:</label>
+						
+						<div class="col-sm-8">
+							<input type="text" class="form-control" name="endereco" required>
+						</div>
+					</div>
+					
+					<div class="form-group col-xs-12">
+						<label for="numero" class="col-sm-4">Número:</label>
+						
+						<div class="col-sm-8">
+							<input type="text" class="form-control" name="numero" required>
+						</div>
+					</div>
+					
+					<div class="form-group col-xs-12">
+						<label for="bairro" class="col-sm-4">Bairro:</label>
+						
+						<div class="col-sm-8">
+							<input type="text" class="form-control" name="bairro" required>
+						</div>
+					</div>
+					
+					<div class="form-group col-xs-12">
+						<label for="cidade" class="col-sm-4">Cidade:</label>
+						
+						<div class="col-sm-8">
+							<input type="text" class="form-control" name="cidade" required>
+						</div>
+					</div>
+					
+					<div class="form-group col-xs-12">
+						<label for="cep" class="col-sm-4">Cep:</label>
+						
+						<div class="col-sm-8">
+							<input type="text" class="form-control" name="cep" placeholder="99999-999" required>
+						</div>
+					</div>
+					
+					<div class="form-group col-xs-12">
+						<label for="fone_cel" class="col-sm-4">Telefone Celular:</label>
+						
+						<div class="col-sm-8">
+							<input type="text" class="form-control disabled" name="fone_cel" disabled>
+						</div>
+					</div>
+					
+					<div class="form-group col-xs-12">
+						<label for="fone_com" class="col-sm-4">Telefone Comercial:</label>
+						
+						<div class="col-sm-8">
+							<input type="text" class="form-control" name="fone_com" placeholder="(xx) 9xxxx-xxxx">
+						</div>
+					</div>
+					
+					<div class="form-group col-xs-12">
+						<label for="obs" class="col-sm-4">Observações:</label>
+						
+						<div class="col-sm-8">
+							<textarea class="form-control" name="obs" rows="4"></textarea>
+						</div>
+					</div>
+				</form>
+	  		</div>
+	  		<div class="modal-footer">
+			  	<button class="btn btn-default btn-voltar" data-dismiss="modal" aria-label="Close">VOLTAR</button>
+			  	<button class="btn btn-primary btn-avancar">AVANÇAR</button>
+      		</div>
+    	</div>
+  	</div>
+</div>
 
 <div id="briefing-vendedor" class="section section-8-4 briefing-complemento-step col-lg-12">
 	<div class="col-md-8">
@@ -235,8 +241,8 @@
 			</div>
 			
 			<div class="form-group">
-				<button class="btn btn-primary btn-voltar pull-left">VOLTAR</button>
-				<button class="btn btn-primary btn-avancar pull-right">AVANÇAR</button>			
+				<button type="button" class="btn btn-primary btn-voltar pull-left">VOLTAR</button>
+				<button type="button" class="btn btn-primary btn-avancar pull-right">AVANÇAR</button>			
 			</div>
 		</form>
 
@@ -274,10 +280,10 @@
 				</div>
 
 				<div class="form-group col-xs-12">
-					<div class="col-xs-9">
+					<div class="col-xs-8">
 						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
 					</div>
-					<div class="col-xs-3">
+					<div class="col-xs-4">
 						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
 						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
 
@@ -296,10 +302,10 @@
 				</div>
 
 				<div class="form-group col-xs-12">
-					<div class="col-xs-9">
+					<div class="col-xs-8">
 						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
 					</div>
-					<div class="col-xs-3">
+					<div class="col-xs-4">
 						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
 						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
 
@@ -318,10 +324,10 @@
 				</div>
 
 				<div class="form-group col-xs-12">
-					<div class="col-xs-9">
+					<div class="col-xs-8">
 						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
 					</div>
-					<div class="col-xs-3">
+					<div class="col-xs-4">
 						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
 						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
 
@@ -340,10 +346,10 @@
 				</div>
 
 				<div class="form-group col-xs-12">
-					<div class="col-xs-9">
+					<div class="col-xs-8">
 						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
 					</div>
-					<div class="col-xs-3">
+					<div class="col-xs-4">
 						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
 						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
 
@@ -362,10 +368,10 @@
 				</div>
 
 				<div class="form-group col-xs-12">
-					<div class="col-xs-9">
+					<div class="col-xs-8">
 						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
 					</div>
-					<div class="col-xs-3">
+					<div class="col-xs-4">
 						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
 						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
 
@@ -384,10 +390,10 @@
 				</div>
 
 				<div class="form-group col-xs-12">
-					<div class="col-xs-9">
+					<div class="col-xs-8">
 						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
 					</div>
-					<div class="col-xs-3">
+					<div class="col-xs-4">
 						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
 						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
 
@@ -406,10 +412,10 @@
 				</div>
 
 				<div class="form-group col-xs-12">
-					<div class="col-xs-9">
+					<div class="col-xs-8">
 						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
 					</div>
-					<div class="col-xs-3">
+					<div class="col-xs-4">
 						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
 						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
 
@@ -422,16 +428,16 @@
 		<?php foreach($this->listaHomeOffice as $item): ?>	
 			<div class="col-md-12">
 				<div class="form-group col-xs-12">
-					<label for="agenda-dia"">Nome do ambiente:</label>
+					<label for="agenda-dia">Nome do ambiente:</label>
 					<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][nome]" 
 						value="<?= $item->bho_descricao; ?>" readonly="readonly" />
 				</div>
 
 				<div class="form-group col-xs-12">
-					<div class="col-xs-9">
+					<div class="col-xs-8">
 						<input type="text" class="form-control" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][path]" readonly="readonly" />
 					</div>
-					<div class="col-xs-3">
+					<div class="col-xs-4">
 						<span class="pesquisar-arquivo pull-left">Pesquisar</span>
 						<input type="file" class="form-control hide" name="briefing[<?= strtolower($item->tp)?>][<?= $item->idbriefing?>][arquivos][]" />
 
@@ -440,11 +446,14 @@
 				</div>
 			</div>
 		<?php endforeach; ?>
+
+			<div class="col-md-12" style="margin-top: 10px;">
+				<div class="form-group col-xs-12">
+					<button type="button" class="btn btn-primary btn-voltar pull-left">VOLTAR</button>
+					<button type="button" class="btn btn-primary btn-avancar pull-right">AVANÇAR</button>
+				</div>
+			</div>	
 		</form>
-		<div class="buttons">
-			<button class="btn btn-primary btn-voltar pull-left">VOLTAR</button>
-			<button class="btn btn-primary btn-avancar pull-right">AVANÇAR</button>
-		</div>
 	</div>
 </div>
 
@@ -566,7 +575,92 @@
 <script src="<?php echo $this->basePath('lib/timepicker/jquery.timepicker.min.js'); ?>"></script>
 
 <script type="text/javascript">
+$(document).ready(function(){
+	ajustaWidHei = function(){
+		$('body').css('overflow', 'hidden');
+		$('#section-content').css('overflow-x', 'hidden');
+		
+		if($(window).width() < 800){
+		}else{
+			var menuHeight = $('#menu-nav-left').outerHeight() + 'px';
+			$('.section-background img').css('height', menuHeight);
+		}
+	};
+
+	// ajustes iniciais
+	ajustaWidHei();
+
+	// ajusta dimensoes em monitoramento
+	setInterval(function(){
+		ajustaWidHei();
+	}, 300);
+});
+</script>
+
+<script type="text/javascript">
 $(function(){
+	$('.briefing-complemento-step').hide();
+	$('#section-briefings').hide();
+	if(!$('#briefing-complemento').is(':visible')){
+		$('#briefing-complemento').fadeIn();
+	}
+
+	$('#briefing-cadastro .btn-voltar').click(function(){
+		$('#briefing-complemento .cmn-toggle').prop('checked', false);
+		$('.briefing-complemento-step').hide();
+		$('#briefing-complemento').show();
+	});
+	
+	$('#cmn-toggle-step1').on('click', function(){
+		if($(this).parents('.switch').find('input:checkbox').is(':checked')){
+			var callback = function(){
+				$('.briefing-complemento-step').hide();
+				$('#briefing-vendedor').fadeIn();
+				$('#briefing-cadastro').modal('close');
+			};
+			showModalCadastro(callback);
+		}
+	});
+	$('#briefing-vendedor .btn-voltar').click(function(){
+		$('#cmn-toggle-step1').prop('checked', false);
+		$('.briefing-complemento-step').hide();
+		$('#briefing-complemento').fadeIn();
+	});
+	
+	$('#cmn-toggle-step2').on('click', function(){
+		if($(this).parents('.switch').find('input:checkbox').is(':checked')){
+			var callback = function(){
+				$('.briefing-complemento-step').hide();
+				$('#briefing-arquivos1').fadeIn();
+			};
+			showModalCadastro(callback);
+		}
+	});
+	$('#briefing-arquivos1 .btn-voltar').click(function(){
+		$('#cmn-toggle-step2').prop('checked', false);
+		$('.briefing-complemento-step').hide();
+		$('#briefing-complemento').fadeIn();
+	});
+	
+	$('#cmn-toggle-step4').on('click', function(){
+		if($(this).parents('.switch').find('input:checkbox').is(':checked')){
+			var callback = function(){
+				$('.briefing-complemento-step').hide();
+				$('#briefing-videos').fadeIn();
+			};
+			showModalCadastro(callback);
+		}
+	});
+	$('#briefing-videos .btn-voltar').click(function(){
+		$('#cmn-toggle-step4').prop('checked', false);
+		$('.briefing-complemento-step').hide();
+		$('#briefing-complemento').fadeIn();
+	});
+
+	$('.btn-fechar').click(function(){
+		window.location = "<?php echo $this->url('clientes'); ?>"
+	});
+
 	var modalCadastroCallback = null;
 	showModalCadastro = function(callback){
 		modalCadastroCallback = callback;
@@ -582,8 +676,7 @@ $(function(){
 					$('#modalCadastroForm input[name="email"]').val(resp.data.email);
 					$('#modalCadastroForm input[name="fone_cel"]').val(resp.data.fone_cel);
 
-					$('.briefing-complemento-step').hide();
-					$('#briefing-cadastro').fadeIn();
+					$('#briefing-cadastro').modal('show');
 				}
 			},
 			'json'

@@ -290,9 +290,6 @@
 	
 </div>
 
-<!-- complemento briefing -->
-<?php include __DIR__ . '/_complemento.phtml'; ?>
-
 <script type="text/javascript">
 $(document).ready(function(){
 	ajustaWidHei = function(){
@@ -328,79 +325,9 @@ $(function(){
 
 	// complementar briefings
 	$('#btn-confirmar-ambientes').on('click', function(){
-		$('.briefing-complemento-step').hide();
-		$('#section-briefings').hide();
-		if(!$('#briefing-complemento').is(':visible')){
-			$('#briefing-complemento').fadeIn();
-		}
-	});
-	$('#briefing-cadastro .btn-voltar').click(function(){
-		$('#briefing-complemento .cmn-toggle').prop('checked', false);
-		$('.briefing-complemento-step').hide();
-		$('#briefing-complemento').fadeIn();
-	});
-	$('#cmn-toggle-step1').on('click', function(){
-		if($(this).parents('.switch').find('input:checkbox').is(':checked')){
-			var callback = function(){
-				$('.briefing-complemento-step').hide();
-				$('#briefing-vendedor').fadeIn();
-			};
-			showModalCadastro(callback);
-		}
-	});
-	$('#briefing-vendedor .btn-voltar').click(function(){
-		$('#cmn-toggle-step1').prop('checked', false);
-		$('.briefing-complemento-step').hide();
-		$('#briefing-complemento').fadeIn();
+		window.location = "<?php echo $this->url('clientes', array('action' => 'confirmar')); ?>"
 	});
 	
-	$('#cmn-toggle-step2').on('click', function(){
-		if($(this).parents('.switch').find('input:checkbox').is(':checked')){
-			var callback = function(){
-				$('.briefing-complemento-step').hide();
-				$('#briefing-arquivos1').fadeIn();
-			};
-			showModalCadastro(callback);
-		}
-	});
-	$('#briefing-arquivos1 .btn-voltar').click(function(){
-		$('#cmn-toggle-step2').prop('checked', false);
-		$('.briefing-complemento-step').hide();
-		$('#briefing-complemento').fadeIn();
-	});
-	
-	$('#cmn-toggle-step4').on('click', function(){
-		if($(this).parents('.switch').find('input:checkbox').is(':checked')){
-			var callback = function(){
-				$('.briefing-complemento-step').hide();
-				$('#briefing-videos').fadeIn();
-			};
-			showModalCadastro(callback);
-		}
-	});
-	$('#briefing-videos .btn-voltar').click(function(){
-		$('#cmn-toggle-step4').prop('checked', false);
-		$('.briefing-complemento-step').hide();
-		$('#briefing-complemento').fadeIn();
-	});
-	
-	/*$('.btn-avancar').click(function(){
-		if($(this).parents('#briefing-cadastro').length == 0){
-			if($(this).parents('#briefing-vendedor').length == 1){
-				$('.briefing-complemento-step input:checkbox').prop('checked', false);
-				$('.briefing-complemento-step').hide();
-				$('#briefing-obrigado-vendedor').fadeIn();
-			}else{
-				$('.briefing-complemento-step input:checkbox').prop('checked', false);
-				$('.briefing-complemento-step').hide();
-				$('#briefing-obrigado').fadeIn();
-			}
-		}
-	});*/
-	$('.btn-fechar').click(function(){
-		$('.briefing-complemento-step').fadeOut();
-		$('#section-briefings').fadeIn();
-	});
 	
 	$('#concluirCozinha').click(function(){
 		$('#modalCozinhaForm').submit();

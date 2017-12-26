@@ -904,7 +904,7 @@ input.cmn-toggle-round:checked + label:after {
 }
 
 #section-briefings input.cmn-toggle-round:checked + label:before {
-  background-color: rgb(255, 19, 110);
+  background-color: #ff136e;
 }
 .briefing-item .col-xs-8 {
 	padding: 5px 0px;
@@ -987,7 +987,9 @@ input.cmn-toggle-round:checked + label:after {
   font-weight: bold;
 }
 
-
+#briefing-complemento input.cmn-toggle-round:checked + label:before {
+  background-color: #ff136e;
+}
 #briefing-complemento {
 	background: #FFF;
 }
@@ -995,17 +997,70 @@ input.cmn-toggle-round:checked + label:after {
   padding-top: 130px;
 }
 
-#briefing-cadastro {
-	background: #3fb7ca;
+#briefing-cadastro .modal-header {
+  text-align: center;
+  color: rgb(255, 64, 131);
 }
-#briefing-cadastro .col-2 {
-	height: 70%;
-    overflow: auto;
+#briefing-cadastro .modal-header h2 {
+  font-weight: bold;
+  line-height: 10px;
 }
-#briefing-cadastro .col-3 .btn-avancar,
-#briefing-cadastro .col-3 .btn-voltar {
-  border: 2px #FFF solid
+#briefing-cadastro .modal-header p {
+  font-size: 18px;
 }
+
+#briefing-cadastro .form-group label {
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+#briefing-cadastro .form-group input[type="radio"],
+#briefing-cadastro .form-group input[type="checkbox"] {
+  display: none;
+}
+
+#briefing-cadastro .form-group input[type="radio"] + label:before,
+#briefing-cadastro .form-group input[type="checkbox"] + label:before {
+  border: 1px solid #AAA;
+  content: "\00a0";
+  display: inline-block;
+  font: 16px/1em sans-serif;
+  height: 16px;
+  margin: 0 .25em 0 0;
+  padding:0;
+  vertical-align: top;
+  width: 16px;
+  border-radius:4px;
+  margin-top: 5px;
+}
+
+#briefing-cadastro .form-group input[type="radio"]:checked + label:before,
+#briefing-cadastro .form-group input[type="checkbox"]:checked + label:before {
+  background: rgb(255, 19, 110);
+  color: #FFF;
+  content: "\2713";
+  text-align: center;
+  margin-top: 5px;
+}
+
+#briefing-cadastro .modal-footer .btn-primary {
+  text-transform: uppercase;
+  border: 2px solid;
+  border-color: #FFF;
+  color: #FFF;
+  font-weight: bolder;
+  /*background: rgb(255, 19, 74);*/
+  background: rgb(255, 64, 131);
+  padding: 10px 15px;
+  padding-top: 13px;
+}
+#briefing-cadastro .modal-footer .btn-default {
+  text-transform: uppercase;
+  border: 2px #AAA solid;
+  padding: 9px 15px;
+  padding-top: 12px;
+}
+
 #briefing-videos {
 	background: #9A5B90;
 }
@@ -1074,8 +1129,12 @@ input.cmn-toggle-round:checked + label:after {
 #briefing-arquivos1 {
 	background: #F73F80;
 }
+#briefing-arquivos1 .col-md-12 {
+  padding-right: 0px;
+}
 #briefing-arquivos1 .col-md-4 {
   padding-top: 40px;
+  min-width: 430px;
 }
 #briefing-arquivos1 .col-md-4 .col-xs-12 p {
 	color: rgb(255, 127, 172);
@@ -1125,34 +1184,37 @@ input.cmn-toggle-round:checked + label:after {
 	position: relative;
 }
 #formArquivosBriefings input {
-    background: #F73F80;
-    border: 2px #FFF solid;
-    color: #FFF;
-    font-weight: bold;
-    font-size: 16px;
+    border: none;
+    box-shadow: none !important;
     border-radius: 0px;
+    border-bottom: 2px solid;
+    border-color: #AAA;
+    background: #FFF;
+    text-transform: uppercase;
+    margin-bottom: 5px;
 }
 #formArquivosBriefings .pesquisar-arquivo {
     background: #FFF;
-    color: #F73F80;
+    color: #AAA;
     font-weight: bold;
     font-size: 16px;
-    border-radius: 0px;
-    border: 1px #FFF solid;
+    border-radius: 5px;
+    border: 1px #AAA solid;
     text-align: center;
-    padding: 8px 20%;
-    margin-right: 10px;
+    padding: 2px 7px;
+    margin-left: 2px;
+    margin-right: 5px;
     cursor: pointer;
 }
 #formArquivosBriefings .glyphicon-plus {
     background: #FFF;
-    color: #F73F80;
-    font-size: 25px;
-    padding: 0px 5px;
-    padding-left: 20px;
+    color: #AAA;
+    font-size: 16px;
+    padding: 8px 8px;
     margin: 0px;
-    border-radius: 0px;
-    border: 1px #FFF solid;
+    margin-top: -1px;
+    border-radius: 5px;
+    border: 1px #AAA solid;
     float: left!important;
     cursor: pointer;
 }
