@@ -1134,7 +1134,7 @@ input.cmn-toggle-round:checked + label:after {
 }
 #briefing-arquivos1 .col-md-4 {
   padding-top: 40px;
-  min-width: 430px;
+  min-width: 435px;
 }
 #briefing-arquivos1 .col-md-4 .col-xs-12 p {
 	color: rgb(255, 127, 172);
