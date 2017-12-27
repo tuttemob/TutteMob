@@ -599,6 +599,10 @@ $(document).ready(function(){
 
 <script type="text/javascript">
 $(function(){
+	// ajusta switchs
+	$('.cmn-toggle:checked').prop('checked',false);
+
+	// apresenta conteudo
 	$('.briefing-complemento-step').hide();
 	$('#section-briefings').hide();
 	if(!$('#briefing-complemento').is(':visible')){
