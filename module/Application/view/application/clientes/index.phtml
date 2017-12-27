@@ -31,7 +31,7 @@
 			</div>
 			<div class="col-xs-4">
 				<div class="switch">
-					<input id="cmn-toggle-cozinha" class="cmn-toggle cmn-toggle-round" type="checkbox">
+					<input id="cmn-toggle-cozinha" class="cmn-toggle cmn-toggle-round" type="checkbox" <?php echo (count($this->listaCozinha) > 0)? 'checked': null; ?>>
 					<label for="cmn-toggle-cozinha"></label>
 				</div>
 			</div>
@@ -62,7 +62,7 @@
 			</div>
 			<div class="col-xs-4">
 				<div class="switch">
-					<input id="cmn-toggle-areaServico" class="cmn-toggle cmn-toggle-round" type="checkbox">
+					<input id="cmn-toggle-areaServico" class="cmn-toggle cmn-toggle-round" type="checkbox" <?php echo (count($this->listaAreaServico) > 0)? 'checked': null; ?>>
 					<label for="cmn-toggle-areaServico"></label>
 				</div>
 			</div>
@@ -93,7 +93,7 @@
 			</div>
 			<div class="col-xs-4">
 				<div class="switch">
-					<input id="cmn-toggle-dormitoriocasal" class="cmn-toggle cmn-toggle-round" type="checkbox">
+					<input id="cmn-toggle-dormitoriocasal" class="cmn-toggle cmn-toggle-round" type="checkbox" <?php echo (count($this->listaDormitorioCasal) > 0)? 'checked': null; ?>>
 					<label for="cmn-toggle-dormitoriocasal"></label>
 				</div>
 			</div>
@@ -124,7 +124,7 @@
 			</div>
 			<div class="col-xs-4">
 				<div class="switch">
-					<input id="cmn-toggle-dormitoriosolteiro" class="cmn-toggle cmn-toggle-round" type="checkbox">
+					<input id="cmn-toggle-dormitoriosolteiro" class="cmn-toggle cmn-toggle-round" type="checkbox" <?php echo (count($this->listaDormitorioSolteiro) > 0)? 'checked': null; ?>>
 					<label for="cmn-toggle-dormitoriosolteiro"></label>
 				</div>
 			</div>
@@ -155,7 +155,7 @@
 			</div>
 			<div class="col-xs-4">
 				<div class="switch">
-					<input id="cmn-toggle-closet" class="cmn-toggle cmn-toggle-round" type="checkbox">
+					<input id="cmn-toggle-closet" class="cmn-toggle cmn-toggle-round" type="checkbox" <?php echo (count($this->listaCloset) > 0)? 'checked': null; ?>>
 					<label for="cmn-toggle-closet"></label>
 				</div>
 			</div>
@@ -186,7 +186,7 @@
 			</div>
 			<div class="col-xs-4">
 				<div class="switch">
-					<input id="cmn-toggle-banheiro" class="cmn-toggle cmn-toggle-round" type="checkbox">
+					<input id="cmn-toggle-banheiro" class="cmn-toggle cmn-toggle-round" type="checkbox" <?php echo (count($this->listaBanheiro) > 0)? 'checked': null; ?>>
 					<label for="cmn-toggle-banheiro"></label>
 				</div>
 			</div>
@@ -217,7 +217,7 @@
 			</div>
 			<div class="col-xs-4">
 				<div class="switch">
-					<input id="cmn-toggle-hometheater" class="cmn-toggle cmn-toggle-round" type="checkbox">
+					<input id="cmn-toggle-hometheater" class="cmn-toggle cmn-toggle-round" type="checkbox" <?php echo (count($this->listaHomeTheater) > 0)? 'checked': null; ?>>
 					<label for="cmn-toggle-hometheater"></label>
 				</div>
 			</div>
@@ -248,7 +248,7 @@
 			</div>
 			<div class="col-xs-4">
 				<div class="switch">
-					<input id="cmn-toggle-homeoffice" class="cmn-toggle cmn-toggle-round" type="checkbox">
+					<input id="cmn-toggle-homeoffice" class="cmn-toggle cmn-toggle-round" type="checkbox" <?php echo (count($this->listaHomeOffice) > 0)? 'checked': null; ?>>
 					<label for="cmn-toggle-homeoffice"></label>
 				</div>
 			</div>
@@ -901,13 +901,14 @@ $(function(){
 		return false;
 	};
 
-	<?php echo (count($this->listaCozinha))? "$('#cmn-toggle-cozinha').click();": ''; ?>
-	<?php echo (count($this->listaAreaServico))? "$('#cmn-toggle-areaServico').click();": ''; ?>
-	<?php echo (count($this->listaDormitorioCasal))? "$('#cmn-toggle-dormitoriocasal').click();": ''; ?>
-	<?php echo (count($this->listaDormitorioSolteiro))? "$('#cmn-toggle-dormitoriosolteiro').click();": ''; ?>
-	<?php echo (count($this->listaCloset))? "$('#cmn-toggle-closet').click();": ''; ?>
-	<?php echo (count($this->listaBanheiro))? "$('#cmn-toggle-banheiro').click();": ''; ?>
-	<?php echo (count($this->listaHomeTheater))? "$('#cmn-toggle-hometheater').click();": ''; ?>
-	<?php echo (count($this->listaHomeOffice))? "$('#cmn-toggle-homeoffice').click();": ''; ?>
+	<?php echo (count($this->listaCozinha))? "$('#cmn-toggle-cozinha').parents('.briefing-item').find('.briefing-grid').slideToggle();": ''; ?>
+	<?php echo (count($this->listaAreaServico))? "$('#cmn-toggle-areaServico').parents('.briefing-item').find('.briefing-grid').slideToggle();": ''; ?>
+	<?php echo (count($this->listaDormitorioCasal))? "$('#cmn-toggle-dormitoriocasal').parents('.briefing-item').find('.briefing-grid').slideToggle();": ''; ?>
+	<?php echo (count($this->listaDormitorioSolteiro))? "$('#cmn-toggle-dormitoriosolteiro').parents('.briefing-item').find('.briefing-grid').slideToggle();": ''; ?>
+	<?php echo (count($this->listaCloset))? "$('#cmn-toggle-closet').parents('.briefing-item').find('.briefing-grid').slideToggle();": ''; ?>
+	<?php echo (count($this->listaBanheiro))? "$('#cmn-toggle-banheiro').parents('.briefing-item').find('.briefing-grid').slideToggle();": ''; ?>
+	<?php echo (count($this->listaHomeTheater))? "$('#cmn-toggle-hometheater').parents('.briefing-item').find('.briefing-grid').slideToggle();": ''; ?>
+	<?php echo (count($this->listaHomeOffice))? "$('#cmn-toggle-homeoffice').parents('.briefing-item').find('.briefing-grid').slideToggle();": ''; ?>
+	
 });
 </script>
