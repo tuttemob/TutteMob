@@ -703,6 +703,8 @@ $(function(){
 	$('#iframeCadastroForm').on('load', function (e) {
 		var response = JSON.parse($(this).contents().find('body').get(0).innerHTML);
 		if(response.data == true){
+			$('#briefing-cadastro').hide();
+			$('.modal-backdrop').hide();
 			modalCadastroCallback();
 		}else{
 			alert(response.data);
