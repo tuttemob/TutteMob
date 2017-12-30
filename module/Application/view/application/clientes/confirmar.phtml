@@ -57,6 +57,7 @@
   	<div class="modal-dialog" role="document">
     	<div class="modal-content">
       		<div class="modal-header">
+      			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h2 id="modalbriefing-cadastroLabel">Estamos quase!</h2>
 				<p>Por favor, complete os seus dados cadastrais.</p>
       		</div>
@@ -173,7 +174,8 @@
 						<label for="fone_cel" class="col-sm-4">Telefone Celular:</label>
 						
 						<div class="col-sm-8">
-							<input type="text" class="form-control disabled" name="fone_cel" disabled>
+							<!-- <input type="text" class="form-control disabled" name="fone_cel" disabled> -->
+							<input type="text" class="form-control" name="fone_cel" required>
 						</div>
 					</div>
 					
@@ -560,6 +562,7 @@
   	<div class="modal-dialog" role="document">
     	<div class="modal-content">
       		<div class="modal-header">
+      			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h2 id="modalbriefing-obrigadoLabel">Obrigado! :)</h2>
 				<p class="p1">Após a realização das medições pelo vendedor, estaremos com todas as informações para realizar o projeto que se adapta ao seu desejo.</p>
 				<p class="p2">Em um prazo de 48h após a medição você receberá a apresentação dos projetos e orçamento.</p>
@@ -633,6 +636,12 @@ $(function(){
 		$('#briefing-complemento').show();
 	});
 	
+	$('#briefing-cadastro .close').click(function(){
+		$('#briefing-complemento .cmn-toggle').prop('checked', false);
+		$('.briefing-complemento-step').hide();
+		$('#briefing-complemento').show();
+	});
+	
 	$('#cmn-toggle-step1').on('click', function(){
 		if($(this).parents('.switch').find('input:checkbox').is(':checked')){
 			var callback = function(){
@@ -679,8 +688,12 @@ $(function(){
 		$('#briefing-complemento').fadeIn();
 	});
 
-	$('.btn-fechar').click(function(){
-		window.location = "<?php echo $this->url('clientes'); ?>"
+	$('#briefing-obrigado .btn-fechar').click(function(){
+		window.location = "<?php echo $this->url('home'); ?>"
+	});
+
+	$('#briefing-obrigado .close').click(function(){
+		window.location = "<?php echo $this->url('home'); ?>"
 	});
 
 	var modalCadastroCallback = null;
@@ -743,7 +756,7 @@ $(function(){
 				function(resp){
 					if(resp.data == true){
 						$('.briefing-complemento-step input:checkbox').prop('checked', false);
-						$('.briefing-complemento-step').hide();
+						//$('.briefing-complemento-step').hide();
 						//$('#briefing-obrigado-vendedor').fadeIn();
 						$('#briefing-obrigado').modal('show');
 					}else{
@@ -768,7 +781,7 @@ $(function(){
 			alert(response.data);
 		}else{
 			$('.briefing-complemento-step input:checkbox').prop('checked', false);
-			$('.briefing-complemento-step').hide();
+			//$('.briefing-complemento-step').hide();
 			//$('#briefing-obrigado-arquivos').fadeIn();
 			$('#briefing-obrigado').modal('show');
 		}

@@ -839,7 +839,9 @@ input.cmn-toggle-round:checked + label:after {
   text-align: center;
   margin-top: 5px;
 }
-#section-briefings .modal-header .close {
+#section-briefings .modal-header .close,
+#briefing-cadastro .modal-header .close,
+#briefing-obrigado .modal-header .close {
   color: rgb(255, 19, 74);
   opacity: 1;
 }
