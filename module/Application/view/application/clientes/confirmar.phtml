@@ -195,8 +195,8 @@
 				</form>
 	  		</div>
 	  		<div class="modal-footer">
-			  	<button class="btn btn-default btn-voltar" data-dismiss="modal" aria-label="Close">VOLTAR</button>
-			  	<button class="btn btn-primary btn-avancar">AVANÇAR</button>
+			  	<button class="btn btn-default btn-voltar" data-dismiss="modal" aria-label="Close">FECHAR</button>
+			  	<button class="btn btn-primary btn-avancar">CONCLUIR</button>
       		</div>
     	</div>
   	</div>
@@ -215,7 +215,6 @@
 	</div>
 
 	<div class="col-md-4">
-		<!-- <div class="col-xs-12" style="text-align: center;"> -->
 		<div class="col-xs-12">
 			<strong>Informe a data e horário para<br>o agendamento da medição:</strong>
 		</div>
@@ -240,12 +239,13 @@
 					placeholder="18:00" required />
 			</div>
 			
+			<div class="form-group" style="padding-top: 60px">
+				<button type="button" class="btn btn-block btn-avancar">ENVIAR</button>			
+			</div>
 			<div class="form-group">
-				<button type="button" class="btn btn-primary btn-voltar pull-left">VOLTAR</button>
-				<button type="button" class="btn btn-primary btn-avancar pull-right">AVANÇAR</button>			
+				<button type="button" class="btn btn-block btn-voltar">VOLTAR</button>
 			</div>
 		</form>
-
 	</div>
 </div>
 
@@ -263,7 +263,7 @@
 	</div>
 	<div class="col-md-4">
 		<div class="col-xs-12" style="text-align: center;">
-			<p>Insira o nome do ambiente em cada arquivo a ser enviado.</p>
+			<p>Selecione os arquivos a serem enviados conforme o ambiente.</p>
 			<p class="sub">Após o anexo do arquivo, utilize o botão [+] para adicionar o próximo.</p>
 		</div>
 		
@@ -447,12 +447,12 @@
 			</div>
 		<?php endforeach; ?>
 
-			<div class="col-md-12" style="margin-top: 10px;">
-				<div class="form-group col-xs-12">
-					<button type="button" class="btn btn-primary btn-voltar pull-left">VOLTAR</button>
-					<button type="button" class="btn btn-primary btn-avancar pull-right">AVANÇAR</button>
-				</div>
-			</div>	
+			<div class="form-group">
+				<button type="button" class="btn btn-block btn-avancar">ENVIAR</button>			
+			</div>
+			<div class="form-group">
+				<button type="button" class="btn btn-block btn-voltar">VOLTAR</button>
+			</div>
 		</form>
 	</div>
 </div>
@@ -495,6 +495,7 @@
 	</div>
 </div>
 
+<!-- 
 <div id="briefing-obrigado" class="briefing-complemento-step">
 	<div class="col-1 col-xs-12">
 		Obrigado! <3
@@ -553,6 +554,23 @@
 		<button class="btn btn-primary btn-fechar pull-right">FECHAR</button>
 	</div>
 </div>
+-->
+
+<div class="modal fade" id="briefing-obrigado" tabindex="-1" role="dialog" aria-labelledby="modalbriefing-obrigadoLabel" data-backdrop="static" data-keyboard="false">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content">
+      		<div class="modal-header">
+				<h2 id="modalbriefing-obrigadoLabel">Obrigado! :)</h2>
+				<p class="p1">Após a realização das medições pelo vendedor, estaremos com todas as informações para realizar o projeto que se adapta ao seu desejo.</p>
+				<p class="p2">Em um prazo de 48h após a medição você receberá a apresentação dos projetos e orçamento.</p>
+      		</div>
+	  		<div class="modal-footer">
+			  	<button class="btn btn-default btn-fechar" data-dismiss="modal" aria-label="Close">FECHAR</button>
+      		</div>
+    	</div>
+  	</div>
+</div>
+ 
 
 <!-- iframeCadastroForm -->
 <iframe name="iframeCadastroForm" id="iframeCadastroForm" class="hide"></iframe>
@@ -726,7 +744,8 @@ $(function(){
 					if(resp.data == true){
 						$('.briefing-complemento-step input:checkbox').prop('checked', false);
 						$('.briefing-complemento-step').hide();
-						$('#briefing-obrigado-vendedor').fadeIn();
+						//$('#briefing-obrigado-vendedor').fadeIn();
+						$('#briefing-obrigado').modal('show');
 					}else{
 						alert(resp.data);
 					}
@@ -750,7 +769,8 @@ $(function(){
 		}else{
 			$('.briefing-complemento-step input:checkbox').prop('checked', false);
 			$('.briefing-complemento-step').hide();
-			$('#briefing-obrigado-arquivos').fadeIn();
+			//$('#briefing-obrigado-arquivos').fadeIn();
+			$('#briefing-obrigado').modal('show');
 		}
 	});
 
