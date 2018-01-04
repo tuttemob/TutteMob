@@ -50,7 +50,7 @@
 				   	<!-- Cama tipo -->
 				   	<label for="bdc_tipocama" class="col-sm-4">Tipo de cama:</label>
 				   	<div class="col-sm-8">
-			   			<select class="form-control" name="bdc_tipocama">
+			   			<select class="form-control" name="bdc_tipocama" required>
 			   				<option value="">Selecione...</option>
 				   			<option value="1">Box</option>
 				   			<option value="2">Tradicional</option>
@@ -70,7 +70,7 @@
 				   	<!-- Medição cama -->
 				   	<label for="bdc_camamedicao" class="col-sm-4">Lagura x Altura x Profundidade:</label>
 				   	<div class="col-sm-8">
-			   			<input type="text" class="form-control" name="bdc_camamedicao">
+			   			<input type="text" class="form-control" name="bdc_camamedicao" required>
 				   	</div>
 				</div>
 				
@@ -234,7 +234,9 @@
 				   	<!-- polegadas -->
 				   	<label for="bdc_tvpolegadas" class="col-sm-4 block-subitem">Polegadas:</label>
 				   	<div class="col-sm-8 block-subitem">
-			   			<input type="text" class="form-control" name="bdc_tvpolegadas">
+			   			<div class="ss-item-required">
+			   				<input type="text" class="form-control" name="bdc_tvpolegadas">
+			   			</div>
 				   	</div>
 				   	
 				   	<!-- modelo/marca -->

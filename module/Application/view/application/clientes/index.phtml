@@ -382,7 +382,7 @@ $(function(){
 		
 		if($(this).val() == '1'){
 			$(formGroup).find('.block-subitem').fadeIn();
-			$(formGroup).find('.block-subitem').find('input,select').attr('required', 'required');
+			$(formGroup).find('.block-subitem').find('.ss-item-required').find('input,select').attr('required', 'required');
 		}else{
 			$(formGroup).find('.block-subitem').slideUp();
 			$(formGroup).find('.block-subitem').find('input,select').removeAttr('required');

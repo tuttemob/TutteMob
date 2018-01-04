@@ -468,32 +468,40 @@
 		<div class="col-xs-9">
 			<p>Você selecionou:</p>
 			<h2>Eu farei<br>a medição.</h2>
-			<p>Serão aceitos arquivos nos formatos JPG e PNG, com resolução<br>máxima de 300dpi.</p>
+			<p>O vídeo ao lado contém orientações para que <b>você mesmo</b> faça a medição dos seus ambientes.<br>
+			Para anotar as medidas que serão enviadas posteriormente através de fotos, você pode <b>imprimir o formulário orientativo</b>
+			ao lado ou utilizar uma folha em branco. 
+			</p>
 		</div>
 	</div>
 	<div class="col-md-4">
 		<div class="col-xs-12">
-			<a data-href="https://www.youtube.com/watch?v=kJQP7kiw5Fk">
-				<img src="<?= $this->basePath('img/youtube.png'); ?>" class="img-responsive" />
-			</a>
+			<p class="p1">No vídeo abaixo, você encontra orientações para tirar as medidas:</p>
 		</div>
+		
 		<div class="col-xs-12">
 			<a data-href="https://www.youtube.com/watch?v=kJQP7kiw5Fk">
 				<img src="<?= $this->basePath('img/youtube.png'); ?>" class="img-responsive" />
 			</a>
 		</div>
 		<div class="col-xs-12">
-			<a data-href="https://www.youtube.com/watch?v=kJQP7kiw5Fk">
-				<img src="<?= $this->basePath('img/youtube.png'); ?>" class="img-responsive" />
+			<a data-href="#">
+				Download do Formulário Orientativo
 			</a>
 		</div>
 		<div class="col-xs-12">
-			<a data-href="https://www.youtube.com/watch?v=kJQP7kiw5Fk">
-				<img src="<?= $this->basePath('img/youtube.png'); ?>" class="img-responsive" />
-			</a>
+			<h2>ATENÇÃO:</h2>
+			<p class="p2">Utilize seu celular para registrar fotos das suas anotações e retorne à opção de envio de arquivos, 
+			onde você também pode nos enviar imagens e detalhes dos seus ambientes. :)</p>
 		</div>
 
-		<button class="btn btn-primary btn-voltar pull-left">VOLTAR</button>
+		<!-- <button class="btn btn-primary btn-voltar pull-left">VOLTAR</button> -->
+		<div class="form-group">
+			<button type="button" class="btn btn-block btn-avancar">ENVIO DE ARQUIVOS</button>			
+		</div>
+		<div class="form-group">
+			<button type="button" class="btn btn-block btn-voltar">VOLTAR</button>
+		</div>		
 	</div>
 </div>
 
@@ -582,7 +590,7 @@
 <iframe name="iframeArquivosBriefings" id="iframeArquivosBriefings" class="hide"></iframe>
 
 <!-- iframeVideosYoutube -->
-<div id="btn-fechar-youtube"><button class="btn btn-primary pull-right">FECHAR VIDÊO</button></div>
+<div id="btn-fechar-youtube"><button class="btn btn-primary pull-right">FECHAR VIDEO</button></div>
 <iframe name="iframeVideosYoutube" id="iframeVideosYoutube" frameborder="0" allowfullscreen></iframe>
 
 

@@ -35,7 +35,12 @@ class ClientesController extends ManagerController {
 		if($this->getRequest()->isPost()){
 			$data = $this->getRequest()->getPost()->toArray();
 			
-			list($error, $success) = $this->_postAcaoAmbientes($data);
+			//var_dump($modelBriefingCozinha);
+			
+			list($error, $success) = $this->_postAcaoAmbientes($data, $modelBriefingCozinha, $modelBriefingDormitorioCasal,
+					$modelBriefingDormitorioSolteiro, $modelBriefingDormitorioInfantil, $modelBriefingBanheiro,
+					$modelBriefingAreaServico, $modelBriefingCloset, $modelBriefingHomeTheater, $modelBriefingHomeOffice,
+					$modelAgendaMedicao);
 			
 			if($error){
 				$type = 'error';
@@ -216,14 +221,17 @@ class ClientesController extends ManagerController {
 		));
 	}
 
-	public function _postAcaoAmbientes($data){
+	public function _postAcaoAmbientes($data, $modelBriefingCozinha, $modelBriefingDormitorioCasal,
+			$modelBriefingDormitorioSolteiro, $modelBriefingDormitorioInfantil, $modelBriefingBanheiro,
+			$modelBriefingAreaServico, $modelBriefingCloset, $modelBriefingHomeTheater, $modelBriefingHomeOffice,
+			$modelAgendaMedicao){
 		$error = null;
 		$success = null;
 
 		if(isset($data['acao']) && $data['acao'] == 'briefing-cozinha'){
 				
 			unset($data['acao']);
-			
+						
 			try{
 				// trata quantidade de pessoas
 				$data['qtdpessoas'] = (int) $data['qtdpessoas'];
@@ -278,6 +286,7 @@ class ClientesController extends ManagerController {
 					$modelBriefingCozinha->update($insertArrayValues, $filtro);
 					$success = 'Seu briefing foi alterado com sucesso.';
 				}
+				
 			}
 			catch (\Exception $e){
 				$error = 'Ocorreu um erro, tente novamente mais tarde.';
@@ -755,7 +764,7 @@ class ClientesController extends ManagerController {
 				$error = 'Ocorreu um erro, tente novamente mais tarde.';
 			}
 		}
-
+		
 		return array($error, $success);
 	}
 
