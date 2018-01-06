@@ -766,6 +766,12 @@ input.cmn-toggle-round:checked + label:after {
 /* Login / Cadastro */
 #section-login .col-md-4 {
   padding-top: 80px;
+  min-height: 100%;
+  right: 0;
+  overflow: auto;
+  overflow-x: hidden;
+  position: fixed;
+  width: 30%;
 }
 #section-login .login-title {
 	text-align: center;
@@ -845,7 +851,8 @@ input.cmn-toggle-round:checked + label:after {
 }
 #section-briefings .modal-header .close,
 #briefing-cadastro .modal-header .close,
-#briefing-obrigado .modal-header .close {
+#briefing-obrigado-vendedor .modal-header .close,
+#briefing-obrigado-arquivos .modal-header .close {
   color: rgb(255, 19, 74);
   opacity: 1;
 }
@@ -1075,12 +1082,12 @@ input.cmn-toggle-round:checked + label:after {
   padding-top: 12px;
 }
 
-#briefing-videos {
-	background: #9A5B90;
+#briefing-videos .col-xs-12 {
+	/*background: #9A5B90;*/
 	text-align: center;
 }
 #briefing-videos .col-md-4 .col-xs-12 .p1 {
-    text-align: center;
+    /*text-align: center;*/
     font-size: 24px;
     color: rgb(255, 111, 163);
     font-weight: bold;
@@ -1117,6 +1124,14 @@ input.cmn-toggle-round:checked + label:after {
 }
 #briefing-videos .col-2 img {
 	border: 5px #FFF solid
+}
+#briefing-videos .icone-download img {
+	float: left;
+	padding-top: 20px;
+    margin-left: -50px;
+}
+#briefing-videos .pdownload {
+	text-align: left;
 }
 #btn-fechar-youtube {
   display: none;
@@ -1275,27 +1290,32 @@ input.cmn-toggle-round:checked + label:after {
     float: left!important;
     cursor: pointer;
 }
-#briefing-obrigado {
+#briefing-obrigado-vendedor,
+#briefing-obrigado-arquivos {
 	/*background: #3fb7ca;*/
     text-align: center;
     font-weight: 400;
 }
-#briefing-obrigado h2 {
+#briefing-obrigado-vendedor h2,
+#briefing-obrigado-arquivos h2 {
     font-size: 50px;
     font-weight: bold;
     color: rgb(255, 64, 131);
     margin-top: 80px;
 }
-#briefing-obrigado p {
+#briefing-obrigado-vendedor p,
+#briefing-obrigado-arquivos p {
     font-size: 25px;
     font-weight: 400;
     color: #AAA;
     line-height: 32px;
 }
-#briefing-obrigado .p1 {
+#briefing-obrigado-vendedor .p1,
+#briefing-obrigado-arquivos .p1 {
     margin: 30px 75px 0px 75px;
 }
-#briefing-obrigado .p2 {
+#briefing-obrigado-vendedor .p2,
+#briefing-obrigado-arquivos .p2 {
     margin: 0px 75px 10px 75px;
     padding-bottom: 30px;
 }

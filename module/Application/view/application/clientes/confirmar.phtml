@@ -479,14 +479,17 @@
 			<p class="p1">No vídeo abaixo, você encontra orientações para tirar as medidas:</p>
 		</div>
 		
-		<div class="col-xs-12">
+		<div class="col-xs-12 youtube">
 			<a data-href="https://www.youtube.com/watch?v=kJQP7kiw5Fk">
 				<img src="<?= $this->basePath('img/youtube.png'); ?>" class="img-responsive" />
 			</a>
 		</div>
 		<div class="col-xs-12">
-			<a data-href="#">
-				Download do Formulário Orientativo
+			<a href="<?= $this->basePath('download/ArquivoTeste.pdf'); ?>" download>
+				<div class="icone-download">
+					<img src="<?= $this->basePath('img/layout/download.png'); ?>" class="img-responsive"/>
+				</div>
+				<p class="pdownload">Download do Formulário Orientativo</p>
 			</a>
 		</div>
 		<div class="col-xs-12">
@@ -566,13 +569,29 @@
 </div>
 -->
 
-<div class="modal fade" id="briefing-obrigado" tabindex="-1" role="dialog" aria-labelledby="modalbriefing-obrigadoLabel" data-backdrop="static" data-keyboard="false">
+<div class="modal fade" id="briefing-obrigado-vendedor" tabindex="-1" role="dialog" aria-labelledby="modalbriefing-obrigadovenderoLabel" data-backdrop="static" data-keyboard="false">
   	<div class="modal-dialog" role="document">
     	<div class="modal-content">
       		<div class="modal-header">
       			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h2 id="modalbriefing-obrigadoLabel">Obrigado! :)</h2>
+				<h2 id="modalbriefing-obrigadovenderoLabel">Obrigado! :)</h2>
 				<p class="p1">Após a realização das medições pelo vendedor, estaremos com todas as informações para realizar o projeto que se adapta ao seu desejo.</p>
+				<p class="p2">Em um prazo de 48h após a medição você receberá a apresentação dos projetos e orçamento.</p>
+      		</div>
+	  		<div class="modal-footer">
+			  	<button class="btn btn-default btn-fechar" data-dismiss="modal" aria-label="Close">FECHAR</button>
+      		</div>
+    	</div>
+  	</div>
+</div>
+ 
+<div class="modal fade" id="briefing-obrigado-arquivos" tabindex="-1" role="dialog" aria-labelledby="modalbriefing-obrigadoarquivosLabel" data-backdrop="static" data-keyboard="false">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content">
+      		<div class="modal-header">
+      			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h2 id="modalbriefing-obrigadoarquivosLabel">Obrigado! :)</h2>
+				<p class="p1">Agora temos as informações necessárias para poder realizar o projeto que se adapta ao seu desejo e a sua necessidade.</p>
 				<p class="p2">Em um prazo de 48h após a medição você receberá a apresentação dos projetos e orçamento.</p>
       		</div>
 	  		<div class="modal-footer">
@@ -696,11 +715,19 @@ $(function(){
 		$('#briefing-complemento').fadeIn();
 	});
 
-	$('#briefing-obrigado .btn-fechar').click(function(){
+	$('#briefing-obrigado-vendedor .btn-fechar').click(function(){
 		window.location = "<?php echo $this->url('home'); ?>"
 	});
 
-	$('#briefing-obrigado .close').click(function(){
+	$('#briefing-obrigado-vendedor .close').click(function(){
+		window.location = "<?php echo $this->url('home'); ?>"
+	});
+
+	$('#briefing-obrigado-arquivos .btn-fechar').click(function(){
+		window.location = "<?php echo $this->url('home'); ?>"
+	});
+
+	$('#briefing-obrigado-arquivos .close').click(function(){
 		window.location = "<?php echo $this->url('home'); ?>"
 	});
 
@@ -766,7 +793,7 @@ $(function(){
 						$('.briefing-complemento-step input:checkbox').prop('checked', false);
 						//$('.briefing-complemento-step').hide();
 						//$('#briefing-obrigado-vendedor').fadeIn();
-						$('#briefing-obrigado').modal('show');
+						$('#briefing-obrigado-vendedor').modal('show');
 					}else{
 						alert(resp.data);
 					}
@@ -791,11 +818,11 @@ $(function(){
 			$('.briefing-complemento-step input:checkbox').prop('checked', false);
 			//$('.briefing-complemento-step').hide();
 			//$('#briefing-obrigado-arquivos').fadeIn();
-			$('#briefing-obrigado').modal('show');
+			$('#briefing-obrigado-arquivos').modal('show');
 		}
 	});
 
-	$('#briefing-videos a').click(function(e){
+	$('#briefing-videos .youtube a').click(function(e){
 		e.stopPropagation();
 
 		var linkHref = $(this).attr('data-href');
