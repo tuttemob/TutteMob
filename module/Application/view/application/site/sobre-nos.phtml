@@ -1,15 +1,263 @@
-<div id="section-quemsomos-bg">
-	<div id="section-quemsomos" class="section col-lg-12">
-		<h1><strong>SOBRE NÓS</strong></h1>
-		A TutteMob é um novo conceito no <strong>relacionamento</strong> com consumidores de móveis planejados.<br>
-		Esta será a sua primeira experiência na compra de móveis planejados de forma <strong>totalmente on line</strong>.<br>
-		Os móveis que produzimos são vendidos de forma <strong>direta ao consumidor</strong>.<br>
-		Você terá toda a comodidade dos serviços de uma loja física <strong>sem sair de casa</strong>.<br><br>
-		<div id="section-quemsomos-interno">
-			<!-- <div class="container"> -->
-				<strong>Somos novo conceito no relacionamento</strong><br>
-				<strong>Com consumidores de móveis planejados.</strong><br>
-			<!-- </div> -->				
+<?php if(!$this->layout()->usuario): ?>
+	<div id="experiencia-tuttemob">
+		<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">
+			EXPERIÊNCIA TUTTEMOB
+		</a>
+		<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">
+			INICIE AGORA!
+		</a>
+	</div>
+<?php endif; ?>
+
+<div id="section-desktop">
+	<div class="section-sobrenos section col-lg-12">
+		<div class="section-background">
+			<img src="<?= $this->basePath('img/paginas/7.png'); ?>" class="img-responsive" />
+		</div>
+		<div class="section-page">
+			<div>
+				<p class="p1">O padrão fora <br />
+				do padrão.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-sobrenos2 section col-lg-12">
+		<div class="section-page">
+			<div>
+				<p class="p1">
+					Acreditamos que <br />
+					o segmento de móveis <br />
+					planejados pode ter um <br />
+					serviço de excelência.
+				</p>
+
+				<p class="p2">
+					Hoje, os consumidores de móveis planejados no Brasil <br /> 
+					pagam um preço elevado pelos seus móveis, e recebem, <br />
+					normalmente, serviços de baixa qualidade.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-sobrenos3 section col-lg-12">
+		<div class="section-page">
+			<div>
+				<p class="p1">
+					Pagam pela ineficiência do serviço, por estruturas e <br />
+					pontos de venda tradicionais com altos custos, que impactam <br />
+					consideravelmente no preço final mesmo sem necessariamente <br />
+					ter relação com a qualidade do produto ofertado.
+				</p>
+
+				<p class="p2">
+					Nós criamos um <br /> 
+					sistema para <br />
+					revolucionar essa <br />
+					cultura.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-sobrenos4 section col-lg-12">
+		<div class="section-page">
+			<div>
+				<div class="box">
+					<p class="p1">
+						Nosso objetivo? oferecer produtos de alta qualidade com preço justo
+						e inteligente, essa é a verdadeira e melhor relação custo x benefício.
+					</p>
+				</div>
+
+				<p class="p2">
+					Nosso sistema de venda é via internet, <br />
+					que abandona a forma tradicional<br />
+					da venda de móveis planejados, sem <br />
+					perder a <b style="font-weight: 800 !important">comodidade</b> dos serviços <br />
+					de medição, projeto e instalação.
+					<br /><br />
+					Queremos que o consumidor só pague<br /> 
+					por aquilo que gere <b>valor real</b> ao seu <br />
+					produto.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-sobrenos5 section col-lg-12">
+		<div class="section-page">
+			<div>
+				<p class="p1">
+					Aqui, o cliente <br />
+					tem o monitoramento <br />
+					de cada etapa do <br />
+					processo de compra na <br />
+					palma da mão.
+				</p>
+
+				<p class="p2">
+					Além de atendimento e serviços com qualidades <br /> 
+					superiores e a possibilidade de avaliar e visualizar a experiência <br />
+					de outros clientes com a marca e o produto.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-sobrenos6 section col-lg-12">
+		<div class="section-page">
+			<div>
+				<p class="p1">
+					Venha também fazer <br />
+					parte da revolução na nova <br />
+					experiência de compra de<br />
+					móveis planejados.
+				</p>
+			</div>
+		
+			<div id="experiencia-tuttemob2">
+				<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">
+					INICIE AGORA!
+				</a>
+			</div>
+			<div>
+				<br />
+				<p class="p2">
+					<a href="#">Ou baixe o App já disponível na Apple Store <br />
+					e na Google Store.</a> 
+				</p>
+				<br />
+			</div>
+		</div>		
+	</div>
+
+</div>
+
+<div id="section-mobile" style="visibility: hidden; position: relative; margin: 0 auto;
+									top: 0px; left: 0px; width: 0; height: 0; overflow: hidden;">
+
+	<!-- Slides Container -->
+	<div u="slides" style="cursor:move;position: absolute; left: 0px; top: 0px; width: 0; height: 0; overflow: hidden;">
+		<div>
+			<div class="section-sobrenos section col-lg-12">
+				<div class="section-background">
+					<img src="<?= $this->basePath('img/paginas/inicial-1-bg.png'); ?>" />
+				</div>
+				<div class="section-page">
+					<div id="p1">
+						<img src="<?= $this->basePath('img/paginas/inicial-1-logo.png'); ?>" />
+					</div>
+					<div id="p2">
+						Móveis planejados
+					</div>
+					<div id="p3">
+						na palma <br /> da mão.
+					</div>
+				</div>
+				
+				<!-- 
+				<a class="pbutton" href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">EXPERIÊNCIA TUTTEMOB</a>
+				-->
+				<a class="pbutton">INICIAR MINHA EXPERIÊNCIA AGORA</a>
+			</div>
+		</div>
+		<div>
+			<div class="section-sobrenos2 section col-lg-12">
+				<div class="section-background">
+					<img src="<?= $this->basePath('img/paginas/inicial-2-bg.png'); ?>" />
+				</div>
+				<div class="section-page">
+					<div id="p2">
+						A tuttemob é o
+					</div>
+					<div id="p3">
+						novo, com <br />
+						todas <br />
+						as vantagens <br />
+						de comprar <br />
+						via internet.
+					</div>
+				</div>
+
+				<!--
+				<a class="pbutton" href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">DESCUBRA</a>
+				 -->
+				 <a class="pbutton">DESCUBRA</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bullet Navigator -->
+	<div data-u="navigator" id="navigator" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+		<div data-u="prototype" class="i" style="width:16px;height:16px;">
+			<svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+				<circle class="b" cx="8000" cy="8000" r="5800"></circle>
+			</svg>
 		</div>
 	</div>
 </div>
+
+<style>
+@media screen and (max-width: 800px){
+	#menu-nav-left {
+	  position: absolute !important;
+	}
+}
+</style>
+
+<script src="<?= $this->basePath('lib/jssor/jssor.slider.min.js') ?>"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	ajustaWidHei = function(){
+		if($(window).width() < 800){
+			$('body').css('overflow', 'hidden');
+			$('#section-content').css('overflow', 'hidden');
+		}else{
+			$('body').css('overflow', 'auto');
+			$('#section-content').css('overflow', 'auto');
+		}
+
+		var winWidth = $(window).width() + 'px';
+		var winHeight = ($(window).height()) + 'px';
+		$('#section-mobile').attr('style', $('#section-mobile').attr('style').replace(/(width: )([0-9]{1,4})(px)?/, 'width: ' + winWidth));
+		$('#section-mobile').attr('style', $('#section-mobile').attr('style').replace(/(height: )([0-9]{1,4})(px)?/, 'height: ' + winHeight));
+		$('#section-mobile div').each(function(){
+			if(	$(this).attr('style') != undefined 
+				&& $(this).parents('#navigator').length == 0
+				&& $(this).attr('id') != 'navigator')
+			{
+				$(this).attr('style', $(this).attr('style').replace(/(width: )([0-9]{1,4})(px)?/, 'width: ' + winWidth));
+				$(this).attr('style', $(this).attr('style').replace(/(height: )([0-9]{1,4})(px)?/, 'height: ' + winHeight));
+				if($(this).find('#navigator').length > 0){
+					$(this).attr('style', $(this).attr('style').replace(/(height: )([0-9]{1,4})(px)?/, 'height: 30px'));
+					$(this).css('left', 0);
+				}
+			}
+		});
+		$('#section-mobile div.section-background img').css('height',winHeight);
+		$('#section-mobile div.section-background img').css('transform', 'translate(-35%, 0%)');
+	};
+
+	// ajustes iniciais
+	ajustaWidHei();
+
+	// inicia o slide
+	setTimeout(function() {
+		var options = {
+            $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$,
+                $ChanceToShow: 2
+            }
+        };
+		var jssor_slider1 = new $JssorSlider$("section-mobile", options);	
+	}, 100);
+
+	// ajusta dimensoes em monitoramento
+	setInterval(function(){
+		ajustaWidHei();
+	}, 300);
+});
+</script>
