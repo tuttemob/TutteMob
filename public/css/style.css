@@ -1301,23 +1301,33 @@ input.cmn-toggle-round:checked + label:after {
   padding-top: 12px;
 }
 
+#briefing-videos .col-md-8 div.col-xs-9 {
+  width: 100%;
+  position: absolute;
+  padding-left: 50px;
+  color: #FFF;
+  top: 50%;
+  margin-top: -80px;
+}
 #briefing-videos .col-xs-12 {
 	/*background: #9A5B90;*/
 	text-align: center;
 }
 #briefing-videos .col-md-4 .col-xs-12 .p1 {
     /*text-align: center;*/
-    font-size: 24px;
+    font-size: 30px;
     color: rgb(255, 111, 163);
     font-weight: bold;
-    line-height: 22px;    
+    line-height: 30px;
+    margin-top: -40px;
+    margin-bottom: -5px;    
 }
 #briefing-videos .col-md-4 .col-xs-12 a {
     font-size: 18px;
     font-weight: bold;
 }
-#briefing-videos .col-md-4 .col-xs-12 a img {
-    padding-left: 90px;
+#briefing-videos .col-md-4 .col-xs-12 .youtube {
+    /*padding-left: 55px;*/
     margin-top: -20px;
     margin-bottom: -20px;
 }
@@ -1325,7 +1335,7 @@ input.cmn-toggle-round:checked + label:after {
     font-size: 22px;
     color: #AAA;
     font-weight: bold;
-    margin-top: -20px;
+    margin-top: -30px;
 }
 #briefing-videos .col-md-4 .col-xs-12 .p2 {
     font-size: 18px;
@@ -1344,10 +1354,17 @@ input.cmn-toggle-round:checked + label:after {
 #briefing-videos .col-2 img {
 	border: 5px #FFF solid
 }
-#briefing-videos .icone-download img {
+/*#briefing-videos .icone-download img {
 	float: left;
 	padding-top: 20px;
     margin-left: -50px;
+}*/
+.icone-download {
+	float: left;
+	padding-top: 8px;
+    margin-left: 50px;
+    height: 32px;
+    width: 20px;
 }
 #briefing-videos .pdownload {
 	text-align: left;
@@ -1375,6 +1392,14 @@ input.cmn-toggle-round:checked + label:after {
 }
 #briefing-vendedor {
 	background: #A04D87;
+}
+#briefing-vendedor .col-md-8 div.col-xs-9 {
+  width: 100%;
+  position: absolute;
+  padding-left: 50px;
+  color: #FFF;
+  top: 50%;
+  margin-top: -80px;
 }
 #briefing-vendedor .col-md-4 {
   padding-top: 130px;
@@ -1418,6 +1443,14 @@ input.cmn-toggle-round:checked + label:after {
 }
 #briefing-arquivos1 {
 	background: #F73F80;
+}
+#briefing-arquivos1 .col-md-8 div.col-xs-9 {
+  width: 100%;
+  position: absolute;
+  padding-left: 50px;
+  color: #FFF;
+  top: 50%;
+  margin-top: -130px;
 }
 #briefing-arquivos1 .col-md-12 {
   padding-right: 0px;
