@@ -1326,7 +1326,7 @@ input.cmn-toggle-round:checked + label:after {
     font-size: 18px;
     font-weight: bold;
 }
-#briefing-videos .col-md-4 .col-xs-12 .youtube {
+#briefing-videos .col-md-4 .col-xs-12 .imgYoutube {
     /*padding-left: 55px;*/
     margin-top: -20px;
     margin-bottom: -20px;
