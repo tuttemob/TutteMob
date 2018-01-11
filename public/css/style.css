@@ -924,6 +924,7 @@ input.cmn-toggle-round:checked + label:after {
   margin-top: 50px !important;
   bottom: auto !important;
   margin-bottom: 0 !important;
+  position: relative;
 }
 #section-ambientes-tela2 h2 {
   color: #F73F80;
@@ -931,7 +932,8 @@ input.cmn-toggle-round:checked + label:after {
   line-height: 98px;
 }
 #section-ambientes-tela2 p {
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   max-width: 870px;
   color: #AAA
 }
@@ -944,12 +946,15 @@ input.cmn-toggle-round:checked + label:after {
   padding-left: 50px;
   z-index: 1;
 }
+#section-ambientes-tela3 div.col-md-4 {
+  padding-top: 80px;
+}
 #section-ambientes-tela3 div.col-md-4 h2,
 #section-ambientes-tela5 div.col-md-4 h2 {
   font-weight: bolder;
   color: #AAA;
-  font-size: 68px;
-  line-height: 68px;
+  font-size: 65px;
+  line-height: 65px;
 }
 #section-ambientes-tela3 div.col-md-8,
 #section-ambientes-tela5 div.col-md-8 {
@@ -958,10 +963,13 @@ input.cmn-toggle-round:checked + label:after {
   position: absolute;
   right: 0;
 }
-#section-ambientes-tela3 div.col-md-8 img,
-#section-ambientes-tela5 div.col-md-8 img {
+#section-ambientes-tela3 div.col-md-8 img {
   position: absolute;
   right: 0;
+}
+#section-ambientes-tela5 div.col-md-8 img {
+  position: absolute;
+  left: 0;
 }
 #section-ambientes-tela3 .section-ambientes-link,
 #section-ambientes-tela5 .section-ambientes-link {
@@ -977,6 +985,9 @@ input.cmn-toggle-round:checked + label:after {
   z-index: 2;
   left: 50px;
   bottom: 15%;
+}
+#section-ambientes-tela5 .section-ambientes-link {
+  bottom: 30%;
 }
 #section-ambientes-tela3 .section-ambientes-link .col-xs-11,
 #section-ambientes-tela5 .section-ambientes-link .col-xs-11 {
