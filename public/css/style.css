@@ -953,8 +953,8 @@ input.cmn-toggle-round:checked + label:after {
 #section-ambientes-tela5 div.col-md-4 h2 {
   font-weight: bolder;
   color: #AAA;
-  font-size: 65px;
-  line-height: 65px;
+  font-size: 55px;
+  line-height: 55px;
 }
 #section-ambientes-tela3 div.col-md-8,
 #section-ambientes-tela5 div.col-md-8 {
@@ -987,7 +987,7 @@ input.cmn-toggle-round:checked + label:after {
   bottom: 15%;
 }
 #section-ambientes-tela5 .section-ambientes-link {
-  bottom: 30%;
+  bottom: 20%;
 }
 #section-ambientes-tela3 .section-ambientes-link .col-xs-11,
 #section-ambientes-tela5 .section-ambientes-link .col-xs-11 {
@@ -1016,8 +1016,8 @@ input.cmn-toggle-round:checked + label:after {
 #section-ambientes-tela4 div.col-md-4 h2 {
   font-weight: bolder;
   color: #AAA;
-  font-size: 59px;
-  line-height: 68px;
+  font-size: 55px;
+  line-height: 55px;
 }
 #section-ambientes-tela4 div.col-md-8 {
   padding: 0px;
