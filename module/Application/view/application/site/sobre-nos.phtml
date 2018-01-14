@@ -115,13 +115,28 @@
 					experiência de compra de<br />
 					móveis planejados.
 				</p>
+			<p>&nbsp;</p>
 			</div>
-		
-			<div id="experiencia-tuttemob2">
-				<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">
-					INICIE AGORA!
-				</a>
-			</div>
+			
+			<?php if(!$this->layout()->usuario): ?>
+				<div id="experiencia-tuttemob2">
+					<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">
+						INICIE AGORA!
+					</a>
+				</div>
+
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+			<?php else: ?>
+				<div>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+				</div>				
+			<?php endif; ?>
+			<!-- 
 			<div>
 				<br />
 				<p class="p2">
@@ -130,6 +145,7 @@
 				</p>
 				<br />
 			</div>
+			 -->
 		</div>		
 	</div>
 

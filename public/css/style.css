@@ -653,7 +653,7 @@ input.cmn-toggle-round:checked + label:after {
 	height: 750px;
 }
 .section-sobrenos4 .box .p1 {
-  color: #c7c4c4;
+  color: #f7f3f3;
   font-size: 35px;
   text-transform: uppercase;
   font-weight: 700;
@@ -927,7 +927,7 @@ input.cmn-toggle-round:checked + label:after {
   position: relative;
 }
 #section-ambientes-tela2 h2 {
-  color: #F73F80;
+  color: #FF6FA3;
   font-size: 98px;
   line-height: 98px;
 }
@@ -976,7 +976,7 @@ input.cmn-toggle-round:checked + label:after {
   width: 25%;
   min-width: 500px;
   color: #FFF;
-  background: #F73F80;
+  background: #FF6FA3;
   font-size: 22px;
   line-height: 30px;
   padding: 20px;
@@ -1033,7 +1033,7 @@ input.cmn-toggle-round:checked + label:after {
   width: 25%;
   min-width: 500px;
   color: #FFF;
-  background: #F73F80;
+  background: #FF6FA3;
   font-size: 22px;
   line-height: 30px;
   padding: 20px;
@@ -1064,7 +1064,7 @@ input.cmn-toggle-round:checked + label:after {
   margin-bottom: 0 !important;
 }
 #section-ambientes-tela6 h2 {
-  color: #F73F80;
+  color: #FF6FA3;
   font-size: 75px;
   line-height: 75px;
 }
@@ -1535,6 +1535,13 @@ input.cmn-toggle-round:checked + label:after {
   top: 20%;
   margin-top: -54px;
   z-index: 100100;
+}
+#btn-fechar-youtube button {
+	background-color: #FF6FA3;
+	border-color: #ef2b70;
+}
+#btn-fechar-youtube button:hover {
+    background-color: #F73F80;
 }
 #iframeVideosYoutube {
   display: none;

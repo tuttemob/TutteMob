@@ -115,17 +115,25 @@
 			<h2>
 				Venha também fazer <br />
 				parte da revolução na nova <br />
-				expêriencia de compra de <br />
+				experiência de compra de <br />
 				móveis planejados.	
 			</h2>
+			
+			<?php if(!$this->layout()->usuario): ?>
+				<div id="experiencia-tuttemob2">
+					<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">
+						INICIE AGORA!
+					</a>
+				</div>
+			<?php else: ?>
+				<div>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+				</div>
+			<?php endif; ?>
 
-			<div id="experiencia-tuttemob2">
-				<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">
-					INICIE AGORA!
-				</a>
-			</div>
-
-			<p>&nbsp;</p>
+			<p style="line-height:50px">&nbsp;</p>
 		</div>
 	</div>
 </div>
@@ -137,9 +145,13 @@
 </div>
 
 <div id="section-ambientes-gallery-tela4" class="section-ambientes-gallery">
-	<a href="<?= $this->basePath('img/paginas/8.png'); ?>" title="Tuttemob"><img src="<?= $this->basePath('img/paginas/10.png'); ?>" width="75" height="75"></a>
-	<a href="<?= $this->basePath('img/paginas/7.png'); ?>" title="Tuttemob"><img src="<?= $this->basePath('img/paginas/9.png'); ?>" width="75" height="75"></a>
-	<a href="<?= $this->basePath('img/paginas/9.png'); ?>" title="Tuttemob"><img src="<?= $this->basePath('img/paginas/8.png'); ?>" width="75" height="75"></a>
+	<a href="<?= $this->basePath('img/paginas/cozinha.jpg'); ?>" title="Tuttemob"><img src="<?= $this->basePath('img/paginas/cozinha.jpg'); ?>" width="75" height="75"></a>
+	<a href="<?= $this->basePath('img/paginas/dormitcasal1.jpg'); ?>" title="Tuttemob"><img src="<?= $this->basePath('img/paginas/dormitcasal1.jpg'); ?>" width="75" height="75"></a>
+	<a href="<?= $this->basePath('img/paginas/dormitcasal2.jpg'); ?>" title="Tuttemob"><img src="<?= $this->basePath('img/paginas/dormitcasal2.jpg'); ?>" width="75" height="75"></a>
+	<a href="<?= $this->basePath('img/paginas/dormitsolteiro.jpg'); ?>" title="Tuttemob"><img src="<?= $this->basePath('img/paginas/dormitsolteiro.jpg'); ?>" width="75" height="75"></a>
+	<a href="<?= $this->basePath('img/paginas/home1.jpg'); ?>" title="Tuttemob"><img src="<?= $this->basePath('img/paginas/home1.jpg'); ?>" width="75" height="75"></a>
+	<a href="<?= $this->basePath('img/paginas/home2.jpg'); ?>" title="Tuttemob"><img src="<?= $this->basePath('img/paginas/home2.jpg'); ?>" width="75" height="75"></a>
+	<a href="<?= $this->basePath('img/paginas/lavanderia.jpg'); ?>" title="Tuttemob"><img src="<?= $this->basePath('img/paginas/lavanderia.jpg'); ?>" width="75" height="75"></a>
 </div>
 
 <div id="section-ambientes-gallery-tela5" class="section-ambientes-gallery">
