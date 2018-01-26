@@ -9,25 +9,8 @@
 	</div>
 <?php endif; ?>
 
-<div id="section-desktop">
-	<div class="section-apresentacao section col-lg-12">
-		<div class="section-background">
-			<img src="<?= $this->basePath('img/paginas/inicial-1-bg.png'); ?>" class="img-responsive" />
-		</div>
-		<div class="section-page">
-			<div id="p1">
-				<img src="<?= $this->basePath('img/paginas/inicial-1-logo.png'); ?>" />
-			</div>
-			<div id="p2">
-				Móveis planejados
-			</div>
-			<div id="p3">
-				na palma <br /> da mão.
-			</div>
-		</div>
-	</div>
-
-	<div class="section-apresentacao2 section col-lg-12">
+<div id="section-desktop-descubra">
+	<div class="section-descubra1-link2 section col-lg-12">
 		<div class="section-background">
 			<img src="<?= $this->basePath('img/paginas/inicial-2-bg.png'); ?>" class="img-responsive" />
 		</div>
@@ -41,80 +24,116 @@
 				via internet.
 			</div>
 			<div id="p4">
-				<a href="<?= $this->url('home', array('action' => 'descubra-link-um')); ?>">Descubra</a>
+				 Descubra
 				<div class="link-border"></div>
+			</div>
+		</div>
+
+		<div class="box">
+			<div class="p1">
+				<div class="col-md-4">
+					<a href="<?= $this->url('home', array('action' => 'descubra-link-um')); ?>">
+						O Novo
+					</a>					
+				</div>
+				<div class="col-md-4">
+					Custo x Benefício
+					<div class="link-border"></div>
+				</div>
+				<div class="col-md-4">
+					<a href="<?= $this->url('home', array('action' => 'descubra-link-tres')); ?>">
+						Móveis Inteligentes
+					</a>
+				</div>
+			</div>
+		</div>							
+	</div>
+	
+	<div class="section-descubra2-link2 section col-lg-12">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-8">
+			<div class="section-background">
+				<img src="<?= $this->basePath('img/paginas/descubra2.png'); ?>" class="img-responsive" />
+			</div>
+		</div>
+	</div>	
+
+	<div class="section-descubra2-link2 section col-lg-12">
+		<div class="section-page">
+			<div class="box">
+				<p class="p1">
+					Oferecemos a experiência de compra totalmente online, através do site ou app.
+				</p>
 			</div>
 		</div>
 	</div>
 
-	<div class="section-apresentacao3 section col-lg-12">
-		<div class="section-background">
-			<img src="<?= $this->basePath('img/paginas/inicial-3-bg.png'); ?>" class="img-responsive" />
-		</div>
+	<div class="section-descubra3-link2 section col-lg-12">
 		<div class="section-page">
-			<div id="p3">
-				Não <br />
-				somos apenas <br />
-				digitais.
-			</div>
-			<div id="p4">
-				<a href="<?= $this->url('home', array('action' => 'franquias')); ?>">Encontre</a>
-				<div class="link-border"></div>
-			</div>
+			<p class="p1">
+				Graças a um sistema inteligente, onde cada <br />
+				etapa foi pensada <b>para ter eficiência e evitar custos</b> <br />
+				de estrutura que não agregam valor a <br />
+				sua compra, podemos oferecer a melhor opção <br />
+				no que diz respeito <b>a economizar.</b>
+			</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
 		</div>
 	</div>
 
-	<div class="section-apresentacao2 section col-lg-12">
-		<div class="section-background">
-			<img src="<?= $this->basePath('img/paginas/inicial-4-bg.png'); ?>" class="img-responsive" />
-		</div>
+	<div class="section-descubra4-link2 section col-lg-12">
 		<div class="section-page">
-			<div id="p2">
-				O que nos move é a
+			<div>
+				<p class="p1">
+					Venha também fazer <br />
+					parte da revolução na nova <br />
+					experiência de compra de<br />
+					móveis planejados.
+				</p>
+			<p>&nbsp;</p>
 			</div>
-			<div id="p3">
-				satisfação <br /> 
-				de quem já passou <br />
-				por aqui.
+			
+			<?php if(!$this->layout()->usuario): ?>
+				<div id="experiencia-tuttemob2">
+					<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">
+						INICIE AGORA!
+					</a>
+				</div>
+
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+			<?php else: ?>
+				<div>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+				</div>				
+			<?php endif; ?>
+			<!-- 
+			<div>
+				<br />
+				<p class="p2">
+					<a href="#">Ou baixe o App já disponível na Apple Store <br />
+					e na Google Store.</a> 
+				</p>
+				<br />
 			</div>
-			<div id="p4">
-				<a href="<?= $this->url('home', array('action' => 'experiencia-clientes')); ?>">Veja</a>
-				<div class="link-border"></div>
-			</div>
-		</div>
+			 -->
+		</div>		
 	</div>
 </div>
 
-<div id="section-mobile" style="visibility: hidden; position: relative; margin: 0 auto;
+<div id="section-mobile-descubra" style="visibility: hidden; position: relative; margin: 0 auto;
 									top: 0px; left: 0px; width: 0; height: 0; overflow: hidden;">
 
 	<!-- Slides Container -->
 	<div u="slides" style="cursor:move;position: absolute; left: 0px; top: 0px; width: 0; height: 0; overflow: hidden;">
 		<div>
-			<div class="section-apresentacao section col-lg-12">
-				<div class="section-background">
-					<img src="<?= $this->basePath('img/paginas/inicial-1-bg.png'); ?>" />
-				</div>
-				<div class="section-page">
-					<div id="p1">
-						<img src="<?= $this->basePath('img/paginas/inicial-1-logo.png'); ?>" />
-					</div>
-					<div id="p2">
-						Móveis planejados
-					</div>
-					<div id="p3">
-						na palma <br /> da mão.
-					</div>
-				</div>
-				
-				<!-- 
-				<a class="pbutton" href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">EXPERIÊNCIA TUTTEMOB</a>
-				-->
-				<a class="pbutton">INICIAR MINHA EXPERIÊNCIA AGORA</a>
-			</div>
-		</div>
-		<div>
-			<div class="section-apresentacao2 section col-lg-12">
+			<div class="section-descubra1-link2 section col-lg-12">
 				<div class="section-background">
 					<img src="<?= $this->basePath('img/paginas/inicial-2-bg.png'); ?>" />
 				</div>
@@ -138,7 +157,7 @@
 			</div>
 		</div>
 		<div>
-			<div class="section-apresentacao3 section col-lg-12">
+			<div class="section-descubra2-link2 section col-lg-12">
 				<div class="section-background">
 					<img src="<?= $this->basePath('img/paginas/inicial-3-bg.png'); ?>" />
 				</div>
@@ -154,7 +173,7 @@
 			</div>
 		</div>
 		<div>
-			<div class="section-apresentacao2 section-apresentacao4 section col-lg-12">
+			<div class="section-descubra1-link2 section-descubra3-link2 section col-lg-12">
 				<div class="section-background">
 					<img src="<?= $this->basePath('img/paginas/inicial-4-bg.png'); ?>" />
 				</div>
@@ -207,9 +226,9 @@ $(document).ready(function(){
 
 		var winWidth = $(window).width() + 'px';
 		var winHeight = ($(window).height()) + 'px';
-		$('#section-mobile').attr('style', $('#section-mobile').attr('style').replace(/(width: )([0-9]{1,4})(px)?/, 'width: ' + winWidth));
-		$('#section-mobile').attr('style', $('#section-mobile').attr('style').replace(/(height: )([0-9]{1,4})(px)?/, 'height: ' + winHeight));
-		$('#section-mobile div').each(function(){
+		$('#section-mobile-descubra').attr('style', $('#section-mobile-descubra').attr('style').replace(/(width: )([0-9]{1,4})(px)?/, 'width: ' + winWidth));
+		$('#section-mobile-descubra').attr('style', $('#section-mobile-descubra').attr('style').replace(/(height: )([0-9]{1,4})(px)?/, 'height: ' + winHeight));
+		$('#section-mobile-descubra div').each(function(){
 			if(	$(this).attr('style') != undefined 
 				&& $(this).parents('#navigator').length == 0
 				&& $(this).attr('id') != 'navigator')
@@ -222,8 +241,8 @@ $(document).ready(function(){
 				}
 			}
 		});
-		$('#section-mobile div.section-background img').css('height',winHeight);
-		$('#section-mobile div.section-background img').css('transform', 'translate(-35%, 0%)');
+		$('#section-mobile-descubra div.section-background img').css('height',winHeight);
+		$('#section-mobile-descubra div.section-background img').css('transform', 'translate(-35%, 0%)');
 	};
 
 	// ajustes iniciais
@@ -237,7 +256,7 @@ $(document).ready(function(){
                 $ChanceToShow: 2
             }
         };
-		var jssor_slider1 = new $JssorSlider$("section-mobile", options);	
+		var jssor_slider1 = new $JssorSlider$("section-mobile-descubra", options);	
 	}, 100);
 
 	// ajusta dimensoes em monitoramento

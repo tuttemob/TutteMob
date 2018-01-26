@@ -65,6 +65,21 @@ class SiteController extends ManagerController {
 		return new ViewModel(array());
 	}
 	
+	public function descubraLinkUmAction()
+	{
+		return new ViewModel(array());
+	}
+	
+	public function descubraLinkDoisAction()
+	{
+		return new ViewModel(array());
+	}
+	
+	public function descubraLinkTresAction()
+	{
+		return new ViewModel(array());
+	}
+	
 	/**
 	 * Cadastrar usuarios
 	 * @return \Zend\View\Model\ViewModel
