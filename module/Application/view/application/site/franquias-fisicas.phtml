@@ -1,0 +1,163 @@
+<?php if(!$this->layout()->usuario): ?>
+	<div id="experiencia-tuttemob">
+		<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">
+			EXPERIÊNCIA TUTTEMOB
+		</a>
+		<a href="<?= $this->url('home', array('action' => 'cadastrar')); ?>">
+			INICIE AGORA!
+		</a>
+	</div>
+<?php endif; ?>
+
+<div id="section-franquias-tela1" class="section section-franquias col-lg-12">
+	<div class="col-md-12">
+		<div class="section-background">
+			<img src="<?= $this->basePath('img/paginas/franquias.png'); ?>" />
+		</div>
+		
+		<div class="col-xs-9">
+			<h2>A TutteMob possui <br />
+			lojas físicas nas regiões onde <br />
+			oferece a venda online.</h2>
+		</div>
+	</div>
+</div>
+
+<div id="section-franquias-tela2" class="section section-franquias col-lg-12">
+	<div class="col-md-12">
+		<div class="section-background"></div>
+		
+		<div class="col-xs-9">
+			<p>
+				Aqui você faz tudo via internet e ainda pode conhecer o <br />
+				produto antes de finalizar a compra. Na TutteMob é <br />
+				fácil assim! Buscamos a inovação a todo custo, em respeito <br />
+				ao seu tempo e a segurança do seu investimento.
+			</p>
+			<h2>Encontre a Tutte mais <br />
+			próxima de você :)</h2>
+		</div>
+	</div>
+</div>
+ 
+<div id="section-franquias-tela3" class="section section-franquias col-lg-12">
+	<div id="section-mapa-interno">
+		<script>
+		function myMap() {
+		/*var mapProp= {
+		    center:new google.maps.LatLng(-28.268400,-52.420126),
+		    zoom:18,
+		};
+		var map=new google.maps.Map(document.getElementById("section-franquias-fisicas"),mapProp);*/
+
+		var contentString = '<div id="contentString">' + 
+			'<p>Faça-nos uma visita!</p>' +
+			'<a href="https://www.google.com/maps/dir/Rua+Morom,+3081+-+Boqueir%C3%A3o,+Passo+Fundo+-+RS,+Brasil//@-28.2685421,-52.4225509,17z/data=!3m1!4b1!4m8!4m7!1m5!1m1!1s0x94e2bf61376873cd:0xaf96e89e6f68519a!2m2!1d-52.4203622!2d-28.2685421!1m0?hl=pt-BR" target="_blank">Loja Passo Fundo</a>' +								 
+			'</div>';
+			
+		var mapCanvas = document.getElementById("section-mapa-interno");
+	  	var myCenter = new google.maps.LatLng(-28.268499,-52.420467); 
+	  	var mapOptions = {center: myCenter, zoom: 18/*, disableDefaultUI: true*/};
+	  	var map = new google.maps.Map(mapCanvas,mapOptions);
+	  	var marker = new google.maps.Marker({
+	    	position: myCenter,
+	    	//animation: google.maps.Animation.BOUNCE
+	  	});
+	  	marker.setMap(map);
+
+		  /*google.maps.event.addListener(marker,'click',function() {*/
+			    var infowindow = new google.maps.InfoWindow({
+			      content: contentString
+			    });
+			  infowindow.open(map,marker);
+			  /*});*/
+		}
+		</script>
+		 
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt6Q5NYmV8Pi-LX1GRnffZP3anE4pu4ek&callback=myMap"></script>
+	</div>
+
+    <form name="formMapa" id="formMapa" class="form-horizontal" enctype="multipart/form-data">	
+    	<div class="form-group col-xs-12">
+	   		<label for="pais" class="col-sm-2">País</label>	
+	   		<div class="col-sm-10">			   	
+	   			<select class="form-control" id="pais" disabled>
+	   				<option value="">Selecione...</option>
+		   			<option value="1" selected>Brasil</option>
+		   			<option value="2">Argentina</option>
+		   		</select>
+		   	</div>
+		</div>
+	   	<div class="form-group col-xs-12">
+	   		<label for="estado" class="col-sm-2">Estado</label>
+	   		<div class="col-sm-10">				   	
+	   			<select class="form-control" id="estado" disabled>
+	   				<option value="">Selecione...</option>
+		   			<option value="1" selected>Rio Grande do Sul</option>
+		   			<option value="2">Santa Catarina</option>
+		   			<option value="2">Paraná</option>
+		   		</select>
+		   	</div>
+		</div>
+		<div class="form-group col-xs-12">
+	   		<label for="cidade" class="col-sm-2">Cidade</label>
+	   		<div class="col-sm-10">				   	
+	   			<select class="form-control" id="cidade" disabled>
+	   				<option value="">Selecione...</option>
+		   			<option value="1" selected>Passo Fundo</option>
+		   			<option value="2">Bento Gonçalves</option>
+		   			<option value="2">Caxias do Sul</option>
+		   		</select>
+		   	</div> 
+	   	</div>   
+	</form>
+	
+	<div>
+		<div class="box">
+			<div class="col-sm-4">
+				<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+			</div>
+			<div class="col-sm-8">
+				<p class="p1">
+					E onde fica a <br />
+					Central de Projetos<br />
+					da TutteMob? <br />
+				</p>
+				<p class="p2">
+					Rua xxx, 123 - Centro <br />
+					Passo Fundo - RS<br />
+				</p>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+ 
+ <script type="text/javascript">
+$(document).ready(function(){
+	ajustaWidHei = function(){
+		$('body').css('overflow', 'hidden');
+		$('#section-content').css('overflow', 'hidden');
+		$('#section-content').css('overflow-y', 'auto');
+		
+		if($(window).width() < 800){
+		}else{
+			var menuHeight = $('#menu-nav-left').outerHeight() + 'px';
+			$('.section-background img').css('height', menuHeight);
+		}
+	};
+
+	// ajustes iniciais
+	ajustaWidHei();
+
+	// ajusta dimensoes em monitoramento
+	setInterval(function(){
+		ajustaWidHei();
+	}, 300);
+});
+</script>
+ 

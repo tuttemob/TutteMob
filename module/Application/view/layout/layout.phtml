@@ -20,13 +20,14 @@
       
 	    <!-- Custom styles -->
 	    <link href="<?= $this->basePath('css/style.css') ?>" rel="stylesheet">
+	    <link href="<?= $this->basePath('css/carousel.css') ?>" rel="stylesheet">
 	    <link rel="stylesheet" href="<?= $this->basePath('lib/duplob/css/style-custom.css') ?>">
 	
 	    <!-- jQuery -->
 	    <script src="<?= $this->basePath('lib/jquery/dist/jquery.min.js') ?>"></script>
 	    <script src="<?= $this->basePath('lib/mask/jquery.mask.min.js') ?>"></script>
     </head>
-    <body>
+    <body style="overflow-x:hidden;">
 			
 			<div id="section-content" class="section col-lg-12">
 				<div id="menu-nav-left">
@@ -69,18 +70,18 @@
 									</a>
 								</li>
 								<li>
-									<a href="<?= $this->url('home', array('action' => 'franquias')); ?>" title="Franquias físicas">
+									<a href="<?= $this->url('home', array('action' => 'franquias-fisicas')); ?>" title="Franquias físicas">
 										Franquias físicas
 									</a>
 								</li>
 							</ul>
 							
 							<div id="nav-center-outrositens">
-								<a href="<?= $this->url('home', array('action' => 'experiencia-clientes')); ?>" title="Experiência de clientes">
+								<a href="<?= $this->url('home', array('action' => 'depoimentos-clientes')); ?>" title="Experiência de clientes">
 									Experiência de clientes
 								</a>
 								<br>
-								<a href="<?= $this->url('home', array('action' => 'contatos')); ?>" title="Contatos">
+								<a href="<?= $this->url('home', array('action' => 'contatos-tuttemob')); ?>" title="Contatos">
 									Contatos
 								</a>
 							</div>

@@ -55,7 +55,7 @@ class SiteController extends ManagerController {
 		return new ViewModel(array());
 	}
 	
-	public function franquiasAction()
+	public function franquiasFisicasAction()
 	{
 		return new ViewModel(array());
 	}
@@ -76,6 +76,11 @@ class SiteController extends ManagerController {
 	}
 	
 	public function descubraLinkTresAction()
+	{
+		return new ViewModel(array());
+	}
+	
+	public function depoimentosClientesAction()
 	{
 		return new ViewModel(array());
 	}
@@ -192,7 +197,7 @@ class SiteController extends ManagerController {
 		));
 	}
 	
-	public function contatosAction()
+	public function contatosTuttemobAction()
 	{
 		$error = null;
 		$success = null;
@@ -256,7 +261,7 @@ class SiteController extends ManagerController {
 				}
 				
 				return $this->redirect()->toRoute('home', array(
-						'action' => 'contatos',
+						'action' => 'contatos-tuttemob',
 						'params' => $type.'='.$msg
 				));
 			}
