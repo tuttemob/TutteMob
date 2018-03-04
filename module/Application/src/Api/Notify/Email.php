@@ -66,6 +66,14 @@ class Email extends Message {
 		
 		return parent::setBody ( $mimeMessage );
 	}
+
+	public function addTo ($email, $nome = null){
+		if($nome !== null){
+			parent::addTo($email, mb_encode_mimeheader($nome));
+		}else{
+			parent::addTo($email);
+		}
+	}
 	
 	public function send() {
 		$this->smtp->send ( $this );
