@@ -1584,6 +1584,10 @@ input.cmn-toggle-round:checked + label:after {
 #section-briefings {
 	padding: 0px;	
 }
+#section-briefings .modal-title {
+	color: #AAA;
+	text-transform: uppercase;
+}
 #section-briefings .form-group {
   margin-bottom: 20px;
 }
