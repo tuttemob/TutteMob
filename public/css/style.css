@@ -1591,6 +1591,9 @@ input.cmn-toggle-round:checked + label:after {
 #section-briefings .form-group {
   margin-bottom: 20px;
 }
+#section-briefings .form-group span {
+  color: #F73F80;
+}
 #section-briefings .form-group label {
   margin-top: 0px;
   cursor: pointer;
