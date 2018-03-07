@@ -97,14 +97,18 @@ jQuery(function($){
 $(document).ready(function(){
 	ajustaWidHei = function(){
 		$('body').css('overflow', 'hidden');
-		$('#section-content').css('overflow', 'hidden');
 		
 		if($(window).width() < 800){
+			$('#section-content').css('overflow', 'auto');
+			$('#section-content').css('padding-bottom', '50px');
+
 			$('#section-login input[name="email"]').attr('placeholder', 'E-mail');
 			$('#section-login input[name="senha"]').attr('placeholder', 'Senha');
 			$('#section-login div.section-background img').css('height', ($(window).height() * 0.60) + 'px');
 			$('#section-login div.section-background img').css('transform', 'translate(-20%, 0%)');
 		}else{
+			$('#section-content').css('overflow', 'hidden');
+
 			var menuHeight = $('#menu-nav-left').outerHeight() + 'px';
 			$('.section-background img').css('height', menuHeight);
 		}
