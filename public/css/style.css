@@ -157,6 +157,9 @@ body, html {
   font-size: 20px;
   color: #A04D87;
 }
+#a-ja-sou-cadastrado {
+  /*font-size: 18px;*/
+}
 #nav-bottom #bottom-social {
   display: none;
   float: left;
@@ -1483,8 +1486,15 @@ input.cmn-toggle-round:checked + label:after {
 #section-briefings {
 	padding: 0px;	
 }
+#section-briefings .modal-title {
+	color: #AAA;
+	text-transform: uppercase;
+}
 #section-briefings .form-group {
   margin-bottom: 20px;
+}
+#section-briefings .form-group span {
+  color: #F73F80;
 }
 #section-briefings .form-group label {
   margin-top: 0px;
@@ -1698,6 +1708,7 @@ input.cmn-toggle-round:checked + label:after {
 }
 #briefing-cadastro .modal-header p {
   font-size: 18px;
+  line-height: 18px;
 }
 
 #briefing-cadastro .form-group label {
