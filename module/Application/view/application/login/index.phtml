@@ -19,7 +19,7 @@
 		
 		<div class="col-xs-9">
 			<h2>Você já <br /> conhece o novo.</h2>
-			<p>Faça o login e continue sua experiência de</p>
+			<p>Faça o login e continue sua experiência de </p>
 			<p>comprar móveis planejados de uma <b>forma única.</b></p>
 		</div>
 	</div>
@@ -51,12 +51,12 @@
 			    	<div class="alert alert-danger" role="alert"><?= $this->error; ?></div>
 			    <?php endif;?>
 				
-				<div class="form-group">
+				<div class="form-group entrar-form">
 					<button type="submit" class="btn btn-block">Entrar</button>
 	            </div>
 				
-				<div class="form-group">
-					<button type="button" id="loginComFacebok" class="btn btn-block">Entrar com o Facebook</button>
+				<div class="form-group entrar-facebook">
+					<button type="button" id="loginComFacebok" class="btn btn-block">Entrar com Facebook</button>
 	            </div>
 			</form>
 		</div>
@@ -100,6 +100,10 @@ $(document).ready(function(){
 		$('#section-content').css('overflow', 'hidden');
 		
 		if($(window).width() < 800){
+			$('#section-login input[name="email"]').attr('placeholder', 'E-mail');
+			$('#section-login input[name="senha"]').attr('placeholder', 'Senha');
+			$('#section-login div.section-background img').css('height', ($(window).height() * 0.60) + 'px');
+			$('#section-login div.section-background img').css('transform', 'translate(-20%, 0%)');
 		}else{
 			var menuHeight = $('#menu-nav-left').outerHeight() + 'px';
 			$('.section-background img').css('height', menuHeight);

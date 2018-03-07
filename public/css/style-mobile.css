@@ -9,6 +9,13 @@
     position: absolute !important;
   }
 
+  .section-8-4 div.col-md-8 {
+    position: relative;
+  }
+  .section-8-4 div.col-md-4 {
+    float: none;
+  }
+
   #section-desktop,
   #section-desktop-descubra,
   #section-desktop-franquias {
@@ -18,6 +25,73 @@
   #section-mobile-descubra,
   #section-mobile-franquias {
     display: block
+  }
+
+  /* ### Mobile Login ###  */
+  #section-login .section-background img {
+    margin-top: -20px;
+  }
+  #section-login div.col-xs-9 {
+    top: auto;
+    margin-top: 0;
+    padding: 15px;
+    bottom: 10px;
+  }
+  #section-login div.col-xs-9 h2 {
+    font-size: 28px;
+    line-height: 29px;
+    margin: 0;
+  }
+  #section-login div.col-xs-9 p {
+    display: inline;
+    font-size: 20px;
+    line-height: 21px;
+    margin: 0;
+  }
+  #section-login .col-md-4 {
+    position: relative;
+    min-height: auto;
+    width: 100%;
+    padding-top: 0;
+  }
+  #section-login .login #formLogin {
+    margin: 0;
+    max-width: 100%;
+  }
+  #section-login .login .form-group {
+    margin-top: 20px;
+  }
+  #section-login .login .form-group label {
+    display: none;
+  }
+  #section-login .help-block {
+    display: none;
+  }
+  #section-login .login .entrar-form {
+    width: 50%;
+    float: right;
+    margin-top: 5px;
+  }
+  #section-login .login .entrar-form button {
+    color: #FFF !important;
+    background: #F73F80 !important;
+    border: none !important;
+    padding: 8px 0px !important;
+    font-size: 14px !important;
+    width: 90%;
+    margin: 0 auto;
+  }
+  #section-login .login .entrar-facebook {
+    width: 50%;
+    float: left;
+    margin-top: 5px;
+  }
+  #section-login .login .entrar-facebook button {
+    color: #F73F80 !important;
+    background: #FFF !important;
+    border: none !important;
+    padding: 10px 0px !important;
+    font-size: 13px !important;
   }
 
   /* ### Mobile Navegação ###  */
