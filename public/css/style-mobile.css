@@ -66,6 +66,7 @@
     right: 20px;
     margin-top: 2px;
     margin-right: 15px;
+    z-index: 1000001;
   }
   #nav-bottom .pull-right {
     display: block;
@@ -400,6 +401,100 @@
     color: #F73F80;
     background: #FFF;
     bottom: 0px;
+  }
+
+  /* ### TELA CLIENTES ### */
+  #section-depoimentos-tela1 h2 {
+    font-size: 30px;
+    line-height: 32px;
+  }
+  #section-depoimentos-tela1 p {
+    display: none;
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+  }
+  #section-depoimentos-tela1 p.p-mobile {
+    display: block !important;
+  }
+  #section-depoimentos-tela1,
+  #section-depoimentos-tela1 .col-md-12 {
+    margin-top: 0;
+    float: left;
+  }
+  #section-depoimentos-tela1 div.col-xs-12 {
+    padding-left: 15px !important;
+  }
+  #section-depoimentos-tela2 {
+    float: left;
+    width: 100%;
+    margin-top: 60px;
+  }
+  #section-depoimentos-tela2 .carousel .item img {
+    height: 100% !important;
+  }
+  #section-depoimentos-tela2 .box {
+    position: absolute;
+    width: 70% !important;
+    right: 10%;
+    left: auto;
+    top: -30px;
+    margin: 0;
+    padding: 15px;
+    padding-right: 15px;
+  }
+  #section-depoimentos-tela2 .p1 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 25px;
+    margin: 0;
+    padding: 0;
+  }
+  #section-depoimentos-tela2 .p2 {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  #section-depoimentos-tela2 .carousel-caption {
+    position: relative;
+  }
+  #section-depoimentos-tela2 .carousel-indicators {
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    margin-left: -35% !important;
+    z-index: 1000000;
+    padding: 0 !important;
+  }
+  #section-depoimentos-tela2 .carousel-indicators li {
+    margin-left: 10px;
+  }
+  #section-depoimentos-tela3 {
+    float: left;
+    width: 100%;
+    max-width: 100%;
+    transform: none;
+    margin-top: -60px;
+  }
+  #section-depoimentos-tela3 .col-xs-9 {
+    display: none;
+  }
+  #section-depoimentos-tela3 .col-md-12 {
+    float: left;
+    width: 100%;
+  }
+  #section-depoimentos-tela3 #experiencia-tuttemob2 {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  #section-depoimentos-tela3 #experiencia-tuttemob2 a {
+    padding: 5px 15px;
+  }
+  #section-depoimentos-tela3 p {
+    display: none;
   }
 
   /* ### Demais ajustes ###*/
