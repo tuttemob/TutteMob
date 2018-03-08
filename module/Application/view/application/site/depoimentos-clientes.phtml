@@ -177,9 +177,8 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	ajustaWidHei = function(){
-		$('body').css('overflow', 'hidden');
-		
 		if($(window).width() < 800){
+			$('body').css('overflow', 'hidden');
 			$('#section-content').css('overflow', 'auto');
 			$('#section-content').css('padding-bottom', '80px');
 
@@ -187,8 +186,6 @@ $(document).ready(function(){
 			$('.carousel .item').css('height', ($(window).height() * 0.50) + 'px');
 			$('.carousel .item .box').css('height', (($(window).height() * 0.50) - 20) + 'px');
 			$('.carousel .item img').css('transform', 'translate(-20%, 0%)');
-		}else{
-			$('#section-content').css('overflow', 'hidden');
 		}
 	};
 
