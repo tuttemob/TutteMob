@@ -1529,8 +1529,15 @@ input.cmn-toggle-round:checked + label:after {
   text-align: center;
   margin-top: 5px;
 }
+
+#briefing-cadastro-sucesso .modal-header,
+#briefing-cadastro-sucesso .modal-footer {
+  border: none;
+}
+
 #section-briefings .modal-header .close,
 #briefing-cadastro .modal-header .close,
+#briefing-cadastro-sucesso .modal-header .close,
 #briefing-obrigado-vendedor .modal-header .close,
 #briefing-obrigado-arquivos .modal-header .close {
   color: rgb(255, 19, 74);
@@ -1698,17 +1705,31 @@ input.cmn-toggle-round:checked + label:after {
   padding-top: 70px;
 }
 
-#briefing-cadastro .modal-header {
+#briefing-cadastro .modal-header,
+#briefing-cadastro-sucesso .modal-body {
   text-align: center;
   color: rgb(255, 64, 131);
 }
-#briefing-cadastro .modal-header h2 {
+#briefing-cadastro-sucesso .modal-body {
+  padding: 70px;
+}
+#briefing-cadastro .modal-header h2,
+#briefing-cadastro-sucesso .modal-body h2 {
   font-weight: bold;
   line-height: 10px;
 }
-#briefing-cadastro .modal-header p {
+#briefing-cadastro-sucesso .modal-body h2 {
+  line-height: 40px;
+  font-size: 35px;
+}
+#briefing-cadastro .modal-header p,
+#briefing-cadastro-sucesso .modal-body p {
   font-size: 18px;
   line-height: 18px;
+}
+
+#briefing-cadastro-sucesso .modal-body p {
+  line-height: 20px;
 }
 
 #briefing-cadastro .form-group label {
@@ -1745,7 +1766,8 @@ input.cmn-toggle-round:checked + label:after {
   margin-top: 5px;
 }
 
-#briefing-cadastro .modal-footer .btn-primary {
+#briefing-cadastro .modal-footer .btn-primary,
+#briefing-cadastro-sucesso .modal-footer .btn-primary {
   text-transform: uppercase;
   border: 2px solid;
   border-color: #FFF;

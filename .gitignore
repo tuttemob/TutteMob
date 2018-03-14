@@ -5,3 +5,4 @@ config/application.config.email.php
 .tern-project
 php_logs.log
 *.DS_Store
+.idea
