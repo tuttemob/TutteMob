@@ -1,6 +1,109 @@
-<div id="section-contatos" class="section col-lg-12">
+<div id="section-desktop-contatos">
+	<div class="section col-lg-12">
+		<div class="corpo">
+			<div id="col-esquerda" class="col-md-5">
+				<p class="p1">
+					E-mail:
+				</p>
+				<p class="p2">
+					tuttemob@tuttemob.com.br
+				</p>
+				
+				<p class="p1">
+					Telefone:
+				</p>
+				<p class="p2">
+					(xx) xxxxx-xxxx
+				</p>
+	
+				<p class="p1">
+					Ouvidoria:
+				</p>
+				<p class="p2">
+					0800-xxx-xxxx
+				</p>
+	
+				<p class="p1">
+					Chat:
+				</p>
+				<p class="p2">
+					Você pode falar com a gente <br />
+					através do App :)
+				</p>
+	
+				<p class="p1">
+					Acompanhe a Tutte:
+				</p>
+				
+				<div id="bottom-social">
+					<ul>
+						<li><a href="#" title="Facebook">
+									<img src="<?= $this->basePath('img/layout/B9.png'); ?>" /></a></li>
+						<li><a href="#" title="Twitter">
+									<img src="<?= $this->basePath('img/layout/B10.png'); ?>" /></a></li>			
+						<li><a href="#" title="Youtube">
+									<img src="<?= $this->basePath('img/layout/B11.png'); ?>" /></a></li>
+						<li><a href="#" title="Instagram">
+									<img src="<?= $this->basePath('img/layout/B12.png'); ?>" /></a></li>
+						<li><a href="#" title="Google Maps">
+									<img src="<?= $this->basePath('img/layout/B13.png'); ?>" /></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2">
+			</div>
+			<div id="col-direita" class="col-md-5">
+					<img src="<?= $this->basePath('img/outros/contato.png') ?>" class="img-responsive" />
+					<!-- <div class="col-xs-9"> -->
+						<form id="formContato" method="post" data-toggle="validator">
+							<input type="hidden" name="acao" value="contatos" />
+							
+							<div class="form-group">
+								<!-- <label for="nome">Nome:</label> -->
+								<input type="text" class="form-control" name="nome" placeholder="Nome completo" required>
+							</div>
+									
+							<div class="form-group">
+								<!-- <label for="telefone">Telefone:</label> -->
+								<input type="text" class="form-control" name="telefone" placeholder="Telefone" required>
+							</div>
+							
+							<div class="form-group">
+								<!-- <label for="email">E-mail:</label> -->
+								<input type="email" class="form-control" name="email" placeholder="E-mail" required>
+							</div>
+								
+							<div class="form-group">
+								<!-- <label for="mensagem">Mensagem:</label> -->
+								<textarea class="form-control" name="mensagem" placeholder="Mensagem" required></textarea>
+							</div>
+								
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary btn-block">Enviar</button>
+							</div>
+							
+						</form>	
+						
+						<!-- 	
+						<?php 
+							unset($_SESSION["nome"]);
+							unset($_SESSION["telefone"]);
+							unset($_SESSION["email"]);
+							unset($_SESSION["mensagem"]);
+						?>
+						 -->
+					<!-- </div> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="section-mobile-contatos" style="section-mobile" style="visibility: hidden;">
+	<div class="topo-contatos">
+		<!-- <img src="<?= $this->basePath('img/layout/logo-icone.png') ?>" class="img-responsive" /> -->
+	</div>
 	<div class="corpo">
-		<div id="col-esquerda" class="col-md-5">
+		<div class="col-md-5">
 			<p class="p1">
 				E-mail:
 			</p>
@@ -48,50 +151,6 @@
 								<img src="<?= $this->basePath('img/layout/B13.png'); ?>" /></a></li>
 				</ul>
 			</div>
-		</div>
-		<div class="col-md-2">
-		</div>
-		<div id="col-direita" class="col-md-5">
-				<img src="<?= $this->basePath('img/outros/contato.png') ?>" class="img-responsive" />
-				<!-- <div class="col-xs-9"> -->
-					<form id="formContato" method="post" data-toggle="validator">
-						<input type="hidden" name="acao" value="contatos" />
-						
-						<div class="form-group">
-							<!-- <label for="nome">Nome:</label> -->
-							<input type="text" class="form-control" name="nome" placeholder="Nome completo" required>
-						</div>
-								
-						<div class="form-group">
-							<!-- <label for="telefone">Telefone:</label> -->
-							<input type="text" class="form-control" name="telefone" placeholder="Telefone" required>
-						</div>
-						
-						<div class="form-group">
-							<!-- <label for="email">E-mail:</label> -->
-							<input type="email" class="form-control" name="email" placeholder="E-mail" required>
-						</div>
-							
-						<div class="form-group">
-							<!-- <label for="mensagem">Mensagem:</label> -->
-							<textarea class="form-control" name="mensagem" placeholder="Mensagem" required></textarea>
-						</div>
-							
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary btn-block">Enviar</button>
-						</div>
-						
-					</form>	
-					
-					<!-- 	
-					<?php 
-						unset($_SESSION["nome"]);
-						unset($_SESSION["telefone"]);
-						unset($_SESSION["email"]);
-						unset($_SESSION["mensagem"]);
-					?>
-					 -->
-				<!-- </div> -->
 		</div>
 	</div>
 </div>

@@ -1,6 +1,7 @@
 #section-mobile,
 #section-mobile-descubra,
-#section-mobile-franquias {
+#section-mobile-franquias,
+#section-mobile-contatos {
   display: none
 }
 
@@ -94,12 +95,14 @@
 
   #section-desktop,
   #section-desktop-descubra,
-  #section-desktop-franquias {
+  #section-desktop-franquias,
+  #section-desktop-contatos {
     display: none
   }
   #section-mobile,
   #section-mobile-descubra,
-  #section-mobile-franquias {
+  #section-mobile-franquias,
+  #section-mobile-contatos {
     display: block
   }
 
@@ -349,6 +352,57 @@
     padding: 5px 10px;
   }
 
+  /* ### TELA CONTATOS ### */
+  #section-mobile-contatos {
+  padding: 0px;
+}
+#section-mobile-contatos .topo-contatos {
+	background-image: url('../img/layout/logo-icone.png');
+	background-repeat:repeat-x;
+	width: 100%;
+    height: 110px;
+}
+#section-mobile-contatos .corpo {
+	padding-top: 0px;
+	margin-left: 0px;
+}
+#section-mobile-contatos .p1 {
+	color: #FF6FA3;
+	padding-top: 20px;
+	font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;	
+}
+#section-mobile-contatos .p2 {
+	color: #AAA;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 15px;
+}
+#section-mobile-contatos #bottom-social {
+  width: 230px;
+  height: 30px;
+  padding: 0px;
+  margin-left: -40px;
+}
+#section-mobile-contatos #bottom-social ul {
+  list-style: none;
+}
+#section-mobile-contatos #bottom-social ul li {
+  display: inline;
+}
+#section-mobile-contatos #bottom-social ul li img {
+  height: 30px;
+}
+#section-mobile-contatos .pull-right {
+  display: none;
+}    
+
+#section-mobile-contatos .col-md-5 {
+  width: 100%;
+  padding-bottom: 70px;
+}  
+	
   /* ### TELA DESCUBRA ### */
   #section-mobile-descubra .section-descubra1-link1 img {
     margin-top: -60px;

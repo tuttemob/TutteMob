@@ -1334,65 +1334,58 @@ input.cmn-toggle-round:checked + label:after {
 }
 
 /* Contatos */
-#section-contatos {
+#section-desktop-contatos {
   padding: 0px;
 }
-#section-contatos .corpo {
+#section-desktop-contatos .corpo {
 	padding-top: 50px;
 }
-#section-contatos #col-esquerda {
+#section-desktop-contatos #col-esquerda {
 	margin-left: 50px;
 }	
-#section-contatos .p1 {
+#section-desktop-contatos .p1 {
 	color: #FF6FA3;
 	padding-top: 20px;
 	font-size: 30px;
     font-weight: 700;
     line-height: 30px;	
 }
-#section-contatos .p2 {
+#section-desktop-contatos .p2 {
 	color: #AAA;
     font-size: 15px;
     font-weight: 500;
     line-height: 15px;
 }
-#section-contatos #bottom-social {
+#section-desktop-contatos #bottom-social {
   width: 230px;
   height: 30px;
   padding: 0px;
   margin-left: -40px;
 }
-#section-contatos #bottom-social ul {
+#section-desktop-contatos #bottom-social ul {
   list-style: none;
 }
-#section-contatos #bottom-social ul li {
+#section-desktop-contatos #bottom-social ul li {
   display: inline;
 }
-#section-contatos #bottom-social ul li img {
+#section-desktop-contatos #bottom-social ul li img {
   height: 30px;
 }
-#section-contatos .pull-right {
+#section-desktop-contatos .pull-right {
   display: none;
 }    
 
-/*
-#section-contatos #col-esquerda .col-xs-4,
-#section-contatos #col-esquerda .col-xs-8 {
-  padding: 0px 5px;
-  padding-bottom: 10px;
-}
-*/
-
-#section-contatos #col-direita .col-md-5 {
+/*#section-desktop-contatos #col-direita .col-md-5 {*/
 	/*background-image: url('../img/outros/contato.png') !important;*/
-	background-color: black;
-}
-#section-contatos #col-direita .col-md-5 {
+/*	background-color: black;
+}*/
+
+#section-desktop-contatos #col-direita .col-md-5 {
   width: 100%;
   padding-bottom: 70px;
 }
 
-#section-contatos form {
+#section-desktop-contatos form {
 	position: absolute;
 	clear:left;
   	margin-left:20px;
@@ -1401,27 +1394,27 @@ input.cmn-toggle-round:checked + label:after {
   	margin-top: -470px;
     width: 85%;
 }
-#section-contatos .form-group {
+#section-desktop-contatos .form-group {
     margin-bottom: 15px;
 }
-#section-contatos #formContato label {
+#section-desktop-contatos #formContato label {
   margin-top: 5px;
   margin-bottom: 0px;
 	font-size: 16px;
 	font-weight: 400;
 }
-#section-contatos #formContato input {
+#section-desktop-contatos #formContato input {
 	border: none;
 	box-shadow: none;
 	/*border: 2px solid;*/
 }
-#section-contatos #formContato textarea {
+#section-desktop-contatos #formContato textarea {
   	border: none;
 	box-shadow: none;
   	/*border: 2px solid;*/
   	height: 200px;  
 }
-#section-contatos #formContato button {
+#section-desktop-contatos #formContato button {
 	margin-top: 15px;
 	padding: 18px 0px;
 	font-size: 18px;
