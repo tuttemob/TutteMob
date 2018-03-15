@@ -1,8 +1,67 @@
 <html>
-<body>
-	<h2>Confirmação de cadastro:</h2>
-	<p>
-		<a href="http://localhost/tuttemob/public/login/confirmacao/<?=$this->macros['ctoken'];?>">Clique aqui</a> para confirmar seu cadastro.
-	</p>
+<head>
+    <style type="text/css">
+        @font-face {
+            font-family: "MyriadPro Regular";
+            src: url("../public/font/MyriadPro-Regular.otf");
+        }
+        div ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        div ul li {
+            display: inline;
+            margin-left: 0px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body style="font-family: 'Lato', MyriadPro Regular, sans-serif; color: #96989A;">
+    <img src="<?= $this->macros['imgPath'].'logo-menu-left-2.png'; ?>" width="350px"/>
+    <div style="font-weight: bold">
+        <p style="color: #FF6FA3; font-size: 30px; line-height: 1px;">
+            Olá, <?= $this->macros['nome']; ?>
+        </p>
+        <p style="font-size: 20px;">
+            Que bom ter você com a gente!
+        </p>
+    </div>
+    <div style="line-height: 1.5;">
+        <p>
+            Obrigado por se cadastrar :)<br>
+            E agora que tal fazer parte da nova forma de comprar imóveis planejados? Vamos lá, é fácil!<br>
+            Comece clicando no link abaixo para confirmar seu e-mail:<br>
+            <a href="http://localhost/tuttemob/public/login/confirmacao/<?=$this->macros['ctoken']; ?>" target="_blank" style="font-weight: bold; color: inherit;">
+                http://localhost/tuttemob/public/login/confirmacao/<?=$this->macros['ctoken']; ?>
+            </a>
+        </p>
+
+        <p>Esperamos que esse seja só o começo do nosso contato.</p>
+        <br>
+        <p>
+            Um abraço!<br>
+            <span style="font-weight: bold; color: #FF6FA3">Equipe Tuttemob</span>
+        </p>
+    </div>
+    <hr width="250px" style="margin-left: 0; margin-bottom: 0px;">
+    <p style="margin-top: 5px;">
+        Visite uma de nossas lojas físicas e conheça mais sobre nós. <br>
+        Acesse: <a href="<?= $this->macros['url']; ?>" target="_blank" style="text-decoration: none; color: inherit;">www.tuttemob.com.br</a>
+    </p>
+    <div>
+        <ul>
+            <li><a href="#" title="Facebook">
+                    <img src="<?= $this->macros['imgPath'].'B9.png'; ?>" width="30px"/></a></li>
+            <li><a href="#" title="Twitter">
+                    <img src="<?= $this->macros['imgPath'].'B10.png'; ?>" width="30px" /></a></li>
+            <li><a href="#" title="Youtube">
+                    <img src="<?= $this->macros['imgPath'].'B11.png'; ?>" width="30px"/></a></li>
+            <li><a href="#" title="Instagram">
+                    <img src="<?= $this->macros['imgPath'].'B12.png'; ?>" width="30px"/></a></li>
+            <li><a href="#" title="Google Maps">
+                    <img src="</= $this->macros['imgath'].'B13.png'; ?>" width="30px"/></a></li>
+        </ul>
+    </div>
 </body>
 </html>

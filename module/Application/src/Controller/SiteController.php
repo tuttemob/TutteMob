@@ -95,10 +95,10 @@ class SiteController extends ManagerController {
 		$success = null;
 		
 		$modelPessoa = $this->serviceManager->get('Model\Pessoa');
-		
+
 		if($this->getRequest()->isPost()){
 			$data = $this->getRequest()->getPost()->toArray();
-			
+
 			if(isset($data['acao']) && $data['acao'] == 'cadastrar'){
 				try{
 					$_SESSION['nome']=$data['nome'];
@@ -135,10 +135,18 @@ class SiteController extends ManagerController {
 								$data['ctoken'] = md5(time());
 									
 								$modelPessoa->cria($data);
-									
+
+								// TODO: Descomentar a linha abaixo quando for colocado em produção e apagar a mais de baixo
+                                //$url = $this->getRequest()->getServer()['HTTP_ORIGIN'].$this->getRequest()->getBaseUrl();
+                                $url = 'http://149.56.2.12/tuttemob/public';
+                                $imgPath = $url.'/img/layout/';
+
 								// envia email de notificacao
 								$macros = array(
-									'ctoken' => $data['ctoken']
+								    'nome' => $data['nome'],
+									'ctoken' => $data['ctoken'],
+                                    'url' => $url,
+                                    'imgPath' => $imgPath
 								);
 									
 								$template = new Template('template.CadastroConfirmacao.phtml', $macros);
