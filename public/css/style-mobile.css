@@ -106,11 +106,13 @@
     display: block
   }
 
-  /* ### Mobile Login ###  */
-  #section-login .section-background img {
+  /* ### Mobile Login - Confirmação ###  */
+  #section-login .section-background img,
+  #section-confirmacao .section-background img {
     margin-top: -20px;
   }
-  #section-login div.col-xs-9 {
+  #section-login div.col-xs-9,
+  #section-confirmacao div.col-xs-9 {
     top: auto;
     margin-top: 0;
     padding: 15px;
@@ -121,17 +123,26 @@
     line-height: 29px;
     margin: 0;
   }
+  #section-confirmacao div.col-xs-9 h2 {
+    font-size: 35px;
+    line-height: initial;
+    margin-bottom: 20px;
+  }
   #section-login div.col-xs-9 p {
     display: inline;
     font-size: 20px;
     line-height: 21px;
     margin: 0;
   }
-  #section-login .col-md-4 {
+  #section-login .col-md-4,
+  #section-confirmacao .col-md-4 {
     position: relative;
     min-height: auto;
     width: 100%;
     padding-top: 0;
+  }
+  #section-confirmacao .col-md-4 {
+    padding-bottom: 100%;
   }
   #section-login .login #formLogin {
     margin: 0;
@@ -171,6 +182,23 @@
     border: none !important;
     padding: 10px 0px !important;
     font-size: 13px !important;
+  }
+
+  #section-confirmacao .col-md-4 .col-xs-9 {
+    position: relative;
+    margin-bottom: 0;
+    bottom: auto;
+    top: 0;
+    padding: 5px;
+  }
+
+  #section-confirmacao .col-md-4 .col-xs-9 h2 {
+    font-size: 28px;
+  }
+
+  #section-confirmacao .col-md-4 .col-xs-9 p {
+    margin: 0;
+    line-height: initial;
   }
 
   /* ### Mobile Navegação ###  */

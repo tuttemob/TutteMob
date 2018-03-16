@@ -151,7 +151,7 @@ class LoginController extends ManagerController {
 				
 				$modelPessoa->update($data, array('idpessoa' => $pessoa->idpessoa));
 				
-				$success = "E-mail confirmado com sucesso.";
+				$success = "Seu cadastro foi confirmado :)";
 			}
 			else {
 				$error = 'Ocorreu um erro, tente novamente mais tarde.';

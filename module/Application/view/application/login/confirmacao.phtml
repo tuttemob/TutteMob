@@ -1,23 +1,61 @@
-<section class="mbr-section article mbr-section__container" id="confirmacao" style="padding-top: 120px; padding-bottom: 40px;">
+<div class="section section-8-4 col-lg-12" id="section-confirmacao">
 
-    <div class="container">
-        <div class="row">
-        	<h2>Confirmação de cadastro</h2>
-        	
-        	<?php if($this->success):?>
-            	<div class="alert alert-success" role="alert"><?= $this->success; ?></div>
-            <?php endif;?>
-            			
-            <?php if($this->error):?>
-            	<div class="alert alert-danger" role="alert"><?= $this->error; ?></div>
-            <?php endif;?>            
+    <div class="col-md-8">
+        <div class="section-background">
+            <img src="<?= $this->basePath('img/paginas/confirmacao-cadastro.png'); ?>" />
         </div>
-        
-        <div class="row">
-            <div class="nav-item">
-				<a class="nav-link link" href="<?= $this->url('login'); ?>">Clique aqui</a> para fazer o login.
-			</div>        
+        <div class="col-xs-9">
+            <div id="texto-confirmacao">
+                <?php if($this->success):?>
+                    <h2><?= $this->success; ?></h2>
+                <?php endif; ?>
+
+                <?php if($this->error):?>
+                    <p><?= $this->error; ?></p>
+                <?php endif;?>
+            </div>
         </div>
     </div>
+    <div class="col-md-4">
+        <div class="col-xs-9">
+            <h2>Oba!</h2>
+            <p>
+                Agora você também faz<br>
+                parte da evolução na compra de<br>
+                móveis planejados.<br><br>
+                <a class="nav-link link" href="<?= $this->url('login'); ?>">Clique aqui</a> e acesse sua<br>
+                conta para dar continuidade<br>
+                a essa nova experiência!
+            </p>
+        </div>
+    </div>
+</div>
 
-</section>
+<script type="text/javascript">
+    $(document).ready(function(){
+        ajustaWidHei = function(){
+            $('body').css('overflow', 'hidden');
+
+            if($(window).width() < 800){
+                $('#section-content').css('overflow', 'auto');
+                $('#section-content').css('padding-bottom', '60px');
+
+                $('#section-confirmacao div.section-background img').css('height', ($(window).height() * 0.60) + 'px');
+                $('#section-confirmacao div.section-background img').css('transform', 'translate(-10%, 0%)');
+            }else{
+                $('#section-content').css('overflow', 'hidden');
+
+                var menuHeight = $('#menu-nav-left').outerHeight() + 'px';
+                $('.section-background img').css('height', menuHeight);
+            }
+        };
+
+        // ajustes iniciais
+        ajustaWidHei();
+
+        // ajusta dimensoes em monitoramento
+        setInterval(function(){
+            ajustaWidHei();
+        }, 300);
+    });
+</script>
