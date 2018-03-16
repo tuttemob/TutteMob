@@ -142,7 +142,7 @@
     padding-top: 0;
   }
   #section-confirmacao .col-md-4 {
-    padding-bottom: 100%;
+    /*padding-bottom: 100%;*/
   }
   #section-login .login #formLogin {
     margin: 0;
@@ -198,7 +198,8 @@
 
   #section-confirmacao .col-md-4 .col-xs-9 p {
     margin: 0;
-    line-height: initial;
+    font-size: 15px;
+    line-height: initial;    
   }
 
   /* ### Mobile Navegação ###  */

@@ -2487,11 +2487,12 @@ a.linksSemEstilos:link,a.linksSemEstilos:visited,a.linksSemEstilos:hover,a.links
 
 #section-confirmacao .col-md-4 {
   background: #F73F80;
+  padding-left: 40px;
 }
 
 #section-confirmacao #texto-confirmacao {
   width: 340px;
-  margin-top: 300px;
+  margin-top: 325px;
 }
 #section-confirmacao .col-md-4 .col-xs-9 {
   position: absolute;
@@ -2502,12 +2503,12 @@ a.linksSemEstilos:link,a.linksSemEstilos:visited,a.linksSemEstilos:hover,a.links
   margin-top: initial;
 }
 #section-confirmacao .col-md-4 .col-xs-9 h2 {
-  font-size: 50px;
+  font-size: 60px;
   line-height: inherit;
   margin-bottom: 0;
 }
 #section-confirmacao .col-md-4 .col-xs-9 p {
-  font-size: initial;
+  font-size: 20px;
   line-height: 1.4;
 }
 #section-confirmacao .col-md-4 .col-xs-9 a {
