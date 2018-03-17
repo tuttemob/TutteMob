@@ -1,7 +1,8 @@
 #section-mobile,
 #section-mobile-descubra,
 #section-mobile-franquias,
-#section-mobile-contatos {
+#section-mobile-contatos,
+#section-mobile-sobrenos {
   display: none
 }
 
@@ -96,13 +97,15 @@
   #section-desktop,
   #section-desktop-descubra,
   #section-desktop-franquias,
-  #section-desktop-contatos {
+  #section-desktop-contatos,
+  #section-desktop-sobrenos {
     display: none
   }
   #section-mobile,
   #section-mobile-descubra,
   #section-mobile-franquias,
-  #section-mobile-contatos {
+  #section-mobile-contatos,
+  #section-mobile-sobrenos {
     display: block
   }
 
@@ -579,6 +582,89 @@
   #section-depoimentos-tela3 p {
     display: none;
   }
+ 
+  /* ### TELA SOBRE NÓS ### */ 
+  #section-mobile-sobrenos .section-1,
+  #section-mobile-sobrenos .section-2 {
+      padding: 0;
+  }
+  #section-mobile-sobrenos .section-1 .section-background img {
+    margin-top: -30px;
+  }
+  #section-mobile-sobrenos .section-1 .section-page {
+    position: absolute;
+    bottom: auto;
+    top: 79%;
+    color: #FFF;
+    transform: translate(20px, 0%);
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: 700;
+  }
+  #section-mobile-sobrenos .section-1 .section-page .p1 {
+    color: #FFF;
+  }
+  #section-mobile-sobrenos .section-1 .section-page .p2,
+  #section-mobile-sobrenos .section-1 .section-page .p11 {
+    color: #FF6FA3;
+    transform: translate(0px, 10%);
+    width: 80%;
+  }
+  #section-mobile-sobrenos .section-1 .section-page .p3,
+  #section-mobile-sobrenos .section-1 .section-page .p4,
+  #section-mobile-sobrenos .section-1 .section-page .p10 {
+    color: #AAA;
+    /*transform: translate(0px, 15%);*/
+    font-size:18px;
+    line-height: 22px;
+    width: 80%;
+    font-weight: normal;
+  }
+  #section-mobile-sobrenos .section-1 .section-page .p3 {
+  	padding-top: 10px;
+  }
+  #section-mobile-sobrenos .section-1 .section-page .p4 {
+  	padding-top: 10px;
+  }
+  #section-mobile-sobrenos .box {
+	background: #FF6FA3;
+	height: auto;
+	margin-left: -20px;
+    /*transform: translate(0px, 5%);*/
+    padding: 20px;
+  }
+  #section-mobile-sobrenos .section-1 .section-page .p5,
+  #section-mobile-sobrenos .section-1 .section-page .p6,
+  #section-mobile-sobrenos .section-1 .section-page .p7,
+  #section-mobile-sobrenos .section-1 .section-page .p8,
+  #section-mobile-sobrenos .section-1 .section-page .p9 {
+    color: #FFF;
+    width: 80%;
+  }
+  #section-mobile-sobrenos .section-1 .section-page .p6,
+  #section-mobile-sobrenos .section-1 .section-page .p8 {
+    font-size:18px;
+    line-height: 22px;
+    font-weight: normal;
+    width: 90%;
+  }
+  #section-mobile-sobrenos .section-1 .section-page .p7 {
+    padding-top: 30px;
+  }
+  #section-mobile-sobrenos .section-1 .section-page .p9 {
+    color: #AAA;
+    position: relative;
+    padding-top: 20px;
+  }
+  #section-mobile-sobrenos .section-1 .section-page #experiencia-tuttemob2 {
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-left: 15%;
+  }
+  #section-mobile-sobrenos .section-1 .section-page #experiencia-tuttemob2 a {
+    padding: 5px 15px;
+  }
+
 
   /* ### Demais ajustes ###*/
   #section-ambientes div.col-md-5 {
