@@ -972,6 +972,9 @@ input.cmn-toggle-round:checked + label:after {
 .section-sobrenos {
   padding: 0px;
 }
+.section-sobrenos .col-md-12 {
+  padding-left: 0px;
+}
 .section-sobrenos .section-page {
   color: rgb(255, 255, 255);
   top: 75%;
