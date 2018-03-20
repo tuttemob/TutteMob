@@ -1,0 +1,195 @@
+<div id="brief-boas-vindas" class="brief-telas col-xs-12">
+    <h2>Conte mais sobre o que você procura.</h2>
+    <p>
+        Precisamos conhecer as suas <b>preferências e necessidades</b> para
+        que os nossos especialistas em projeto possam aproveitar o que temos 
+        de melhor para deixar o seu ambiente <b>adequado a sua necessidade.</b> :)
+    </p>
+    <p>
+        Daqui, começaremos a levantar informações sobre o projeto que você deseja realizar.
+        É muito importante que você nos repasse suas necessidades e desejos com atenção, para que possamos
+        transformá-los no seu sonho, dentro da sua casa.
+    </p>
+
+    <div class="col-xs-12" style="text-align:center;">
+        <a href="javascript:void(0)" onclick="proximaTela('#brief-tela-inicio');">
+            VAMOS LÁ!
+        </a>
+    </div>
+</div>
+
+<div id="brief-tela-inicio" class="brief-telas col-xs-12">
+    <h2>Quais ambientes você gostaria de planejar?</h2>
+    
+    <div class="tela-inicio-item">
+        <div class="pull-left">
+            <p>Cozinha</p>
+        </div>
+
+        <div class="pull-right">
+            <button class="inicio-item-novo" onclick="return criarBriefing('cozinha')">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <button class="inicio-item-total <?php echo count($this->listaCozinha)? 'inicio-item-total-red': ''; ?>">
+                <?php echo count($this->listaCozinha); ?>
+            </button>
+        </div>
+    </div>
+
+    <div class="tela-inicio-item">
+        <div class="pull-left">
+            <p>Área de serviço</p>
+        </div>
+
+        <div class="pull-right">
+            <button class="inicio-item-novo" onclick="return criarBriefing('areaServico')">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <button class="inicio-item-total <?php echo count($this->listaAreaServico)? 'inicio-item-total-red': ''; ?>">
+                <?php echo count($this->listaAreaServico); ?>
+            </button>
+        </div>
+    </div>
+
+    <div class="tela-inicio-item">
+        <div class="pull-left">
+            <p>Dormitório Casal</p>
+        </div>
+
+        <div class="pull-right">
+            <button class="inicio-item-novo" onclick="return criarBriefing('dormitoriocasal')">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <button class="inicio-item-total <?php echo count($this->listaDormitorioCasal)? 'inicio-item-total-red': ''; ?>">
+                <?php echo count($this->listaDormitorioCasal); ?>
+            </button>
+        </div>
+    </div>
+
+    <div class="tela-inicio-item">
+        <div class="pull-left">
+            <p>Dormitório Solteiro</p>
+        </div>
+
+        <div class="pull-right">
+            <button class="inicio-item-novo" onclick="return criarBriefing('dormitoriosolteiro')">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <button class="inicio-item-total <?php echo count($this->listaDormitorioSolteiro)? 'inicio-item-total-red': ''; ?>">
+                <?php echo count($this->listaDormitorioSolteiro); ?>
+            </button>
+        </div>
+    </div>
+
+    <div class="tela-inicio-item">
+        <div class="pull-left">
+            <p>Closet</p>
+        </div>
+
+        <div class="pull-right">
+            <button class="inicio-item-novo" onclick="return criarBriefing('closet')">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <button class="inicio-item-total <?php echo count($this->listaCloset)? 'inicio-item-total-red': ''; ?>">
+                <?php echo count($this->listaCloset); ?>
+            </button>
+        </div>
+    </div>
+
+    <div class="tela-inicio-item">
+        <div class="pull-left">
+            <p>Banheiro</p>
+        </div>
+
+        <div class="pull-right">
+            <button class="inicio-item-novo" onclick="return criarBriefing('banheiro')">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <button class="inicio-item-total <?php echo count($this->listaBanheiro)? 'inicio-item-total-red': ''; ?>">
+                <?php echo count($this->listaBanheiro); ?>
+            </button>
+        </div>
+    </div>
+
+    <!--
+    <div class="tela-inicio-item">
+        <div class="pull-left">
+            <p>Banheiro Suíte</p>
+        </div>
+
+        <div class="pull-right">
+            <button class="inicio-item-novo" onclick="return criarBriefing('banheirosuite')">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <button class="inicio-item-total <?php echo count($this->listaCozinha)? 'inicio-item-total-red': ''; ?>">
+                <?php echo count($this->listaCozinha); ?>
+            </button>
+        </div>
+    </div>
+    -->
+
+    <div class="tela-inicio-item">
+        <div class="pull-left">
+            <p>Home Theater</p>
+        </div>
+
+        <div class="pull-right">
+            <button class="inicio-item-novo" onclick="return criarBriefing('hometheater')">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <button class="inicio-item-total <?php echo count($this->listaHomeTheater)? 'inicio-item-total-red': ''; ?>">
+                <?php echo count($this->listaHomeTheater); ?>
+            </button>
+        </div>
+    </div>
+
+    <div class="tela-inicio-item">
+        <div class="pull-left">
+            <p>Home Office</p>
+        </div>
+
+        <div class="pull-right">
+            <button class="inicio-item-novo" onclick="return criarBriefing('homeoffice')">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <button class="inicio-item-total <?php echo count($this->listaHomeOffice)? 'inicio-item-total-red': ''; ?>">
+                <?php echo count($this->listaHomeOffice); ?>
+            </button>
+        </div>
+    </div>
+
+    <!--
+    <div class="tela-inicio-item">
+        <div class="pull-left">
+            <p>Outros</p>
+        </div>
+
+        <div class="pull-right">
+            <button class="inicio-item-novo" onclick="return criarBriefing('homeoffice')">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <button class="inicio-item-total <?php echo count($this->listaCozinha)? 'inicio-item-total-red': ''; ?>">
+                <?php echo count($this->listaCozinha); ?>
+            </button>
+        </div>
+    </div>
+    -->
+
+    <div class="col-xs-12">
+        <a href="javascript:void(0)" id="btn-confirmar-ambientes-mobile">
+            CONFIRMAR AMBIENTES
+        </a>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+    // show tela inicial
+    $('#brief-boas-vindas').fadeIn();
+
+    proximaTela = function(selector){
+        $('.brief-telas').hide();
+        $(selector).fadeIn();
+    }
+});
+</script>

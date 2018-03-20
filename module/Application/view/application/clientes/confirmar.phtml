@@ -242,11 +242,20 @@
 					placeholder="18:00" required />
 			</div>
 			
-			<div class="form-group" style="padding-top: 60px">
+			<div class="form-group hide-mobile" style="padding-top: 60px">
 				<button type="button" class="btn btn-block btn-avancar">ENVIAR</button>			
 			</div>
-			<div class="form-group">
+			<div class="form-group hide-mobile">
 				<button type="button" class="btn btn-block btn-voltar">VOLTAR</button>
+			</div>
+
+			<div class="form-group show-mobile">
+				<div class="col-xs-6">
+					<button type="button" class="btn btn-block btn-voltar-mobile">VOLTAR</button>
+				</div>
+				<div class="col-xs-6">
+					<button type="button" class="btn btn-block btn-avancar">ENVIAR</button>			
+				</div>
 			</div>
 		</form>
 	</div>
@@ -602,6 +611,9 @@
   	</div>
 </div>
  
+<div id="section-confirmar-mobile">
+	<?php include __DIR__ . '/confirmar-mobile.phtml'; ?>
+</div> 
 
 <!-- iframeCadastroForm -->
 <iframe name="iframeCadastroForm" id="iframeCadastroForm" class="hide"></iframe>
@@ -626,11 +638,14 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	ajustaWidHei = function(){
-		$('body').css('overflow', 'hidden');
-		$('#section-content').css('overflow-x', 'hidden');
-		
 		if($(window).width() < 800){
+
+			var menuHeight = ($(window).height() * 0.60) + 'px';
+			$('.section-background img').css('height', menuHeight);
 		}else{
+			$('body').css('overflow', 'hidden');
+			$('#section-content').css('overflow-x', 'hidden');
+
 			var menuHeight = $('#menu-nav-left').outerHeight() + 'px';
 			$('.section-background img').css('height', menuHeight);
 		}
@@ -647,15 +662,38 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
+	modalCadastroCallback = null;
+	showModalCadastro = function(callback){
+		modalCadastroCallback = callback;
+		$.post(
+			'<?=$this->url('clientes', array('action' => 'completaCadastro'));?>',
+			{acao: 'checa-cadastro'},
+			function(resp){
+				//modalCadastroCallback();
+				if(resp.data == true){
+					modalCadastroCallback();					
+				}else{
+					$('#modalCadastroForm input[name="nome"]').val(resp.data.nome);
+					$('#modalCadastroForm input[name="email"]').val(resp.data.email);
+					$('#modalCadastroForm input[name="fone_cel"]').val(resp.data.fone_cel);
+
+					$('#briefing-cadastro').modal('show');
+				}
+			},
+			'json'
+		);
+	};
 $(function(){
 	// ajusta switchs
 	$('.cmn-toggle:checked').prop('checked',false);
 
 	// apresenta conteudo
-	$('.briefing-complemento-step').hide();
-	$('#section-briefings').hide();
-	if(!$('#briefing-complemento').is(':visible')){
-		$('#briefing-complemento').fadeIn();
+	if($(window).width() > 800){
+		$('.briefing-complemento-step').hide();
+		$('#section-briefings').hide();
+		if(!$('#briefing-complemento').is(':visible')){
+			$('#briefing-complemento').fadeIn();
+		}
 	}
 
 	$('#briefing-cadastro .btn-voltar').click(function(){
@@ -732,28 +770,6 @@ $(function(){
 		window.location = "<?php echo $this->url('home'); ?>"
 	});
 
-	var modalCadastroCallback = null;
-	showModalCadastro = function(callback){
-		modalCadastroCallback = callback;
-		$.post(
-			'<?=$this->url('clientes', array('action' => 'completaCadastro'));?>',
-			{acao: 'checa-cadastro'},
-			function(resp){
-				//modalCadastroCallback();
-				if(resp.data == true){
-					modalCadastroCallback();					
-				}else{
-					$('#modalCadastroForm input[name="nome"]').val(resp.data.nome);
-					$('#modalCadastroForm input[name="email"]').val(resp.data.email);
-					$('#modalCadastroForm input[name="fone_cel"]').val(resp.data.fone_cel);
-
-					$('#briefing-cadastro').modal('show');
-				}
-			},
-			'json'
-		);
-	};
-	
 	$('#briefing-cadastro .btn-avancar').click(function(e){
 		$('#modalCadastroForm').submit();	
 	});

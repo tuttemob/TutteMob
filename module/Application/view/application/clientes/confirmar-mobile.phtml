@@ -1,0 +1,50 @@
+<div id="brief-confirmar-inical" class="brief-telas col-xs-12">
+    <div class="brief-telas-title col-xs-12">
+        <h2>Como você deseja nos passar as medidas de seus ambientes?</h2>
+        <p>
+            Precisamos das <b>medidas físicas disponíveis para acomodar o seu projeto</b> 
+            Por favor, selecione uma das opções abaixo:
+        </p>
+    </div>
+    
+    <div class="brief-confirmar-item">
+        <button id="brief-confirmar-vendedor" style="padding-left: 50px;">
+            Desejo que um <br /> vendedor faça as <br /> medições.
+        </button>
+    </div>
+
+    <div class="brief-confirmar-item">
+        <button>
+            Enviarei os arquivos <br /> das medidas e fotos. <br />
+            <span>
+                Planta baixa, folders <br />
+                com medidas do espaço, etc.
+            </span>
+        </button>
+    </div>
+
+    <div class="brief-confirmar-item">
+        <button>
+            Eu farei <br /> a medição. <br />
+            <span>
+                Mas quero assitir o <br />
+                vídeo com orientação antes.
+            </span>
+        </button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.btn-voltar-mobile').on('click', function(){
+        $('.briefing-complemento-step').hide();
+        $('#brief-confirmar-inical').fadeIn();
+    });
+    $('#brief-confirmar-vendedor').on('click', function(){
+		var callback = function(){
+            $('#brief-confirmar-inical').hide();
+            $('#briefing-vendedor').fadeIn();
+            $('#briefing-cadastro').modal('hide');
+        };
+        showModalCadastro(callback);
+	});
+</script>
