@@ -277,6 +277,10 @@
 		</div>				
 	</div>
 
+	<div id="section-briefings-mobile">
+		<?php include __DIR__ . '/index-mobile.phtml'; ?>
+	</div>
+
 	<!-- Modal formulário-->
 	<?php include __DIR__ . '/_modalAreaServico.phtml'; ?>
 	<?php include __DIR__ . '/_modalBanheiro.phtml'; ?>
@@ -324,7 +328,7 @@ $(function(){
 	});
 
 	// complementar briefings
-	$('#btn-confirmar-ambientes').on('click', function(){
+	$('#btn-confirmar-ambientes, #btn-confirmar-ambientes-mobile').on('click', function(){
 		window.location = "<?php echo $this->url('clientes', array('action' => 'confirmar')); ?>"
 	});
 	

@@ -1,7 +1,10 @@
+.show-mobile,
 #section-mobile,
 #section-mobile-descubra,
 #section-mobile-franquias,
 #section-mobile-contatos,
+#section-briefings-mobile,
+#section-confirmar-mobile,
 #section-mobile-sobrenos {
   display: none
 }
@@ -107,6 +110,13 @@
   #section-mobile-contatos,
   #section-mobile-sobrenos {
     display: block
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+  .show-mobile {
+    display: block;
   }
 
   /* ### Mobile Login - Confirmação ###  */
@@ -665,6 +675,217 @@
     padding: 5px 15px;
   }
 
+
+  /* ### LOGADO: TELA INICIAL ### */
+  #section-briefings .col-md-8,
+  #section-briefings .col-md-4 {
+    display: none;
+  }
+  #section-briefings-mobile {
+    display: block;
+    float: left;
+    padding-bottom: 70px;
+  }
+  #section-briefings-mobile .brief-telas {
+    display: none;
+  }
+  .brief-telas h2 {
+    color: #FF6FA3;
+    padding: 0;
+    padding-bottom: 15px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+  .brief-telas p {
+    color: rgb(187, 187, 187);
+    font-size: 22px;
+    line-height: 24px;
+  }
+  .brief-telas p b {
+    color: #AAA;
+  }
+  .brief-telas a {
+    margin-top: 20px;
+    padding: 10px 35px;
+    background: #F73F80;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+  }
+  .brief-telas .brief-telas-title {
+    padding: 0;
+  }
+  .brief-telas .brief-telas-title h2 {
+    padding-bottom: 0;
+  }
+  .brief-telas .brief-telas-title p {
+    font-size: 18px;
+    line-height: 20px;
+    color: #FF6FA3;
+    font-weight: normal;
+  }
+  .brief-telas .brief-telas-title p b {
+    color: rgb(255, 40, 119);
+    font-weight: 700;
+  }
+  #section-briefings-mobile .tela-inicio-item {
+    display: flow-root;
+    margin: 5px 0;
+  }
+  #section-briefings-mobile button.inicio-item-novo {
+    border: 1px #AAA solid;
+    background: #FFF;
+    padding: 0;
+    height: 25px;
+    width: 25px;
+  }
+  #section-briefings-mobile button.inicio-item-novo .glyphicon-plus:before {
+    color: #AAA;
+    margin-left: 1px;
+  }
+  #section-briefings-mobile button.inicio-item-total {
+    border: 1px rgb(160, 160, 160) solid;
+    background: rgb(160, 160, 160);
+    color: #FFF;
+    padding: 0;
+    height: 25px;
+    width: 25px;
+  }
+  #section-briefings-mobile button.inicio-item-total-red {
+    background: #F73F80;
+  }
+  #section-briefings-mobile #brief-tela-inicio a {
+    float: right;
+    margin-right: -15px;
+    padding: 8px 10px;
+    margin-top: 20px;
+  }
+  /* ajustes nas modais */
+  #section-briefings .modal-content {
+    margin-bottom: 70px;
+  }
+  #section-briefings .modal .col-sm-4 {
+    float: left;
+    width: 40%;
+    padding: 0;
+    font-size: 14px !important;
+  }
+  #section-briefings .modal .col-sm-8 {
+    float: left;
+    width: 60%;
+    padding-right: 0;
+  }
+  #section-briefings .modal .col-sm-8 .col-md-6 {
+    float: left;
+    width: 50%;
+    padding: 0;
+  }
+  #section-briefings .modal .col-xs-12 {
+    padding-right: 0;
+  }
+  #section-briefings .form-group label {
+    font-size: 14px !important;
+  }
+  #section-briefings .form-group label[for*="preferenciacores-3"] {
+    font-size: 10px !important;
+  }
+  #section-briefings .form-group input[type="checkbox"] + label[for*="preferenciacores-3"]:before,
+  #section-briefings .form-group input[type="checkbox"]:checked + label[for*="preferenciacores-3"]:before {
+    margin: 0px;
+    margin-right: 4px;
+  }
+
+  /* ### LOGADO: TELA CONFIRMAR ### */
+  .briefing-complemento-step {
+    display: none;
+  }
+  #section-confirmar-mobile {
+    display: block;
+    float: left;
+    padding-bottom: 70px;
+  }
+  #section-confirmar-mobile .brief-confirmar-item {
+    float: left;
+    width: 100%;
+    margin: 5px 0px;
+  }
+  #section-confirmar-mobile .brief-confirmar-item button {
+    width: 100%;
+    padding: 15px 0px;
+    padding-left: 20px;
+    text-align: left;
+    font-size: 24px;
+    line-height: 25px;
+    background: #FFF;
+    color: #AAA;
+    border: 1px #AAA solid;
+  }
+  #section-confirmar-mobile .brief-confirmar-item button span {
+    font-size: 20px;
+  }
+  #briefing-vendedor {
+    margin-bottom: 60px;
+  }
+  #briefing-vendedor .col-md-8 div.col-xs-9 {
+    padding-left: 15px;
+    font-size: 20px;
+    line-height: 25px;
+    top: auto;
+    margin-top: 0;
+    bottom: 25px;
+  }
+  #briefing-vendedor .col-md-4 {
+    padding: 15px;
+    margin: 0;
+    width: 100%;
+    position: relative;
+  }
+  #briefing-vendedor .col-md-4 .col-xs-12 {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+  #briefing-vendedor form {
+    padding: 0;
+  }
+  #briefing-vendedor form .col-xs-6 {
+    padding: 0 5px;
+  }
+  #briefing-vendedor form .col-xs-6 .btn-voltar-mobile {
+    border: none;
+    color: rgb(255, 127, 172) !important;
+    padding: 10px 5px;
+    background: #FFF !important;
+  }
+  #briefing-vendedor form .col-xs-6 .btn-avancar {
+    padding: 10px 5px;
+    border: none;
+    border-radius: 0;
+  }
+  .briefing-complemento-step .col-md-8 .col-xs-9 h2 {
+    font-size: 30px;
+    line-height: 32px;
+    margin-right: 0px;
+    margin: 0;
+  }
+  #briefing-obrigado-vendedor h2, #briefing-obrigado-arquivos h2 {
+    text-align: left;
+    margin-top: 40px;
+  }
+  #briefing-obrigado-vendedor .p1, #briefing-obrigado-arquivos .p1,
+  #briefing-obrigado-vendedor .p2, #briefing-obrigado-arquivos .p2 {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    line-height: 27px;
+    margin-top: 15px;
+  }
+  #briefing-obrigado-vendedor .modal-content,
+  #briefing-obrigado-arquivos .modal-content {
+    margin-bottom: 60px;
+  }
 
   /* ### Demais ajustes ###*/
   #section-ambientes div.col-md-5 {

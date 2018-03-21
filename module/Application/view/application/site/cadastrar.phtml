@@ -25,7 +25,7 @@
 		</div>
 	</div>
 	<div class="col-md-4">
-		<div class="cadastro">
+		<div class="login cadastro">
 			<form id="formLogin" method="post" data-toggle="validator">
 				<input type="hidden" name="acao" value="cadastrar" />
 				<input type="hidden" name="fone_cel" value="0">
@@ -58,11 +58,11 @@
 			    	<div class="alert alert-danger" role="alert"><?= $this->error; ?></div>
 			    <?php endif;?>
 				
-				<div class="form-group">
+				<div class="form-group entrar-form">
 					<button type="submit" class="btn btn-block">Cadastrar</button>
 	            </div>
 				
-				<div class="form-group">
+				<div class="form-group entrar-facebook">
 					<button type="button" id="loginComFacebok" class="btn btn-block">Entrar com o Facebook</button>
 	            </div>
 			</form>
@@ -132,10 +132,20 @@ jQuery(function($){
 $(document).ready(function(){
 	ajustaWidHei = function(){
 		$('body').css('overflow', 'hidden');
-		$('#section-content').css('overflow', 'hidden');
 		
 		if($(window).width() < 800){
+			$('#section-content').css('overflow', 'auto');
+			$('#section-content').css('padding-bottom', '50px');
+
+			$('#section-login input[name="nome"]').attr('placeholder', 'Nome completo');
+			$('#section-login input[name="email"]').attr('placeholder', 'E-mail');
+			$('#section-login input[name="senha"]').attr('placeholder', 'Escolha uma Senha');
+			$('#section-login input[name="senharepeat"]').attr('placeholder', 'Repita a Senha');
+			$('#section-login div.section-background img').css('height', ($(window).height() * 0.60) + 'px');
+			$('#section-login div.section-background img').css('transform', 'translate(-20%, 0%)');
 		}else{
+			$('#section-content').css('overflow', 'hidden');
+
 			var menuHeight = $('#menu-nav-left').outerHeight() + 'px';
 			$('.section-background img').css('height', menuHeight);
 		}
