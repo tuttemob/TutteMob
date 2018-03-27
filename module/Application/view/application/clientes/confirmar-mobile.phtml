@@ -14,7 +14,7 @@
     </div>
 
     <div class="brief-confirmar-item">
-        <button>
+        <button id="brief-confirmar-arquivos">
             Enviarei os arquivos <br /> das medidas e fotos. <br />
             <span>
                 Planta baixa, folders <br />
@@ -24,7 +24,7 @@
     </div>
 
     <div class="brief-confirmar-item">
-        <button>
+        <button id="brief-confirmar-videos">
             Eu farei <br /> a medição. <br />
             <span>
                 Mas quero assitir o <br />
@@ -44,6 +44,27 @@
             $('#brief-confirmar-inical').hide();
             $('#briefing-vendedor').fadeIn();
             $('#briefing-cadastro').modal('hide');
+            $(window).scrollTop(0);
+        };
+        showModalCadastro(callback);
+	});
+    $('#brief-confirmar-arquivos, #briefing-videos .btn-avancar').on('click', function(){
+		var callback = function(){
+            $('#brief-confirmar-inical, .briefing-complemento-step').hide();
+            $('#briefing-arquivos1').fadeIn();
+            $('#briefing-cadastro').modal('hide');
+            $(window).scrollTop(0);
+        };
+        showModalCadastro(callback);
+	});
+    $('#brief-confirmar-videos').on('click', function(){
+		var callback = function(){
+            $('#brief-confirmar-inical').hide();
+            $('#briefing-videos').fadeIn();
+            $('#briefing-videos .col-md-4 .col-xs-12:last').css('margin-top', '15px');
+            $('#briefing-videos .show-mobile:first').css('margin-top', '-10px');
+            $('#briefing-cadastro').modal('hide');
+            $(window).scrollTop(0);
         };
         showModalCadastro(callback);
 	});

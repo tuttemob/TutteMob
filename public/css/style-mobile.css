@@ -825,9 +825,13 @@
   #section-confirmar-mobile .brief-confirmar-item button span {
     font-size: 20px;
   }
+  #briefing-videos,
+  #briefing-arquivos1,
   #briefing-vendedor {
     margin-bottom: 60px;
   }
+  #briefing-videos .col-md-8 div.col-xs-9,
+  #briefing-arquivos1 .col-md-8 div.col-xs-9,
   #briefing-vendedor .col-md-8 div.col-xs-9 {
     padding-left: 15px;
     font-size: 20px;
@@ -836,29 +840,41 @@
     margin-top: 0;
     bottom: 25px;
   }
+  #briefing-videos .col-md-4,
+  #briefing-arquivos1 .col-md-4,
   #briefing-vendedor .col-md-4 {
     padding: 15px;
     margin: 0;
     width: 100%;
+    min-width: auto;
     position: relative;
   }
+  #briefing-videos .col-md-4 .col-xs-12,
+  #briefing-arquivos1 .col-md-4 .col-xs-12,
+  #briefing-arquivos1 .col-md-4 .col-md-12,
   #briefing-vendedor .col-md-4 .col-xs-12 {
     padding: 0;
     margin: 0;
     text-align: left;
   }
+  #briefing-arquivos1 form,
   #briefing-vendedor form {
     padding: 0;
   }
+  #briefing-arquivos1 form .col-xs-6,
   #briefing-vendedor form .col-xs-6 {
     padding: 0 5px;
   }
+  #briefing-videos .col-xs-6 .btn-voltar-mobile,
+  #briefing-arquivos1 form .col-xs-6 .btn-voltar-mobile,
   #briefing-vendedor form .col-xs-6 .btn-voltar-mobile {
     border: none;
     color: rgb(255, 127, 172) !important;
     padding: 10px 5px;
     background: #FFF !important;
   }
+  #briefing-videos .col-xs-6 .btn-avancar,
+  #briefing-arquivos1 form .col-xs-6 .btn-avancar,
   #briefing-vendedor form .col-xs-6 .btn-avancar {
     padding: 10px 5px;
     border: none;
@@ -887,6 +903,75 @@
     margin-bottom: 60px;
   }
 
+  #briefing-videos .col-md-8 .col-xs-9 h2 br,
+  #briefing-arquivos1 .col-md-8 .col-xs-9 h2 br {
+    display: none;
+  }
+  #briefing-videos .col-md-8 .col-xs-9 p,
+  #briefing-arquivos1 .col-md-8 .col-xs-9 p {
+    font-size: 20px;
+    line-height: 22px;
+    margin: 0;
+  }
+  #briefing-videos .col-md-8 .col-xs-9 p br {
+    display: none;
+  }
+  #briefing-arquivos1 .col-xs-12 .col-xs-8,
+  #briefing-arquivos1 .col-xs-12 .col-xs-4 {
+    width: 50%;
+  }
+  #briefing-videos .col-md-4 .col-xs-12 p,
+  #briefing-arquivos1 .col-md-4 .col-xs-12 p {
+    font-size: 22px;
+    text-align: left;
+    margin-top: 0px !important;
+  }
+  
+  #briefing-videos .col-md-4 .col-xs-12 p.sub,
+  #briefing-arquivos1 .col-md-4 .col-xs-12 p.sub {
+    font-size: 14px;
+  }
+  #briefing-arquivos1 .form-horizontal .form-group {
+    margin: 0;
+  }
+  #briefing-videos .col-md-4 .col-xs-12 p {
+    display: none;
+  }
+  #briefing-videos .icone-download {
+    margin-left: 0px;
+    width: auto;
+    height: auto;
+  }
+  #briefing-videos .icone-download img {
+    width: 28px;
+  }
+  #briefing-videos .col-md-4 .col-xs-12 p.pdownload {
+    display: block;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: left;
+    padding-top: 15px;
+    padding-left: 40px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  #briefing-videos .col-md-4 .col-xs-12 h2 {
+    display: inline;
+    font-size: 20px;
+  }
+  #briefing-videos .col-md-4 .col-xs-12 p.p2 {
+    display: inline;
+    font-size: 17px;
+    line-height: 19px;
+    color: #AAA;
+  }
+  #briefing-videos .col-md-4 .col-xs-12 .imgYoutube {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -5px;
+    width: 100%;
+  }
+  
   /* ### Demais ajustes ###*/
   #section-ambientes div.col-md-5 {
 	padding-top: 20px !important;
