@@ -762,6 +762,12 @@
     padding: 8px 10px;
     margin-top: 20px;
   }
+  #section-briefings-mobile #brief-tela-inicio .absolute {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 30px;
+  }
   .brief-telas-grid h2 {
     font-size: 34px;
     line-height: 36px;

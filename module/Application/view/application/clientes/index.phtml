@@ -305,9 +305,15 @@ $(document).ready(function(){
 			if($('#section-briefings-mobile').outerHeight() <= height){
 				$('.brief-telas-grid').css('height', (height - 70) + 'px');
 				$('.brief-telas-grid .form-group').addClass('form-group-mobile');	
+
+				$('#brief-tela-inicio').css('height', (height - 70) + 'px');
+				$('#brief-tela-inicio .col-xs-12').addClass('absolute');
 			}else{
 				$('.brief-telas-grid').css('height', 'auto');
 				$('.brief-telas-grid .form-group').removeClass('form-group-mobile');	
+
+				$('#brief-tela-inicio').css('height', 'auto');
+				$('#brief-tela-inicio .col-xs-12').removeClass('absolute');
 			}
 		}else{
 			var menuHeight = $('#menu-nav-left').outerHeight() + 'px';
