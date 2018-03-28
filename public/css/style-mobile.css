@@ -762,6 +762,35 @@
     padding: 8px 10px;
     margin-top: 20px;
   }
+  .brief-telas-grid h2 {
+    font-size: 34px;
+    line-height: 36px;
+    padding: 0;
+  }
+  .brief-telas-grid p {
+    color: #FF6FA3;
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .brief-telas-grid .form-group-mobile {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 0 10px;
+    margin-bottom: 0 !important;
+  }
+  .brief-telas-grid-item {
+    padding: 10px 15px;
+    margin: 10px 0;
+    text-align: center;
+    border: 1px #AAA solid;
+    color: #AAA;
+    font-size: 20px;
+  }
+  .brief-telas-grid .col-xs-6 button {
+    font-size: 16px;
+  }
   /* ajustes nas modais */
   #section-briefings .modal-content {
     margin-bottom: 70px;
@@ -825,6 +854,10 @@
   #section-confirmar-mobile .brief-confirmar-item button span {
     font-size: 20px;
   }
+  #brief-boas-vindas .col-xs-12 {
+    padding-top: 20px;
+    text-align: center;
+  }
   #briefing-videos,
   #briefing-arquivos1,
   #briefing-vendedor {
@@ -861,10 +894,12 @@
   #briefing-vendedor form {
     padding: 0;
   }
+  .brief-telas-grid .col-xs-6,
   #briefing-arquivos1 form .col-xs-6,
   #briefing-vendedor form .col-xs-6 {
     padding: 0 5px;
   }
+  .brief-telas-grid .col-xs-6 .btn-voltar-mobile,
   #briefing-videos .col-xs-6 .btn-voltar-mobile,
   #briefing-arquivos1 form .col-xs-6 .btn-voltar-mobile,
   #briefing-vendedor form .col-xs-6 .btn-voltar-mobile {
@@ -873,6 +908,8 @@
     padding: 10px 5px;
     background: #FFF !important;
   }
+  .brief-telas-grid .col-xs-6 .btn-iniciar-novo,
+  .brief-telas-grid .col-xs-6 .btn-avancar,
   #briefing-videos .col-xs-6 .btn-avancar,
   #briefing-arquivos1 form .col-xs-6 .btn-avancar,
   #briefing-vendedor form .col-xs-6 .btn-avancar {

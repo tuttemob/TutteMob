@@ -11,7 +11,7 @@
         transformá-los no seu sonho, dentro da sua casa.
     </p>
 
-    <div class="col-xs-12" style="text-align:center;">
+    <div class="col-xs-12">
         <a href="javascript:void(0)" onclick="proximaTela('#brief-tela-inicio');">
             VAMOS LÁ!
         </a>
@@ -30,7 +30,7 @@
             <button class="inicio-item-novo" onclick="return criarBriefing('cozinha')">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </button>
-            <button class="inicio-item-total <?php echo count($this->listaCozinha)? 'inicio-item-total-red': ''; ?>">
+            <button <?php echo count($this->listaCozinha)? 'onclick="proximaTela(\'#brief-grid-cozinha\');"': ''; ?> class="inicio-item-total <?php echo count($this->listaCozinha)? 'inicio-item-total-red': ''; ?>">
                 <?php echo count($this->listaCozinha); ?>
             </button>
         </div>
@@ -45,7 +45,7 @@
             <button class="inicio-item-novo" onclick="return criarBriefing('areaServico')">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </button>
-            <button class="inicio-item-total <?php echo count($this->listaAreaServico)? 'inicio-item-total-red': ''; ?>">
+            <button <?php echo count($this->listaAreaServico)? 'onclick="proximaTela(\'#brief-grid-areaServico\');"': ''; ?> class="inicio-item-total <?php echo count($this->listaAreaServico)? 'inicio-item-total-red': ''; ?>">
                 <?php echo count($this->listaAreaServico); ?>
             </button>
         </div>
@@ -60,7 +60,7 @@
             <button class="inicio-item-novo" onclick="return criarBriefing('dormitoriocasal')">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </button>
-            <button class="inicio-item-total <?php echo count($this->listaDormitorioCasal)? 'inicio-item-total-red': ''; ?>">
+            <button <?php echo count($this->listaDormitorioCasal)? 'onclick="proximaTela(\'#brief-grid-dormitorioCasal\');"': ''; ?> class="inicio-item-total <?php echo count($this->listaDormitorioCasal)? 'inicio-item-total-red': ''; ?>">
                 <?php echo count($this->listaDormitorioCasal); ?>
             </button>
         </div>
@@ -75,7 +75,7 @@
             <button class="inicio-item-novo" onclick="return criarBriefing('dormitoriosolteiro')">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </button>
-            <button class="inicio-item-total <?php echo count($this->listaDormitorioSolteiro)? 'inicio-item-total-red': ''; ?>">
+            <button <?php echo count($this->listaDormitorioSolteiro)? 'onclick="proximaTela(\'#brief-grid-dormitorioSolteiro\');"': ''; ?> class="inicio-item-total <?php echo count($this->listaDormitorioSolteiro)? 'inicio-item-total-red': ''; ?>">
                 <?php echo count($this->listaDormitorioSolteiro); ?>
             </button>
         </div>
@@ -90,7 +90,7 @@
             <button class="inicio-item-novo" onclick="return criarBriefing('closet')">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </button>
-            <button class="inicio-item-total <?php echo count($this->listaCloset)? 'inicio-item-total-red': ''; ?>">
+            <button <?php echo count($this->listaCloset)? 'onclick="proximaTela(\'#brief-grid-closet\');"': ''; ?> class="inicio-item-total <?php echo count($this->listaCloset)? 'inicio-item-total-red': ''; ?>">
                 <?php echo count($this->listaCloset); ?>
             </button>
         </div>
@@ -105,7 +105,7 @@
             <button class="inicio-item-novo" onclick="return criarBriefing('banheiro')">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </button>
-            <button class="inicio-item-total <?php echo count($this->listaBanheiro)? 'inicio-item-total-red': ''; ?>">
+            <button <?php echo count($this->listaBanheiro)? 'onclick="proximaTela(\'#brief-grid-banheiro\');"': ''; ?> class="inicio-item-total <?php echo count($this->listaBanheiro)? 'inicio-item-total-red': ''; ?>">
                 <?php echo count($this->listaBanheiro); ?>
             </button>
         </div>
@@ -137,7 +137,7 @@
             <button class="inicio-item-novo" onclick="return criarBriefing('hometheater')">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </button>
-            <button class="inicio-item-total <?php echo count($this->listaHomeTheater)? 'inicio-item-total-red': ''; ?>">
+            <button <?php echo count($this->listaHomeTheater)? 'onclick="proximaTela(\'#brief-grid-homeTheater\');"': ''; ?> class="inicio-item-total <?php echo count($this->listaHomeTheater)? 'inicio-item-total-red': ''; ?>">
                 <?php echo count($this->listaHomeTheater); ?>
             </button>
         </div>
@@ -152,7 +152,7 @@
             <button class="inicio-item-novo" onclick="return criarBriefing('homeoffice')">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </button>
-            <button class="inicio-item-total <?php echo count($this->listaHomeOffice)? 'inicio-item-total-red': ''; ?>">
+            <button <?php echo count($this->listaHomeOffice)? 'onclick="proximaTela(\'#brief-grid-homeOffice\');"': ''; ?> class="inicio-item-total <?php echo count($this->listaHomeOffice)? 'inicio-item-total-red': ''; ?>">
                 <?php echo count($this->listaHomeOffice); ?>
             </button>
         </div>
@@ -182,11 +182,219 @@
     </div>
 </div>
 
+<div id="brief-grid-cozinha" class="brief-telas brief-telas-grid col-xs-12">
+    <h2>Você já possui <?php echo count($this->listaCozinha); ?> briefings de Cozinha em andamento.</h2>
+    <p>
+        Deseja continuar de onde parou?
+    </p>
+
+    <?php foreach($this->listaCozinha as $item): ?>
+        <div class="brief-telas-grid-item col-xs-12">
+            <?php echo $item->descricao ?>
+        </div>
+    <?php endforeach; ?>
+
+    <div class="form-group">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-iniciar-novo" onclick="criarBriefing('cozinha');">INICIAR NOVO</button>			
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-voltar-mobile" onclick="proximaTela('#brief-tela-inicio');">VOLTAR</button>
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-avancar">CONCLUIR</button>			
+        </div>
+    </div>
+</div>
+
+<div id="brief-grid-areaServico" class="brief-telas brief-telas-grid col-xs-12">
+    <h2>Você já possui <?php echo count($this->listaAreaServico); ?> briefings de Área de Serviço em andamento.</h2>
+    <p>
+        Deseja continuar de onde parou?
+    </p>
+
+    <?php foreach($this->listaAreaServico as $item): ?>
+        <div class="brief-telas-grid-item col-xs-12">
+            <?php echo $item->bas_descricao ?>
+        </div>
+    <?php endforeach; ?>
+
+    <div class="form-group">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-iniciar-novo" onclick="criarBriefing('areaServico');">INICIAR NOVO</button>			
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-voltar-mobile" onclick="proximaTela('#brief-tela-inicio');">VOLTAR</button>
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-avancar">CONCLUIR</button>			
+        </div>
+    </div>
+</div>
+
+<div id="brief-grid-dormitorioCasal" class="brief-telas brief-telas-grid col-xs-12">
+    <h2>Você já possui <?php echo count($this->listaDormitorioCasal); ?> briefings de Dormitório Casal em andamento.</h2>
+    <p>
+        Deseja continuar de onde parou?
+    </p>
+
+    <?php foreach($this->listaDormitorioCasal as $item): ?>
+        <div class="brief-telas-grid-item col-xs-12">
+            <?php echo $item->bdc_descricao ?>
+        </div>
+    <?php endforeach; ?>
+
+    <div class="form-group">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-iniciar-novo" onclick="criarBriefing('dormitoriocasal');">INICIAR NOVO</button>			
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-voltar-mobile" onclick="proximaTela('#brief-tela-inicio');">VOLTAR</button>
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-avancar">CONCLUIR</button>			
+        </div>
+    </div>
+</div>
+
+<div id="brief-grid-dormitorioSolteiro" class="brief-telas brief-telas-grid col-xs-12">
+    <h2>Você já possui <?php echo count($this->listaDormitorioSolteiro); ?> briefings de Dormitório Solteiro em andamento.</h2>
+    <p>
+        Deseja continuar de onde parou?
+    </p>
+
+    <?php foreach($this->listaDormitorioSolteiro as $item): ?>
+        <div class="brief-telas-grid-item col-xs-12">
+            <?php echo $item->bds_descricao ?>
+        </div>
+    <?php endforeach; ?>
+
+    <div class="form-group">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-iniciar-novo" onclick="criarBriefing('dormitoriosolteiro');">INICIAR NOVO</button>			
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-voltar-mobile" onclick="proximaTela('#brief-tela-inicio');">VOLTAR</button>
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-avancar">CONCLUIR</button>			
+        </div>
+    </div>
+</div>
+
+<div id="brief-grid-closet" class="brief-telas brief-telas-grid col-xs-12">
+    <h2>Você já possui <?php echo count($this->listaCloset); ?> briefings de Closet em andamento.</h2>
+    <p>
+        Deseja continuar de onde parou?
+    </p>
+
+    <?php foreach($this->listaCloset as $item): ?>
+        <div class="brief-telas-grid-item col-xs-12">
+            <?php echo $item->bcl_descricao ?>
+        </div>
+    <?php endforeach; ?>
+
+    <div class="form-group">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-iniciar-novo" onclick="criarBriefing('closet');">INICIAR NOVO</button>			
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-voltar-mobile" onclick="proximaTela('#brief-tela-inicio');">VOLTAR</button>
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-avancar">CONCLUIR</button>			
+        </div>
+    </div>
+</div>
+
+<div id="brief-grid-banheiro" class="brief-telas brief-telas-grid col-xs-12">
+    <h2>Você já possui <?php echo count($this->listaBanheiro); ?> briefings de Banheiro em andamento.</h2>
+    <p>
+        Deseja continuar de onde parou?
+    </p>
+
+    <?php foreach($this->listaBanheiro as $item): ?>
+        <div class="brief-telas-grid-item col-xs-12">
+            <?php echo $item->ban_descricao ?>
+        </div>
+    <?php endforeach; ?>
+
+    <div class="form-group">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-iniciar-novo" onclick="criarBriefing('banheiro');">INICIAR NOVO</button>			
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-voltar-mobile" onclick="proximaTela('#brief-tela-inicio');">VOLTAR</button>
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-avancar">CONCLUIR</button>			
+        </div>
+    </div>
+</div>
+
+<div id="brief-grid-homeTheater" class="brief-telas brief-telas-grid col-xs-12">
+    <h2>Você já possui <?php echo count($this->listaHomeTheater); ?> briefings de Home Theater em andamento.</h2>
+    <p>
+        Deseja continuar de onde parou?
+    </p>
+
+    <?php foreach($this->listaHomeTheater as $item): ?>
+        <div class="brief-telas-grid-item col-xs-12">
+            <?php echo $item->bht_descricao ?>
+        </div>
+    <?php endforeach; ?>
+
+    <div class="form-group">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-iniciar-novo" onclick="criarBriefing('hometheater');">INICIAR NOVO</button>			
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-voltar-mobile" onclick="proximaTela('#brief-tela-inicio');">VOLTAR</button>
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-avancar">CONCLUIR</button>			
+        </div>
+    </div>
+</div>
+
+<div id="brief-grid-homeOffice" class="brief-telas brief-telas-grid col-xs-12">
+    <h2>Você já possui <?php echo count($this->listaHomeOffice); ?> briefings de Home Office em andamento.</h2>
+    <p>
+        Deseja continuar de onde parou?
+    </p>
+
+    <?php foreach($this->listaHomeOffice as $item): ?>
+        <div class="brief-telas-grid-item col-xs-12">
+            <?php echo $item->bho_descricao ?>
+        </div>
+    <?php endforeach; ?>
+
+    <div class="form-group">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-iniciar-novo" onclick="criarBriefing('homeoffice');">INICIAR NOVO</button>			
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-voltar-mobile" onclick="proximaTela('#brief-tela-inicio');">VOLTAR</button>
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-block btn-avancar">CONCLUIR</button>			
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
 $(function(){
     // show tela inicial
     $('#brief-boas-vindas').fadeIn();
-
+    
     proximaTela = function(selector){
         $('.brief-telas').hide();
         $(selector).fadeIn();

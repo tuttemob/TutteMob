@@ -301,6 +301,14 @@ $(document).ready(function(){
 		$('#section-content').css('overflow-x', 'hidden');
 		
 		if($(window).width() < 800){
+			var height = ($(window).height());
+			if($('#section-briefings-mobile').outerHeight() <= height){
+				$('.brief-telas-grid').css('height', (height - 70) + 'px');
+				$('.brief-telas-grid .form-group').addClass('form-group-mobile');	
+			}else{
+				$('.brief-telas-grid').css('height', 'auto');
+				$('.brief-telas-grid .form-group').removeClass('form-group-mobile');	
+			}
 		}else{
 			var menuHeight = $('#menu-nav-left').outerHeight() + 'px';
 			$('.section-background img').css('height', menuHeight);
@@ -328,7 +336,7 @@ $(function(){
 	});
 
 	// complementar briefings
-	$('#btn-confirmar-ambientes, #btn-confirmar-ambientes-mobile').on('click', function(){
+	$('#btn-confirmar-ambientes, #btn-confirmar-ambientes-mobile, .brief-telas-grid .btn-avancar').on('click', function(){
 		window.location = "<?php echo $this->url('clientes', array('action' => 'confirmar')); ?>"
 	});
 	

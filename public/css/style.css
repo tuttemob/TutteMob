@@ -1909,7 +1909,8 @@ input.cmn-toggle-round:checked + label:after {
 }
 #briefing-vendedor button,
 #briefing-arquivos1 button,
-#briefing-videos button {
+#briefing-videos button,
+.brief-telas-grid button {
   margin-top: 15px;
   padding: 18px 0px;
   font-size: 18px;
